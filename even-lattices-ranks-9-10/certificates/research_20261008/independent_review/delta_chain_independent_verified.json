@@ -1,0 +1,97 @@
+{
+  "status": "PASS",
+  "scope": "Independent exact linkage audit for the completed equality delta data.\n\nThe separate quadratic-module checker supplies exhaustive independent\nnecessary-condition coverage. This checker compares its exact class sets\nwith the actual generated matrices and verifies every stored job and merge.\nIt uses only the previously independent standard-library arithmetic kernel.\n",
+  "mathematical_conclusion": "Global rank-ten determinant54675 equality has exactly two isometry types, under gamma9<=2, the old audited complete prefix, and the E8 two-type classification.",
+  "jobs_checked": 5010,
+  "new_raw_grams_checked": 78,
+  "steps": [
+    {
+      "step": "independent_proof_inputs",
+      "source_hashes_verified": 12,
+      "parent_target_pairs": 4952
+    },
+    {
+      "step": "rank6_boundary",
+      "parents": 925,
+      "raw_children": 58,
+      "independently_verified_primal_and_dual_minima": 58,
+      "exact_fingerprint_matches": 58
+    },
+    {
+      "step": "rank7_boundary",
+      "parents": 3752,
+      "raw_children": 20,
+      "independently_verified_primal_and_dual_minima": 20,
+      "exact_fingerprint_matches": 20
+    },
+    {
+      "step": "rank7_from_new6",
+      "parents": 58,
+      "raw_children": 0,
+      "independently_verified_primal_and_dual_minima": 0,
+      "exact_fingerprint_matches": 0
+    },
+    {
+      "step": "rank8_boundary",
+      "parents": 224,
+      "raw_children": 0,
+      "independently_verified_primal_and_dual_minima": 0,
+      "exact_fingerprint_matches": 0
+    },
+    {
+      "step": "rank8_from_new7",
+      "parents": 4,
+      "raw_children": 0,
+      "independently_verified_primal_and_dual_minima": 0,
+      "exact_fingerprint_matches": 0
+    },
+    {
+      "step": "rank9_boundary",
+      "parents": 47,
+      "raw_children": 0,
+      "independently_verified_primal_and_dual_minima": 0,
+      "exact_fingerprint_matches": 0
+    },
+    {
+      "step": "rank9_from_new8",
+      "parents": 0,
+      "raw_children": 0,
+      "independently_verified_primal_and_dual_minima": 0,
+      "exact_fingerprint_matches": 0
+    },
+    {
+      "step": "rank7_complete_merge",
+      "old_raw": 56269,
+      "old_prunes": 52208,
+      "revived": 4,
+      "new_raw": 20,
+      "new_pruned": 20,
+      "new_eligible": 4
+    },
+    {
+      "step": "rank8_complete_merge",
+      "old_raw": 19481,
+      "old_prunes": 18110,
+      "revived": 0,
+      "new_raw": 0,
+      "new_pruned": 0,
+      "new_eligible": 0
+    },
+    {
+      "step": "rank9_complete_merge",
+      "old_raw": 3819,
+      "old_prunes": 3819,
+      "revived": 0,
+      "new_raw": 0,
+      "new_pruned": 0,
+      "new_eligible": 0
+    },
+    {
+      "step": "old_terminal_obstruction_at_equality",
+      "rank9_records": 3819,
+      "least_required_next_determinant": "12966723/212",
+      "equality_target": 54675
+    }
+  ],
+  "elapsed_seconds": 0.9970687800014275
+}

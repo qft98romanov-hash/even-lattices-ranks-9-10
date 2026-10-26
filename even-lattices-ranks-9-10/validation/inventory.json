@@ -1,0 +1,861 @@
+{
+  "file_count": 8195,
+  "total_bytes": 71949818,
+  "suffixes": {
+    ".log": 132,
+    ".pdf": 9,
+    ".txt": 44,
+    ".json": 7817,
+    ".py": 83,
+    ".tex": 10,
+    "": 4,
+    ".md": 33,
+    ".stdout": 2,
+    ".transcript": 22,
+    ".cpp": 2,
+    ".sha256": 9,
+    ".sh": 4,
+    ".patch": 1,
+    ".zip": 1,
+    ".raw": 22
+  },
+  "python_imports": {
+    "verify_file_hashes.py": [
+      "hashlib",
+      "pathlib",
+      "sys"
+    ],
+    "PRIOR_20261007_verify_new_results.py": [
+      "argparse",
+      "pathlib",
+      "subprocess",
+      "sys"
+    ],
+    "verify_new_results.py": [
+      "argparse",
+      "pathlib",
+      "subprocess",
+      "sys"
+    ],
+    "research_20261008/independent_review/check_delta_chain_independent.py": [
+      "check_rank10_global_chain",
+      "collections",
+      "fractions",
+      "hashlib",
+      "json",
+      "pathlib",
+      "sys",
+      "time"
+    ],
+    "research_20261008/independent_review/check_boundaries_by_quadratic_module.py": [
+      "argparse",
+      "check_rank10_global_chain",
+      "collections",
+      "concurrent",
+      "fractions",
+      "hashlib",
+      "json",
+      "math",
+      "pathlib",
+      "sys",
+      "time"
+    ],
+    "research_20261008/independent_review/check_equality_windows_and_recovered_prunes.py": [
+      "fractions",
+      "hashlib",
+      "json",
+      "pathlib"
+    ],
+    "research_20261008/rank10_equality/record_fresh_generation.py": [
+      "hashlib",
+      "json",
+      "pathlib"
+    ],
+    "research_20261008/rank10_equality/process_delta.py": [
+      "argparse",
+      "exact_lattice",
+      "fractions",
+      "hashlib",
+      "json",
+      "pathlib",
+      "sys"
+    ],
+    "research_20261008/rank10_equality/verify_equality_certificate.py": [
+      "argparse",
+      "exact_lattice",
+      "fast_extend",
+      "fractions",
+      "hashlib",
+      "json",
+      "multiprocessing",
+      "pathlib",
+      "process_delta",
+      "sys",
+      "time",
+      "verify_global_rank10_certificate"
+    ],
+    "research_20261008/rank10_equality/run_delta.py": [
+      "argparse",
+      "exact_lattice",
+      "fast_extend",
+      "hashlib",
+      "json",
+      "multiprocessing",
+      "pathlib",
+      "sys",
+      "time"
+    ],
+    "research_20261008/consequences/audit_two_types_and_cluster_gap.py": [
+      "collections",
+      "fractions",
+      "hashlib",
+      "json",
+      "math",
+      "pathlib"
+    ],
+    "research_20261008/report_build/finalize_report_qa.py": [
+      "datetime",
+      "hashlib",
+      "json",
+      "pathlib",
+      "re"
+    ],
+    "research_20261008/report_build/augment_reports.py": [
+      "pathlib"
+    ],
+    "research_20261008/report_build/render_reports.py": [
+      "PIL",
+      "json",
+      "pathlib",
+      "pypdf",
+      "re",
+      "shutil",
+      "subprocess"
+    ],
+    "research_20261008/report_build/update_reports.py": [
+      "pathlib"
+    ],
+    "research_20261007/independent_review/check_rank9_low_orbits.py": [
+      "collections",
+      "fractions",
+      "json",
+      "math",
+      "pathlib"
+    ],
+    "research_20261007/independent_review/check_all_e8_rank9_clusters.py": [
+      "fractions",
+      "json",
+      "math",
+      "pathlib"
+    ],
+    "research_20261007/independent_review/check_equality_independent.py": [
+      "collections",
+      "fractions",
+      "itertools",
+      "json",
+      "math",
+      "pathlib"
+    ],
+    "research_20261007/independent_review/check_rank10_global_chain.py": [
+      "fractions",
+      "functools",
+      "hashlib",
+      "json",
+      "math",
+      "pathlib",
+      "re",
+      "time"
+    ],
+    "research_20261007/independent_review/check_k9_perfect.py": [
+      "exact_lattice",
+      "fractions",
+      "json",
+      "pathlib",
+      "sys",
+      "verify_rank9_extremal_example_exact"
+    ],
+    "research_20261007/independent_review/check_rank9_low_by_radius.py": [
+      "fractions",
+      "json",
+      "math",
+      "pathlib"
+    ],
+    "research_20261007/independent_review/check_fixed_k9_extension_coverage.py": [
+      "collections",
+      "fractions",
+      "json",
+      "math",
+      "pathlib",
+      "random"
+    ],
+    "research_20261007/independent_review/check_global_rank10_windows.py": [
+      "fractions",
+      "json",
+      "pathlib"
+    ],
+    "research_20261007/clusters/verify_fixed_section_cluster_optimality.py": [
+      "fractions",
+      "itertools",
+      "json",
+      "math",
+      "pathlib"
+    ],
+    "research_20261007/clusters/verify_rank10_single_projection.py": [
+      "fractions",
+      "json",
+      "pathlib"
+    ],
+    "research_20261007/clusters/verify_all_E8_rank9_cluster_optimality.py": [
+      "fractions",
+      "json",
+      "math",
+      "pathlib"
+    ],
+    "research_20261007/embeddings/prepare_all_fixed_K9_extensions.py": [
+      "collections",
+      "exact_lattice",
+      "fractions",
+      "json",
+      "pathlib",
+      "sys",
+      "verify_ambient_embeddings"
+    ],
+    "research_20261007/embeddings/verify_all_fixed_K9_extensions.py": [
+      "collections",
+      "exact_lattice",
+      "fractions",
+      "json",
+      "math",
+      "pathlib",
+      "sys",
+      "time",
+      "verify_ambient_embeddings"
+    ],
+    "research_20261007/embeddings/prepare_A10_exact_cvp.py": [
+      "fractions",
+      "json",
+      "pathlib",
+      "sys",
+      "verify_ambient_embeddings"
+    ],
+    "research_20261007/embeddings/verify_A10_extension_exact.py": [
+      "fractions",
+      "json",
+      "math",
+      "pathlib",
+      "sys",
+      "time",
+      "verify_ambient_embeddings"
+    ],
+    "research_20261007/embeddings/verify_ambient_embeddings.py": [
+      "fractions",
+      "hashlib",
+      "json",
+      "pathlib",
+      "re",
+      "sys",
+      "time"
+    ],
+    "research_20261007/rank10/analyze_e8_optimal.py": [
+      "collections",
+      "exact_lattice",
+      "extend_flag",
+      "fractions",
+      "json",
+      "pathlib",
+      "sys",
+      "time",
+      "verify_rank9_extremal_example_exact"
+    ],
+    "research_20261007/rank10/fast_deduplicate.py": [
+      "collections",
+      "exact_lattice",
+      "json",
+      "pathlib",
+      "sys",
+      "time"
+    ],
+    "research_20261007/rank10/run_next_rank_parallel.py": [
+      "argparse",
+      "exact_lattice",
+      "extend_flag",
+      "fractions",
+      "hashlib",
+      "json",
+      "multiprocessing",
+      "os",
+      "pathlib",
+      "time"
+    ],
+    "research_20261007/rank10/verify_global_rank10_certificate.py": [
+      "argparse",
+      "fast_extend",
+      "fractions",
+      "functools",
+      "hashlib",
+      "json",
+      "math",
+      "multiprocessing",
+      "pathlib",
+      "re",
+      "subprocess",
+      "sys",
+      "time"
+    ],
+    "research_20261007/rank10/exact_lattice.py": [
+      "__future__",
+      "collections",
+      "fractions",
+      "math",
+      "typing"
+    ],
+    "research_20261007/rank10/verify_rank9_low_spectrum.py": [
+      "collections",
+      "exact_lattice",
+      "json",
+      "pathlib",
+      "verify_rank10_e8_classification",
+      "verify_rank9_extremal_example_exact"
+    ],
+    "research_20261007/rank10/merge_filter_next.py": [
+      "argparse",
+      "exact_lattice",
+      "hashlib",
+      "json",
+      "pathlib"
+    ],
+    "research_20261007/rank10/verify_fast_dedup_maps.py": [
+      "exact_lattice",
+      "json",
+      "pathlib",
+      "sys"
+    ],
+    "research_20261007/rank10/verify_rank10_e8_classification.py": [
+      "collections",
+      "exact_lattice",
+      "fractions",
+      "hashlib",
+      "json",
+      "pathlib",
+      "verify_rank9_extremal_example_exact"
+    ],
+    "research_20261007/rank10/fast_extend.py": [
+      "collections",
+      "exact_lattice",
+      "extend_flag",
+      "fractions"
+    ],
+    "research_20261007/rank10/export_k9_deep_classes.py": [
+      "collections",
+      "exact_lattice",
+      "fractions",
+      "json",
+      "math",
+      "pathlib",
+      "verify_rank10_e8_classification",
+      "verify_rank9_extremal_example_exact"
+    ],
+    "research_20261007/rank10/verify_rank9_extremal_example_exact.py": [
+      "exact_lattice",
+      "hashlib",
+      "pathlib"
+    ],
+    "research_20261007/rank10/extend_flag.py": [
+      "__future__",
+      "argparse",
+      "collections",
+      "exact_lattice",
+      "fractions",
+      "json",
+      "pathlib"
+    ],
+    "research_20261007/rank10/verify_rank6_dual_minima.py": [
+      "exact_lattice",
+      "extend_flag",
+      "fractions",
+      "json",
+      "pathlib"
+    ],
+    "research_20261007/rank10/crosscheck_fast_extension.py": [
+      "fast_extend",
+      "hashlib",
+      "json",
+      "pathlib",
+      "time"
+    ],
+    "research_20261007/rank10/run_rank7_parallel.py": [
+      "exact_lattice",
+      "extend_flag",
+      "hashlib",
+      "json",
+      "multiprocessing",
+      "os",
+      "pathlib",
+      "time"
+    ],
+    "research_20261007/rank10/run_early_flags.py": [
+      "argparse",
+      "json",
+      "pathlib",
+      "subprocess",
+      "sys"
+    ],
+    "research_20261007/rank10/merge_filter_rank7.py": [
+      "exact_lattice",
+      "hashlib",
+      "json",
+      "pathlib"
+    ],
+    "research_20261007/rank10/compute_windows.py": [
+      "fractions",
+      "json",
+      "pathlib"
+    ],
+    "research_20261007/rank10/run_next_rank_fast_parallel.py": [
+      "argparse",
+      "exact_lattice",
+      "fast_extend",
+      "fractions",
+      "hashlib",
+      "json",
+      "multiprocessing",
+      "os",
+      "pathlib",
+      "time"
+    ],
+    "research_20261007/rank10/probe_rank7.py": [
+      "extend_flag",
+      "json",
+      "pathlib",
+      "time"
+    ],
+    "research_20261007/rank10_theory/verify_rank10_bounds.py": [
+      "json",
+      "pathlib"
+    ],
+    "research_20261007/equality/identify.py": [],
+    "research_20261007/equality/boundary_check.py": [
+      "extend_flag"
+    ],
+    "research_20261007/equality/e8_orbit.py": [
+      "collections"
+    ],
+    "research_20261007/equality/explore.py": [
+      "exact_lattice",
+      "fractions",
+      "json",
+      "pathlib",
+      "sys",
+      "time",
+      "verify_e7_branch_exact",
+      "verify_rank9_extremal_example_exact"
+    ],
+    "research_20261007/equality/verify_equality.py": [
+      "argparse",
+      "collections",
+      "exact_lattice",
+      "extend_flag",
+      "fractions",
+      "hashlib",
+      "json",
+      "pathlib",
+      "sys",
+      "time",
+      "verify_e7_branch_exact",
+      "verify_rank9_extremal_example_exact"
+    ],
+    "research_20261007/equality/boundary8.py": [
+      "extend_flag"
+    ],
+    "research_20261007/equality/rank9_gap.py": [
+      "argparse",
+      "collections",
+      "exact_lattice",
+      "fractions",
+      "json",
+      "pathlib",
+      "sys",
+      "time",
+      "verify_e7_branch_exact",
+      "verify_rank9_extremal_example_exact"
+    ],
+    "research_20261007/recovered/rank9_audit_evidence_20260910/audit_20260910/test_enumeration_independent.py": [
+      "exact_lattice",
+      "extend_flag",
+      "fractions",
+      "itertools",
+      "json",
+      "math",
+      "pathlib",
+      "random",
+      "sys"
+    ],
+    "research_20261007/recovered/rank9_audit_evidence_20260910/audit_20260910/verify_rank7_topdown_hardened.py": [
+      "fractions",
+      "math"
+    ],
+    "research_20261007/recovered/rank9_audit_evidence_20260910/audit_20260910/branch_independent_checks.py": [
+      "exact_lattice",
+      "fractions",
+      "itertools",
+      "math",
+      "pathlib",
+      "random",
+      "rank9_exact_ldl",
+      "sys",
+      "verify_e6_branch_exact",
+      "verify_e7_branch_exact",
+      "verify_rank7_topdown",
+      "verify_rank9_extremal_example_exact"
+    ],
+    "research_20261007/recovered/rank9_audit_evidence_20260910/audit_20260910/verify_theory_and_sharpness.py": [
+      "collections",
+      "fractions",
+      "itertools",
+      "json"
+    ],
+    "research_20261007/recovered/rank9_audit_evidence_20260910/audit_20260910/topdown_zero_layer_regression.py": [
+      "itertools",
+      "pathlib",
+      "sys",
+      "verify_rank7_topdown",
+      "verify_rank7_topdown_hardened"
+    ],
+    "research_20261007/recovered/rank9_audit_evidence_20260910/audit_20260910/RU_appendix64_extracted.py": [
+      "collections",
+      "itertools"
+    ],
+    "research_20261007/recovered/rank9_audit_evidence_20260910/audit_20260910/rank9_complete_certificates/certificate/verify_e6_branch_exact.py": [
+      "collections",
+      "fractions",
+      "hashlib",
+      "pathlib",
+      "rank9_exact_ldl",
+      "sys"
+    ],
+    "research_20261007/recovered/rank9_audit_evidence_20260910/audit_20260910/rank9_complete_certificates/certificate/verify_regenerated_frozen_bridges_exact.py": [
+      "__future__",
+      "collections",
+      "exact_lattice",
+      "hashlib",
+      "json",
+      "pathlib",
+      "typing"
+    ],
+    "research_20261007/recovered/rank9_audit_evidence_20260910/audit_20260910/rank9_complete_certificates/certificate/verify_h6318_branch_exact.py": [
+      "collections",
+      "fractions",
+      "verify_e6_branch_exact"
+    ],
+    "research_20261007/recovered/rank9_audit_evidence_20260910/audit_20260910/rank9_complete_certificates/certificate/verify_rank7_residuals_exact.py": [
+      "__future__",
+      "exact_lattice",
+      "extend_flag",
+      "fractions",
+      "hashlib",
+      "json",
+      "math",
+      "pathlib",
+      "typing"
+    ],
+    "research_20261007/recovered/rank9_audit_evidence_20260910/audit_20260910/rank9_complete_certificates/certificate/verify_e6_flag_branch_exact.py": [
+      "__future__",
+      "collections",
+      "dataclasses",
+      "exact_lattice",
+      "fractions",
+      "hashlib",
+      "json",
+      "pathlib",
+      "rank9_exact_ldl",
+      "sys",
+      "typing"
+    ],
+    "research_20261007/recovered/rank9_audit_evidence_20260910/audit_20260910/rank9_complete_certificates/certificate/verify_rank7_survivor_linkage_exact.py": [
+      "__future__",
+      "collections",
+      "exact_lattice",
+      "extend_flag",
+      "fractions",
+      "hashlib",
+      "json",
+      "pathlib",
+      "typing"
+    ],
+    "research_20261007/recovered/rank9_audit_evidence_20260910/audit_20260910/rank9_complete_certificates/certificate/verify_e7_branch_exact.py": [
+      "collections",
+      "fractions",
+      "hashlib",
+      "math"
+    ],
+    "research_20261007/recovered/rank9_audit_evidence_20260910/audit_20260910/rank9_complete_certificates/certificate/exact_lattice.py": [
+      "__future__",
+      "collections",
+      "fractions",
+      "math",
+      "typing"
+    ],
+    "research_20261007/recovered/rank9_audit_evidence_20260910/audit_20260910/rank9_complete_certificates/certificate/verify_rank9_extremal_example_exact.py": [
+      "exact_lattice",
+      "hashlib",
+      "pathlib"
+    ],
+    "research_20261007/recovered/rank9_audit_evidence_20260910/audit_20260910/rank9_complete_certificates/certificate/extend_flag.py": [
+      "__future__",
+      "argparse",
+      "collections",
+      "exact_lattice",
+      "fractions",
+      "json",
+      "pathlib"
+    ],
+    "research_20261007/recovered/rank9_audit_evidence_20260910/audit_20260910/rank9_complete_certificates/certificate/verify_rank7_topdown.py": [
+      "fractions",
+      "math"
+    ],
+    "research_20261007/recovered/rank9_audit_evidence_20260910/audit_20260910/rank9_complete_certificates/certificate/verify_flag_chunks.py": [
+      "__future__",
+      "argparse",
+      "collections",
+      "exact_lattice",
+      "extend_flag",
+      "fractions",
+      "hashlib",
+      "json",
+      "pathlib"
+    ],
+    "research_20261007/recovered/rank9_audit_evidence_20260910/audit_20260910/rank9_complete_certificates/certificate/extend_flag_chunk.py": [
+      "__future__",
+      "argparse",
+      "collections",
+      "exact_lattice",
+      "extend_flag",
+      "hashlib",
+      "json",
+      "pathlib"
+    ],
+    "research_20261007/recovered/rank9_audit_evidence_20260910/audit_20260910/rank9_complete_certificates/certificate/rank9_exact_ldl.py": [
+      "fractions",
+      "math"
+    ],
+    "research_20261007/recovered/rank9_audit_evidence_20260910/audit_20260910/rank9_complete_certificates/certificate/verify_sqrt3_e8_covering_radius_exact.py": [
+      "collections",
+      "fractions",
+      "hashlib",
+      "math",
+      "pathlib"
+    ],
+    "research_20261007/recovered/rank9_audit_evidence_20260910/audit_20260910/rank9_complete_certificates/certificate/merge_flag_chunks.py": [
+      "__future__",
+      "argparse",
+      "collections",
+      "exact_lattice",
+      "hashlib",
+      "json",
+      "pathlib"
+    ],
+    "research_20261007/recovered/rank9_audit_evidence_20260910/audit_20260910/rank9_complete_certificates/certificate/verify_lower_flag_chain_exact.py": [
+      "__future__",
+      "collections",
+      "exact_lattice",
+      "extend_flag",
+      "fractions",
+      "hashlib",
+      "json",
+      "pathlib"
+    ]
+  },
+  "cyrillic": [
+    {
+      "path": "lattices_RU.txt",
+      "lines": 427,
+      "bytes": 121665
+    },
+    {
+      "path": "PRIOR_20261007_README_RU.txt",
+      "lines": 94,
+      "bytes": 11004
+    },
+    {
+      "path": "lattices_complete_RU.txt",
+      "lines": 589,
+      "bytes": 153824
+    },
+    {
+      "path": "README_RU.txt",
+      "lines": 111,
+      "bytes": 13275
+    },
+    {
+      "path": "lattices_complete_RU.tex",
+      "lines": 589,
+      "bytes": 153824
+    },
+    {
+      "path": "lattices_RU.tex",
+      "lines": 427,
+      "bytes": 121665
+    },
+    {
+      "path": "prior_reports/lattices_RU.txt",
+      "lines": 427,
+      "bytes": 121665
+    },
+    {
+      "path": "prior_reports/lattices_RU.tex",
+      "lines": 427,
+      "bytes": 121665
+    },
+    {
+      "path": "research_20261008/consequences/structural_corollaries_RU.tex",
+      "lines": 118,
+      "bytes": 13783
+    },
+    {
+      "path": "research_20261008/report_build/augment_reports.py",
+      "lines": 15,
+      "bytes": 9237
+    },
+    {
+      "path": "research_20261008/report_build/update_reports.py",
+      "lines": 22,
+      "bytes": 12814
+    },
+    {
+      "path": "research_20261008/report_build/equality_completion_RU.tex",
+      "lines": 47,
+      "bytes": 17481
+    },
+    {
+      "path": "research_20261007/clusters/RESULTS_RU.md",
+      "lines": 9,
+      "bytes": 5215
+    },
+    {
+      "path": "research_20261007/recovered/rank9_audit_evidence_20260910/README_RU.md",
+      "lines": 108,
+      "bytes": 12340
+    },
+    {
+      "path": "research_20261007/recovered/rank9_audit_evidence_20260910/manuscripts/rank9_audit_theory_RU.txt",
+      "lines": 1291,
+      "bytes": 131846
+    },
+    {
+      "path": "research_20261007/recovered/rank9_audit_evidence_20260910/audit_20260910/rank9_complete_certificates/README_RU.md",
+      "lines": 79,
+      "bytes": 7833
+    },
+    {
+      "path": "research_20261007/recovered/rank9_audit_evidence_20260910/audit_20260910/rank9_complete_certificates/ASSUMPTIONS_RU.md",
+      "lines": 35,
+      "bytes": 3478
+    }
+  ],
+  "external_path_files": [
+    "lattices_complete_RU.txt",
+    "lattices_complete_EN.txt",
+    "lattices_complete_RU.tex",
+    "lattices_complete_EN.tex",
+    "research_20261008/consequences/structural_corollaries_EN.tex",
+    "research_20261008/consequences/structural_corollaries_RU.tex",
+    "research_20261008/report_build/lattices_complete_RU.stdout",
+    "research_20261008/report_build/lattices_complete_EN.log",
+    "research_20261008/report_build/lattices_complete_RU.log",
+    "research_20261008/report_build/lattices_complete_EN.stdout",
+    "research_20261007/embeddings/README_REPRO_EXACT.md",
+    "research_20261007/equality/explore.py",
+    "research_20261007/recovered/rank9_audit_evidence_20260910/manuscripts/rank9_audit_theory_RU.txt",
+    "research_20261007/recovered/rank9_audit_evidence_20260910/manuscripts/rank9_audit_theory_EN.txt",
+    "research_20261007/recovered/rank9_audit_evidence_20260910/audit_20260910/replay_full_regeneration_20260910.log",
+    "research_20261007/rank10/early_flags/run.sh",
+    "research_20261007/rank10/early_flags/rank5.log",
+    "research_20261007/rank10/early_flags/rank3.log",
+    "research_20261007/rank10/early_flags/rank2.log",
+    "research_20261007/rank10/early_flags/rank4.log",
+    "research_20261007/rank10/early_flags_regenerated/rank2_generation.log",
+    "research_20261007/rank10/early_flags_regenerated/rank3_generation.log",
+    "research_20261007/rank10/early_flags_regenerated/rank5_generation.log",
+    "research_20261007/rank10/early_flags_regenerated/rank4_generation.log"
+  ],
+  "contact_files": [
+    "source_extracted.txt"
+  ],
+  "potential_sensitive": [],
+  "largest_files": [
+    {
+      "path": "research_20261008/independent_review/boundaries_by_quadratic_module.json",
+      "bytes": 6035755
+    },
+    {
+      "path": "research_20261007/rank10/early_flags/rank6_fast.json",
+      "bytes": 4264729
+    },
+    {
+      "path": "research_20261007/rank10/early_flags/rank6.json.raw",
+      "bytes": 3836475
+    },
+    {
+      "path": "research_20261007/equality/equality_candidates.json",
+      "bytes": 3476201
+    },
+    {
+      "path": "research_20261007/rank10/early_flags/rank5.json",
+      "bytes": 3043780
+    },
+    {
+      "path": "research_20261007/rank10/early_flags/rank7_lifting_prunes.json",
+      "bytes": 2497915
+    },
+    {
+      "path": "research_20261007/recovered/rank9_audit_evidence_20260910/audit_20260910/rank9_complete_certificates/certificate/rank7_merged.json",
+      "bytes": 1591572
+    },
+    {
+      "path": "research_20261007/embeddings/all_fixed_K9_extension_inputs.json",
+      "bytes": 1438275
+    },
+    {
+      "path": "research_20261007/recovered/rank9_audit_evidence_20260910/audit_20260910/rank9_complete_certificates/certificate/rank7_chunk_070_105.json",
+      "bytes": 1302248
+    },
+    {
+      "path": "research_20261007/rank10/early_flags/rank8_parents/parent_0223.json",
+      "bytes": 1298651
+    },
+    {
+      "path": "research_20261007/recovered/rank9_audit_evidence_20260910/audit_20260910/rank9_complete_certificates/certificate/rank6_isometry_classes_regen.json",
+      "bytes": 1101020
+    },
+    {
+      "path": "research_20261007/recovered/rank9_audit_evidence_20260910/audit_20260910/rank9_complete_certificates/certificate/rank6_isometry_classes.json",
+      "bytes": 1089164
+    },
+    {
+      "path": "SHA256SUMS",
+      "bytes": 1074414
+    },
+    {
+      "path": "research_20261008/consequences/audit_two_types_and_cluster_gap.json",
+      "bytes": 1045104
+    },
+    {
+      "path": "research_20261007/rank10/early_flags/rank8_lifting_prunes.json",
+      "bytes": 878909
+    }
+  ],
+  "audit_date": "2026-10-26",
+  "source_archive_sha256": "7b08027eed3dd5388f86a5fba259e10ad5a3fabd91ec585758e7b9bad2fc5306",
+  "credential_scan_scope": "Pattern scan of decoded text files; excludes binary PDFs/ZIP; no credential-like matches found; not a formal security guarantee.",
+  "contact_classification": "Original authors publication-contact metadata in source_extracted.txt; not credentials.",
+  "portable_entrypoints": [
+    "verify_file_hashes.py",
+    "verify_new_results.py"
+  ],
+  "historical_nonportable_helpers": [
+    "research_20261007/equality/explore.py",
+    "research_20261007/rank10/early_flags/run.sh"
+  ],
+  "recommended_preservation": "Preserve all8195 original files and directory structure in immutable certificates subtree; put translations and current presentation outside.",
+  "runtime_verification_record": "routine_verification.json"
+}

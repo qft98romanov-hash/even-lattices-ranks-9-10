@@ -1,0 +1,13 @@
+{
+  "timestamp_utc": "20261026T184801.744176Z",
+  "python": "3.12.14",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "mode": "routine",
+  "flags": [],
+  "workers": 2,
+  "certificate_manifest_sha256": "be99da16355bb1614c858251ab1047ab44f35b7785def9feaad48854bf9db0f3",
+  "elapsed_seconds": 118.633,
+  "exit_code": 0,
+  "status": "PASS",
+  "scope": "Executed checks only; not external peer review or formal verification."
+}

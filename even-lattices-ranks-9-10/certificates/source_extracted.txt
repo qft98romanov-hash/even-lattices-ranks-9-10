@@ -1,0 +1,1089 @@
+                          Optimal Extensions of Cross-Sections:
+                         Sphere Packings in Dimensions 38 to 43
+                       Ivan Dorofeev∗               Xiaoming Sun†                Chengu Wang‡
+
+
+                                                        Abstract
+           We improve the best known sphere packings in every dimension from 38 to 43. Our packings in
+       dimensions
+               √     38 √
+                        to 42 come
+                                √ from one chain of cross-sections of the extremal even unimodular lattice
+       P
+       √ 48p ,  3E 6  ⊂   3E7 ⊂    3E8 ⊂ K9 ⊂ K10 , whose first three members are cut from the fixed lattice
+         3(E8 ⊥ E8 ) of an order-three automorphism; their orthogonal complements are lattice packings and
+       set the records in dimensions 42 down to 38. Each successive section is a determinant-minimal extension
+       of its predecessor. Our 43-dimensional packing is an antipode packing: six translates of the complement
+       of a 5-dimensional section.
+           We also improve some kissing numbers. Conway and Sloane’s twelve 1982 cross-section packings
+       appear never to have had theirs computed; we compute them and find that, in dimensions 42 to 47, they
+       exceed the previously tabulated lower bounds. Our chain does better in dimensions 40, 41 and 42, and
+       a further antipode packing beats the record in dimension 45.
+
+
+1      Introduction
+A sphere packing in Rn is a collection of congruent balls with disjoint interiors, and its density is the fraction
+of space the balls cover. Following Conway and Sloane [9], we measure packings by their center density
+
+                                                                 ∆(P)
+                                                    δ(P) =            ,
+                                                                  Vn
+where ∆(P) is the density and Vn is the volume of the unit ball. The sphere packing problem is solved only
+in dimensions 1, 2, 3 [13], 8 [25] and 24 [6]; in every other dimension the state of the art is a record set by
+an explicit construction, and we refer to the table maintained by Cohn [5].
+    Around dimension 48 the densest packings known come from the extremal even unimodular lattices of
+that dimension and their cross-sections. In Laminated lattices, Conway and Sloane [7, Corollary 8] exhibited
+cross-sections of P48p that set the records in dimensions 39–43, and those records stood for four decades;
+the record in dimension 38 was held by a lattice of another family, D38 of center density 8 [9, p. xxxvii].
+The antipode construction of Conway and Sloane [8], which places several translates of a cross-section over
+a cluster in its dual, improved dimensions 44–47; Chen et al. [3] applied it to deliberately suboptimal cross-
+sections and improved dimensions 19, 20, 21, 23, 44, 45 and 47.
+    This paper improves all six dimensions from 38 to 43 (Table 1), and, more to the point, derives them
+from a single mechanism rather than six separate tricks.
+
+The mechanism. Let Λ be one of the four known extremal even unimodular 48-dimensional lattices, so
+det Λ = 1 and the minimal squared norm is µ = 6. A saturated cross-section K ⊂ Λ of rank k has an
+orthogonal complement L = Λ ∩ span(K)⊥ of rank l = 48 − k with det L = det K and minimum at least 6,
+    ∗ qft98romanov@gmail.com
+   † State Key Lab of Processors, Institute of Computing Technology, Chinese Academy of Sciences, Beijing, China. University
+
+of Chinese Academy of Sciences, Beijing, China. sunxiaoming@ict.ac.cn
+   ‡ wangchengu@gmail.com
+
+
+
+
+                                                             1
+                           previously known                                                          this paper
+ dim    construction       lattice?                   δ                    construction lattice?                        δ
+                                                  3                                                        −19 31/2 −1
+  38       D38 [9]           yes                 2 =8                       Section 3       yes          2    3     5 = 9.48 . . .
+  39   cross-section [7]     yes      2−41/2 316 7−1/2 = 10.97 . . .        Section 3       yes         2−20 316 5−1/2 = 18.35 . . .
+  40   cross-section [7]     yes         2−45/2 317 = 21.77 . . .           Section 3       yes             2−20 316 = 41.05 . . .
+  41   cross-section [7]     yes         2−43/2 317 = 43.54 . . .           Section 3       yes             2−21 317 = 61.57 . . .
+  42   cross-section [7]     yes          2−22 318 = 92.36 . . .            Section 3       yes           2 −21 35/2
+                                                                                                               3     = 106.65 . . .
+                                         −45/2 19
+  43   cross-section [7]     yes        2      3 = 195.94 . . .             Section 4       no       2−223/2 3−21 13743/2 = 226.51 . . .
+
+Table 1: Center densities δ. The columns “lattice?” say whether the packing is a lattice packing; our
+dimension-43 packing is an antipode packing of s = 6 translates of a lattice in (1).
+
+and a finite set S of s points of the dual lattice K ∗ of pairwise squared distance at most β produces, by the
+antipode construction of Conway and Sloane [8], an l-dimensional packing of center density
+                                                                   s (6 − β)l/2
+                                                          δ =         √         .                                                     (1)
+                                                                   2l   det K
+Everything in this paper is a choice of (K, S) in (1), and the two ways to make δ large pull against each other:
+a small det K makes K ∗ sparse, which limits s, while a cluster large enough to pay for a bigger determinant
+needs a K ∗ with many short vectors.
+    Formula (1) and the two bounds that constrain it are due to Conway and Sloane, and are collected
+in Section 2. This paper adds four things. First, a sharpening of their determinant bound for one-vector
+extensions. Write ρglue (K) for the largest distance from a point of K ∗ to K, a maximum over the det K classes
+of K ∗ /K; we call it the glue radius. Then every rank-(k + 1) cross-section containing K has determinant at
+least det K (6 − ρ2glue (K)), in every integral ambient of minimum 6 (Lemma 13). Conway and Sloane control
+the analogous quantity by a subcovering radius and then by the ordinary covering radius; here integrality
+restricts the relevant projections to K ∗ , giving ρglue (K) ≤ ρcov (K), the ordinary
+                                                                                  √ covering
+                                                                                           √radius, and√ a finite
+computation of rank k. Second, the exact values of ρ2glue along the chain 3E6 ⊂              3E7 ⊂      3E8 ⊂
+K9 ⊂ K10 of cross-sections of P48p , which prove each one the smallest-determinant extension of the one
+before it (Theorem 14). Third, the sections K9 and K10 themselves, whose complements        √ are the records in
+dimensions 39 and 38; the first three sections of the chain come from the fixed lattice 3(E8 ⊥ E8 ) of an
+order-three automorphism of P48p and give dimensions 42, 41 and 40. Fourth, the dimension-43 packing,
+which by Corollary 15 cannot come from a bare cross-section at the inherited ambient radius.
+    Section 5 adds kissing numbers, which Proposition 5 makes a finite count over the ambient’s minimal
+vectors. Corollary 8 of Conway and Sloane [7] constructs twelve cross-section packings of P48p in dimensions
+38 to 47 and states their densities, but their kissing numbers appear never to have been computed. We
+reconstruct all twelve in closed form and count them exactly, and find that in dimensions 42 to 47 their
+kissing numbers exceed the previously tabulated lower bounds. Our chain does better still in dimensions
+40, 41 and 42, and one further cross-section, of P48m and P48q , beats the record in dimension 45 while its
+density ties the record.
+Theorem 1. Sphere packings exist that give
+
+            lat     331/2                      lat           316                          lat     316
+           δ38  ≥           = 9.48 . . . ,    δ39  ≥                   = 18.35 . . . ,   δ40  ≥       = 41.05 . . . ,
+                    219 · 5                               220 · 51/2                              220
+
+            lat     317                        lat        335/2                                    13743/2
+           δ41  ≥       = 61.57 . . . ,       δ42  ≥            = 106.65 . . . ,         δ43 ≥                   = 226.51 . . .
+                    221                                    221                                    2223/2 · 321
+The first five are attained by lattice packings, that is by bare cross-section packings (3), and the last by a
+union of six translates of a lattice (Table 1).
+
+Theorem 2. There are sphere packings with kissing numbers 1,092,000, 1,324,472, 1,792,386, 7,379,838 in
+dimensions 40, 41, 42 and 45 (Table 2). The first three are lattice packings; the last is a union of four
+translates of a lattice.
+
+
+                                                                       2
+                           previously known                                   this paper
+      dim   construction                     kissing number   construction                 kissing number
+      40    binary codes [12, 2, 4]            1,064,368      cross-section Section 3        1,092,000
+      41    binary codes [12, 2, 4]            1,170,384      cross-section Section 3        1,324,472
+      42    cross-section [7, Corollary 8]     1,541,292      cross-section Section 3        1,792,386
+      45    cross-section [7, Corollary 8]     6,702,080      antipode Section 5.3           7,379,838
+
+Table 2: Kissing numbers. The previously known entries are the largest previously tabulated: in dimensions
+40 and 41 these are kissing configurations built from binary codes, not known to extend to packings [12];
+in dimensions 42 and 45 they are cross-sections of Conway and Sloane [7, Corollary 8], constructed without
+computing their kissing numbers, which we compute here (Table 5). Our packings in dimensions 40, 41 and
+42 are lattices; the dimension-45 one is an antipode packing of s = 4 translates of a lattice.
+
+
+2     Preliminaries
+2.1    Cross-sections
+Let Λ be an n-dimensional lattice of minimal squared norm µ and let Rn = U ⊕ V be an orthogonal
+decomposition with dim U = k, dim V = l = n − k. Write
+
+                                K = Λ ∩ U,       L = Λ ∩ V,     M = πU (Λ),
+
+where πU , πV are the orthogonal projections, and assume K has rank k. A sublattice K ⊆ Λ is saturated
+(or primitive) when Λ/K is torsion-free; Λ ∩ U is always saturated, and conversely a saturated sublattice is
+the intersection of Λ with its own span. For Λ unimodular, discriminant gluing identifies the discriminant
+groups of K and L anti-isometrically [17, Prop. 1.9.8], [7, Thm. 4], so that
+
+                                         det L = det K = 1/ det M.                                          (2)
+
+We write K ∗ and L∗ for the duals of K in U and of L in V . The next fact is used throughout; it needs L
+saturated, which is automatic, and not K saturated.
+Lemma 3. If Λ is unimodular and L = Λ ∩ V , then πV (Λ) = L∗ . Likewise πU (Λ) = K ∗ when K = Λ ∩ U .
+Proof. For x ∈ Λ and ℓ ∈ L we have ⟨πV (x), ℓ⟩ = ⟨x, ℓ⟩ ∈ Z, so πV (Λ) ⊆ L∗ . Conversely let y ∈ L∗ . Since
+Λ/L is torsion-free it is free, so L is a direct summand of Λ and the homomorphism ℓ 7→ ⟨y, ℓ⟩ extends
+to a homomorphism Λ → Z. As Λ is unimodular, that homomorphism is ⟨x, ·⟩ for some x ∈ Λ, and then
+πV (x) − y is orthogonal to L and lies in V = span(L), hence vanishes.
+
+2.2    The antipode construction
+Let S = {u0 = 0, u1 , . . . , us−1 } ⊂ M have pairwise squared distances at most β for some β < µ. The
+antipode packing is
+                                     A(S) = { πV (w) : w ∈ Λ, πU (w) ∈ S },
+                                                             √
+a union of s translates of L packed with spheres of radius 21 µ − β.
+                                                                          √
+Theorem 4 (Conway and Sloane [8]). Drawing spheres of radius ρ = 12 µ − β around the points of A(S)
+gives an l-dimensional sphere packing of center density
+
+                                                        s ρl
+                                             δ(A(S)) = √       .
+                                                         det L
+
+   For unimodular Λ we have det L = det K by (2), so this is s(µ − β)l/2 2−l (det K)−1/2 , which is (1) when
+                                                                      √
+µ = 6. The case s = 1, β = 0 uses the lattice L with spheres of radius µ/2, the radius inherited from the
+
+
+                                                     3
+ambient minimum. We call this the bare cross-section packing; five of our six results are of this kind, with
+center density
+                                  (µ/4)l/2     (3/2)(48−k)/2
+                    δbare (L) = √          =      √              (µ = 6, n = 48).                        (3)
+                                    det K           det K
+If min(L) > µ, then L regarded intrinsically as a lattice can of course support larger spheres. Throughout
+                                                                                                 √
+this paper, “bare cross-section packing” means the construction at the inherited ambient radius µ/2.
+    The kissing number of an antipode packing is equally explicit: contacts come from minimal vectors of Λ
+lying in the fibers of πU over the difference set of S.
+Proposition 5. In the packing A(S), every sphere in the translate indexed by ui touches exactly
+                                X
+                       Ni =            #{ w ∈ Λ : |w|2 = µ, πU (w) = uj − ui }
+                                      j̸=i
+                                 |ui −uj |2 =β
+
+other spheres, and the kissing number of A(S) is maxi Ni .
+Proof. Fix a center πV (w0 ) with πU (w0 ) = ui . Every other center is πV (w) with πU (w) = uj for some j,
+and w 7→ w − w0 is a bijection between such centers and the vectors v ∈ Λ with πU (v) = uj − ui (for j = i,
+excluding v = 0). The squared distance of the two centers is
+
+                      |πV (w − w0 )|2 = |w − w0 |2 − |uj − ui |2 ≥ µ − β        (w ̸= w0 ),
+
+since |w − w0 |2 ≥ µ and |uj − ui |2 ≤ β (for j = i the bound is µ > µ − β). Equality holds √    if and only
+if w − w0 is a minimal vector of Λ and |uj − ui |2 = β; in this case the two spheres of radius 12 µ − β are
+tangent. Summing over j gives Ni , which does not depend on the choice of w0 .
+Remark 1. For s = 1 the packing A(S) is the lattice packing of L itself, the contact distance is µ, and the
+same argument gives N0 = #{ w ∈ Λ : |w|2 = µ, πU (w) = 0 }: the kissing number of a bare cross-section
+packing is the number of minimal vectors of Λ that lie in L. Section 5 uses this count.
+   A convenient sufficient condition for a large cluster, which our dimension-43 packing satisfies, takes S to
+be the origin together with an entire basis of M :
+Theorem 6 (Chen, Hu, Li, Wang and Wu [3]). Let Λ be an n-dimensional unimodular lattice of minimum
+µ, let K be a saturated cross-section of rank k with Gram matrix K, and put M = K−1 . If 0 < β < µ
+satisfies
+                    Mi,i ≤ β     and      Mi,i + Mj,j − 2Mi,j ≤ β      (1 ≤ i < j ≤ k),
+                                                                      √
+then there is an (n − k)-dimensional packing of center density (k + 1) det M ((µ − β)/4)(n−k)/2 .
+      Three center densities appear below. Write δd for the largest center density of a packing in dimension d,
+and δdlat for the largest center density of a lattice packing, each taken over all packings whether or not one is
+known; so δdlat ≤ δd , and δdlat = (γd /4)d/2 with γd the Hermite constant. A cross-section is a lattice, so what
+bounds it is δ lat , not δ, and the distinction is not vacuous: among the ranks used below, the densest packing
+known in dimension 10 is not a lattice [5]. Neither optimum is known in every rank we need, so write δ lat     d
+for the largest center density of a lattice packing that is known, tabulated by Nebe and Sloane [21]; then
+δ lat    lat
+  d ≤ δd , with equality exactly when the densest rank-d lattice has been found.
+
+
+2.3    The ceiling of a bare cross-section
+A cross-section of Λ is a lattice of minimum at least µ = 6, and that alone limits how dense its complement
+can be. The argument is that of Conway and Sloane, who observed that the densest k-dimensional and
+(48 − k)-dimensional sections of a unimodular lattice have the same determinant [7, Corollary 5]; with the
+classification of the densest lattices in dimensions at most 8 [7, Theorem 2] this bounds one in terms of the
+other. They drew the conclusion in dimensions 43 and above, over even unimodular ambients [7, Corollary 8];
+we need it below dimension 43 as well, where their own sections do not attain it (Corollary 11), and over
+every unimodular ambient.
+
+
+                                                       4
+Proposition 7. Let K be a cross-section of rank k of a unimodular 48-dimensional lattice of minimum 6,
+and let γk be the Hermite constant. Then
+                                                                           k
+                                                                       6
+                                                     det K ≥                     ,
+                                                                       γk
+
+and consequently the bare cross-section packing (3) of its complement has
+
+                                                  δbare ≤ δklat (3/2)24−k .                                                 (4)
+
+Proof. K is a rank-k lattice of minimum m ≥ 6, so 6/(det K)1/k ≤ m/(det K)1/k ≤ γk by the definition of
+the Hermite constant, which is the determinant inequality. Substituting it into (3) gives the density.
+    The bound depends on neither the choice of 48-dimensional lattice nor extremality: the same argument
+over an ambient of minimum µ ≤ 6 only lowers the right-hand side, and an odd unimodular lattice of rank
+48 also has minimum at most 6 by the shadow bound of Rains and Sloane [24], so the ceiling holds over
+every unimodular ambient of rank 48.
+    The densest lattice packing has been established in the published literature in every dimension up to 8,
+so for k ≤ 8 the bound is effective: γ55 = 8, γ66 = 64/3, γ77 = 64 and γ88 = 256 [15, 1], attained by D5 , E6 ,
+E7 and E8 , unique up to similarity [17, Ch. 6].1 Those are the ranks at which this paper uses published
+optimality results. Section 4 evaluates the bound rank by rank.
+
+
+3     A chain of optimal extensions
+3.1     The seed: an order-three fixed lattice
+                                                                          √     √      √
+Section 2.3 says what to look for in ranks 6, 7, 8: a section isometric to 3E6 , 3E7 or 3E8 would attain
+the ceiling exactly. Symmetry produces all three at once.
+    Let Λ = P48p , the extremal even unimodular lattice built from the Pless symmetry code [23, 9], so
+det Λ = 1 and µ(Λ) = 6. For an automorphism σ of Λ let FixΛ (σ) = Λ ∩ ker(σ − 1).
+                                                                                                 √
+Proposition 8 (Nebe [18]). There is an automorphism σ ∈ Aut(P48p ) of order 3 with FixP48p (σ) ∼
+                                                                                               = 3(E8 ⊥
+E8 ).
+   This is the construction-specific
+                                  √ input from the literature: the proof of Theorem 3.8 of Nebe [18] exhibits
+an order-three σ with Fix(σ) ∼  = 3(E8 ⊥ E8 ) in P48p , and√Proposition 4.8 there classifies the order-three
+automorphisms of extremal
+                        √ 48-dimensional lattices. Here 3R means      √     the lattice R with its bilinear form
+multiplied by 3, so det( 3R) = 3rank R det R and the minimum of 3R is three times that of R.
+   The two lemmas below are standard, and are proved only to keep the determinants self-contained: invari-
+ant lattices are saturated [14, §2] (see [22] for saturated sublattices in general), and a subsystem of √ simple
+roots
+√     spans √a saturated sublattice.  It is their conjunction with Proposition   8 that matters, putting    3E6 ,
+  3E7 and 3E8 inside an extremal 48-dimensional lattice, where (3) turns them into packings.
+Lemma 9. F = FixΛ (σ) is saturated in Λ.
+Proof. F = Λ ∩ ker(σ − id) is the intersection of Λ with a linear subspace, hence saturated by Section 2.1.
+Directly: if x ∈ Λ and mx ∈ F for some nonzero integer m, then m(σx − x) = σ(mx) − mx = 0; a lattice is
+torsion-free, so σx = x and x ∈ F .
+                                                     √               √              √
+Lemma 10. Λ contains saturated sublattices K6 ∼    = 3E6 ⊂ K7 ∼   = 3E7 ⊂ K8 ∼   = 3E8 , of determinants
+37 = 2187, 2 · 37 = 4374 and 38 = 6561.
+   1 A recent preprint of Dutour Sikirić and van Woerden [11] reports a complete Voronoi enumeration in dimension 9 and
+
+concludes that Λ9 is optimal, equivalently γ9 = 2. If this computation is correct, then the k = 9 row of Table 4 is also
+unconditional: det K ≥ 39 = 19683, and the possible bare-improvement window in dimension 39 is exactly 19683 ≤ det K <
+21870. Because this result is available only as a preprint at the time of writing, we do not use it as an established theorem in
+the present paper.
+
+
+
+
+                                                               5
+                                      √
+Proof. Write F = F1 ⊥ F2 with Fi ∼ = 3E8 ; each Fi is a direct summand of the free abelian group F . Choose
+a simple-root basis of F1 containing the nested Dynkin diagrams E6 ⊂ E7 ⊂ E8 . A subset of a Z-basis spans
+a saturated subgroup, so the scaled copies of E6 and E7 are saturated in F1 . Saturation is transitive, so
+Lemma 9 gives all three saturated embeddings in Λ. Finally det E6 = 3, det E7 = 2 and det E8 = 1.
+   Applying (3) to K6 , K7 , K8 gives the first three records of Table 1:
+
+                        (3/2)21  335/2            (3/2)41/2  317                    (3/2)20  316
+                δ42 ≥     √     = 21 ,       δ41 ≥ √        = 21 ,          δ40 ≥     √     = 20 .
+                            37    2                  2·3 7   2                          38   2
+
+Each is exactly the ceiling (4) of its rank, so by Proposition 7:
+Corollary 11. The packings of dimensions 42, 41 and 40 above are optimal among bare cross-section
+packings: no bare cross-section packing (3) of any unimodular 48-dimensional lattice has larger center density
+in the same dimension. Equivalently, K6 , K7 and K8 have the smallest determinant among all cross-sections
+of rank 6, 7 and 8 of such lattices, attaining the floor (6/γk )k of Proposition 7, and the sections attaining it
+are unique up to isometry.
+    Conway and Sloane claimed √   optimality
+                                         √ only from dimension 43 upwards [7, Corollary 8]. Their sections
+in dimensions 42, 41 and 40 are 3D6 , 3D7 and S8 , of determinants 4 · 36 , 4 · 37 and 32 · 36 , none of which
+meets Proposition 7: what was missing was not the bound but a section attaining it. Corollary 11 extends
+their assertion down to dimension 40.
+    In the basis of simple roots the three Gram matrices are the leading blocks of
+                                                                              
+                                          6   0 −3 0          0    0    0    0
+                                        0
+                                             6    0 −3 0          0    0    0
+                                        −3 0      6 −3 0          0    0    0
+                                                                              
+                                         0 −3 −3 6 −3 0                0    0
+                           3 C(E8 ) =                                         ,
+                                        0
+                                             0    0 −3 6 −3 0               0
+                                        0
+                                             0    0    0 −3 6 −3 0           
+                                        0    0    0    0     0 −3 6 −3
+                                          0   0    0    0     0    0 −3 6
+
+C(E8 ) being the Cartan matrix; the leading 6 × 6 and 7 × 7 blocks are 3C(E6 ) and 3C(E7 ), of determinants
+2187 and 4374.
+Remark 2. The construction is not specific to P48p . Realizing σ as a signed coordinate permutation of the
+ternary code frame (for P48p the element x 7→ −1/(x + 1) of PSL2 (23) acting on the Pless symmetry code, for
+P48q the corresponding element of PSL2 (47) on the extended quadratic residue code) and, for P48n , as the
+product of three generators
+                       √      of the automorphism group listed in the catalogue entry CQ48a [20], we obtain
+the same fixed lattice 3(E8 ⊥ E8 ), hence the same sections, in three of the four known extremal lattices.
+Whether the fourth, P48m , has such a section we do not know. An order-three action on R48 with f trivial
+and t faithful two-dimensional summands has 48 = f + 2t and trace f − t, so a fixed lattice of rank 16
+requires trace 0; an unverified enumeration of order-three elements generated by the catalogue’s generators
+for Aut(P48m ) produced only trace −24, that is, only fixed-point-free elements, but we have not certified
+that computation and nothing in this paper depends on it.
+
+3.2    Extension and the glue radius
+We now push past rank 8. The determinant of a one-vector extension is governed by a projection, and
+integrality restricts that projection to a dual-lattice coset.
+Proposition 12. Let K = Λ ∩ U be a saturated cross-section of rank k of a unimodular lattice Λ, and
+L = Λ ∩ V with V = U ⊥ .
+  1. Every saturated cross-section of rank k + 1 containing K is K + Zv for some v ∈ Λ.
+  2. det(K + Zv) = det K · |πV (v)|2 .
+
+
+                                                       6
+  3. The smallest determinant of a rank-(k +1) cross-section containing K is det K ·µ(L∗ ), where µ denotes
+     the minimum.
+Proof. (1) If W ⊇ K is a saturated section of rank k + 1 then W/K is torsion-free of rank 1, hence infinite
+cyclic; any preimage v of a generator gives W = K + Zv. (2) In a basis of K followed by v, the Gram matrix
+of K + Zv has the Gram matrix of K as its leading block and |v|2 in the corner; its Schur complement is
+|v|2 − |πU (v)|2 = |πV (v)|2 . (3) By Lemma 3, πV maps Λ onto L∗ , so the values |πV (v)|2 for v ∈ Λ with
+πV (v) ̸= 0 are exactly the nonzero squared norms of L∗ , and the smallest is µ(L∗ ). If the resulting K + Zv
+is not saturated, its saturation is a section of the same rank and strictly smaller determinant containing K,
+so the minimum is attained by a saturated section.
+    Parts (2) and (3) are the cross-section form of a computation of Conway and Sloane. Writing Λn as a
+union of layers of a sublattice Λn−1 , their equation (2) reads Xn = γn−1 Xn−1 , with X a determinant and
+γn−1 the minimum of the projection of Λn orthogonal to Λn−1 [7, §II]. They grow a lattice; we grow a section
+inside a fixed ambient, where Lemma 3 identifies the projection as L∗ .
+    Part (3) replaces a search through Λ by one shortest-vector computation, but in the complement, of
+dimension 39 or more. The next lemma moves the question into rank k, where a finite enumeration settles
+it, and removes the dependence on the ambient.
+Lemma 13. Let Λ be an integral lattice of minimum µ, let K ⊆ Λ have rank k and span U , put V = U ⊥ ,
+and set
+                                     ρglue (K) = max∗ dist(y, K),
+                                                      y∈K
+                                                ∗
+a maximum over the finitely many classes of K /K. We call ρglue (K) the glue radius: it is the largest norm
+of a minimal glue vector of K [9, Ch. 4]. Then every v ∈ Λ with πV (v) ̸= 0 satisfies
+
+                                          |πV (v)|2 ≥ µ − ρ2glue (K).
+
+Moreover ρglue (K) ≤ ρcov (K), where ρcov (K) is the ordinary covering radius of K.
+Proof. Since Λ is integral, ⟨v, x⟩ ∈ Z for all x ∈ K, so πU (v) ∈ K ∗ . Choose x ∈ K nearest to πU (v); then
+|πU (v) − x|2 ≤ ρ2glue (K). The vector v − x lies in Λ and is nonzero because πV (v − x) = πV (v) ̸= 0, so
+
+                      µ ≤ |v − x|2 = |πV (v)|2 + |πU (v) − x|2 ≤ |πV (v)|2 + ρ2glue (K).
+
+Finally, the ordinary covering radius maximizes dist(y, K) over all y ∈ U , while the glue radius maximizes
+it only over y ∈ K ∗ , hence ρglue (K) ≤ ρcov (K).
+   The argument is again theirs: equation (1) of [7, §II] reads γn−1 ≥ 4 − h2n−1 , with hn−1 the distance
+from the extension vector to the layer lattice, a quantity they call the subcovering radius and then bound
+by the ordinary covering radius. In the present integral setting, πU (v) is restricted to K ∗ rather than being
+an arbitrary point of U . Thus the intrinsic glue radius gives a bound no weaker than the ordinary covering-
+radius bound and is computable by a finite
+                                         √ enumeration
+                                                  √         of K ∗ /K. The difference decides the question at
+hand. The ordinary covering radius of 3E8 is    √ 3, so bounding by    it gives only det ≥ 38 (6 − 3) = 19683,
+                                           2                         8
+which leaves dimension 39 open, whereas ρglue ( 3E8 ) = 8/3 gives 3 (6−8/3) = 21870, and 21870 is attained.
+
+3.3    The chain
+Combining Proposition 12(2) with Lemma 13: every rank-(k +1) cross-section containing K has determinant
+at least det K (µ − ρ2glue (K)), in any integral ambient of minimum µ. Table 3 evaluates ρ2glue for the sections
+at hand. Each row’s bound is attained by the next row’s section, so each step of the chain is optimal.
+                                                                                                         √
+Theorem 14. Let Λ be a unimodular 48-dimensional lattice of minimum 6 containing a saturated 3E8 .
+Then:
+                                                         √
+   1. every rank-9 cross-section of Λ containing that 3E8 has determinant at least 21870;
+  2. in P48p , P48q and P48n the value 21870 is attained by a saturated section K9 , whose complement is a
+     39-dimensional lattice packing of center density 2−20 316 5−1/2 = 18.35 . . .;
+
+
+                                                       7
+    K        det K    ρ2glue (K)   6 − ρ2glue (K)   det K (6 − ρ2glue (K))   attained by   complement
+    √                                                                        √
+    √3E6      2187        4              2                          4374     √3E7          dim 41, 61.57 . . .
+    √3E7      4374      9/2             3/2                         6561       3E8         dim 40, 41.05 . . .
+      3E8     6561      8/3            10/3                        21870     K9            dim 39, 18.35 . . .
+    K9       21870       7/2            5/2                        54675     K10           dim 38, 9.48 . . .
+    K10      54675      34/9           20/9                       121500                   dim 37, ≤ 5.19 . . .
+
+Table 3: The chain of optimal extensions. By Lemma 13 every rank-(k + 1) cross-section containing K has
+determinant at least det K (6 − ρ2glue (K)), in any integral ambient of minimum 6, where k = rank K; the
+fifth column is this floor, and the sixth shows that each bound is attained by the next section of the chain,
+so every step is optimal. The values of ρ2glue are exact, obtained by enumerating all det K classes of K ∗ /K;
+the maximum is attained by 2, 1, 1920, 561 and 324 classes respectively.
+
+
+  3. every rank-10 cross-section containing that K9 has determinant at least 54675, attained by a saturated
+     K10 whose complement is a 38-dimensional lattice packing of center density 2−19 331/2 5−1 = 9.48 . . .;
+  4. every rank-11 cross-section containing K10 has determinant at least 121500, so its complement has
+     center density at most 5.19 . . ., below the record in dimension 37.
+Proof. The lower bounds are Lemma 13 with the values of ρ2glue in Table 3, computed exactly by enumerating
+the classes of K ∗ /K (Section
+                             √ 6); the attainments are the certified sections of Appendix A, and the densities
+are (3). For (4), (3/2)37/2 / 121500 = 5.19 . . . while the dimension-37 record is 25/2 = 5.65 . . ..
+   The Gram matrices of the two new sections, in the bases of Appendix A, are
+                                                                           
+                                 6 −3 −3 −3 −3 −3 −3 3 −2
+                               −3 6       3     3    3    3     3    0   1
+                                                                           
+                               −3 3       6     0    3    0     0 −3 3 
+                                                                           
+                               −3 3       0     6    3    3     3    0 −1
+                                                                           
+                       K9 =   −3 3       3     3    6    3     3 −3 1    ,
+                               −3 3       0     3    3    6     3    0   0
+                                                                           
+                               −3 3       0     3    3    3     6    0   1
+                                                                           
+                               3    0 −3 0 −3 0                 0    6 −1
+                                −2 1       3 −1 1          0     1 −1 6
+                                                                              
+                               6 −3 −3 −3 −3 −3 −3 3 −2 1
+                             −3 6       3     3    3    3     3    0   1 −1
+                                                                              
+                             −3 3       6     0    3    0     0   −3   3    1
+                                                                              
+                             −3 3       0     6    3    3     3    0 −1 0 
+                                                                              
+                             −3 3       3     3    6    3     3 −3 1 −1
+                    K10 =                                                    ,
+                             −3 3       0     3    3    6     3    0   0 −2  
+                             −3 3       0     3    3    3     6    0   1 −2
+                                                                              
+                             3
+                                  0 −3 0 −3 0                 0   6 −1 1     
+                             −2 1       3 −1 1          0     1 −1 6        2
+                               1 −1 1          0 −1 −2 −2 1             2    6
+of determinants 21870 = 2 · 37 · 5 and             7   2
+                                     √ 54675 = 3 · 5 . The two bases are nested: the leading 8 × 8
+block
+√      of each is a Gram matrix of 3E8 , and K9 is the leading 9 × 9 block of K10 , so the inclusions
+  3E8 ⊂ K9 ⊂ K10 of Theorem 14 can be read off the matrices rather than taken on trust. Neither
+is a rescaled root lattice, since 21870/39 and 54675/310 are not integers; their discriminant groups are
+(Z/3)6 × Z/30 and (Z/3)4 × Z/15 × Z/45, and they have 258 and 294 minimal vectors.
+Remark 3. Concretely, since K8 is saturated, Lemma 3 gives πU (Λ) = K8∗ = √13 E8 , so every v ∈ Λ has
+           √
+πU (v) = e/ 3 with e ∈ E8 , and |πV (v)|2 = |v|2 −|e|2 /3: a larger
+                                                                √ E8 -component means a smaller determinant.
+For a minimal vector v and every root ρ of E8 we have |v − 3ρ|2 ≥ 6, i.e. (e, ρ) ≤ 3, and an enumeration of
+
+
+                                                         8
+the vectors of E8 of norm at most |e|2 ≤ 3|v|2 = 18 shows that this forces |e|2 ≤ 8. The bound is attained:
+of the 52,416,000 minimal vectors of P48p , exactly 272,160 have |e|2 = 8, and each of them extends K8 to a
+section of determinant 38 (6 − 8/3) = 21870. In the Leech lattice the same computation gives only (e, ρ) ≤ 2
+and no comparable gain, which is why this route is special to minimum 6.
+Remark 4. For K9 and K10 , our exhaustive cluster maximization over the duals, with no cap on the number
+of dual points or on the clique search and with β ≤ 1, returns s = 1. Thus no cluster with β ≤ 1 improves
+the bare packing. We do not infer anything here about clusters of diameter β > 1; such clusters may contain
+additional dual points and are not ruled out by this computation.
+
+
+4        Dimension 43: beyond the bare cross-section
+Evaluating Proposition 7 rank by rank says how far the bare route reaches. In rank 5 it stops short of
+dimension 43.
+Corollary 15. No bare cross-section of any unimodular 48-dimensional lattice gives a 43-dimensional
+                                                                                                √        pack-
+ing of center density above 2−45/2 319 = 195.94 . . ., and that value is attained by the section 3D5 of deter-
+minant 972. In particular the 43-dimensional record of Table 1 cannot be obtained from a bare cross-section.
+This is the second assertion of Corollary 8 of Conway and Sloane [7], stated there for every even unimodular
+48-dimensional lattice of minimum 6 and for all dimensions from 43 upwards.
+                                                                                                     √
+Proof. Proposition 7 with k = 5√and γ55 = 8 gives det K ≥ 65 /8 = 972 and δbare ≤ (3/2)43/2 / 972 =
+2−45/2 319 , with equality only for 3D5 , which is the dimension-43 section of Conway and Sloane [7, Corol-
+lary 8].
+
+
+    k     48 − k   densest known lattice   bound / benchmark       status
+    5      43               D5                  195.94 . . .       known 43-dim. packing 226.51 . . .
+                                                                   exceeds this ceiling: no bare
+                                                                   cross-section reaches it
+    6      42               E6                  106.65 . . .       attained exactly; the section is optimal
+    7      41               E7                  61.57 . . .        attained exactly; the section is optimal
+    8      40               E8                  41.05 . . .        attained exactly; the section is optimal
+    9      39               Λ9                   19.35 . . .       bare improvement possible;
+                                                                   det K < 19683 would also improve the
+                                                                   rank-9 lattice record
+    10     38              Λ10                   10.53 . . .       bare improvement possible;
+                                                                   det K ≤ 44286 would also improve the
+                                                                   rank-10 lattice record
+
+Table 4: Bare cross-section bounds and current-record benchmarks. For k ≤ 8 (above the rule), the displayed
+value is the unconditional ceiling of Proposition 7, because the Hermite constant is known from published
+results. For k = 9, 10 we instead display the benchmark δ latk (3/2)
+                                                                     24−k
+                                                                          from the densest lattice currently
+known in dimension k [21]. Exceeding this benchmark with a bare cross-section would simultaneously
+produce a new k-dimensional lattice record. A recent preprint, discussed in Section 2.3, claims that the
+k = 9 benchmark is in fact unconditional.
+
+    For k = 9, 10 we do not use an established value of the Hermite constant, so putting the current record δ lat
+                                                                                                              k
+in place of δklat gives only a benchmark. Since δ lat  lat                                             k   lat 2
+                                                  k ≤ δk , the resulting determinant benchmark (3/2) /(δ k )
+is at least as large as the true determinant floor, whereas the density benchmark δ latk (3/2)
+                                                                                               24−k
+                                                                                                     is at most
+as large as the true ceiling. Thus crossing either benchmark would establish a new rank-k lattice record,
+but failing to cross it does not rule out a bare improvement in dimensions 48 − k. Concretely, in dimension
+39 a section with 19683 ≤ det K < 21870 would improve our packing without necessarily improving the
+current rank-9 lattice record; a smaller determinant would improve both. In dimension 38, a section with
+
+
+                                                         9
+44287 ≤ det K < 54675 would improve our packing without necessarily improving the current rank-10 lattice
+record, whereas det K ≤ 44286 would improve both. The exact rank-10 benchmark is 311 /4 = 44286.75, so
+the last inequality is equivalent because det K is integral.
+    No bare cross-section, then, beats 195.94 . . . in dimension 43. A cluster does, and this is where the second
+lever in (1) earns its keep.
+    Let K be the 5-dimensional lattice with Gram matrix
+                                                                                               
+                       6 −1 −1 −2 −1                                        14 7 7 8 6
+                    −1 6 −2 −1 −1                                         7 14 8 7 6 
+                                                               −1      1                       
+              K = −1 −2 6 −1 −1 ,
+                                                       M = K       =      7 8 14 7 6  ,
+                    −2 −1 −1 6 −1                                     48 
+                                                                            8 7 7 14 6 
+                                                                                                  
+
+                      −1 −1 −1 −1 6                                          6 6 6 6 12
+
+so det K = 3072 = 210 · 3. It is a saturated cross-section of P48n and of P48m (Appendix A). The hypotheses
+of Theorem 6 hold with β = 7/24: the diagonal entries of M are 14/48 and 12/48, and the quantities
+Mi,i + Mj,j − 2Mi,j are all 12/48 or 14/48. The cluster is S = {0, m1 , . . . , m5 }, the origin together with the
+basis of M dual to the chosen basis of K; its six points form three pairs at squared distance 1/4, namely
+{0, m5 }, {m1 , m4 } and {m2 , m3 }, and all other distances equal β = 7/24. Hence
+
+                                                    7   43/2
+                                               6 − 24                13743/2
+                                           
+                                     1
+                         δ = 6· √                               =                  = 226.51 . . . ,
+                                    3072          4                 2223/2 · 321
+                                                                                p
+improving the 1982 record 195.94 . . . by a factor 1.15 . . . that splits as 6 · 972/3072 · (137/144)43/2 : cluster
+size, determinant penalty, radius penalty. The lattice K is not a rescaled root lattice (3072/35 ∈   / Z), has 12
+minimal vectors, and has discriminant group Z/4 × Z/16 × Z/48.
+
+
+5     Kissing numbers
+Proposition 5 turns a kissing number into a finite count over the complete list of 52,416,000 minimal vectors
+of the ambient, so every packing in this paper comes with one for free. Three families are worth recording:
+the 1982 cross-sections, whose kissing numbers appear never to have been computed; the chain of Section 3,
+which improves the tabulated bounds in dimensions 40, 41 and 42; and one further packing in dimension 45.
+Table 6 collects what the three give in dimensions 40 to 47.
+
+5.1    The 1982 cross-sections
+Corollary 8 of Conway and Sloane [7] constructs cross-sections of P48p orthogonal to
+                      √       √      √         √       √           √
+                        3A1 , 3A2 , 3A3 , 3D3 , 3D4 , . . . , 3D7 , S7 , S8 , S9 , S10 ,
+               √
+where Sn = ⟨ 3Dn−1 , v ∗ ⟩ are the glue lattices of the corollary’s proof. The resulting bare packings live
+in dimensions 47 down to 38, with two in dimension 41 (“D7 or S7 ” in the corollary) and, as the table
+shows, two in dimension 45 as well. The corollary states their densities but not their kissing numbers. We
+reconstruct all twelve in closed form, in the coordinate frame of the corollary’s own proof, and count exactly
+(Table 5).
+    The count needs an explicit embedding, and the proof supplies one: it fixes coordinates, taken from
+Leech and Sloane [16], in which the minimal vectors of P48p include all vectors with two entries ±3 and the
+rest zero, together with v ∗ = (−2, 114 , 033 ). Our frame for P48p is exactly that frame, so those vectors exist
+verbatim and a vector of the shape of v ∗ exists on the support of every weight-15 codeword. We pin the
+lexicographically first such codeword and write every complement basis down in closed form, with no search.
+Each kissing number is then one sweep of the minimal shell, counting the fiber over zero (Remark 1).
+    In dimensions 42 to 47 these counts exceed the previously tabulated lower bounds; in dimensions 38 to
+41 they fall below them. The packings that held the density records for four decades were also hiding the
+best kissing numbers, in the range where nobody had looked.
+
+
+                                                            10
+                        dim   complement     kissing number    previously tabulated
+                                √
+                         47     √3A1             23,766,960                9,741,412
+                         46     √3A2             12,309,600                5,318,060
+                         45     √ 3A3              6,687,648               3,047,160
+                         45     √3D3              6,702,080                3,047,160
+                         44     √3D4              4,153,600                2,948,552
+                         43     √3D5              2,545,056                1,745,692
+                         42     √3D6              1,541,292                1,250,676
+                         41       3D7                922,282               1,170,384
+                         41       S7                 922,664               1,170,384
+                         40       S8                 578,368               1,064,368
+                         39       S9                 360,716                 755,988
+                         38      S10                 224,608                 566,652
+
+Table 5: The twelve cross-section packings of Conway and Sloane [7, Corollary 8] and their kissing numbers,
+computed here. Bold entries exceed the previously tabulated lower bounds [12, 2, 4]. The two dimension-45
+rows are two embeddings of one lattice (A3 = D3 ), which the corollary’s family contains both as the A-series
+and as the D-fork; see Remark 5.
+
+
+Remark 5. Unlike the density, which by Theorem 4 depends only on det L, the kissing number of a cross-
+section packing depends on the embedding √ of the complement
+                                                     √        in the ambient lattice. The two dimension-45
+rows of Table 5 show this concretely:      3A3 and 3D3 are the same lattice, but the corollary’s family
+contains it twice, once as the A-series and once as the D-fork, and the two embeddings give 6,687,648 and
+6,702,080 contacts. Since the corollary pins the embeddings only up to its frame condition, the values in
+Table 5 are those of the canonical frame fixed above.
+
+5.2    The chain
+The complements of K6 , K7 and K8 improve on Table 5 in their own dimensions, and on the tabulated
+bounds as well:
+                              1,792,386,   1,324,472,    1,092,000
+in dimensions 42, 41 and 40. Only the first competes with a 1982 section: in dimension 42 the bound to
+beat is Table 5’s 1,541,292, while in dimensions 41 and 40 the 1982 sections fall well short of the tabulated
+1,170,384 and 1,064,368, which are therefore the relevant comparison. All three counts are the same in P48p ,
+P48q and P48n .
+Remark 6. The last two sections of the chain do not improve their dimensions. The complement of K9
+has 604,644, 604,472 and 604,892 contacts in P48p , P48q and P48n , and that of K10 has 381,658, 381,438
+and 381,620, all below the records 755,988 and 566,652. That the three counts differ is itself informative:
+by Theorem 4 the three embeddings of each section give packings of equal density, so they are inequivalent
+under the automorphism groups of their ambients even though no density computation can distinguish them.
+
+5.3    A kissing record in dimension 45
+Ranking cross-sections by the kissing number of their antipode packing rather than by density yields one more
+packing, which beats even the corresponding 1982 cross-section. Here K is the 3-dimensional cross-section
+of P48m with Gram matrix
+                                                                      
+                        6 −2 −2                                  2 1 1
+                                                             1
+               K = −2 6 −2 ,              M = K−1 = 1 2 1 ,                 det K = 128,
+                                                             8
+                        −2 −2 6                                  1 1 2
+
+
+
+
+                                                     11
+              √
+isometric to 2 2A∗3 , the rescaled body-centered cubic lattice. The hypotheses of Theorem 6 hold with β = 14 ,
+all pairwise squared distances of S = {0, m1 , m2 , m3 } being exactly 14 , and the center density
+                                                       45/2
+                                              6 − 14                2345/2
+                                          
+                                    1
+                           δ = 4· √                            =           = 1243.45 . . .
+                                    128         4                   2183/2
+equals the record of Chen, Hu, Li, Wang and Wu [3]. Every fiber of Proposition 5 contains 2,459,946 minimal
+vectors and the per-sphere counts are equal across translates, so every sphere touches
+
+                                          3 · 2,459,946 = 7,379,838
+
+others, against 6,702,080 for the better of the two 1982 dimension-45 cross-sections. The section embeds in
+P48q as well, giving a packing of the same density by Theorem 4 and, although the kissing number need not
+survive a change of embedding (Remark 5), an exact count there returns the same 7,379,838.
+
+                         dim    previously tabulated       CS82 [7, Cor 8]        this paper
+                          40               1,064,368                   578,368   1,092,000
+                          41               1,170,384                   922,664   1,324,472
+                          42               1,250,676                 1,541,292   1,792,386
+                          43               1,745,692                2,545,056
+                          44               2,948,552                4,153,600
+                          45               3,047,160                 6,702,080   7,379,838
+                          46               5,318,060               12,309,600
+                          47               9,741,412               23,766,960
+
+Table 6: Kissing number lower bounds in dimensions 40 to 47. The middle column is Table 5, the kissing
+numbers of the 1982 cross-sections; the last is this paper’s chain (dimensions 40 to 42) and the dimension-45
+packing of Section 5.3. Bold marks the largest entry of each row, and every one of them improves on the
+previously tabulated bound [12, 2, 4]. For comparison the best known upper bounds in dimensions 44 to 47
+are 220,788,272, 316,735,249, 441,900,184 and 621,658,419 [10, 4].
+
+
+
+6    Search and verification
+Everything that decides a claim in this paper is computed in exact integer or rational arithmetic; floating
+point and lattice reduction appear only inside search heuristics.
+    The seed of Section 3.1 needs no search: σ is written down in closed form on the coordinate frame of the
+ternary code, its fixed lattice is an integer kernel computation, and the 480 minimal vectors of that fixed
+lattice split into two orthogonal root systems of type E8 , from which a basis with Gram matrix 3C(E8 ) is
+read off.
+    The chain of Section 3 was found by sweeping the complete list of 52,416,000 minimal vectors of the
+ambient once, classifying each by its projection onto the span of the current section (Remark 3), and ranking
+extensions by the exact Schur complement of Proposition 12(2). The optimality of each step is not a search
+result: ρ2glue (K) is computed by enumerating the det K classes of K ∗ /K (2187, 4374, 6561, 21870 and 54675
+classes respectively) and taking, for each class, the minimum norm of its representatives, a finite computation
+of rank at most 10. As a check, the
+                                 √ dual shortest-vector problem of Proposition 12(3) was also solved directly
+in the complement for the step 3E8 → K9 , with the enumeration running to completion, and returned the
+same value µ(L∗ ) = 10/3.
+    The dimension-43 section of Section 4 was found by simulated annealing over 5-tuples of ambient lattice
+vectors: a move replaces or perturbs one vector of the tuple, each tuple is completed to the saturated section
+its span meets, and the section is scored by an exact lower bound for the best antipode density over its
+dual; the best candidates are then re-scored exhaustively, enumerating all short dual points and running a
+maximum-clique search over admissible pairs for each realizable diameter. Independent runs over P48n and
+over P48m converged to isometric sections.
+
+
+                                                          12
+    Each packing is recorded as a machine-checkable certificate that names the ambient lattice, the section
+basis in ambient coordinates and the cluster, and a verifier rebuilds the ambient from its published con-
+struction and re-proves membership, saturation, det L = det K, the cluster distances, the minimum, and the
+density. The code, the verifier and certificates for every packing in this paper, in each of the ambients where
+it exists, are available at https://github.com/wcgbg/sphere-packing.
+
+
+7     Open problems
+Table 4 localizes what is left for the bare cross-section route and separates unconditional ceilings from
+current-record benchmarks. In dimensions 40, 41 and 42 the bare route is closed: the sections of Corollary 11
+are optimal among bare cross-section packings. This does not rule out antipode clusters over these or other
+sections. In dimension 43 the bare route is also closed, while the cluster route is essential for our improvement
+and may admit further gains.
+    The interesting bare cases are dimensions 39 and 38. In dimension 39, any rank-9 section with determinant
+below 21870 would improve our present packing. The current published rank-9 lattice record corresponds
+to the benchmark 19683: under the published-literature convention used here, a determinant below that
+is not excluded by an optimality theorem, but would simultaneously produce a new 9-dimensional lattice
+record. Thus [19683, 21870) is the portion of the search interval that could improve dimension 39 without
+necessarily improving that lower-dimensional record. If the recent dimension-9 preprint cited above is correct,
+then determinants below 19683 are excluded and this interval is the full rigorous search window. Likewise,
+for dimension 38 one seeks determinant below 54675. The current rank-10 lattice record gives the exact
+benchmark 311 /4 = 44286.75; because section determinants are integral, det K ≤ 44286 would also improve
+the rank-10 lattice record, while 44287 ≤ det K < 54675 could improve dimension 38 without doing so.
+    Any such section inside an even ambient lattice must itself be an even integral lattice of minimum at
+least 6, which is apreal constraint: at the rank-9 benchmark 19683 = 39 the natural candidate, the rescaled
+laminated lattice 3/2 Λ9 , is not integral, so a rank-9 section of that determinant would have to be some
+other lattice. We do not know which even integral lattices of minimum 6 occur in ranks 9 and 10, and
+determining their smallest determinant would sharpen these searches. The current lattice records alone do
+not provide rigorous determinant floors in these ranks; the recent dimension-9 preprint, if correct, supplies
+the rank-9 floor. We leave the corresponding integral-section questions open.
+
+
+AI Disclosure
+We used Claude and ChatGPT to assist with background research, generating and exploring ideas, devel-
+oping the search and verification code, checking derivations, running and analyzing the computations, and
+drafting and editing this paper. All computational claims underlying the new packings and kissing-number
+computations are independently established by the exact-arithmetic certificates and verifier of Section 6.
+The theoretical and literature-based claims are supported by the arguments and references in the paper.
+The authors have reviewed all content and take full responsibility for it.
+
+
+A      Certificates
+Each packing is specified by integer matrices: G, the 48 × 48 Gram matrix of a basis b1 , . . . , b48 of the
+ambient lattice Λ; T, a k × 48 matrix whose row i holds the coordinates of the i-th basis vector of the
+cross-section with respect to b1 , . . . , b48 ; and, when the cluster is not trivial, W, an s × 48 matrix whose row
+i holds the coordinates of a lattice point wi with πU (wi ) = ui (row 0 being w0 = 0). Identifying Λ with Z48
+under ⟨x, y⟩ = xGy T , the following certificate-local claims can be checked in exact arithmetic:
+    1. G is symmetric and positive definite with even diagonal and det G = 1, so Λ is an even unimodular
+       lattice of rank 48; positive definiteness can be checked in exact arithmetic, for example by an exact
+       LDLT decomposition;
+
+    2. TGTT = K, the Gram matrix displayed in the text, with the stated determinant;
+
+
+                                                        13
+    3. the greatest common divisor of the k × k minors of T is 1 (equivalently, the Smith normal form of T
+       is [ Ik | 0 ]), so the rows of T span a saturated sublattice: K = Λ ∩ U exactly;
+    4. WGTT is a zero row above Ik , which is the statement S = {0, m1 , . . . , mk } of Theorem 6;
+    5. the pairwise squared distances d2 (ui , uj ) = (ci − cj )K−1 (ci − cj )T are as listed, all at most β < 6, with
+       β attained;
+    6. Theorem 4 with det L = det K gives the stated density.
+                                                                48        T
+        S itself is determined by the same data: L = {x ∈ Z : xGT = 0} is an integer kernel, and
+The packing
+A(S) = i (wi − πU (wi ) + L).
+   One claim is not certified by the printed data: the minimum µ = 6 of the ambient. For P48p , G is the
+Gram matrix of the basis built from the Pless symmetry code [23, 9]; for P48m it is the catalogue entry
+P48m. In both cases µ = 6 is the published extremality of the ambient, and a reader who prefers not to rely
+on it can re-verify µ = 6 from G by a short-vector enumeration. Certificates for the same packings in the
+other ambients (P48q and P48n for dimensions 38–42, P48n for dimension 43, P48q for dimension 45) are in
+the repository.
+
+A.1         Dimensions 42, 41 and 40
+Certificates
+records/dim42-delta106/P48p-e6f899b4,
+records/dim41-delta61/P48p-28a12f16, and
+records/dim40-delta41/P48p-6a1733b0.                                           √
+   The                                                                       ∼
+                                          √ of one matrix: Trows 1–6 span K6 = 3E6 , rows 1–7 span
+      √ three sections are the row prefixes
+K7 ∼
+   = 3E7 , and all eight rows span K8 ∼= 3E8 , with TGT = 3 C(E8 ).
+
+G      (the Gram matrix of P48p ):
+[[6 3 3 -3 3 -3 2 -3 -2 -3 3 3 -1 1 -1 -3 -2 -1 -2 -2 0 1 2 -1 0 0 2 2 -1 0 -2 -1 -1 0 -2 1 -2 1 -1 -2 0 3 -3 -3 -1 0 2 -2]
+ [3 6 3 0 3 -3 0 -1 1 -3 3 3 1 0 0 0 -3 -2 -2 -2 -2 0 3 1 2 -2 -1 2 0 0 -1 0 1 0 -1 0 0 -1 -2 1 2 2 -1 -2 -2 -2 0 -1]
+ [3 3 6 -3 3 -3 -1 -3 0 -3 3 3 2 -1 -2 0 -3 -2 -3 -2 0 2 3 2 0 1 0 0 1 2 -1 1 1 -2 1 -1 0 0 -1 -1 1 3 -3 -3 1 0 1 0]
+ [-3 0 -3 6 0 0 1 2 0 2 0 0 1 -1 3 1 1 0 1 0 0 -3 -1 -1 0 -2 -2 1 -1 -2 1 -1 1 0 1 -1 1 -2 1 1 1 -2 2 2 -2 -1 -2 2]
+ [3 3 3 0 6 -3 2 -3 -2 -3 3 3 1 -2 1 0 -1 -3 -2 -3 1 0 1 1 -1 0 -1 2 0 -1 0 0 0 0 1 -1 0 -2 -2 -2 1 3 -1 -2 0 -2 1 0]
+ [-3 -3 -3 0 -3 6 0 1 2 1 -3 -3 0 -1 0 1 2 0 2 3 0 1 -2 -1 -1 0 1 -1 2 0 0 -1 1 2 1 2 1 -1 0 1 -2 -2 2 2 2 2 1 -1]
+ [2 0 -1 1 2 0 6 0 -1 0 2 1 0 -1 0 -1 1 -2 1 -2 0 -2 -2 -2 -2 0 2 1 -2 -1 -1 -3 1 2 -1 1 -2 -1 1 -1 -2 1 0 0 0 0 0 -2]
+ [-3 -1 -3 2 -3 1 0 6 1 3 -2 -3 -1 2 1 1 0 2 1 0 -1 -1 -1 0 2 0 0 0 -1 1 0 1 0 0 -1 -1 -1 1 1 2 -1 -1 3 1 0 0 -3 0]
+ [-2 1 0 0 -2 2 -1 1 6 -1 0 -1 2 0 -1 1 1 -1 2 0 -2 1 1 1 1 0 -1 -2 1 1 0 0 3 1 0 0 0 -1 0 2 1 -1 0 2 1 -1 0 0]
+ [-3 -3 -3 2 -3 1 0 3 -1 6 -3 -3 -2 0 1 2 1 3 2 2 -1 -2 -3 -1 -1 0 1 0 -2 1 2 0 0 -1 0 -1 1 0 2 2 -2 -3 2 1 -1 2 -2 0]
+ [3 3 3 0 3 -3 2 -2 0 -3 6 3 1 -1 0 -1 -1 -2 -2 -3 1 -1 2 1 0 -1 0 1 -1 0 -2 -2 1 -1 0 0 -2 0 0 -1 2 3 -2 -1 0 -1 1 -1]
+ [3 3 3 0 3 -3 1 -3 -1 -3 3 6 1 0 0 -2 -1 -2 -2 -1 1 0 2 -1 -1 -1 0 0 1 -1 -1 -1 0 -1 0 0 -1 0 -1 -2 2 1 -2 -2 -1 -1 1 1]
+ [-1 1 2 1 1 0 0 -1 2 -2 1 1 6 -1 -2 1 -1 -3 0 -1 0 0 1 1 0 0 -1 -1 1 -1 -1 1 2 0 1 -1 1 -2 1 0 1 0 -1 1 0 0 0 1]
+ [1 0 -1 -1 -2 -1 -1 2 0 0 -1 0 -1 6 -1 -2 -1 3 1 1 0 1 1 -2 1 1 1 -1 0 -1 -2 2 -2 -1 -2 -1 -3 2 1 -1 0 0 -1 -1 -2 0 -1 0]
+ [-1 0 -2 3 1 0 0 1 -1 1 0 0 -2 -1 6 -1 2 1 0 0 2 0 0 -1 0 -1 -1 3 -1 0 1 -1 -1 0 1 0 0 -1 -2 0 2 -1 2 0 0 -1 0 1]
+ [-3 0 0 1 0 1 -1 1 1 2 -1 -2 1 -2 -1 6 -1 -1 1 1 -2 -2 -1 3 0 -1 -1 -1 1 0 1 1 1 0 2 -1 3 -2 1 3 -1 0 2 1 0 0 -1 0]
+ [-2 -3 -3 1 -1 2 1 0 1 1 -1 -1 -1 -1 2 -1 6 0 3 1 1 0 -3 -1 -2 1 -1 -1 0 0 2 -1 0 1 0 1 -1 0 0 -1 0 -2 1 3 1 -1 1 0]
+ [-1 -2 -2 0 -3 0 -2 2 -1 3 -2 -2 -3 3 1 -1 0 6 0 2 0 0 -1 -1 1 1 0 0 -1 1 1 1 -2 -2 0 -1 -1 1 1 0 0 -2 1 -1 -1 1 -2 0]
+ [-2 -2 -3 1 -2 2 1 1 2 2 -2 -2 0 1 0 1 3 0 6 1 -1 -1 -2 -2 -1 0 0 -1 0 -1 0 -1 0 2 -1 0 0 0 2 1 -1 -2 0 2 -1 0 0 -1]
+ [-2 -2 -2 0 -3 3 -2 0 0 2 -3 -1 -1 1 0 1 1 2 1 6 -1 1 -2 -1 -1 0 1 -1 1 -1 0 1 0 0 1 2 1 0 0 1 -1 -2 1 1 -1 1 0 0]
+ [0 -2 0 0 1 0 0 -1 -2 -1 1 1 0 0 2 -2 1 0 -1 -1 6 1 1 -1 -2 1 1 0 0 -1 0 0 -2 -1 1 -1 -1 0 -1 -3 1 0 0 0 2 1 1 1]
+ [1 0 2 -3 0 1 -2 -1 1 -2 -1 0 0 1 0 -2 0 0 -1 1 1 6 1 0 -1 2 1 0 1 2 -1 2 0 -1 1 0 -1 0 -2 -1 0 1 -1 -1 2 0 1 0]
+ [2 3 3 -1 1 -2 -2 -1 1 -3 2 2 1 1 0 -1 -3 -1 -2 -2 1 1 6 1 2 -1 0 0 1 0 -1 1 0 -1 0 -1 0 1 -1 0 2 2 -2 -2 0 0 1 1]
+ [-1 1 2 -1 1 -1 -2 0 1 -1 1 -1 1 -2 -1 3 -1 -1 -2 -1 -1 0 1 6 2 0 -2 -1 0 1 1 2 1 -1 1 -1 2 0 0 2 1 2 1 0 2 -2 0 0]
+ [0 2 0 0 -1 -1 -2 2 1 -1 0 -1 0 1 0 0 -2 1 -1 -1 -2 -1 2 2 6 -1 -2 1 0 0 -1 1 -1 1 -2 0 1 2 0 2 2 1 1 -1 -1 -1 -1 0]
+ [0 -2 1 -2 0 0 0 0 0 0 -1 -1 0 1 -1 -1 1 1 0 0 1 2 -1 0 -1 6 0 -2 0 1 1 2 0 0 0 0 -1 0 0 -2 -2 1 -1 -1 2 0 -1 0]
+ [2 -1 0 -2 -1 1 2 0 -1 1 0 0 -1 1 -1 -1 -1 0 0 1 1 1 0 -2 -2 0 6 0 -1 0 -2 -1 0 0 -1 1 -1 1 1 0 -2 0 0 -1 0 3 1 -2]
+ [2 2 0 1 2 -1 1 0 -2 0 1 0 -1 -1 3 -1 -1 0 -1 -1 0 0 0 -1 1 -2 0 6 -2 0 -1 -1 -1 0 -1 0 0 -1 -2 0 1 1 0 -1 -1 0 1 -1]
+ [-1 0 1 -1 0 2 -2 -1 1 -2 -1 1 1 0 -1 1 0 -1 0 1 0 1 1 0 0 0 -1 -2 6 0 0 0 0 0 2 0 1 0 0 -1 0 0 0 -1 1 1 1 1]
+ [0 0 2 -2 -1 0 -1 1 1 1 0 -1 -1 -1 0 0 0 1 -1 -1 -1 2 0 1 0 1 0 0 0 6 1 0 1 -2 1 0 -1 1 0 1 -1 0 0 -1 2 1 0 -1]
+ [-2 -1 -1 1 0 0 -1 0 0 2 -2 -1 -1 -2 1 1 2 1 0 0 0 -1 -1 1 -1 1 -2 -1 0 1 6 1 1 0 1 -1 2 -1 -1 0 -1 -2 1 1 1 -1 -1 1]
+ [-1 0 1 -1 0 -1 -3 1 0 0 -2 -1 1 2 -1 1 -1 1 -1 1 0 2 1 2 1 2 -1 -1 0 0 1 6 -1 -2 0 -2 0 0 -1 0 0 1 0 0 0 -1 -1 1]
+ [-1 1 1 1 0 1 1 0 3 0 1 0 2 -2 -1 1 0 -2 0 0 -2 0 0 1 -1 0 0 -1 0 1 1 -1 6 0 1 0 1 -1 0 1 -1 0 -1 1 1 -1 0 0]
+ [0 0 -2 0 0 2 2 0 1 -1 -1 -1 0 -1 0 0 1 -2 2 0 -1 -1 -1 -1 1 0 0 0 0 -2 0 -2 0 6 -1 3 1 0 -1 1 -1 0 1 1 0 -1 0 -1]
+ [-2 -1 1 1 1 1 -1 -1 0 0 0 0 1 -2 1 2 0 0 -1 1 1 1 0 1 -2 0 -1 -1 2 1 1 0 1 -1 6 -1 1 -2 0 0 0 0 1 0 1 0 -1 2]
+ [1 0 -1 -1 -1 2 1 -1 0 -1 0 0 -1 -1 0 -1 1 -1 0 2 -1 0 -1 -1 0 0 1 0 0 0 -1 -2 0 3 -1 6 0 1 -1 1 -1 0 0 1 0 0 1 -2]
+ [-2 0 0 1 0 1 -2 -1 0 1 -2 -1 1 -3 0 3 -1 -1 0 1 -1 -1 0 2 1 -1 -1 0 1 -1 2 0 1 1 1 0 6 -1 0 2 0 -1 1 0 0 0 0 1]
+ [1 -1 0 -2 -2 -1 -1 1 -1 0 0 0 -2 2 -1 -2 0 1 0 0 0 0 1 0 2 0 1 -1 0 1 -1 0 -1 0 -2 1 -1 6 1 0 0 1 -1 -1 0 0 1 0]
+ [-1 -2 -1 1 -2 0 1 1 0 2 0 -1 1 1 -2 1 0 1 2 0 -1 -2 -1 0 0 0 1 -2 0 0 -1 -1 0 -1 0 -1 0 1 6 1 -1 -1 0 0 -1 2 -1 0]
+ [-2 1 -1 1 -2 1 -1 2 2 2 -1 -2 0 -1 0 3 -1 0 1 1 -3 -1 0 2 2 -2 0 0 -1 1 0 0 1 1 0 1 2 0 1 6 0 -1 2 1 -1 0 -1 -1]
+ [0 2 1 1 1 -2 -2 -1 1 -2 2 2 1 0 2 -1 0 0 -1 -1 1 0 2 1 2 -2 -2 1 0 -1 -1 0 -1 -1 0 -1 0 0 -1 0 6 -1 0 0 -1 -2 0 2]
+ [3 2 3 -2 3 -2 1 -1 -1 -3 3 1 0 0 -1 0 -2 -2 -2 -2 0 1 2 2 1 1 0 1 0 0 -2 1 0 0 0 0 -1 1 -1 -1 -1 6 -2 -2 1 -1 1 -1]
+ [-3 -1 -3 2 -1 2 0 3 0 2 -2 -2 -1 -1 2 2 1 1 0 1 0 -1 -2 1 1 -1 0 0 0 0 1 0 -1 1 1 0 1 -1 0 2 0 -2 6 1 0 0 -2 0]
+ [-3 -2 -3 2 -2 2 0 1 2 1 -1 -2 1 -1 0 1 3 -1 2 1 0 -1 -2 0 -1 -1 -1 -1 -1 -1 1 0 1 1 0 1 0 -1 0 1 0 -2 1 6 0 -1 0 1]
+ [-1 -2 1 -2 0 2 0 0 1 -1 0 -1 0 -2 0 0 1 -1 -1 -1 2 2 0 2 -1 2 0 -1 1 2 1 0 1 0 1 0 0 0 -1 -1 -1 1 0 0 6 0 1 0]
+ [0 -2 0 -1 -2 2 0 0 -1 2 -1 -1 0 0 -1 0 -1 1 0 1 1 0 0 -2 -1 0 3 0 1 1 -1 -1 -1 -1 0 0 0 0 2 0 -2 -1 0 -1 0 6 1 -1]
+ [2 0 1 -2 1 1 0 -3 0 -2 1 1 0 -1 0 -1 1 -2 0 0 1 1 1 0 -1 -1 1 1 1 0 -1 -1 0 0 -1 1 0 1 -1 -1 0 1 -2 0 1 1 6 -1]
+ [-2 -1 0 2 0 -1 -2 0 0 0 -1 1 1 0 1 0 0 0 -1 0 1 0 1 0 0 0 -2 -1 1 -1 1 1 0 -1 2 -2 1 0 0 -1 2 -1 0 1 0 -1 -1 6]]
+
+
+
+
+                                                                                      14
+T     (8 × 48):
+[[5 -6 2 1 0 1 -4 3 1 0 1 1 -1 0 0 -1 -1 -2 0 0 0 -1 -1 -1 -1 -1 -1 0 0 0 1 1 1 1 0 0 0 -2 1 1 1 1 1 -1 -1 -1 0 -1]
+ [-1 -2 -3 -2 1 0 0 2 0 -1 2 2 0 -1 0 1 -1 0 0 0 -1 1 1 0 0 1 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 -1 0 -1 0 0 0]
+ [-5 4 1 0 -2 -4 7 -3 0 -3 -3 -3 0 -1 1 1 1 2 -1 2 1 1 1 1 0 0 0 0 1 0 -1 -1 -1 -1 -1 -1 0 2 -1 0 -1 -1 -1 1 0 1 0 0]
+ [-5 3 0 0 0 0 2 -4 0 2 -1 -1 0 3 0 -1 0 -1 -1 0 0 0 0 1 1 0 1 0 0 1 0 -1 -1 0 0 0 0 0 0 -1 0 1 0 0 0 0 0 0]
+ [11 -4 -2 0 1 3 -8 7 -1 0 4 3 1 -4 -1 1 0 1 3 -2 -1 0 -1 -2 -1 0 -1 -1 -1 -2 0 2 2 0 1 1 0 -1 0 1 0 -1 1 -1 1 0 0 1]
+ [1 -2 6 2 1 2 -2 0 1 0 -3 -1 -1 3 0 -2 1 -2 -1 0 1 -3 -1 -1 0 -1 0 0 -1 0 1 -1 0 0 0 0 0 -1 1 1 1 2 1 0 0 -1 0 -1]
+ [-7 4 -4 -3 -3 -3 6 -5 -1 0 1 0 0 0 2 3 -1 1 -1 -1 -1 3 1 1 1 1 0 1 1 0 -1 1 0 0 0 0 0 2 0 -2 -1 -2 -1 1 0 1 0 0]
+ [-1 -2 3 3 3 -2 2 1 3 0 -1 -3 -1 0 -2 -5 -1 0 0 5 2 -2 1 2 -2 -1 0 0 2 3 -1 -1 -2 1 -2 -1 1 -1 -1 1 0 1 0 0 -1 -1 0 0]]
+
+
+
+
+A.2         Dimension 39
+Certificate records/dim39-delta18/P48p-adc3124f; the ambient is P48p and TGTT = K9 .
+
+T     (9 × 48):
+[[5 -6 2 1 0 1 -4 3 1 0 1 1 -1 0 0 -1 -1 -2 0 0 0 -1 -1 -1 -1 -1 -1 0 0 0 1 1 1 1 0 0 0 -2 1 1 1 1 1 -1 -1 -1 0 -1]
+ [-5 4 1 0 -2 -4 7 -3 0 -3 -3 -3 0 -1 1 1 1 2 -1 2 1 1 1 1 0 0 0 0 1 0 -1 -1 -1 -1 -1 -1 0 2 -1 0 -1 -1 -1 1 0 1 0 0]
+ [-10 7 1 0 -2 -4 9 -7 0 -1 -4 -4 0 2 1 0 1 1 -2 2 1 1 1 2 1 0 1 0 1 1 -1 -2 -2 -1 -1 -1 0 2 -1 -1 -1 0 -1 1 0 1 0 0]
+ [0 1 -4 -2 0 -1 1 2 -1 -2 2 1 1 -3 0 2 0 2 1 0 -1 2 1 0 0 1 0 0 0 -1 0 0 0 -1 0 0 0 1 -1 0 -1 -2 -1 0 0 1 0 1]
+ [-11 5 -2 -2 -1 -4 9 -5 0 -2 -2 -2 0 1 1 1 0 1 -2 2 0 2 2 2 1 1 1 1 1 1 0 -2 -2 -1 -1 -1 0 2 -1 -1 -1 -1 -2 1 -1 1 0 0]
+ [1 -1 2 0 1 1 -1 2 0 -2 -1 0 0 0 0 0 1 0 0 0 0 -1 0 -1 0 0 0 0 -1 -1 1 -1 0 -1 0 0 0 0 0 1 0 0 0 0 0 0 0 0]
+ [-6 3 -2 -3 -2 -2 5 -3 -1 -2 0 0 0 0 2 3 0 1 -1 -1 -1 2 1 0 1 1 0 1 0 -1 0 0 0 -1 0 0 0 2 0 -1 -1 -2 -1 1 0 1 0 0]
+ [5 -8 6 1 0 0 -3 4 2 -3 1 -1 -2 0 1 -2 -1 -2 0 1 0 -2 -1 -2 -2 -2 -2 0 0 -1 1 1 1 0 -1 0 1 -2 1 2 0 0 2 -1 -1 -1 0 -1]
+ [-12 3 7 0 -2 -4 10 -7 1 -3 -4 -6 -2 5 2 -2 0 -1 -3 3 1 -1 1 1 0 -1 0 1 1 1 0 -2 -2 -1 -2 -1 1 1 0 0 -1 0 0 1 -1 0 0 -1]]
+
+
+
+
+A.3         Dimension 38
+Certificate records/dim38-delta9/P48p-a17f250f; the ambient is P48p and TGTT = K10 .
+
+T     (10 × 48):
+[[5 -6 2 1 0 1 -4 3 1 0 1 1 -1 0 0 -1 -1 -2 0 0 0 -1 -1 -1 -1 -1 -1 0 0 0 1 1 1 1 0 0 0 -2 1 1 1 1 1 -1 -1 -1 0 -1]
+ [-5 4 1 0 -2 -4 7 -3 0 -3 -3 -3 0 -1 1 1 1 2 -1 2 1 1 1 1 0 0 0 0 1 0 -1 -1 -1 -1 -1 -1 0 2 -1 0 -1 -1 -1 1 0 1 0 0]
+ [-10 7 1 0 -2 -4 9 -7 0 -1 -4 -4 0 2 1 0 1 1 -2 2 1 1 1 2 1 0 1 0 1 1 -1 -2 -2 -1 -1 -1 0 2 -1 -1 -1 0 -1 1 0 1 0 0]
+ [0 1 -4 -2 0 -1 1 2 -1 -2 2 1 1 -3 0 2 0 2 1 0 -1 2 1 0 0 1 0 0 0 -1 0 0 0 -1 0 0 0 1 -1 0 -1 -2 -1 0 0 1 0 1]
+ [-11 5 -2 -2 -1 -4 9 -5 0 -2 -2 -2 0 1 1 1 0 1 -2 2 0 2 2 2 1 1 1 1 1 1 0 -2 -2 -1 -1 -1 0 2 -1 -1 -1 -1 -2 1 -1 1 0 0]
+ [1 -1 2 0 1 1 -1 2 0 -2 -1 0 0 0 0 0 1 0 0 0 0 -1 0 -1 0 0 0 0 -1 -1 1 -1 0 -1 0 0 0 0 0 1 0 0 0 0 0 0 0 0]
+ [-6 3 -2 -3 -2 -2 5 -3 -1 -2 0 0 0 0 2 3 0 1 -1 -1 -1 2 1 0 1 1 0 1 0 -1 0 0 0 -1 0 0 0 2 0 -1 -1 -2 -1 1 0 1 0 0]
+ [5 -8 6 1 0 0 -3 4 2 -3 1 -1 -2 0 1 -2 -1 -2 0 1 0 -2 -1 -2 -2 -2 -2 0 0 -1 1 1 1 0 -1 0 1 -2 1 2 0 0 2 -1 -1 -1 0 -1]
+ [-12 3 7 0 -2 -4 10 -7 1 -3 -4 -6 -2 5 2 -2 0 -1 -3 3 1 -1 1 1 0 -1 0 1 1 1 0 -2 -2 -1 -2 -1 1 1 0 0 -1 0 0 1 -1 0 0 -1]
+ [-2 1 -5 -2 0 -2 1 -1 -1 0 1 0 1 -2 0 0 -1 1 0 1 -1 1 2 0 -1 1 0 0 1 1 -1 0 0 0 -1 -1 0 0 0 0 0 0 0 0 0 0 0 0]]
+
+
+
+
+A.4         Dimension 43
+Certificate records/dim43-delta226/P48m-1f02996f. The ambient is P48m ; TGTT = K is the Gram
+matrix of Section 4 and WGTT = [ 0; I5 ]. Its Gram matrix G is the catalogue entry P48m [19, 20] reproduced
+verbatim; the dimension-45 packing below uses the same ambient and the same G.
+
+G      (the Gram matrix of P48m ):
+[[6 -2 1 2 -1 -1 -3 1 1 -1 2 -3 2 0 1 -2 -3 -2 2 -2 -3 -2 -1 1 0 2 1 0 -2 2 -2 -2 3 2 1 -2 1 3 3 2 -3 3 0 -3 -2 0 2 -2]
+ [-2 8 -1 -2 -2 1 0 -3 -2 3 2 2 2 -2 3 0 -2 3 -4 0 4 4 -3 1 2 1 2 0 2 0 -1 3 -4 -1 -4 2 0 -4 -2 -3 1 0 0 -1 3 3 -4 3]
+ [1 -1 6 -2 0 -3 0 2 -2 2 -1 -3 -2 1 -2 2 -3 -2 -2 2 -3 -1 -1 0 -1 2 1 2 -3 0 1 -1 0 -1 -1 0 0 0 -2 2 2 -2 2 -1 0 -1 2 2]
+ [2 -2 -2 6 1 2 -3 1 0 -3 0 1 1 1 2 -3 1 -2 4 -2 0 -3 1 2 -2 1 0 -1 2 1 1 -2 0 2 2 -2 -1 1 1 0 -1 3 -1 -1 -1 -2 2 -1]
+ [-1 -2 0 1 6 -2 -2 2 -2 -2 1 2 -3 -1 -1 0 2 -3 0 1 -1 -3 2 -2 -3 0 -1 2 1 -2 -1 0 0 -2 3 -1 -3 -2 1 2 1 -2 2 2 -2 -3 -1 -2]
+ [-1 1 -3 2 -2 6 2 0 1 0 -1 2 1 2 1 0 1 1 1 -2 3 2 0 2 1 -1 1 -2 2 0 1 1 0 0 -2 0 0 1 1 -2 1 2 -3 -1 0 1 1 1]
+ [-3 0 0 -3 -2 2 8 -1 2 3 -1 1 0 1 -3 4 2 2 -2 2 3 3 2 1 1 -2 -2 1 -1 -1 0 0 2 -2 -2 0 2 0 -2 0 0 -2 -1 2 0 0 1 0]
+ [1 -3 2 1 2 0 -1 6 -1 0 -1 0 -1 0 -1 -1 0 -2 2 1 -2 -3 0 1 -2 -1 -1 0 -1 -1 0 0 1 0 2 -2 0 1 0 1 3 -2 2 0 -3 -3 2 0]
+ [1 -2 -2 0 -2 1 2 -1 6 -2 -1 0 2 1 -1 0 1 2 3 0 1 2 2 1 0 -1 -2 0 0 2 -1 0 3 2 2 -1 1 4 2 1 -3 1 -1 0 -1 2 2 -3]
+ [-1 3 2 -3 -2 0 3 0 -2 6 1 0 0 0 -1 1 -1 1 -3 2 1 1 -2 1 1 0 1 1 -2 0 0 0 0 -2 -4 1 2 -2 -2 -1 1 -1 1 -1 1 1 -1 3]
+ [2 2 -1 0 1 -1 -1 -1 -1 1 6 1 2 -3 2 -1 -1 0 -1 -1 0 0 0 0 1 0 0 2 -1 1 -3 0 0 -1 -1 0 0 -2 1 1 -3 2 1 -1 -1 0 -3 -1]
+ [-3 2 -3 1 2 2 1 0 0 0 1 6 0 -1 1 0 3 1 0 0 4 1 2 0 -1 -2 -2 0 3 -1 0 1 -1 -1 0 0 -1 -3 -1 -1 1 -1 0 2 0 -1 -2 0]
+ [2 2 -2 1 -3 1 0 -1 2 0 2 0 6 -1 2 -2 -1 2 1 -2 1 2 0 3 1 -1 -1 -1 0 1 -1 0 0 2 0 0 2 1 0 -1 -2 3 0 -1 0 2 -1 -1]
+ [0 -2 1 1 -1 2 1 0 1 0 -3 -1 -1 6 -3 1 0 -2 1 0 0 0 0 1 -1 1 2 0 0 1 2 -2 1 0 0 0 0 2 1 1 1 2 -2 -1 0 2 3 1]
+ [1 3 -2 2 -1 1 -3 -1 -1 -1 2 1 2 -3 6 -2 -1 2 0 -2 1 1 -2 1 1 1 0 -1 2 0 0 2 -3 1 -1 0 0 -1 0 -2 -1 1 0 -1 1 0 -2 1]
+ [-2 0 2 -3 0 0 4 -1 0 1 -1 0 -2 1 -2 6 0 0 -3 1 0 3 1 -1 0 0 0 1 0 -2 0 0 1 -2 -2 1 0 0 -1 1 1 -2 -1 1 1 0 1 1]
+ [-3 -2 -3 1 2 1 2 0 1 -1 -1 3 -1 0 -1 0 6 1 2 1 1 -1 3 -1 -1 -2 -3 -1 1 -1 1 0 1 -1 2 0 0 -1 0 -1 0 -1 0 3 0 -1 -1 -2]
+ [-2 3 -2 -2 -3 1 2 -2 2 1 0 1 2 -2 2 0 1 6 0 1 2 4 -1 1 2 -1 -1 -1 1 0 0 3 -1 1 -1 2 2 0 -1 -2 -1 -1 0 1 2 2 -2 1]
+ [2 -4 -2 4 0 1 -2 2 3 -3 -1 0 1 1 0 -3 2 0 8 0 -2 -2 1 2 -2 0 -1 -1 1 3 0 -1 2 4 3 -1 1 3 1 0 -1 3 -1 0 -1 -1 2 -2]
+ [-2 0 2 -2 1 -2 2 1 0 2 -1 0 -2 0 -2 1 1 1 0 6 1 0 0 1 -1 1 -1 3 0 0 0 0 0 -1 1 -1 0 -1 -2 1 1 -3 2 1 0 0 1 0]
+ [-3 4 -3 0 -1 3 3 -2 1 1 0 4 1 0 1 0 1 2 -2 1 8 2 0 1 1 -1 -1 0 3 0 0 1 -2 -1 -1 -1 0 -2 -2 -2 0 -1 -1 1 0 1 -1 0]
+ [-2 4 -1 -3 -3 2 3 -3 2 1 0 1 2 0 1 3 -1 4 -2 0 2 8 -1 1 2 0 0 0 2 0 -1 3 -1 0 -3 3 1 0 0 -1 0 0 -2 0 2 4 -1 2]
+ [-1 -3 -1 1 2 0 2 0 2 -2 0 2 0 0 -2 1 3 -1 1 0 0 -1 6 0 -1 -2 -3 1 0 -1 1 -2 2 -1 2 -1 -2 0 0 2 -1 0 0 2 -1 -2 1 -3]
+ [1 1 0 2 -2 2 1 1 1 1 0 0 3 1 1 -1 -1 1 2 1 1 1 0 6 -1 1 0 1 1 1 0 0 0 1 0 -1 1 1 -1 0 0 2 0 -1 0 0 2 1]
+ [0 2 -1 -2 -3 1 1 -2 0 1 1 -1 1 -1 1 0 -1 2 -2 -1 1 2 -1 -1 6 -1 1 -2 -1 1 0 0 -1 0 -2 1 1 -1 0 -1 -1 1 -2 -1 1 2 -1 1]
+ [2 1 2 1 0 -1 -2 -1 -1 0 0 -2 -1 1 1 0 -2 -1 0 1 -1 0 -2 1 -1 6 2 2 0 1 0 0 0 0 -1 0 -1 0 1 1 -1 1 0 -2 1 1 1 0]
+ [1 2 1 0 -1 1 -2 -1 -2 1 0 -2 -1 2 0 0 -3 -1 -1 -1 -1 0 -3 0 1 2 6 0 0 1 0 0 -1 0 -2 1 -1 0 1 0 1 2 -1 -3 1 2 0 2]
+ [0 0 2 -1 2 -2 1 0 0 1 2 0 -1 0 -1 1 -1 -1 -1 3 0 0 1 1 -2 2 0 6 -1 0 -1 0 0 -2 0 -1 -2 -1 0 3 -1 -1 2 0 -1 0 0 -1]
+ [-2 2 -3 2 1 2 -1 -1 0 -2 -1 3 0 0 2 0 1 1 1 0 3 2 0 1 -1 0 0 -1 6 -1 0 1 -2 1 1 0 -1 -1 0 -1 1 0 -2 1 1 0 0 1]
+ [2 0 0 1 -2 0 -1 -1 2 0 1 -1 1 1 0 -2 -1 0 3 0 0 0 -1 1 1 1 1 0 -1 6 -1 -1 0 2 0 0 1 1 0 0 -2 3 -1 -2 0 2 1 0]
+ [-2 -1 1 1 -1 1 0 0 -1 0 -3 0 -1 2 0 0 1 0 0 0 0 -1 1 0 0 0 0 -1 0 -1 6 -1 -2 0 -1 1 -1 0 -2 -1 2 0 0 0 2 0 1 2]
+ [-2 3 -1 -2 0 1 0 0 0 0 0 1 0 -2 2 0 0 3 -1 0 1 3 -2 0 0 0 0 0 1 -1 -1 6 -2 -1 -1 2 0 -1 0 -2 2 -2 1 1 1 1 -3 1]
+ [3 -4 0 0 0 0 2 1 3 0 0 -1 0 1 -3 1 1 -1 2 0 -2 -1 2 0 -1 0 -1 0 -2 0 -2 -2 8 0 1 -2 1 4 4 2 -2 1 -1 -1 -2 -1 3 -3]
+ [2 -1 -1 2 -2 0 -2 0 2 -2 -1 -1 2 0 1 -2 -1 1 4 -1 -1 0 -1 1 0 0 0 -2 1 2 0 -1 0 6 1 0 2 2 0 0 -1 2 -1 0 0 0 2 0]
+ [1 -4 -1 2 3 -2 -2 2 2 -4 -1 0 0 0 -1 -2 2 -1 3 1 -1 -3 2 0 -2 -1 -2 0 1 0 -1 -1 1 1 8 -3 -1 2 1 2 -1 -1 2 2 -2 -1 1 -4]
+ [-2 2 0 -2 -1 0 0 -2 -1 1 0 0 0 0 0 1 0 2 -1 -1 -1 3 -1 -1 1 0 1 -1 0 0 1 2 -2 0 -3 6 1 -1 -1 -1 1 0 -1 1 2 2 -2 2]
+
+
+
+
+                                                                                      15
+[1 0 0 -1 -3 0 2 0 1 2 0 -1 2 0 0 0 0 2 1 0 0 1 -2 1 1 -1 -1 -2 -1 1 -1 0 1 2 -1 1 6 1 -1 -1 -1 0 0 1 0 0 0 1]
+[3 -4 0 1 -2 1 0 1 4 -2 -2 -3 1 2 -1 0 -1 0 3 -1 -2 0 0 1 -1 0 0 -1 -1 1 0 -1 4 2 2 -1 1 8 3 1 -2 1 -1 -2 -1 1 4 -2]
+[3 -2 -2 1 1 1 -2 0 2 -2 1 -1 0 1 0 -1 0 -1 1 -2 -2 0 0 -1 0 1 1 0 0 0 -2 0 4 0 1 -1 -1 3 8 2 -3 2 -1 -2 -2 2 1 -2]
+[2 -3 2 0 2 -2 0 1 1 -1 1 -1 -1 1 -2 1 -1 -2 0 1 -2 -1 2 0 -1 1 0 3 -1 0 -1 -2 2 0 2 -1 -1 1 2 6 -2 -1 1 0 -3 -1 3 -2]
+[-3 1 2 -1 1 1 0 3 -3 1 -3 1 -2 1 -1 1 0 -1 -1 1 0 0 -1 0 -1 -1 1 -1 1 -2 2 2 -2 -1 -1 1 -1 -2 -3 -2 8 -2 0 1 1 -1 0 3]
+[3 0 -2 3 -2 2 -2 -2 1 -1 2 -1 3 2 1 -2 -1 -1 3 -3 -1 0 0 2 1 1 2 -1 0 3 0 -2 1 2 -1 0 0 1 2 -1 -2 8 -3 -3 1 2 0 0]
+[0 0 2 -1 2 -3 -1 2 -1 1 1 0 0 -2 0 -1 0 0 -1 2 -1 -2 0 0 -2 0 -1 2 -2 -1 0 1 -1 -1 2 -1 0 -1 -1 1 0 -3 6 1 -1 -1 -2 -1]
+[-3 -1 -1 -1 2 -1 2 0 0 -1 -1 2 -1 -1 -1 1 3 1 0 1 1 0 2 -1 -1 -2 -3 0 1 -2 0 1 -1 0 2 1 1 -2 -2 0 1 -3 1 6 0 -2 -2 -1]
+[-2 3 0 -1 -2 0 0 -3 -1 1 -1 0 0 0 1 1 0 2 -1 0 0 2 -1 0 1 1 1 -1 1 0 2 1 -2 0 -2 2 0 -1 -2 -3 1 1 -1 0 6 2 -2 3]
+[0 3 -1 -2 -3 1 0 -3 2 1 0 -1 2 2 0 0 -1 2 -1 0 1 4 -2 0 2 1 2 0 0 2 0 1 -1 0 -1 2 0 1 2 -1 -1 2 -1 -2 2 8 -1 0]
+[2 -4 2 2 -1 1 1 2 2 -1 -3 -2 -1 3 -2 1 -1 -2 2 1 -1 -1 1 2 -1 1 0 0 0 1 1 -3 3 2 1 -2 0 4 1 3 0 0 -2 -2 -2 -1 8 0]
+[-2 3 2 -1 -2 1 0 0 -3 3 -1 0 -1 1 1 1 -2 1 -2 0 0 2 -3 1 1 0 2 -1 1 0 2 1 -3 0 -4 2 1 -2 -2 -2 3 0 -1 -1 3 0 0 8]]
+
+
+
+
+T     (5 × 48):
+[[-1 1 0 0 0 0 0 0 -1 0 0 -1 0 1 1 0 0 -1 0 1 0 0 1 0 0 -1 0 0 0 0 0 1 1 1 0 0 0 0 0 0 -1 0 0 0 0 0 0 0]
+ [-1 -2 7 -2 5 2 -2 -6 1 4 1 2 3 -1 -1 0 1 0 4 -2 1 0 0 1 2 1 1 -1 -1 -2 0 1 -2 1 1 -2 0 1 1 -2 0 -2 -2 0 -1 0 1 0]
+ [-1 0 -7 1 -3 -3 -1 6 0 -1 3 -5 -5 1 0 0 0 1 -2 -2 2 4 1 1 -3 0 0 0 -1 1 1 -2 1 0 0 0 1 -2 -1 1 1 0 1 -1 2 0 0 -1]
+ [2 -2 -2 1 1 0 1 -2 -3 0 -4 3 2 0 -1 2 -3 3 0 1 -1 -3 1 -1 1 1 -2 0 0 1 -2 1 -1 -1 -1 0 0 1 0 1 1 1 1 -1 -1 1 -1 1]
+ [-1 3 -8 1 -8 -2 -3 7 -2 -3 1 -5 -6 0 -1 1 2 -1 -3 -2 2 4 0 1 -3 -1 -1 3 -1 2 2 -2 3 0 1 1 1 -2 -1 2 0 0 1 -1 1 -1 -1 -1]]
+
+
+
+
+W       (6 × 48):
+[[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+ [9 7 1 0 8 6 0 -5 2 4 -4 -2 2 -2 -2 3 1 0 5 0 -1 -1 -3 -1 2 -2 -4 2 0 0 2 -1 -1 -1 0 1 -2 1 0 1 1 -1 1 1 0 -1 0 1]
+ [6 8 8 -1 12 8 -1 -8 2 6 -6 0 5 -2 1 3 2 -1 7 0 -1 -3 -2 -2 4 -2 -3 2 0 -1 0 0 -1 0 0 0 -1 3 0 1 0 0 0 1 -1 0 0 1]
+ [8 6 2 0 6 5 0 -3 4 3 -2 -2 1 -1 0 2 2 -1 4 1 0 0 -2 -1 1 -2 -2 1 0 -1 1 -2 -1 -1 0 2 -2 0 0 1 1 -1 1 0 1 -1 0 1]
+ [8 9 -1 2 6 3 1 -2 2 4 -4 -4 1 0 -1 4 2 0 5 -1 -1 -1 -2 -2 2 -2 -4 2 0 0 1 -1 -1 -1 0 1 -2 1 0 1 1 -1 1 1 0 -1 0 1]
+ [8 4 -2 1 4 4 -2 -2 1 2 -3 -2 2 -2 -4 4 2 1 2 0 0 0 -3 0 1 -1 -3 2 0 1 2 0 -1 -1 0 1 -2 0 0 1 1 -1 1 1 0 -1 0 1]]
+
+
+
+
+A.5         Dimension 45
+Certificate records/dim45-kissing7379838/P48m-d914e7d8. The ambient is again P48m , so G is the ma-
+trix printed above. As in dimension 43, the basis encoded by T is the one whose Gram matrix is the K of
+Section 5.3, so WGTT = [ 0; I3 ]: the cluster is {0} together with the dual basis m1 , m2 , m3 , and no separate
+cluster matrix is needed.
+
+T     (3 × 48):
+[[4 0 -6 0 1 -1 1 0 0 -2 0 0 -1 1 -1 1 -2 2 -1 1 -1 0 -1 1 -1 0 -1 -1 -1 1 1 -1 0 -1 -1 0 -1 -1 -1 0 1 -1 1 0 0 0 0 1]
+ [2 0 6 -1 2 2 3 -3 1 0 -2 4 3 -1 1 -2 1 -2 1 2 -2 -2 -1 -2 2 0 1 0 2 -1 -1 1 -1 0 0 1 -1 2 0 -1 -1 1 0 1 -1 0 0 1]
+ [-3 0 -3 2 -3 0 -1 2 0 -1 1 -1 -1 0 -1 1 -2 0 -2 1 -1 0 0 0 -1 0 -1 0 0 1 1 0 1 0 0 0 1 -1 0 1 0 0 0 -1 0 0 -1 -1]]
+
+
+
+
+W       (4 × 48):
+[[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+ [1 1 -7 8 2 -7 0 5 1 4 -4 -4 1 2 1 5 -1 1 0 -1 3 3 0 -2 2 -1 0 1 -2 2 1 1 1 -1 0 1 -1 -1 0 2 1 0 1 0 1 -1 -1 0]
+ [0 3 -1 6 5 -3 2 4 2 4 -4 -4 1 3 3 3 0 -1 -1 -1 1 0 0 -3 4 -2 -1 3 2 2 0 2 3 1 0 2 -1 0 -1 1 -1 1 1 0 0 0 -2 0]
+ [1 5 -10 12 -1 -10 4 9 0 3 -6 -6 -3 3 2 5 -3 -1 -2 -1 2 1 1 -3 2 -3 -2 3 1 3 1 2 4 0 0 3 -1 -1 -1 3 -1 2 2 -1 1 0 -3 0]]
+
+
+
+
+References
+ [1] Hans Frederick Blichfeldt. The minimum values of positive quadratic forms in six, seven and eight
+     variables. Mathematische Zeitschrift, 39:1–15, 1935.
+ [2] Andries E. Brouwer. Bounds for binary constant weight codes. Online tables, https://www.win.tue.
+     nl/~aeb/codes/Andw.html, 2026. Accessed July 2026.
+ [3] Ruitao Chen, Jiachen Hu, Binghui Li, Liwei Wang, and Tianyi Wu. New sphere packings from the
+     antipode construction. Preprint, arXiv:2505.02394, 2025.
+ [4] Henry Cohn. Kissing numbers. Online table of the best kissing numbers known, https://cohn.mit.
+     edu/kissing-numbers/, 2026. Accessed July 2026.
+ [5] Henry Cohn. Sphere packing. Online table of the best sphere packings known, https://cohn.mit.
+     edu/sphere-packing/, 2026. Accessed July 2026.
+ [6] Henry Cohn, Abhinav Kumar, Stephen D. Miller, Danylo Radchenko, and Maryna Viazovska. The
+     sphere packing problem in dimension 24. Annals of Mathematics, 185(3):1017–1033, 2017.
+ [7] John H. Conway and Neil J. A. Sloane. Laminated lattices. Annals of Mathematics, 116(3):593–620,
+     1982.
+
+
+                                                                                      16
+ [8] John H. Conway and Neil J. A. Sloane. The antipode construction for sphere packings. Inventiones
+     mathematicae, 123:309–313, 1996.
+ [9] John H. Conway and Neil J. A. Sloane. Sphere Packings, Lattices and Groups, volume 290 of Grundlehren
+     der mathematischen Wissenschaften. Springer-Verlag, New York, 3rd edition, 1999.
+
+[10] David de Laat and Nando Leijenhorst. Solving clustered low-rank semidefinite programs arising from
+     polynomial optimization. Mathematical Programming Computation, 16(3):503–534, 2024.
+[11] Mathieu Dutour Sikirić and Wessel van Woerden. The lattice packing problem in dimension 9 by
+     Voronoi’s algorithm. Preprint, arXiv:2508.20719, 2025.
+[12] Yves Edel, Eric M. Rains, and Neil J. A. Sloane. On kissing numbers in dimensions 32 to 128. Electronic
+     Journal of Combinatorics, 5:Research Paper 22, 1998.
+[13] Thomas C. Hales. A proof of the Kepler conjecture. Annals of Mathematics, 162(3):1065–1185, 2005.
+[14] Gerald Höhn and Geoffrey Mason. The 290 fixed-point sublattices of the Leech lattice. Journal of
+     Algebra, 448:618–637, 2016.
+
+[15] Alexander Korkine and Yegor Zolotareff. Sur les formes quadratiques positives. Mathematische Annalen,
+     11:242–292, 1877.
+[16] John Leech and N. J. A. Sloane. Sphere packings and error-correcting codes. Canadian Journal of
+     Mathematics, 23(4):718–745, 1971.
+
+[17] Jacques Martinet. Perfect Lattices in Euclidean Spaces, volume 327 of Grundlehren der mathematischen
+     Wissenschaften. Springer-Verlag, Berlin, 2003.
+[18] Gabriele Nebe. On automorphisms of extremal even unimodular lattices of dimension 48. International
+     Journal of Number Theory, 9(8):1933–1959, 2013.
+[19] Gabriele Nebe. A fourth extremal even unimodular lattice of dimension 48. Discrete Mathematics,
+     331:133–136, 2014.
+[20] Gabriele Nebe and Neil J. A. Sloane. A catalogue of lattices. https://www.math.rwth-aachen.de/
+     ~Gabriele.Nebe/LATTICES/, 2026. Accessed July 2026.
+[21] Gabriele Nebe and Neil J. A. Sloane. Table of densest packings presently known. Part of the Catalogue of
+     Lattices, https://www.math.rwth-aachen.de/~Gabriele.Nebe/LATTICES/density.html, 2026. Ac-
+     cessed August 2026.
+[22] V. V. Nikulin. Integral symmetric bilinear forms and some of their applications. Mathematics of the
+     USSR-Izvestiya, 14(1):103–167, 1980.
+[23] Vera Pless. Symmetry codes over GF (3) and new five-designs. Journal of Combinatorial Theory, Series
+     A, 12(1):119–142, 1972.
+[24] Eric M. Rains and Neil J. A. Sloane. The shadow theory of modular and unimodular lattices. Journal
+     of Number Theory, 73:359–389, 1998.
+[25] Maryna S. Viazovska. The sphere packing problem in dimension 8. Annals of Mathematics, 185(3):991–
+     1015, 2017.
+
+
+
+
+                                                     17
+

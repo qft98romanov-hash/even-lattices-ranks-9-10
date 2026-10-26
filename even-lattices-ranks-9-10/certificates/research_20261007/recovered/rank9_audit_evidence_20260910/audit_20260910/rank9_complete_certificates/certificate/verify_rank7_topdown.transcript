@@ -1,0 +1,15 @@
+[1] L = 4 E7^*
+    det=8192, rho_glue^2=7/2, points=42969, floor=20480
+[2] Four rank-7 descendants with d6=2835
+    det=7722, dual_min=105/286, rho_glue^2=93/22, points=65209, floor=13689
+    det=8208, dual_min=105/304, rho_glue^2=297/76, points=51077, floor=17172
+    det=9018, dual_min=105/334, rho_glue^2=1377/334, points=65015, floor=16929
+    det=9342, dual_min=105/346, rho_glue^2=1449/346, points=69801, floor=16929
+[3] Exact extension list for det 7722
+    OPPOSITE_CLASS_ASSERT: c_plus+c_minus=0 in A_L; det(T)=-1 and T^T J_plus T=J_minus
+    the only determinant is 13689
+[4] Explicit merger with the old J_13689
+    det(U)=-1 and U J_old U^T = J_new
+[5] Exact glue closure of J_13689
+    rho_glue^2=10/3, points=61429, rank-9 floor=36504
+ALL EXACT CHECKS PASSED

@@ -1,0 +1,53 @@
+RANK-NINE SPECTRAL COROLLARIES OF THE NEW GLOBAL PREFIX
+Assume gamma9<=2 and the completed new flag-search certificate.
+
+(1) Below determinant32076, the determinant spectrum of positive definite
+even integral rank-nine lattices of minimum at least6 is exactly
+ {21870,26244,30618}.
+At each of these three determinants there is exactly one isometry class.
+Their oriented minimal-vector counts are258,246,242, respectively.
+In particular the next determinant after the unique K9 is exactly26244.
+
+(2) Among such rank-nine lattices which do not contain sqrt(3)E8, the
+smallest determinant is exactly32076. The explicit witness saved in
+rank9_low_spectrum.json has minimum6 and180 minimal vectors.
+No uniqueness assertion is made for the non-E8 determinant32076 case.
+
+Proof of coverage. The global rank-ten prefix actually covers every
+rank-nine shortest-dual flag with d9<=40054 and d8!=6561. The upper windows
+at ranks1--8 are obtained from d9<=40054 using the same Hermite recursions;
+the later rank-ten lifting exclusion is NOT used for this corollary.
+The rank-nine low interval[19684,24450] is empty for those parents. In the
+full higher interval[24452,40054], the smallest recorded determinant is
+32076. Therefore every rank-nine lattice of determinant<32076 has a
+shortest-dual rank-eight section of determinant6561, hence contains
+sqrt(3)E8. Conversely the explicit raw determinant32076 example proves
+attainment for the no-E8 subclass once noncontainment is established.
+
+If J=sqrt(3)E8 is contained in a minimum-six integral lattice, it is
+primitive, because every nonzero J*/J class has a representative of
+squared norm<=8/3. Every rank-nine extension of J can therefore be written
+as [[3C,p],[p^T,n]], choosing a closest class representative and even n>=6.
+The unscaled E8 class minima are q=0,2,4,6,8, so
+ D=6561*(n-q/3).
+For n>=8, this is at least34992. For n=6, the only values below32076 are
+21870 (q8),26244 (q6),30618 (q4). Each yields a valid extension because
+its perpendicular squared norm is at least10/3: layers |m|>=2 are already
+longer than6, and the first layer has minimum6.
+The exact reflection orbit computation in verify_rank9_low_spectrum.py
+is transitive on each relevant residue set: sizes1920,2240,2160. Thus the
+extensions are unique up to isometry at each of the three determinants.
+
+For any even integral rank-nine extension of J,
+ det=3^7*(3n-p^T C^{-1}p)
+is divisible by2*3^7=4374, since n is even and C^{-1} is even integral.
+The determinant32076 is not divisible by4374 (remainder1458), so its
+explicit witness cannot contain J. Its Gram positivity, evenness,
+determinant, minimum and norm-six count are verified directly.
+
+Verification:
+ python verify_rank9_low_spectrum.py
+It ends RANK9_LOW_SPECTRUM_EXACT_WITNESSES_AND_ORBITS_PASS and writes
+rank9_low_spectrum.json. The absence statements rely on the complete
+new global-prefix certificate; the script independently verifies all
+witnesses and finite residue transitivity claims.

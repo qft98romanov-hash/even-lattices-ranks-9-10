@@ -1,0 +1,420 @@
+{
+  "parent_count": 31,
+  "raw_count": 729,
+  "statistics": [
+    {
+      "parent_det": 210,
+      "dual_minimum": "6/35",
+      "global_required_s": "35/8",
+      "global_s_upper": "263/70",
+      "globally_pruned": true,
+      "discriminant_classes": 0,
+      "cover_search_bound": "not-run",
+      "tested": {},
+      "raw_children": 0
+    },
+    {
+      "parent_det": 180,
+      "dual_minimum": "1/5",
+      "global_required_s": "15/4",
+      "global_s_upper": "263/60",
+      "globally_pruned": false,
+      "discriminant_classes": 180,
+      "cover_search_bound": "4",
+      "tested": {
+        "even_diagonal": 217,
+        "det_congruence": 217,
+        "minimum": 63,
+        "dual_shortest": 2
+      },
+      "raw_children": 2
+    },
+    {
+      "parent_det": 210,
+      "dual_minimum": "1/6",
+      "global_required_s": "9/2",
+      "global_s_upper": "263/70",
+      "globally_pruned": true,
+      "discriminant_classes": 0,
+      "cover_search_bound": "not-run",
+      "tested": {},
+      "raw_children": 0
+    },
+    {
+      "parent_det": 204,
+      "dual_minimum": "35/204",
+      "global_required_s": "153/35",
+      "global_s_upper": "263/68",
+      "globally_pruned": true,
+      "discriminant_classes": 0,
+      "cover_search_bound": "not-run",
+      "tested": {},
+      "raw_children": 0
+    },
+    {
+      "parent_det": 200,
+      "dual_minimum": "7/40",
+      "global_required_s": "30/7",
+      "global_s_upper": "789/200",
+      "globally_pruned": true,
+      "discriminant_classes": 0,
+      "cover_search_bound": "not-run",
+      "tested": {},
+      "raw_children": 0
+    },
+    {
+      "parent_det": 196,
+      "dual_minimum": "5/28",
+      "global_required_s": "21/5",
+      "global_s_upper": "789/196",
+      "globally_pruned": true,
+      "discriminant_classes": 0,
+      "cover_search_bound": "not-run",
+      "tested": {},
+      "raw_children": 0
+    },
+    {
+      "parent_det": 190,
+      "dual_minimum": "7/38",
+      "global_required_s": "57/14",
+      "global_s_upper": "789/190",
+      "globally_pruned": false,
+      "discriminant_classes": 190,
+      "cover_search_bound": "4",
+      "tested": {
+        "even_diagonal": 235,
+        "det_congruence": 235,
+        "minimum": 59
+      },
+      "raw_children": 0
+    },
+    {
+      "parent_det": 192,
+      "dual_minimum": "1/6",
+      "global_required_s": "9/2",
+      "global_s_upper": "263/64",
+      "globally_pruned": true,
+      "discriminant_classes": 0,
+      "cover_search_bound": "not-run",
+      "tested": {},
+      "raw_children": 0
+    },
+    {
+      "parent_det": 186,
+      "dual_minimum": "16/93",
+      "global_required_s": "279/64",
+      "global_s_upper": "263/62",
+      "globally_pruned": true,
+      "discriminant_classes": 0,
+      "cover_search_bound": "not-run",
+      "tested": {},
+      "raw_children": 0
+    },
+    {
+      "parent_det": 184,
+      "dual_minimum": "4/23",
+      "global_required_s": "69/16",
+      "global_s_upper": "789/184",
+      "globally_pruned": true,
+      "discriminant_classes": 0,
+      "cover_search_bound": "not-run",
+      "tested": {},
+      "raw_children": 0
+    },
+    {
+      "parent_det": 176,
+      "dual_minimum": "2/11",
+      "global_required_s": "33/8",
+      "global_s_upper": "789/176",
+      "globally_pruned": false,
+      "discriminant_classes": 176,
+      "cover_search_bound": "4",
+      "tested": {
+        "even_diagonal": 230,
+        "det_congruence": 230,
+        "minimum": 83,
+        "dual_shortest": 2
+      },
+      "raw_children": 2
+    },
+    {
+      "parent_det": 170,
+      "dual_minimum": "16/85",
+      "global_required_s": "255/64",
+      "global_s_upper": "789/170",
+      "globally_pruned": false,
+      "discriminant_classes": 170,
+      "cover_search_bound": "4",
+      "tested": {
+        "even_diagonal": 224,
+        "det_congruence": 224,
+        "minimum": 83
+      },
+      "raw_children": 0
+    },
+    {
+      "parent_det": 168,
+      "dual_minimum": "4/21",
+      "global_required_s": "63/16",
+      "global_s_upper": "263/56",
+      "globally_pruned": false,
+      "discriminant_classes": 168,
+      "cover_search_bound": "4",
+      "tested": {
+        "even_diagonal": 224,
+        "det_congruence": 224,
+        "minimum": 89,
+        "dual_shortest": 6
+      },
+      "raw_children": 6
+    },
+    {
+      "parent_det": 160,
+      "dual_minimum": "1/5",
+      "global_required_s": "15/4",
+      "global_s_upper": "789/160",
+      "globally_pruned": false,
+      "discriminant_classes": 160,
+      "cover_search_bound": "4",
+      "tested": {
+        "even_diagonal": 226,
+        "det_congruence": 226,
+        "minimum": 104,
+        "dual_shortest": 9
+      },
+      "raw_children": 9
+    },
+    {
+      "parent_det": 154,
+      "dual_minimum": "16/77",
+      "global_required_s": "231/64",
+      "global_s_upper": "789/154",
+      "globally_pruned": false,
+      "discriminant_classes": 154,
+      "cover_search_bound": "3",
+      "tested": {
+        "even_diagonal": 223,
+        "det_congruence": 223,
+        "minimum": 107,
+        "dual_shortest": 54
+      },
+      "raw_children": 54
+    },
+    {
+      "parent_det": 208,
+      "dual_minimum": "2/13",
+      "global_required_s": "39/8",
+      "global_s_upper": "789/208",
+      "globally_pruned": true,
+      "discriminant_classes": 0,
+      "cover_search_bound": "not-run",
+      "tested": {},
+      "raw_children": 0
+    },
+    {
+      "parent_det": 202,
+      "dual_minimum": "16/101",
+      "global_required_s": "303/64",
+      "global_s_upper": "789/202",
+      "globally_pruned": true,
+      "discriminant_classes": 0,
+      "cover_search_bound": "not-run",
+      "tested": {},
+      "raw_children": 0
+    },
+    {
+      "parent_det": 128,
+      "dual_minimum": "1/4",
+      "global_required_s": "3",
+      "global_s_upper": "789/128",
+      "globally_pruned": false,
+      "discriminant_classes": 128,
+      "cover_search_bound": "3",
+      "tested": {
+        "even_diagonal": 228,
+        "det_congruence": 228,
+        "minimum": 149,
+        "dual_shortest": 131
+      },
+      "raw_children": 131
+    },
+    {
+      "parent_det": 192,
+      "dual_minimum": "1/6",
+      "global_required_s": "9/2",
+      "global_s_upper": "263/64",
+      "globally_pruned": true,
+      "discriminant_classes": 0,
+      "cover_search_bound": "not-run",
+      "tested": {},
+      "raw_children": 0
+    },
+    {
+      "parent_det": 184,
+      "dual_minimum": "4/23",
+      "global_required_s": "69/16",
+      "global_s_upper": "789/184",
+      "globally_pruned": true,
+      "discriminant_classes": 0,
+      "cover_search_bound": "not-run",
+      "tested": {},
+      "raw_children": 0
+    },
+    {
+      "parent_det": 162,
+      "dual_minimum": "1/6",
+      "global_required_s": "9/2",
+      "global_s_upper": "263/54",
+      "globally_pruned": false,
+      "discriminant_classes": 162,
+      "cover_search_bound": "4",
+      "tested": {
+        "even_diagonal": 216,
+        "det_congruence": 216,
+        "minimum": 93,
+        "dual_shortest": 3
+      },
+      "raw_children": 3
+    },
+    {
+      "parent_det": 156,
+      "dual_minimum": "9/52",
+      "global_required_s": "13/3",
+      "global_s_upper": "263/52",
+      "globally_pruned": false,
+      "discriminant_classes": 156,
+      "cover_search_bound": "4",
+      "tested": {
+        "even_diagonal": 233,
+        "det_congruence": 233,
+        "minimum": 112,
+        "dual_shortest": 15
+      },
+      "raw_children": 15
+    },
+    {
+      "parent_det": 210,
+      "dual_minimum": "9/70",
+      "global_required_s": "35/6",
+      "global_s_upper": "263/70",
+      "globally_pruned": true,
+      "discriminant_classes": 0,
+      "cover_search_bound": "not-run",
+      "tested": {},
+      "raw_children": 0
+    },
+    {
+      "parent_det": 144,
+      "dual_minimum": "3/16",
+      "global_required_s": "4",
+      "global_s_upper": "263/48",
+      "globally_pruned": false,
+      "discriminant_classes": 144,
+      "cover_search_bound": "3",
+      "tested": {
+        "even_diagonal": 244,
+        "det_congruence": 244,
+        "minimum": 137,
+        "dual_shortest": 60
+      },
+      "raw_children": 60
+    },
+    {
+      "parent_det": 198,
+      "dual_minimum": "3/22",
+      "global_required_s": "11/2",
+      "global_s_upper": "263/66",
+      "globally_pruned": true,
+      "discriminant_classes": 0,
+      "cover_search_bound": "not-run",
+      "tested": {},
+      "raw_children": 0
+    },
+    {
+      "parent_det": 138,
+      "dual_minimum": "9/46",
+      "global_required_s": "23/6",
+      "global_s_upper": "263/46",
+      "globally_pruned": false,
+      "discriminant_classes": 138,
+      "cover_search_bound": "4",
+      "tested": {
+        "even_diagonal": 233,
+        "det_congruence": 233,
+        "minimum": 141,
+        "dual_shortest": 97
+      },
+      "raw_children": 97
+    },
+    {
+      "parent_det": 192,
+      "dual_minimum": "9/64",
+      "global_required_s": "16/3",
+      "global_s_upper": "263/64",
+      "globally_pruned": true,
+      "discriminant_classes": 0,
+      "cover_search_bound": "not-run",
+      "tested": {},
+      "raw_children": 0
+    },
+    {
+      "parent_det": 120,
+      "dual_minimum": "9/40",
+      "global_required_s": "10/3",
+      "global_s_upper": "263/40",
+      "globally_pruned": false,
+      "discriminant_classes": 120,
+      "cover_search_bound": "3",
+      "tested": {
+        "even_diagonal": 240,
+        "det_congruence": 240,
+        "minimum": 169,
+        "dual_shortest": 157
+      },
+      "raw_children": 157
+    },
+    {
+      "parent_det": 174,
+      "dual_minimum": "9/58",
+      "global_required_s": "29/6",
+      "global_s_upper": "263/58",
+      "globally_pruned": true,
+      "discriminant_classes": 0,
+      "cover_search_bound": "not-run",
+      "tested": {},
+      "raw_children": 0
+    },
+    {
+      "parent_det": 108,
+      "dual_minimum": "1/4",
+      "global_required_s": "3",
+      "global_s_upper": "263/36",
+      "globally_pruned": false,
+      "discriminant_classes": 108,
+      "cover_search_bound": "3",
+      "tested": {
+        "even_diagonal": 249,
+        "det_congruence": 249,
+        "minimum": 190,
+        "dual_shortest": 190
+      },
+      "raw_children": 190
+    },
+    {
+      "parent_det": 162,
+      "dual_minimum": "1/6",
+      "global_required_s": "9/2",
+      "global_s_upper": "263/54",
+      "globally_pruned": false,
+      "discriminant_classes": 162,
+      "cover_search_bound": "4",
+      "tested": {
+        "even_diagonal": 228,
+        "det_congruence": 228,
+        "minimum": 104,
+        "dual_shortest": 3
+      },
+      "raw_children": 3
+    }
+  ]
+}

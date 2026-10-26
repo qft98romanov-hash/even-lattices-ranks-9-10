@@ -1,0 +1,1 @@
+{'rank': 8, 'complete_parent_coverage': 224, 'raw_candidates': 19481, 'next_lifting_pruned': 18110, 'eligible_raw': 1371, 'next_upper': 40054, 'eligible_isometry_classes': 'not yet deduplicated', 'all_isometry_count': 'NOT DETERMINED; some safely pruned before deduplication'}

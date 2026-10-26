@@ -1,0 +1,85 @@
+{
+  "status": "PASS",
+  "date": "2026-10-07",
+  "compiler": "XeLaTeX",
+  "all_pdf_pages_rendered_and_visually_reviewed": true,
+  "new_spectrum_matrix_checked_against_json": true,
+  "numbered_equations_per_language": 26,
+  "label_set_per_language": 44,
+  "matching_language_labels": true,
+  "numbered_math_difference": "English punctuation comma in continuation floor only",
+  "overleaf_engine": "XeLaTeX",
+  "portable_font_primary": "CMU Serif; local Nimbus Roman fallback",
+  "results": {
+    "e9": 21870,
+    "e9_unique": true,
+    "rank9_spectrum_below32076": [
+      21870,
+      26244,
+      30618
+    ],
+    "three_rank9_types_each_unique": true,
+    "rank9_no_E8_minimum": 32076,
+    "e10": 54675,
+    "global_e10_equality_classification": false,
+    "rank10_E8_subclass_equality_types": 2,
+    "fixed_K9_supersections": 19,
+    "full_replay_parent_lists": 1897,
+    "full_replay_raw_matrices": 115627,
+    "independently_verified_dual_minima": 8966,
+    "cluster_all_determinant_rank10_scope": "one fiber all beta<6; all fibers collinear beta<4/3"
+  },
+  "external_dependency": "gamma9<=2, Dutour Sikiric--van Woerden arXiv:2508.20719v2; classical constants through8 and rank8 equality",
+  "old_rank9_certificate_required_for_new_global_proof": false,
+  "external_human_referee_or_novelty_verdict": false,
+  "reports": [
+    {
+      "language": "RU",
+      "pages": 31,
+      "tex_txt_identical": true,
+      "latex_warnings": 0,
+      "files": [
+        {
+          "path": "output/rank9_rank10_results_20261007_RU.tex",
+          "bytes": 121665,
+          "sha256": "7ef2dbf0857543cb58f793c2646da44d869cd235d7a4f04173c63835a4cca395"
+        },
+        {
+          "path": "output/rank9_rank10_results_20261007_RU.txt",
+          "bytes": 121665,
+          "sha256": "7ef2dbf0857543cb58f793c2646da44d869cd235d7a4f04173c63835a4cca395"
+        },
+        {
+          "path": "output/rank9_rank10_results_20261007_RU.pdf",
+          "bytes": 216318,
+          "sha256": "e2934b1218523f0eadd13ef53b0e24c2deb085261ddd0c757afbe10d8fd2bf0f"
+        }
+      ]
+    },
+    {
+      "language": "EN",
+      "pages": 31,
+      "tex_txt_identical": true,
+      "latex_warnings": 0,
+      "files": [
+        {
+          "path": "output/rank9_rank10_results_20261007_EN.tex",
+          "bytes": 82256,
+          "sha256": "3c7063299c656bd137ee94b5fb612786fd42d6fd5c901c4d615985971b0af67b"
+        },
+        {
+          "path": "output/rank9_rank10_results_20261007_EN.txt",
+          "bytes": 82256,
+          "sha256": "3c7063299c656bd137ee94b5fb612786fd42d6fd5c901c4d615985971b0af67b"
+        },
+        {
+          "path": "output/rank9_rank10_results_20261007_EN.pdf",
+          "bytes": 209317,
+          "sha256": "652970685c058b9f6e4c778510ff0a807cfa71143efb970c341c2f1496ace772"
+        }
+      ]
+    }
+  ],
+  "final_global_proof_wording_review": "PASS by independent_rank10_bound; rank8 equality dependency explicit",
+  "rank9_three_orbits_independent_isometries": 6317
+}

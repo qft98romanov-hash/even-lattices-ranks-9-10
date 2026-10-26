@@ -1,0 +1,3 @@
+Complete original exact raw generation: 28284 candidates.
+Original slow deduplication deliberately interrupted with Ctrl-C (exit130) after the faster exact dedup completed and all28284maps were independently checked.
+No original rank6.json is expected; use rank6_fast.json.

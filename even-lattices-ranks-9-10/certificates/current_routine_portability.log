@@ -1,0 +1,34 @@
+RUN independent_review/check_k9_perfect.py
+PASS independent_review/check_k9_perfect.py
+RUN independent_review/check_equality_independent.py
+PASS independent_review/check_equality_independent.py
+RUN equality/rank9_gap.py
+PASS equality/rank9_gap.py
+RUN rank10/verify_rank10_e8_classification.py
+PASS rank10/verify_rank10_e8_classification.py
+RUN independent_review/check_rank10_global_chain.py
+PASS independent_review/check_rank10_global_chain.py
+RUN rank10/verify_rank9_low_spectrum.py
+PASS rank10/verify_rank9_low_spectrum.py
+RUN independent_review/check_rank9_low_orbits.py
+PASS independent_review/check_rank9_low_orbits.py
+RUN rank10_theory/verify_rank10_bounds.py
+PASS rank10_theory/verify_rank10_bounds.py
+RUN clusters/verify_fixed_section_cluster_optimality.py
+PASS clusters/verify_fixed_section_cluster_optimality.py
+RUN clusters/verify_all_E8_rank9_cluster_optimality.py
+PASS clusters/verify_all_E8_rank9_cluster_optimality.py
+RUN clusters/verify_rank10_single_projection.py
+PASS clusters/verify_rank10_single_projection.py
+RUN independent_review/check_all_e8_rank9_clusters.py
+PASS independent_review/check_all_e8_rank9_clusters.py
+RUN embeddings/verify_ambient_embeddings.py --json
+PASS embeddings/verify_ambient_embeddings.py
+RUN embeddings/verify_A10_extension_exact.py
+PASS embeddings/verify_A10_extension_exact.py
+RUN embeddings/verify_A10_extension_exact.py --control
+PASS embeddings/verify_A10_extension_exact.py
+RUN independent_review/check_fixed_k9_extension_coverage.py
+PASS independent_review/check_fixed_k9_extension_coverage.py
+ALL_SELECTED_NEW_RESULT_CHECKS_PASS
+This is not a proof that the unresolved global problems are solved.

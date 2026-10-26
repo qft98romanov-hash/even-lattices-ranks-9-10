@@ -1,0 +1,110 @@
+{
+  "status": "PASS",
+  "small_parent_direct_crosschecks": [
+    {
+      "name": "rank1",
+      "parent_det": 6,
+      "children": 9,
+      "ordered_children_match": true,
+      "each_child_direct_primal_and_dual_check": true,
+      "elapsed_seconds": 0.0027635959995677695,
+      "old_tested": {
+        "even_diagonal": 21,
+        "det_congruence": 21,
+        "minimum": 9,
+        "dual_shortest": 9
+      },
+      "fast_tested": {
+        "even_diagonal": 9,
+        "det_congruence": 9,
+        "minimum": 9,
+        "dual_shortest": 9
+      }
+    },
+    {
+      "name": "rank2_hexagonal",
+      "parent_det": 27,
+      "children": 53,
+      "ordered_children_match": true,
+      "each_child_direct_primal_and_dual_check": true,
+      "elapsed_seconds": 0.02720899000269128,
+      "old_tested": {
+        "even_diagonal": 105,
+        "det_congruence": 105,
+        "minimum": 53,
+        "dual_shortest": 53
+      },
+      "fast_tested": {
+        "even_diagonal": 60,
+        "det_congruence": 60,
+        "minimum": 53,
+        "dual_shortest": 53
+      }
+    },
+    {
+      "name": "rank2_orthogonal",
+      "parent_det": 36,
+      "children": 5,
+      "ordered_children_match": true,
+      "each_child_direct_primal_and_dual_check": true,
+      "elapsed_seconds": 0.0132801380023011,
+      "old_tested": {
+        "even_diagonal": 107,
+        "det_congruence": 107,
+        "minimum": 40,
+        "dual_shortest": 5
+      },
+      "fast_tested": {
+        "even_diagonal": 31,
+        "det_congruence": 31,
+        "minimum": 31,
+        "dual_shortest": 5
+      }
+    },
+    {
+      "name": "rank3",
+      "parent_det": 108,
+      "children": 190,
+      "ordered_children_match": true,
+      "each_child_direct_primal_and_dual_check": true,
+      "elapsed_seconds": 0.18667658199410653,
+      "old_tested": {
+        "even_diagonal": 387,
+        "det_congruence": 387,
+        "minimum": 190,
+        "dual_shortest": 190
+      },
+      "fast_tested": {
+        "even_diagonal": 249,
+        "det_congruence": 249,
+        "minimum": 190,
+        "dual_shortest": 190
+      }
+    }
+  ],
+  "invalid_parent_flag_rejected": "parent basis is not the claimed dual-shortest flag",
+  "module_hashes": {
+    "fast_extend.py": "feb658a45bd1c0f3c58a9ba13ab0db809b5c4d9cf82e32df1030dc65fac9418c",
+    "fast_extension_proof.txt": "16f18a0878881379854299b6a8557d573055998ed97b26cd64d431ff43c9a254",
+    "exact_lattice.py": "a50cc6664e062c6bd9e2cf75503544cd3e606c48039b5419627ad12e8eb2fda8",
+    "extend_flag.py": "e17ef89bf9e7ee0b836923a463ca1cdbd2a239d886a98909a910ba064176ae84"
+  },
+  "scope": "Independent mathematical code review and targeted old/new/direct comparisons; both implementations reuse the same exact rational vector enumerator.",
+  "cached_rank8_metadata_check": {
+    "status": "PASS",
+    "parents": 224,
+    "raw_children": 19481,
+    "input_sha256": "5caae65649e0c1d65c808ebaaa7c98fab2e1d8e60e141e19268586210e7572bb",
+    "window": [
+      6564,
+      24673
+    ],
+    "modulus": 4,
+    "residues": [
+      0,
+      1
+    ],
+    "checks": "Each input/code hash, window, modulus, residues, parent index, parent Gram and raw child count matched."
+  },
+  "driver_metadata_checks_added_and_reviewed": true
+}

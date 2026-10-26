@@ -1,0 +1,11 @@
+EXACT CERTIFICATE: L6 = sqrt(3) E6 branch
+E6_COSETS 17821 2187 7402b7ae3fefeba9ce1a26f0efdd38cc2fc5eb2e40adb66ef23fcb3f24e6e37d
+L7_ORBITS [(6, 4374, 2), (6, 6318, 54), (6, 7290, 144), (6, 7776, 432), (6, 8748, 240), (6, 9234, 54), (6, 9234, 432), (8, 8748, 2)]
+L7_TO_L8 [('H4374', 1375, 4), ('H6318', 12, 12), ('H7290', 4, 4), ('H7776', 4, 4), ('H8748a', 4, 4), ('H8748b', 2, 2), ('H9234a', 2, 2), ('H9234b', 2, 2)]
+RANK8_CLASSES ['J12393', 'J13689', 'J14580', 'J15309a', 'J15309b']
+RANK8 {"cosets": 12393, "det": 12393, "name": "J12393", "points": 67205, "rank9_lower": 32076, "rho2": "58/17", "sha256": "51ac0134c9dae4c715713edb34fa97371e3e46094a38e02d82c5f3bf6631347a"}
+RANK8 {"cosets": 13689, "det": 13689, "name": "J13689", "points": 61429, "rank9_lower": 36504, "rho2": "10/3", "sha256": "118dece4d2fb2349694b655c1d96a3c39f76d6e6b81e3ea3b09f336c90c9a751"}
+RANK8 {"cosets": 14580, "det": 14580, "name": "J14580", "points": 190491, "rank9_lower": 21870, "rho2": "9/2", "sha256": "0fef0e356810506c3c0a16007d60fac190bcdf8cd5e95773c50445bf44edb64a"}
+RANK8 {"cosets": 15309, "det": 15309, "name": "J15309a", "points": 227617, "rank9_lower": 21870, "rho2": "32/7", "sha256": "a8e1c77badcf09716f3292d5eceb2e3dd7f607a0b6ab19b62497ec7c573250a5"}
+RANK8 {"cosets": 15309, "det": 15309, "name": "J15309b", "points": 64559, "rank9_lower": 42282, "rho2": "68/21", "sha256": "8d4f18fceb156dacc2b5fd646b23fcd2ba75c147ed059fb205a5f62b46966ac5"}
+CONCLUSION det(L9) >= 21870: VERIFIED

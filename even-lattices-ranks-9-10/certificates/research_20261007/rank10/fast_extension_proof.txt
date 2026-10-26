@@ -1,0 +1,29 @@
+Exact fast extension kernel.
+Assume the parent is positive definite, even integral, and has minimum
+at least6. Let its Gram G have determinant d, adjugate A and inverse A/d. For
+pairing column p and new even diagonal n, put M=p^T A p and D=nd-M.
+Then the child's Schur complement is s=D/d. Its dual norm at (q,m) is
+  q^T G^{-1}q + (m-p^T G^{-1}q)^2/s.
+The new perpendicular dual vector has norm 1/s=d/D. For q=0 no nonzero
+integer m has smaller norm. For q!=0, minimizing over m gives distance
+to the nearest integer. Thus the normal is shortest iff
+  D (q^T A q) + dist(p^T A q,d Z)^2 >= d^2
+for every nonzero q with D(q^T A q)<d^2. All terms are integers.
+A single complete parent-dual list through d/D_low covers these q for
+all candidate D>=D_low. The lifting lower bound permits increasing
+D_low to ceil(3d/(4 min(parent*))). Negating q makes the same test, so
+one representative of each +/-pair suffices.
+
+Discriminant class fingerprints are A p modulo d. Their minima M_a are
+integers with actual squared norm M_a/d. Complete enumeration through a
+bound which covers all d classes proves every class minimum exactly.
+The original all-layer minimum condition becomes
+  m^2 D + M_(ma) >= 6d,
+for each m>0 with m^2D<6d. This includes nonzero zero-class layers.
+The even diagonal range and determinant congruence are tested exactly.
+
+The parent flag basis condition min(parent*)=det(leading block)/d is
+independently checked by exact dual enumeration for every parent used.
+No floating arithmetic occurs. The vector enumerator is the archived
+rational exact kernel; this is an optimized extension implementation,
+not a fully independent implementation of vector enumeration.

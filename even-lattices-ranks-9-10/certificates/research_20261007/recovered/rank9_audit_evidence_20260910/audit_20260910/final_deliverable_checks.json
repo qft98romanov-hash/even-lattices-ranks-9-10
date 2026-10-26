@@ -1,0 +1,35 @@
+{
+  "audit_date": "2026-09-10",
+  "math_review": "completed with documented corrections",
+  "visual_qa": "all pages rendered and inspected; selected matrices and tables viewed in detail",
+  "files": [
+    {
+      "file": "rank9_audit_theory_RU.txt",
+      "bytes": 131846,
+      "sha256": "f21362c8270fbfd3d999be6001e72f2aadd919f3d4816f385b6f75c8e026dcb8",
+      "standalone_latex": true,
+      "no_draft_placeholder": true
+    },
+    {
+      "file": "rank9_audit_theory_RU.pdf",
+      "bytes": 233340,
+      "sha256": "e675809b0e1e3ec5c9038310cf96c3071a8ff8876004247a52f36aa12189067c",
+      "pages": 41,
+      "all_pages_have_text": true
+    },
+    {
+      "file": "rank9_audit_theory_EN.txt",
+      "bytes": 81313,
+      "sha256": "522031faa74dc7ef2f8571ba1a244683d9b979a6ea508af30e7db87c414751c5",
+      "standalone_latex": true,
+      "no_draft_placeholder": true
+    },
+    {
+      "file": "rank9_audit_theory_EN.pdf",
+      "bytes": 222161,
+      "sha256": "4c2acf943050683e4a9910f9dcb1230d7563abee02d24b9432ae32aef9230bb6",
+      "pages": 31,
+      "all_pages_have_text": true
+    }
+  ]
+}

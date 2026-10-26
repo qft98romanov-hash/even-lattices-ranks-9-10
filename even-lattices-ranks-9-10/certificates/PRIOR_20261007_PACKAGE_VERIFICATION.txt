@@ -1,0 +1,31 @@
+PACKAGE VERIFICATION — 7 OCTOBER 2026
+
+The assembled portable package was checked with ordinary CPython:
+  python verify_new_results.py
+All selected checks passed. The last added independent rank-nine orbit
+checker was also run from this package and passed, verifying6317 explicit
+extension isometries. No external service or optional Python library is
+needed to execute the mathematical verifiers.
+
+Completed full global regeneration, retained in the certificate:
+ 1897 parent lists;115627 raw candidate matrices;PASS_FULL_EXACT_REPLAY.
+Its complete status is also preserved as
+ research_20261007/rank10/global_rank10_full_replay_record.json.
+A separate chain checker independently enumerated8966 dual minima and
+checked41490 covering isometries, every determinant window and every prune.
+
+Completed local ambient regeneration:
+ 281 fibers;171472428 recursion nodes;19 distinct primitive supersections.
+The entire arbitrary-precision Python replay matched the C++ transcript.
+A separate implementation verified candidate coverage, the19 witnesses,
+primitivity and distinctness. This is not an ambient automorphism-orbit count.
+
+Both reports have31 pages; all pages were rendered and visually reviewed.
+XeLaTeX reported no warnings. The PDF/source hashes were checked against
+report_QA.json before packaging. Each .txt is byte-identical to its .tex.
+The short filenames lattices_RU/EN are byte-identical aliases of the
+longer original filenames recorded in report_QA.json.
+
+SHA256SUMS covers all package files except itself. File hashes check identity;
+they do not replace the mathematical coverage arguments or actual regeneration.
+Internal independent implementations and reviews are not external refereeing.

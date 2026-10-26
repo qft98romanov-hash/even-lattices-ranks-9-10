@@ -1,0 +1,19 @@
+{
+  "started_utc": "2026-09-10T07:37:54.236737+00:00",
+  "zip_sha256": "608cf4b022d448476028d56f002485ec39c1893b2a2e797458838c64db11d8b3",
+  "zip_size": 330039,
+  "manifest_entries": 83,
+  "manifest_exit": 0,
+  "zip_test": "PASS",
+  "python": "Python 3.12.14",
+  "platform": "Linux-6.18.35-x86_64-with-glibc2.39",
+  "machine": "x86_64",
+  "python_executable": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+  "python_optimization": 0,
+  "assertions_enabled": true,
+  "python_hash_seed": "unset",
+  "python_optimize_environment": "unset",
+  "post_replay_manifest_exit": 0,
+  "source_unchanged_manifest_exit": 0,
+  "completed_utc": "2026-09-10T07:42:47.523946+00:00"
+}

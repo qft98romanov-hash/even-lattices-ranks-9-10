@@ -1,0 +1,13 @@
+{
+  "rank": 9,
+  "complete_parent_coverage": 47,
+  "raw_candidates": 3819,
+  "next_lifting_pruned": 3819,
+  "eligible_raw": 0,
+  "next_upper": 54672,
+  "eligible_isometry_classes": 0,
+  "all_isometry_count": "NOT DETERMINED; some safely pruned before deduplication",
+  "eligible_dedup_file": "rank9_eligible.json",
+  "eligible_map_verification": "rank9_maps.log",
+  "minimum_next_determinant_bound": "12966723/212"
+}

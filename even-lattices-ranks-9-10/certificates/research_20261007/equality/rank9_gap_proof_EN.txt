@@ -1,0 +1,86 @@
+RANK-NINE DETERMINANT GAP ABOVE THE UNIQUE MINIMIZER
+7 October 2026
+
+Additional imported input: the upper bound gamma_9<=2 for the Hermite
+constant of all real Euclidean rank9 lattices. This input is distinct from
+the weaker Mordell bound used in the original lower-bound certificate.
+The parent report must supply the verified public source for this input.
+All statements below explicitly depend on it.
+
+PROPOSITION
+Every positive definite even integral rank9 lattice L with squared minimum
+at least6 and Gram determinant at most24450 is isometric to K9 and has
+determinant21870. Consequently every such lattice not isometric to K9
+has determinant at least24452.
+
+This is an excluded interval, not a claim that determinant24452 is attained.
+
+PROOF
+Write D=det L. The published lower-bound certificate already establishes
+D>=21870. Take the primitive kernel J of a shortest nonzero vector in L*.
+The Hermite bound gamma9<=2 gives
+
+ det J <=2 D^(8/9).
+
+Exact integer arithmetic verifies
+
+ 2^9 *24450^8 <15912^9.
+
+Thus det J<15912. An even integral rank8 lattice has determinant congruent
+to0 or1 modulo4, so det J<=15909. The equality addendum has established
+completeness in precisely this rank8 window, including the changed lower
+rank windows4648 and9494 and the newly allowed endpoint15909. Its empty
+endpoint certificates are therefore directly applicable; no search at
+ranks5--8 needs to be assumed complete beyond its proved domain.
+
+The old six-branch analysis rules out all rank8 parent types other than
+sqrt(3)E8,J14580,J15309a for a rank9 determinant at most24450: their
+alternative branch lower bounds are at least32076,36504,39930,42282,
+or the branch has no valid continuation in the window. The case det J=6561
+is sqrt(3)E8 by the rank8 Hermite equality theorem.
+
+For each of these three parents, exact discriminant-class minima were
+recomputed. Any extension of squared minimum at least6 can be written
+using a shortest representative of its glue class, with last diagonal
+n=s+mu(a) an even integer at least6. Moreover
+
+ det J*(8-max mu)>24450
+
+for all three parents. Therefore n can only equal6. For every discriminant
+class a we computed
+
+ s=6-mu(a),  D=det J*s,
+
+and tested every positive m with m^2*s<6 against
+
+ m^2*s+mu(m*a)>=6.
+
+The complete result within21870<=D<=24450 is
+
+ parent          number of admissible classes      determinant
+ sqrt(3)E8                    1920                     21870
+ J14580                          1                     21870
+ J15309a                         2                     21870.
+
+These are exactly the classes already proved isometric to K9. This proves
+the proposition. Since an even lattice of rank9 has even Gram determinant,
+the next value not excluded by this argument is24452.
+
+For comparison, reusing only the original rank8 window<=15908 would give
+the weaker exclusion through24444. The slightly stronger24450 threshold
+uses the explicitly verified endpoint addendum and the modulo4 restriction.
+
+The first determinant produced by the single-layer formula above the
+searched interval is26244 for the E8 parent and33534 for either other
+parent. These observations do not prove the global absence of determinants
+between24452 and26242, because the present shortest-dual flag windows do
+not cover that larger interval.
+
+REPRODUCTION
+ python rank9_gap.py --baseline PATH/TO/original/certificate
+
+Output: rank9_gap.json, including the entire admitted class list.
+Success marker: RANK9_DETERMINANT_GAP_EXACT_PASS.
+The gamma9 input is a mathematical dependency, not something this finite
+script proves. All class enumerations and thresholds in this addendum use
+only exact integer and rational arithmetic.

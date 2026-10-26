@@ -1,0 +1,2 @@
+# Exact certificate hashes require preserving file bytes on every platform.
+* -text

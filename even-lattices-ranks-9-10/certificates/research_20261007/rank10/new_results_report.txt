@@ -1,0 +1,59 @@
+FINAL MATHEMATICAL RESULTS OF THE RANK-TEN SUBTASK
+
+1. Under the explicit external assertion gamma9<=2, a completed exact
+shortest-dual flag search proves e10(6)=54675. This proof no longer uses
+any old rank-nine determinant or gap certificate. Its finite coverage is
+fully documented in global_rank10_proof_EN.txt and checked by
+verify_global_rank10_certificate.py, including optional full regeneration.
+The actual full replay status is in global_rank10_certificate_verified.json.
+
+2. Without using gamma9<=2, every minimum-six even integral rank-ten
+lattice containing sqrt(3)E8 has determinant>=54675, and exactly two
+isometry types attain it. The original K10 and an alternative are separated
+by Gram ranks modulo3:4 versus3. Both have294 vectors of norm6; their
+norm-ten counts are756 versus762. The alternative has block Gram
+ [[G8,p,-p],[p^T,6,-1],[-p^T,-1,6]], where K9=[[G8,p],[p^T,6]].
+Its discriminant group is(Z/3)^5 x(Z/15)^2 and it is an index3gluing of
+sqrt(3)E8 perpendicular sqrt(5)A2. Proof and exact orbit certificate:
+rank10_e8_theorem.txt, verify_rank10_e8_classification.py.
+This is a classification of the E8-containing subclass, not all global
+rank-ten equality cases.
+
+3. The complete new search gives stronger rank-nine corollaries under
+gamma9<=2: determinant spectrum below32076 is exactly21870,26244,30618,
+with one isometry class at each; hence the exact next determinant after
+K9 is26244. The least determinant without an E8 section is32076, attained
+by the explicit min-six lattice with180 minimal vectors. See
+rank9_spectral_corollary_EN.txt, verify_rank9_low_spectrum.py,
+rank9_low_spectrum.json.
+
+4. Exact global search counts:
+ r2 raw9 ->6classes; r3 102->31; r4 729->161; r5 6934->925;
+ r6 28284->3752classes.
+ r7:3252parentprunes+500fullparents ->56269raw;
+    52208nextliftingprunes,4061eligible ->224classes.
+ r8:224fullparents ->19481raw;
+    18110nextliftingprunes,1371eligible ->47classes.
+ r9low19684..24450:45parentprunes+2fullparents ->0raw.
+ r9high24452..40054:47fullparents ->3819raw;
+    ALL3819excluded by final lifting towardD10<=54672.
+ The minimum final lower bound is12966723/212>54672.
+ All covering isometries are explicitly unimodular and exactly checked.
+ The independent static audit checked8,966 distinct short-dual problems.
+ A complete generator replay has1,897jobs covering115,627raw records;
+ full exact replay COMPLETED successfully:1897/1897 jobs,115627 raw
+ candidates,363.760134795 seconds for regeneration; see final status JSON.
+
+5. All561 deepest K9 discriminant classes of norm7/2 are explicitly
+exported:560 of order6 and one of order2; modulo negation there are281.
+The embeddings subtask used these to classify exactly19 optimal rank-ten
+supersections of the fixed printed K9 in P48p. That ambient result and
+its independent full CVP replay are documented separately in embeddings/.
+The alternative abstract rank-ten lattice does not extend that marked K9.
+
+Remaining boundaries: the rank-ten global theorem retains its gamma9<=2
+external input. No global classification of all rank-ten equality cases,
+all rank48 primitive embedding orbits, or all antipode clusters is claimed.
+These computations are internally independently audited; external peer
+review and full independent reimplementation of all enumeration remain
+separate tasks. No scientific novelty is asserted without literature review.

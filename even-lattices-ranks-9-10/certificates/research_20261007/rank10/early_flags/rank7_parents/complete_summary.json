@@ -1,0 +1,3013 @@
+{
+  "input_sha256": "471dd105d965770a44411e72c22ca0f9dfaaa7a097f1712c49b5d6ed98d61576",
+  "extension_code_sha256": "e17ef89bf9e7ee0b836923a463ca1cdbd2a239d886a98909a910ba064176ae84",
+  "rank6_representatives": 3752,
+  "exact_pruned_parents": 3252,
+  "fully_enumerated_parents": 500,
+  "raw_rank7_candidates": 56269,
+  "wall_seconds": 458.05301413800044,
+  "timings": [
+    {
+      "parent": 16,
+      "raw_count": 0,
+      "seconds": 3.804081676003989,
+      "cached": false
+    },
+    {
+      "parent": 17,
+      "raw_count": 0,
+      "seconds": 3.8306871320019127,
+      "cached": false
+    },
+    {
+      "parent": 12,
+      "raw_count": 0,
+      "seconds": 4.207929547999811,
+      "cached": false
+    },
+    {
+      "parent": 13,
+      "raw_count": 0,
+      "seconds": 4.21306864899816,
+      "cached": false
+    },
+    {
+      "parent": 14,
+      "raw_count": 266,
+      "seconds": 4.260751513997093,
+      "cached": false
+    },
+    {
+      "parent": 43,
+      "raw_count": 0,
+      "seconds": 4.462632440998277,
+      "cached": false
+    },
+    {
+      "parent": 15,
+      "raw_count": 613,
+      "seconds": 5.088748227004544,
+      "cached": false
+    },
+    {
+      "parent": 45,
+      "raw_count": 0,
+      "seconds": 3.7038830399978906,
+      "cached": false
+    },
+    {
+      "parent": 86,
+      "raw_count": 0,
+      "seconds": 4.581695873996068,
+      "cached": false
+    },
+    {
+      "parent": 111,
+      "raw_count": 0,
+      "seconds": 4.57328946999769,
+      "cached": false
+    },
+    {
+      "parent": 49,
+      "raw_count": 0,
+      "seconds": 8.291166210001393,
+      "cached": false
+    },
+    {
+      "parent": 48,
+      "raw_count": 0,
+      "seconds": 9.091386120999232,
+      "cached": false
+    },
+    {
+      "parent": 44,
+      "raw_count": 0,
+      "seconds": 9.930890928997542,
+      "cached": false
+    },
+    {
+      "parent": 46,
+      "raw_count": 0,
+      "seconds": 9.857851295004366,
+      "cached": false
+    },
+    {
+      "parent": 47,
+      "raw_count": 0,
+      "seconds": 10.163005790003808,
+      "cached": false
+    },
+    {
+      "parent": 184,
+      "raw_count": 0,
+      "seconds": 4.528569519003213,
+      "cached": false
+    },
+    {
+      "parent": 205,
+      "raw_count": 0,
+      "seconds": 4.306590738997329,
+      "cached": false
+    },
+    {
+      "parent": 206,
+      "raw_count": 0,
+      "seconds": 4.151661538002372,
+      "cached": false
+    },
+    {
+      "parent": 207,
+      "raw_count": 2,
+      "seconds": 5.025869725999655,
+      "cached": false
+    },
+    {
+      "parent": 158,
+      "raw_count": 0,
+      "seconds": 10.542633214994567,
+      "cached": false
+    },
+    {
+      "parent": 318,
+      "raw_count": 0,
+      "seconds": 5.011188322001544,
+      "cached": false
+    },
+    {
+      "parent": 320,
+      "raw_count": 0,
+      "seconds": 3.828235486995254,
+      "cached": false
+    },
+    {
+      "parent": 319,
+      "raw_count": 0,
+      "seconds": 4.202380426999298,
+      "cached": false
+    },
+    {
+      "parent": 204,
+      "raw_count": 0,
+      "seconds": 9.616877193999244,
+      "cached": false
+    },
+    {
+      "parent": 241,
+      "raw_count": 0,
+      "seconds": 8.789839903998654,
+      "cached": false
+    },
+    {
+      "parent": 322,
+      "raw_count": 0,
+      "seconds": 4.125162746000569,
+      "cached": false
+    },
+    {
+      "parent": 363,
+      "raw_count": 0,
+      "seconds": 4.524637174996315,
+      "cached": false
+    },
+    {
+      "parent": 321,
+      "raw_count": 0,
+      "seconds": 8.439612083995598,
+      "cached": false
+    },
+    {
+      "parent": 365,
+      "raw_count": 0,
+      "seconds": 4.626465680004912,
+      "cached": false
+    },
+    {
+      "parent": 366,
+      "raw_count": 0,
+      "seconds": 4.133915580998291,
+      "cached": false
+    },
+    {
+      "parent": 361,
+      "raw_count": 0,
+      "seconds": 8.882822217005014,
+      "cached": false
+    },
+    {
+      "parent": 362,
+      "raw_count": 0,
+      "seconds": 9.715365298005054,
+      "cached": false
+    },
+    {
+      "parent": 368,
+      "raw_count": 2,
+      "seconds": 4.026926489998004,
+      "cached": false
+    },
+    {
+      "parent": 364,
+      "raw_count": 0,
+      "seconds": 9.417490778003412,
+      "cached": false
+    },
+    {
+      "parent": 369,
+      "raw_count": 0,
+      "seconds": 4.275105480999628,
+      "cached": false
+    },
+    {
+      "parent": 370,
+      "raw_count": 0,
+      "seconds": 4.718020391002938,
+      "cached": false
+    },
+    {
+      "parent": 371,
+      "raw_count": 0,
+      "seconds": 4.180442188997404,
+      "cached": false
+    },
+    {
+      "parent": 373,
+      "raw_count": 0,
+      "seconds": 3.516653615006362,
+      "cached": false
+    },
+    {
+      "parent": 367,
+      "raw_count": 0,
+      "seconds": 8.70284876399819,
+      "cached": false
+    },
+    {
+      "parent": 399,
+      "raw_count": 0,
+      "seconds": 3.9003278949967353,
+      "cached": false
+    },
+    {
+      "parent": 494,
+      "raw_count": 0,
+      "seconds": 3.905189655997674,
+      "cached": false
+    },
+    {
+      "parent": 495,
+      "raw_count": 0,
+      "seconds": 3.783666846000415,
+      "cached": false
+    },
+    {
+      "parent": 582,
+      "raw_count": 0,
+      "seconds": 4.242041128993151,
+      "cached": false
+    },
+    {
+      "parent": 372,
+      "raw_count": 0,
+      "seconds": 7.68870010899991,
+      "cached": false
+    },
+    {
+      "parent": 625,
+      "raw_count": 0,
+      "seconds": 3.8902532499996596,
+      "cached": false
+    },
+    {
+      "parent": 652,
+      "raw_count": 0,
+      "seconds": 3.990515105993836,
+      "cached": false
+    },
+    {
+      "parent": 686,
+      "raw_count": 0,
+      "seconds": 4.024414187995717,
+      "cached": false
+    },
+    {
+      "parent": 687,
+      "raw_count": 0,
+      "seconds": 4.361876317998394,
+      "cached": false
+    },
+    {
+      "parent": 624,
+      "raw_count": 0,
+      "seconds": 8.443733976004296,
+      "cached": false
+    },
+    {
+      "parent": 583,
+      "raw_count": 0,
+      "seconds": 8.589240581000922,
+      "cached": false
+    },
+    {
+      "parent": 651,
+      "raw_count": 0,
+      "seconds": 7.979024468004354,
+      "cached": false
+    },
+    {
+      "parent": 691,
+      "raw_count": 0,
+      "seconds": 3.854227486997843,
+      "cached": false
+    },
+    {
+      "parent": 688,
+      "raw_count": 0,
+      "seconds": 7.91075305200502,
+      "cached": false
+    },
+    {
+      "parent": 790,
+      "raw_count": 0,
+      "seconds": 4.031746228996781,
+      "cached": false
+    },
+    {
+      "parent": 791,
+      "raw_count": 0,
+      "seconds": 4.025512029998936,
+      "cached": false
+    },
+    {
+      "parent": 792,
+      "raw_count": 0,
+      "seconds": 4.166362192001543,
+      "cached": false
+    },
+    {
+      "parent": 689,
+      "raw_count": 0,
+      "seconds": 7.684992424001393,
+      "cached": false
+    },
+    {
+      "parent": 690,
+      "raw_count": 0,
+      "seconds": 7.787972389996867,
+      "cached": false
+    },
+    {
+      "parent": 793,
+      "raw_count": 0,
+      "seconds": 3.8783743349995348,
+      "cached": false
+    },
+    {
+      "parent": 794,
+      "raw_count": 0,
+      "seconds": 3.741296409003553,
+      "cached": false
+    },
+    {
+      "parent": 822,
+      "raw_count": 0,
+      "seconds": 3.803933456998493,
+      "cached": false
+    },
+    {
+      "parent": 795,
+      "raw_count": 0,
+      "seconds": 4.09533474399359,
+      "cached": false
+    },
+    {
+      "parent": 823,
+      "raw_count": 62,
+      "seconds": 4.0946522029989865,
+      "cached": false
+    },
+    {
+      "parent": 843,
+      "raw_count": 0,
+      "seconds": 4.167069408002135,
+      "cached": false
+    },
+    {
+      "parent": 880,
+      "raw_count": 0,
+      "seconds": 4.021576229002676,
+      "cached": false
+    },
+    {
+      "parent": 881,
+      "raw_count": 0,
+      "seconds": 3.882562840000901,
+      "cached": false
+    },
+    {
+      "parent": 841,
+      "raw_count": 0,
+      "seconds": 7.359581832002732,
+      "cached": false
+    },
+    {
+      "parent": 944,
+      "raw_count": 0,
+      "seconds": 3.9914362619965686,
+      "cached": false
+    },
+    {
+      "parent": 842,
+      "raw_count": 0,
+      "seconds": 7.91187849099515,
+      "cached": false
+    },
+    {
+      "parent": 844,
+      "raw_count": 0,
+      "seconds": 7.966451441003301,
+      "cached": false
+    },
+    {
+      "parent": 946,
+      "raw_count": 0,
+      "seconds": 4.2764388479990885,
+      "cached": false
+    },
+    {
+      "parent": 945,
+      "raw_count": 0,
+      "seconds": 4.551197877997765,
+      "cached": false
+    },
+    {
+      "parent": 949,
+      "raw_count": 0,
+      "seconds": 3.944593847998476,
+      "cached": false
+    },
+    {
+      "parent": 964,
+      "raw_count": 0,
+      "seconds": 4.514596471999539,
+      "cached": false
+    },
+    {
+      "parent": 947,
+      "raw_count": 0,
+      "seconds": 8.196918403999007,
+      "cached": false
+    },
+    {
+      "parent": 965,
+      "raw_count": 0,
+      "seconds": 4.75983305900445,
+      "cached": false
+    },
+    {
+      "parent": 966,
+      "raw_count": 0,
+      "seconds": 4.394276528000773,
+      "cached": false
+    },
+    {
+      "parent": 967,
+      "raw_count": 0,
+      "seconds": 4.417020449996926,
+      "cached": false
+    },
+    {
+      "parent": 968,
+      "raw_count": 2,
+      "seconds": 4.4419624709989876,
+      "cached": false
+    },
+    {
+      "parent": 948,
+      "raw_count": 0,
+      "seconds": 8.639318581001135,
+      "cached": false
+    },
+    {
+      "parent": 1079,
+      "raw_count": 0,
+      "seconds": 4.4633897519961465,
+      "cached": false
+    },
+    {
+      "parent": 1080,
+      "raw_count": 0,
+      "seconds": 4.352759537003294,
+      "cached": false
+    },
+    {
+      "parent": 1082,
+      "raw_count": 0,
+      "seconds": 4.643357037995884,
+      "cached": false
+    },
+    {
+      "parent": 1085,
+      "raw_count": 0,
+      "seconds": 4.297029389999807,
+      "cached": false
+    },
+    {
+      "parent": 1084,
+      "raw_count": 0,
+      "seconds": 4.480185401000199,
+      "cached": false
+    },
+    {
+      "parent": 1086,
+      "raw_count": 0,
+      "seconds": 4.596233273994585,
+      "cached": false
+    },
+    {
+      "parent": 1087,
+      "raw_count": 0,
+      "seconds": 4.308193945995299,
+      "cached": false
+    },
+    {
+      "parent": 1081,
+      "raw_count": 0,
+      "seconds": 8.72782035900309,
+      "cached": false
+    },
+    {
+      "parent": 1083,
+      "raw_count": 0,
+      "seconds": 8.748482856004557,
+      "cached": false
+    },
+    {
+      "parent": 1088,
+      "raw_count": 0,
+      "seconds": 4.290364022999711,
+      "cached": false
+    },
+    {
+      "parent": 1090,
+      "raw_count": 0,
+      "seconds": 4.585769955003343,
+      "cached": false
+    },
+    {
+      "parent": 1089,
+      "raw_count": 0,
+      "seconds": 7.915299760999915,
+      "cached": false
+    },
+    {
+      "parent": 1091,
+      "raw_count": 0,
+      "seconds": 4.81631810899853,
+      "cached": false
+    },
+    {
+      "parent": 1092,
+      "raw_count": 0,
+      "seconds": 4.920152064994909,
+      "cached": false
+    },
+    {
+      "parent": 1196,
+      "raw_count": 0,
+      "seconds": 4.716241233996698,
+      "cached": false
+    },
+    {
+      "parent": 1094,
+      "raw_count": 198,
+      "seconds": 4.7535087460055365,
+      "cached": false
+    },
+    {
+      "parent": 1093,
+      "raw_count": 8,
+      "seconds": 8.511280818005616,
+      "cached": false
+    },
+    {
+      "parent": 1199,
+      "raw_count": 0,
+      "seconds": 4.396059045000584,
+      "cached": false
+    },
+    {
+      "parent": 1198,
+      "raw_count": 0,
+      "seconds": 4.984696380000969,
+      "cached": false
+    },
+    {
+      "parent": 1200,
+      "raw_count": 0,
+      "seconds": 4.554760854000051,
+      "cached": false
+    },
+    {
+      "parent": 1202,
+      "raw_count": 0,
+      "seconds": 4.168585938001343,
+      "cached": false
+    },
+    {
+      "parent": 1197,
+      "raw_count": 0,
+      "seconds": 8.6407852179982,
+      "cached": false
+    },
+    {
+      "parent": 1201,
+      "raw_count": 0,
+      "seconds": 4.516456762001326,
+      "cached": false
+    },
+    {
+      "parent": 1204,
+      "raw_count": 0,
+      "seconds": 4.160318365000421,
+      "cached": false
+    },
+    {
+      "parent": 1207,
+      "raw_count": 0,
+      "seconds": 3.9150581630019587,
+      "cached": false
+    },
+    {
+      "parent": 1206,
+      "raw_count": 0,
+      "seconds": 4.13169152699993,
+      "cached": false
+    },
+    {
+      "parent": 1205,
+      "raw_count": 0,
+      "seconds": 4.173281960000168,
+      "cached": false
+    },
+    {
+      "parent": 1209,
+      "raw_count": 0,
+      "seconds": 4.394996262999484,
+      "cached": false
+    },
+    {
+      "parent": 1208,
+      "raw_count": 0,
+      "seconds": 4.54938388899609,
+      "cached": false
+    },
+    {
+      "parent": 1203,
+      "raw_count": 4,
+      "seconds": 8.294883388996823,
+      "cached": false
+    },
+    {
+      "parent": 1210,
+      "raw_count": 2,
+      "seconds": 4.152203624005779,
+      "cached": false
+    },
+    {
+      "parent": 1212,
+      "raw_count": 0,
+      "seconds": 4.054748916001699,
+      "cached": false
+    },
+    {
+      "parent": 1211,
+      "raw_count": 2,
+      "seconds": 4.667949600996508,
+      "cached": false
+    },
+    {
+      "parent": 1213,
+      "raw_count": 4,
+      "seconds": 4.829518512000504,
+      "cached": false
+    },
+    {
+      "parent": 1214,
+      "raw_count": 0,
+      "seconds": 4.342550770001253,
+      "cached": false
+    },
+    {
+      "parent": 1215,
+      "raw_count": 6,
+      "seconds": 4.808795627002837,
+      "cached": false
+    },
+    {
+      "parent": 1216,
+      "raw_count": 12,
+      "seconds": 4.404905733004853,
+      "cached": false
+    },
+    {
+      "parent": 1218,
+      "raw_count": 722,
+      "seconds": 4.448694711994904,
+      "cached": false
+    },
+    {
+      "parent": 1217,
+      "raw_count": 34,
+      "seconds": 4.885802839002281,
+      "cached": false
+    },
+    {
+      "parent": 1321,
+      "raw_count": 0,
+      "seconds": 4.447629946000234,
+      "cached": false
+    },
+    {
+      "parent": 1323,
+      "raw_count": 0,
+      "seconds": 4.346121075002884,
+      "cached": false
+    },
+    {
+      "parent": 1327,
+      "raw_count": 0,
+      "seconds": 4.133308242002386,
+      "cached": false
+    },
+    {
+      "parent": 1322,
+      "raw_count": 0,
+      "seconds": 8.321546023995325,
+      "cached": false
+    },
+    {
+      "parent": 1329,
+      "raw_count": 0,
+      "seconds": 4.060598613003094,
+      "cached": false
+    },
+    {
+      "parent": 1324,
+      "raw_count": 0,
+      "seconds": 8.767146862999653,
+      "cached": false
+    },
+    {
+      "parent": 1325,
+      "raw_count": 0,
+      "seconds": 9.142009536000842,
+      "cached": false
+    },
+    {
+      "parent": 1326,
+      "raw_count": 0,
+      "seconds": 8.656667490999098,
+      "cached": false
+    },
+    {
+      "parent": 1330,
+      "raw_count": 0,
+      "seconds": 4.971561138998368,
+      "cached": false
+    },
+    {
+      "parent": 1332,
+      "raw_count": 0,
+      "seconds": 4.363866391999181,
+      "cached": false
+    },
+    {
+      "parent": 1328,
+      "raw_count": 0,
+      "seconds": 8.919884940994962,
+      "cached": false
+    },
+    {
+      "parent": 1333,
+      "raw_count": 0,
+      "seconds": 4.62228828699881,
+      "cached": false
+    },
+    {
+      "parent": 1334,
+      "raw_count": 0,
+      "seconds": 3.9472203140030615,
+      "cached": false
+    },
+    {
+      "parent": 1335,
+      "raw_count": 0,
+      "seconds": 4.442486751002434,
+      "cached": false
+    },
+    {
+      "parent": 1331,
+      "raw_count": 0,
+      "seconds": 9.045569280999189,
+      "cached": false
+    },
+    {
+      "parent": 1337,
+      "raw_count": 0,
+      "seconds": 4.969129987999622,
+      "cached": false
+    },
+    {
+      "parent": 1338,
+      "raw_count": 0,
+      "seconds": 4.996040187994367,
+      "cached": false
+    },
+    {
+      "parent": 1340,
+      "raw_count": 4,
+      "seconds": 4.302611175000493,
+      "cached": false
+    },
+    {
+      "parent": 1342,
+      "raw_count": 4,
+      "seconds": 4.446073844999773,
+      "cached": false
+    },
+    {
+      "parent": 1341,
+      "raw_count": 2,
+      "seconds": 5.053111283996259,
+      "cached": false
+    },
+    {
+      "parent": 1336,
+      "raw_count": 0,
+      "seconds": 9.699881146007101,
+      "cached": false
+    },
+    {
+      "parent": 1344,
+      "raw_count": 44,
+      "seconds": 4.661278111998399,
+      "cached": false
+    },
+    {
+      "parent": 1343,
+      "raw_count": 22,
+      "seconds": 5.4481732770000235,
+      "cached": false
+    },
+    {
+      "parent": 1339,
+      "raw_count": 0,
+      "seconds": 10.702001391997328,
+      "cached": false
+    },
+    {
+      "parent": 1345,
+      "raw_count": 30,
+      "seconds": 5.391618200999801,
+      "cached": false
+    },
+    {
+      "parent": 1347,
+      "raw_count": 72,
+      "seconds": 4.6631921349980985,
+      "cached": false
+    },
+    {
+      "parent": 1346,
+      "raw_count": 48,
+      "seconds": 6.187057538001682,
+      "cached": false
+    },
+    {
+      "parent": 1349,
+      "raw_count": 226,
+      "seconds": 5.470764106998104,
+      "cached": false
+    },
+    {
+      "parent": 1348,
+      "raw_count": 34,
+      "seconds": 6.077017721996526,
+      "cached": false
+    },
+    {
+      "parent": 1350,
+      "raw_count": 230,
+      "seconds": 5.899622124001326,
+      "cached": false
+    },
+    {
+      "parent": 1445,
+      "raw_count": 0,
+      "seconds": 5.382851043999835,
+      "cached": false
+    },
+    {
+      "parent": 1446,
+      "raw_count": 0,
+      "seconds": 5.630211360003159,
+      "cached": false
+    },
+    {
+      "parent": 1448,
+      "raw_count": 0,
+      "seconds": 5.864952293995884,
+      "cached": false
+    },
+    {
+      "parent": 1449,
+      "raw_count": 2,
+      "seconds": 5.493038564003655,
+      "cached": false
+    },
+    {
+      "parent": 1450,
+      "raw_count": 0,
+      "seconds": 5.380367366000428,
+      "cached": false
+    },
+    {
+      "parent": 1444,
+      "raw_count": 0,
+      "seconds": 11.730224223996629,
+      "cached": false
+    },
+    {
+      "parent": 1451,
+      "raw_count": 0,
+      "seconds": 5.88313136400393,
+      "cached": false
+    },
+    {
+      "parent": 1452,
+      "raw_count": 0,
+      "seconds": 5.568569183000363,
+      "cached": false
+    },
+    {
+      "parent": 1447,
+      "raw_count": 0,
+      "seconds": 10.932173982997483,
+      "cached": false
+    },
+    {
+      "parent": 1455,
+      "raw_count": 0,
+      "seconds": 4.366872571001295,
+      "cached": false
+    },
+    {
+      "parent": 1453,
+      "raw_count": 2,
+      "seconds": 5.576490412997373,
+      "cached": false
+    },
+    {
+      "parent": 1457,
+      "raw_count": 28,
+      "seconds": 4.695674649003195,
+      "cached": false
+    },
+    {
+      "parent": 1458,
+      "raw_count": 12,
+      "seconds": 5.029116721001628,
+      "cached": false
+    },
+    {
+      "parent": 1460,
+      "raw_count": 24,
+      "seconds": 4.50332135699864,
+      "cached": false
+    },
+    {
+      "parent": 1454,
+      "raw_count": 2,
+      "seconds": 9.753751748001378,
+      "cached": false
+    },
+    {
+      "parent": 1461,
+      "raw_count": 20,
+      "seconds": 4.513790889002848,
+      "cached": false
+    },
+    {
+      "parent": 1456,
+      "raw_count": 2,
+      "seconds": 8.601042891998077,
+      "cached": false
+    },
+    {
+      "parent": 1463,
+      "raw_count": 12,
+      "seconds": 4.451942758998484,
+      "cached": false
+    },
+    {
+      "parent": 1459,
+      "raw_count": 2,
+      "seconds": 8.884585612999217,
+      "cached": false
+    },
+    {
+      "parent": 1465,
+      "raw_count": 56,
+      "seconds": 4.812745369003096,
+      "cached": false
+    },
+    {
+      "parent": 1466,
+      "raw_count": 40,
+      "seconds": 4.722332463999919,
+      "cached": false
+    },
+    {
+      "parent": 1467,
+      "raw_count": 118,
+      "seconds": 5.244223140005488,
+      "cached": false
+    },
+    {
+      "parent": 1462,
+      "raw_count": 12,
+      "seconds": 8.807128184998874,
+      "cached": false
+    },
+    {
+      "parent": 1464,
+      "raw_count": 38,
+      "seconds": 8.541174948004482,
+      "cached": false
+    },
+    {
+      "parent": 1468,
+      "raw_count": 63,
+      "seconds": 5.09769160200085,
+      "cached": false
+    },
+    {
+      "parent": 1469,
+      "raw_count": 76,
+      "seconds": 5.155567205998523,
+      "cached": false
+    },
+    {
+      "parent": 1470,
+      "raw_count": 70,
+      "seconds": 5.171283577001304,
+      "cached": false
+    },
+    {
+      "parent": 1471,
+      "raw_count": 184,
+      "seconds": 5.2441296390024945,
+      "cached": false
+    },
+    {
+      "parent": 1472,
+      "raw_count": 170,
+      "seconds": 5.0000692600006005,
+      "cached": false
+    },
+    {
+      "parent": 1473,
+      "raw_count": 188,
+      "seconds": 5.311784389996319,
+      "cached": false
+    },
+    {
+      "parent": 1474,
+      "raw_count": 270,
+      "seconds": 4.982987673000025,
+      "cached": false
+    },
+    {
+      "parent": 1476,
+      "raw_count": 224,
+      "seconds": 5.216076067998074,
+      "cached": false
+    },
+    {
+      "parent": 1478,
+      "raw_count": 325,
+      "seconds": 4.928866607006057,
+      "cached": false
+    },
+    {
+      "parent": 1477,
+      "raw_count": 154,
+      "seconds": 5.306092484999681,
+      "cached": false
+    },
+    {
+      "parent": 1480,
+      "raw_count": 462,
+      "seconds": 5.7794697799981805,
+      "cached": false
+    },
+    {
+      "parent": 1475,
+      "raw_count": 140,
+      "seconds": 10.618668919996708,
+      "cached": false
+    },
+    {
+      "parent": 1481,
+      "raw_count": 592,
+      "seconds": 6.65791515300225,
+      "cached": false
+    },
+    {
+      "parent": 1482,
+      "raw_count": 648,
+      "seconds": 6.0780745040028705,
+      "cached": false
+    },
+    {
+      "parent": 1483,
+      "raw_count": 948,
+      "seconds": 6.244698971000616,
+      "cached": false
+    },
+    {
+      "parent": 1479,
+      "raw_count": 210,
+      "seconds": 10.163403710001148,
+      "cached": false
+    },
+    {
+      "parent": 1484,
+      "raw_count": 1072,
+      "seconds": 6.437769903001026,
+      "cached": false
+    },
+    {
+      "parent": 1523,
+      "raw_count": 0,
+      "seconds": 5.018951452002511,
+      "cached": false
+    },
+    {
+      "parent": 1524,
+      "raw_count": 12,
+      "seconds": 5.201873935002368,
+      "cached": false
+    },
+    {
+      "parent": 1525,
+      "raw_count": 36,
+      "seconds": 5.858358653997129,
+      "cached": false
+    },
+    {
+      "parent": 1528,
+      "raw_count": 48,
+      "seconds": 4.567434757002047,
+      "cached": false
+    },
+    {
+      "parent": 1527,
+      "raw_count": 22,
+      "seconds": 4.680020293999405,
+      "cached": false
+    },
+    {
+      "parent": 1522,
+      "raw_count": 0,
+      "seconds": 10.019294136996905,
+      "cached": false
+    },
+    {
+      "parent": 1529,
+      "raw_count": 12,
+      "seconds": 5.067694889003178,
+      "cached": false
+    },
+    {
+      "parent": 1530,
+      "raw_count": 78,
+      "seconds": 4.5743982839994715,
+      "cached": false
+    },
+    {
+      "parent": 1526,
+      "raw_count": 52,
+      "seconds": 8.810718284999894,
+      "cached": false
+    },
+    {
+      "parent": 1531,
+      "raw_count": 188,
+      "seconds": 5.0296963500004495,
+      "cached": false
+    },
+    {
+      "parent": 1533,
+      "raw_count": 362,
+      "seconds": 4.870949106996704,
+      "cached": false
+    },
+    {
+      "parent": 1532,
+      "raw_count": 338,
+      "seconds": 5.016000812000129,
+      "cached": false
+    },
+    {
+      "parent": 1534,
+      "raw_count": 486,
+      "seconds": 4.532749635000073,
+      "cached": false
+    },
+    {
+      "parent": 1535,
+      "raw_count": 450,
+      "seconds": 4.936363989996607,
+      "cached": false
+    },
+    {
+      "parent": 1536,
+      "raw_count": 538,
+      "seconds": 4.604987252998399,
+      "cached": false
+    },
+    {
+      "parent": 1537,
+      "raw_count": 752,
+      "seconds": 5.207037649997801,
+      "cached": false
+    },
+    {
+      "parent": 1538,
+      "raw_count": 850,
+      "seconds": 5.170747411997581,
+      "cached": false
+    },
+    {
+      "parent": 1539,
+      "raw_count": 1022,
+      "seconds": 5.1797701840041555,
+      "cached": false
+    },
+    {
+      "parent": 1541,
+      "raw_count": 1318,
+      "seconds": 5.138069284002995,
+      "cached": false
+    },
+    {
+      "parent": 1543,
+      "raw_count": 2009,
+      "seconds": 5.378525863001414,
+      "cached": false
+    },
+    {
+      "parent": 1612,
+      "raw_count": 0,
+      "seconds": 3.6968195699955686,
+      "cached": false
+    },
+    {
+      "parent": 1615,
+      "raw_count": 0,
+      "seconds": 4.148275432999071,
+      "cached": false
+    },
+    {
+      "parent": 1665,
+      "raw_count": 0,
+      "seconds": 4.086743521002063,
+      "cached": false
+    },
+    {
+      "parent": 1664,
+      "raw_count": 0,
+      "seconds": 4.5891049330020905,
+      "cached": false
+    },
+    {
+      "parent": 1555,
+      "raw_count": 0,
+      "seconds": 8.41776184700575,
+      "cached": false
+    },
+    {
+      "parent": 1614,
+      "raw_count": 0,
+      "seconds": 7.36498566299997,
+      "cached": false
+    },
+    {
+      "parent": 1613,
+      "raw_count": 0,
+      "seconds": 8.690289026002574,
+      "cached": false
+    },
+    {
+      "parent": 1616,
+      "raw_count": 0,
+      "seconds": 7.834816829999909,
+      "cached": false
+    },
+    {
+      "parent": 1677,
+      "raw_count": 0,
+      "seconds": 3.5475134480002453,
+      "cached": false
+    },
+    {
+      "parent": 1829,
+      "raw_count": 0,
+      "seconds": 4.08738512799755,
+      "cached": false
+    },
+    {
+      "parent": 1830,
+      "raw_count": 0,
+      "seconds": 3.9608814360035467,
+      "cached": false
+    },
+    {
+      "parent": 1666,
+      "raw_count": 0,
+      "seconds": 7.582076093000069,
+      "cached": false
+    },
+    {
+      "parent": 1831,
+      "raw_count": 0,
+      "seconds": 4.349489132997405,
+      "cached": false
+    },
+    {
+      "parent": 1832,
+      "raw_count": 0,
+      "seconds": 4.142089066001063,
+      "cached": false
+    },
+    {
+      "parent": 1737,
+      "raw_count": 0,
+      "seconds": 7.703085128996463,
+      "cached": false
+    },
+    {
+      "parent": 1828,
+      "raw_count": 0,
+      "seconds": 8.294253412997932,
+      "cached": false
+    },
+    {
+      "parent": 1833,
+      "raw_count": 0,
+      "seconds": 3.9322905959998025,
+      "cached": false
+    },
+    {
+      "parent": 1835,
+      "raw_count": 0,
+      "seconds": 3.9427712710021297,
+      "cached": false
+    },
+    {
+      "parent": 1838,
+      "raw_count": 0,
+      "seconds": 3.9699818050066824,
+      "cached": false
+    },
+    {
+      "parent": 1839,
+      "raw_count": 0,
+      "seconds": 4.05426818900014,
+      "cached": false
+    },
+    {
+      "parent": 1840,
+      "raw_count": 4,
+      "seconds": 4.131658591002633,
+      "cached": false
+    },
+    {
+      "parent": 1863,
+      "raw_count": 4,
+      "seconds": 4.030937894996896,
+      "cached": false
+    },
+    {
+      "parent": 1836,
+      "raw_count": 0,
+      "seconds": 7.8767202269955305,
+      "cached": false
+    },
+    {
+      "parent": 1834,
+      "raw_count": 0,
+      "seconds": 8.74387260000367,
+      "cached": false
+    },
+    {
+      "parent": 1837,
+      "raw_count": 0,
+      "seconds": 8.047092148000957,
+      "cached": false
+    },
+    {
+      "parent": 1921,
+      "raw_count": 0,
+      "seconds": 4.480482769999071,
+      "cached": false
+    },
+    {
+      "parent": 1945,
+      "raw_count": 0,
+      "seconds": 4.31260042800568,
+      "cached": false
+    },
+    {
+      "parent": 2018,
+      "raw_count": 0,
+      "seconds": 4.259208401999786,
+      "cached": false
+    },
+    {
+      "parent": 2022,
+      "raw_count": 0,
+      "seconds": 4.393871936998039,
+      "cached": false
+    },
+    {
+      "parent": 2023,
+      "raw_count": 0,
+      "seconds": 4.006562573995325,
+      "cached": false
+    },
+    {
+      "parent": 2024,
+      "raw_count": 0,
+      "seconds": 3.9307449879997876,
+      "cached": false
+    },
+    {
+      "parent": 2019,
+      "raw_count": 0,
+      "seconds": 7.836313649997464,
+      "cached": false
+    },
+    {
+      "parent": 2017,
+      "raw_count": 0,
+      "seconds": 8.451171654000063,
+      "cached": false
+    },
+    {
+      "parent": 2020,
+      "raw_count": 0,
+      "seconds": 7.986223421998147,
+      "cached": false
+    },
+    {
+      "parent": 2021,
+      "raw_count": 0,
+      "seconds": 8.950908573999186,
+      "cached": false
+    },
+    {
+      "parent": 2061,
+      "raw_count": 0,
+      "seconds": 4.969961157003127,
+      "cached": false
+    },
+    {
+      "parent": 2160,
+      "raw_count": 0,
+      "seconds": 5.541738688996702,
+      "cached": false
+    },
+    {
+      "parent": 2305,
+      "raw_count": 0,
+      "seconds": 5.727103113000339,
+      "cached": false
+    },
+    {
+      "parent": 2306,
+      "raw_count": 0,
+      "seconds": 5.8990812490010285,
+      "cached": false
+    },
+    {
+      "parent": 2368,
+      "raw_count": 0,
+      "seconds": 4.987117495002167,
+      "cached": false
+    },
+    {
+      "parent": 2103,
+      "raw_count": 0,
+      "seconds": 9.647600615993724,
+      "cached": false
+    },
+    {
+      "parent": 2372,
+      "raw_count": 0,
+      "seconds": 4.818651044995931,
+      "cached": false
+    },
+    {
+      "parent": 2371,
+      "raw_count": 0,
+      "seconds": 5.0299485989962704,
+      "cached": false
+    },
+    {
+      "parent": 2367,
+      "raw_count": 0,
+      "seconds": 10.706294324001647,
+      "cached": false
+    },
+    {
+      "parent": 2373,
+      "raw_count": 0,
+      "seconds": 4.9370514689944685,
+      "cached": false
+    },
+    {
+      "parent": 2369,
+      "raw_count": 0,
+      "seconds": 9.390529227996012,
+      "cached": false
+    },
+    {
+      "parent": 2374,
+      "raw_count": 0,
+      "seconds": 5.046226814003603,
+      "cached": false
+    },
+    {
+      "parent": 2370,
+      "raw_count": 0,
+      "seconds": 9.440041617999668,
+      "cached": false
+    },
+    {
+      "parent": 2375,
+      "raw_count": 0,
+      "seconds": 4.533913751998625,
+      "cached": false
+    },
+    {
+      "parent": 2493,
+      "raw_count": 0,
+      "seconds": 4.817344409995712,
+      "cached": false
+    },
+    {
+      "parent": 2495,
+      "raw_count": 0,
+      "seconds": 4.562431129998004,
+      "cached": false
+    },
+    {
+      "parent": 2498,
+      "raw_count": 0,
+      "seconds": 4.011533449003764,
+      "cached": false
+    },
+    {
+      "parent": 2500,
+      "raw_count": 0,
+      "seconds": 3.751870965003036,
+      "cached": false
+    },
+    {
+      "parent": 2499,
+      "raw_count": 0,
+      "seconds": 4.1394512449987815,
+      "cached": false
+    },
+    {
+      "parent": 2494,
+      "raw_count": 0,
+      "seconds": 8.808599550000508,
+      "cached": false
+    },
+    {
+      "parent": 2501,
+      "raw_count": 0,
+      "seconds": 4.2648226320015965,
+      "cached": false
+    },
+    {
+      "parent": 2497,
+      "raw_count": 0,
+      "seconds": 8.547193119993608,
+      "cached": false
+    },
+    {
+      "parent": 2496,
+      "raw_count": 0,
+      "seconds": 9.12205828000151,
+      "cached": false
+    },
+    {
+      "parent": 2502,
+      "raw_count": 0,
+      "seconds": 4.5758416230019066,
+      "cached": false
+    },
+    {
+      "parent": 2582,
+      "raw_count": 0,
+      "seconds": 4.636414842003433,
+      "cached": false
+    },
+    {
+      "parent": 2583,
+      "raw_count": 0,
+      "seconds": 4.811471186003473,
+      "cached": false
+    },
+    {
+      "parent": 2588,
+      "raw_count": 0,
+      "seconds": 5.176100755001244,
+      "cached": false
+    },
+    {
+      "parent": 2581,
+      "raw_count": 0,
+      "seconds": 10.465538721000485,
+      "cached": false
+    },
+    {
+      "parent": 2589,
+      "raw_count": 0,
+      "seconds": 6.04973457500455,
+      "cached": false
+    },
+    {
+      "parent": 2584,
+      "raw_count": 0,
+      "seconds": 11.163690498004144,
+      "cached": false
+    },
+    {
+      "parent": 2586,
+      "raw_count": 0,
+      "seconds": 10.501212413997564,
+      "cached": false
+    },
+    {
+      "parent": 2585,
+      "raw_count": 0,
+      "seconds": 10.723343035002472,
+      "cached": false
+    },
+    {
+      "parent": 2587,
+      "raw_count": 2,
+      "seconds": 10.628595271999075,
+      "cached": false
+    },
+    {
+      "parent": 2590,
+      "raw_count": 50,
+      "seconds": 6.534364892002486,
+      "cached": false
+    },
+    {
+      "parent": 2648,
+      "raw_count": 0,
+      "seconds": 5.065530565996596,
+      "cached": false
+    },
+    {
+      "parent": 2650,
+      "raw_count": 0,
+      "seconds": 5.736877023002307,
+      "cached": false
+    },
+    {
+      "parent": 2651,
+      "raw_count": 4,
+      "seconds": 5.401572012000543,
+      "cached": false
+    },
+    {
+      "parent": 2591,
+      "raw_count": 32,
+      "seconds": 10.302610069004004,
+      "cached": false
+    },
+    {
+      "parent": 2647,
+      "raw_count": 0,
+      "seconds": 10.181003195000812,
+      "cached": false
+    },
+    {
+      "parent": 2652,
+      "raw_count": 106,
+      "seconds": 5.397066798002925,
+      "cached": false
+    },
+    {
+      "parent": 2649,
+      "raw_count": 0,
+      "seconds": 9.327197382997838,
+      "cached": false
+    },
+    {
+      "parent": 2737,
+      "raw_count": 0,
+      "seconds": 4.766135890000442,
+      "cached": false
+    },
+    {
+      "parent": 2738,
+      "raw_count": 0,
+      "seconds": 4.668121120004798,
+      "cached": false
+    },
+    {
+      "parent": 2736,
+      "raw_count": 0,
+      "seconds": 8.626856162001786,
+      "cached": false
+    },
+    {
+      "parent": 2741,
+      "raw_count": 4,
+      "seconds": 5.089975770999445,
+      "cached": false
+    },
+    {
+      "parent": 2881,
+      "raw_count": 0,
+      "seconds": 5.505151012002898,
+      "cached": false
+    },
+    {
+      "parent": 2739,
+      "raw_count": 0,
+      "seconds": 10.03264596399822,
+      "cached": false
+    },
+    {
+      "parent": 2740,
+      "raw_count": 0,
+      "seconds": 10.245424167005694,
+      "cached": false
+    },
+    {
+      "parent": 2883,
+      "raw_count": 0,
+      "seconds": 5.475243207998574,
+      "cached": false
+    },
+    {
+      "parent": 2879,
+      "raw_count": 0,
+      "seconds": 11.090716194004926,
+      "cached": false
+    },
+    {
+      "parent": 2880,
+      "raw_count": 0,
+      "seconds": 10.849232510998263,
+      "cached": false
+    },
+    {
+      "parent": 2884,
+      "raw_count": 0,
+      "seconds": 5.129545941999822,
+      "cached": false
+    },
+    {
+      "parent": 2887,
+      "raw_count": 0,
+      "seconds": 4.465803434999543,
+      "cached": false
+    },
+    {
+      "parent": 2882,
+      "raw_count": 0,
+      "seconds": 10.751665771997068,
+      "cached": false
+    },
+    {
+      "parent": 2888,
+      "raw_count": 0,
+      "seconds": 5.47687452500395,
+      "cached": false
+    },
+    {
+      "parent": 2889,
+      "raw_count": 0,
+      "seconds": 5.971471672004554,
+      "cached": false
+    },
+    {
+      "parent": 2885,
+      "raw_count": 2,
+      "seconds": 10.21592285999941,
+      "cached": false
+    },
+    {
+      "parent": 2890,
+      "raw_count": 0,
+      "seconds": 5.607843492995016,
+      "cached": false
+    },
+    {
+      "parent": 2886,
+      "raw_count": 0,
+      "seconds": 10.512356866995106,
+      "cached": false
+    },
+    {
+      "parent": 2893,
+      "raw_count": 0,
+      "seconds": 5.146765391997178,
+      "cached": false
+    },
+    {
+      "parent": 2894,
+      "raw_count": 0,
+      "seconds": 5.002330092000193,
+      "cached": false
+    },
+    {
+      "parent": 2895,
+      "raw_count": 0,
+      "seconds": 4.967514760995982,
+      "cached": false
+    },
+    {
+      "parent": 2896,
+      "raw_count": 0,
+      "seconds": 5.158798749005655,
+      "cached": false
+    },
+    {
+      "parent": 2897,
+      "raw_count": 0,
+      "seconds": 4.836612355997204,
+      "cached": false
+    },
+    {
+      "parent": 2892,
+      "raw_count": 0,
+      "seconds": 10.072627604000445,
+      "cached": false
+    },
+    {
+      "parent": 2891,
+      "raw_count": 0,
+      "seconds": 10.621325485000852,
+      "cached": false
+    },
+    {
+      "parent": 2898,
+      "raw_count": 0,
+      "seconds": 5.82388475699554,
+      "cached": false
+    },
+    {
+      "parent": 2900,
+      "raw_count": 12,
+      "seconds": 5.037935576998279,
+      "cached": false
+    },
+    {
+      "parent": 2901,
+      "raw_count": 16,
+      "seconds": 4.979748549005308,
+      "cached": false
+    },
+    {
+      "parent": 2899,
+      "raw_count": 28,
+      "seconds": 5.770657276996644,
+      "cached": false
+    },
+    {
+      "parent": 2976,
+      "raw_count": 0,
+      "seconds": 4.407463724004629,
+      "cached": false
+    },
+    {
+      "parent": 2977,
+      "raw_count": 0,
+      "seconds": 4.503203641004802,
+      "cached": false
+    },
+    {
+      "parent": 2974,
+      "raw_count": 0,
+      "seconds": 8.457395635996363,
+      "cached": false
+    },
+    {
+      "parent": 2972,
+      "raw_count": 0,
+      "seconds": 9.116113582000253,
+      "cached": false
+    },
+    {
+      "parent": 2973,
+      "raw_count": 0,
+      "seconds": 9.351032612998097,
+      "cached": false
+    },
+    {
+      "parent": 2975,
+      "raw_count": 0,
+      "seconds": 9.264426091998757,
+      "cached": false
+    },
+    {
+      "parent": 2979,
+      "raw_count": 0,
+      "seconds": 4.678706133003288,
+      "cached": false
+    },
+    {
+      "parent": 2981,
+      "raw_count": 0,
+      "seconds": 5.602639828000974,
+      "cached": false
+    },
+    {
+      "parent": 2978,
+      "raw_count": 0,
+      "seconds": 10.36344633599947,
+      "cached": false
+    },
+    {
+      "parent": 2980,
+      "raw_count": 0,
+      "seconds": 8.832018850000168,
+      "cached": false
+    },
+    {
+      "parent": 2983,
+      "raw_count": 0,
+      "seconds": 8.584074266000243,
+      "cached": false
+    },
+    {
+      "parent": 2982,
+      "raw_count": 0,
+      "seconds": 8.984329580998747,
+      "cached": false
+    },
+    {
+      "parent": 2987,
+      "raw_count": 74,
+      "seconds": 4.2035139899962815,
+      "cached": false
+    },
+    {
+      "parent": 2986,
+      "raw_count": 2,
+      "seconds": 4.4851277869966,
+      "cached": false
+    },
+    {
+      "parent": 2984,
+      "raw_count": 0,
+      "seconds": 9.688714436997543,
+      "cached": false
+    },
+    {
+      "parent": 2985,
+      "raw_count": 0,
+      "seconds": 8.990367932005029,
+      "cached": false
+    },
+    {
+      "parent": 3106,
+      "raw_count": 0,
+      "seconds": 5.415990276997036,
+      "cached": false
+    },
+    {
+      "parent": 3109,
+      "raw_count": 0,
+      "seconds": 5.538856534003571,
+      "cached": false
+    },
+    {
+      "parent": 3105,
+      "raw_count": 0,
+      "seconds": 9.88979555900005,
+      "cached": false
+    },
+    {
+      "parent": 3111,
+      "raw_count": 2,
+      "seconds": 5.768987636998645,
+      "cached": false
+    },
+    {
+      "parent": 3112,
+      "raw_count": 0,
+      "seconds": 5.308027782004501,
+      "cached": false
+    },
+    {
+      "parent": 3107,
+      "raw_count": 0,
+      "seconds": 11.186242572999618,
+      "cached": false
+    },
+    {
+      "parent": 3108,
+      "raw_count": 0,
+      "seconds": 10.929704706999473,
+      "cached": false
+    },
+    {
+      "parent": 3114,
+      "raw_count": 0,
+      "seconds": 4.882256056996994,
+      "cached": false
+    },
+    {
+      "parent": 3110,
+      "raw_count": 0,
+      "seconds": 11.501598504997673,
+      "cached": false
+    },
+    {
+      "parent": 3116,
+      "raw_count": 4,
+      "seconds": 4.576555063002161,
+      "cached": false
+    },
+    {
+      "parent": 3113,
+      "raw_count": 0,
+      "seconds": 9.738544517000264,
+      "cached": false
+    },
+    {
+      "parent": 3117,
+      "raw_count": 0,
+      "seconds": 5.0855121909989975,
+      "cached": false
+    },
+    {
+      "parent": 3115,
+      "raw_count": 0,
+      "seconds": 9.842232144001173,
+      "cached": false
+    },
+    {
+      "parent": 3120,
+      "raw_count": 0,
+      "seconds": 4.53986457100109,
+      "cached": false
+    },
+    {
+      "parent": 3121,
+      "raw_count": 4,
+      "seconds": 4.455628630996216,
+      "cached": false
+    },
+    {
+      "parent": 3118,
+      "raw_count": 0,
+      "seconds": 9.344683285999054,
+      "cached": false
+    },
+    {
+      "parent": 3123,
+      "raw_count": 4,
+      "seconds": 4.926857189995644,
+      "cached": false
+    },
+    {
+      "parent": 3119,
+      "raw_count": 0,
+      "seconds": 9.093679126002826,
+      "cached": false
+    },
+    {
+      "parent": 3125,
+      "raw_count": 12,
+      "seconds": 4.585830484000326,
+      "cached": false
+    },
+    {
+      "parent": 3126,
+      "raw_count": 4,
+      "seconds": 4.538356295000995,
+      "cached": false
+    },
+    {
+      "parent": 3122,
+      "raw_count": 4,
+      "seconds": 8.412429310003063,
+      "cached": false
+    },
+    {
+      "parent": 3127,
+      "raw_count": 36,
+      "seconds": 4.510393755001132,
+      "cached": false
+    },
+    {
+      "parent": 3128,
+      "raw_count": 80,
+      "seconds": 4.903240931002074,
+      "cached": false
+    },
+    {
+      "parent": 3124,
+      "raw_count": 0,
+      "seconds": 9.408633742998063,
+      "cached": false
+    },
+    {
+      "parent": 3257,
+      "raw_count": 0,
+      "seconds": 4.721510737996141,
+      "cached": false
+    },
+    {
+      "parent": 3129,
+      "raw_count": 318,
+      "seconds": 6.2162002790064435,
+      "cached": false
+    },
+    {
+      "parent": 3256,
+      "raw_count": 0,
+      "seconds": 5.328176228998927,
+      "cached": false
+    },
+    {
+      "parent": 3130,
+      "raw_count": 906,
+      "seconds": 5.774202571003116,
+      "cached": false
+    },
+    {
+      "parent": 3258,
+      "raw_count": 0,
+      "seconds": 4.935910415006219,
+      "cached": false
+    },
+    {
+      "parent": 3260,
+      "raw_count": 0,
+      "seconds": 5.67504273999657,
+      "cached": false
+    },
+    {
+      "parent": 3264,
+      "raw_count": 0,
+      "seconds": 4.72287321400654,
+      "cached": false
+    },
+    {
+      "parent": 3261,
+      "raw_count": 0,
+      "seconds": 5.771034646000771,
+      "cached": false
+    },
+    {
+      "parent": 3263,
+      "raw_count": 0,
+      "seconds": 5.607745718996739,
+      "cached": false
+    },
+    {
+      "parent": 3259,
+      "raw_count": 0,
+      "seconds": 11.529597495995404,
+      "cached": false
+    },
+    {
+      "parent": 3266,
+      "raw_count": 0,
+      "seconds": 5.501162938999187,
+      "cached": false
+    },
+    {
+      "parent": 3268,
+      "raw_count": 0,
+      "seconds": 5.319921237001836,
+      "cached": false
+    },
+    {
+      "parent": 3267,
+      "raw_count": 2,
+      "seconds": 5.60874421599874,
+      "cached": false
+    },
+    {
+      "parent": 3269,
+      "raw_count": 8,
+      "seconds": 5.112095135002164,
+      "cached": false
+    },
+    {
+      "parent": 3262,
+      "raw_count": 0,
+      "seconds": 11.060732486002962,
+      "cached": false
+    },
+    {
+      "parent": 3265,
+      "raw_count": 2,
+      "seconds": 10.24164723099966,
+      "cached": false
+    },
+    {
+      "parent": 3270,
+      "raw_count": 0,
+      "seconds": 5.114686345004884,
+      "cached": false
+    },
+    {
+      "parent": 3274,
+      "raw_count": 20,
+      "seconds": 4.586664929993276,
+      "cached": false
+    },
+    {
+      "parent": 3271,
+      "raw_count": 4,
+      "seconds": 5.322718957999314,
+      "cached": false
+    },
+    {
+      "parent": 3273,
+      "raw_count": 0,
+      "seconds": 4.976946200004022,
+      "cached": false
+    },
+    {
+      "parent": 3272,
+      "raw_count": 0,
+      "seconds": 5.190137706005771,
+      "cached": false
+    },
+    {
+      "parent": 3276,
+      "raw_count": 2,
+      "seconds": 4.964330978000362,
+      "cached": false
+    },
+    {
+      "parent": 3278,
+      "raw_count": 14,
+      "seconds": 4.851632178004365,
+      "cached": false
+    },
+    {
+      "parent": 3275,
+      "raw_count": 6,
+      "seconds": 9.658938159998797,
+      "cached": false
+    },
+    {
+      "parent": 3279,
+      "raw_count": 14,
+      "seconds": 4.935506693000207,
+      "cached": false
+    },
+    {
+      "parent": 3280,
+      "raw_count": 2,
+      "seconds": 4.924930825996853,
+      "cached": false
+    },
+    {
+      "parent": 3282,
+      "raw_count": 22,
+      "seconds": 4.967218408004555,
+      "cached": false
+    },
+    {
+      "parent": 3277,
+      "raw_count": 4,
+      "seconds": 9.54973135200271,
+      "cached": false
+    },
+    {
+      "parent": 3281,
+      "raw_count": 8,
+      "seconds": 8.78352622300008,
+      "cached": false
+    },
+    {
+      "parent": 3283,
+      "raw_count": 14,
+      "seconds": 4.486458450999635,
+      "cached": false
+    },
+    {
+      "parent": 3284,
+      "raw_count": 44,
+      "seconds": 4.39339187600126,
+      "cached": false
+    },
+    {
+      "parent": 3286,
+      "raw_count": 80,
+      "seconds": 4.351601204005419,
+      "cached": false
+    },
+    {
+      "parent": 3285,
+      "raw_count": 45,
+      "seconds": 4.562002045000554,
+      "cached": false
+    },
+    {
+      "parent": 3287,
+      "raw_count": 104,
+      "seconds": 4.786525237002934,
+      "cached": false
+    },
+    {
+      "parent": 3289,
+      "raw_count": 59,
+      "seconds": 5.303412662993651,
+      "cached": false
+    },
+    {
+      "parent": 3290,
+      "raw_count": 98,
+      "seconds": 5.301314502998139,
+      "cached": false
+    },
+    {
+      "parent": 3291,
+      "raw_count": 134,
+      "seconds": 5.125493503001053,
+      "cached": false
+    },
+    {
+      "parent": 3292,
+      "raw_count": 216,
+      "seconds": 5.389046987998881,
+      "cached": false
+    },
+    {
+      "parent": 3293,
+      "raw_count": 286,
+      "seconds": 5.424219323002035,
+      "cached": false
+    },
+    {
+      "parent": 3294,
+      "raw_count": 442,
+      "seconds": 5.895537420001347,
+      "cached": false
+    },
+    {
+      "parent": 3288,
+      "raw_count": 22,
+      "seconds": 9.00958246600203,
+      "cached": false
+    },
+    {
+      "parent": 3295,
+      "raw_count": 519,
+      "seconds": 5.182650244001707,
+      "cached": false
+    },
+    {
+      "parent": 3297,
+      "raw_count": 638,
+      "seconds": 5.063766398001462,
+      "cached": false
+    },
+    {
+      "parent": 3296,
+      "raw_count": 630,
+      "seconds": 5.0861313920031535,
+      "cached": false
+    },
+    {
+      "parent": 3298,
+      "raw_count": 708,
+      "seconds": 4.889608067998779,
+      "cached": false
+    },
+    {
+      "parent": 3337,
+      "raw_count": 4,
+      "seconds": 4.1070514480015845,
+      "cached": false
+    },
+    {
+      "parent": 3335,
+      "raw_count": 0,
+      "seconds": 8.19033985799615,
+      "cached": false
+    },
+    {
+      "parent": 3338,
+      "raw_count": 0,
+      "seconds": 4.280835299003229,
+      "cached": false
+    },
+    {
+      "parent": 3340,
+      "raw_count": 36,
+      "seconds": 4.415057439997327,
+      "cached": false
+    },
+    {
+      "parent": 3341,
+      "raw_count": 54,
+      "seconds": 4.5301845890062395,
+      "cached": false
+    },
+    {
+      "parent": 3336,
+      "raw_count": 0,
+      "seconds": 8.26715016500384,
+      "cached": false
+    },
+    {
+      "parent": 3342,
+      "raw_count": 50,
+      "seconds": 4.411025715999131,
+      "cached": false
+    },
+    {
+      "parent": 3343,
+      "raw_count": 68,
+      "seconds": 5.059146070998395,
+      "cached": false
+    },
+    {
+      "parent": 3345,
+      "raw_count": 130,
+      "seconds": 4.765344038998592,
+      "cached": false
+    },
+    {
+      "parent": 3339,
+      "raw_count": 0,
+      "seconds": 9.388309990994458,
+      "cached": false
+    },
+    {
+      "parent": 3347,
+      "raw_count": 354,
+      "seconds": 4.638033855997492,
+      "cached": false
+    },
+    {
+      "parent": 3346,
+      "raw_count": 368,
+      "seconds": 4.866396366000117,
+      "cached": false
+    },
+    {
+      "parent": 3348,
+      "raw_count": 1554,
+      "seconds": 6.141424943998572,
+      "cached": false
+    },
+    {
+      "parent": 3344,
+      "raw_count": 100,
+      "seconds": 8.851341396999487,
+      "cached": false
+    },
+    {
+      "parent": 3383,
+      "raw_count": 0,
+      "seconds": 8.989985587002593,
+      "cached": false
+    },
+    {
+      "parent": 3382,
+      "raw_count": 0,
+      "seconds": 9.671304439005326,
+      "cached": false
+    },
+    {
+      "parent": 3384,
+      "raw_count": 0,
+      "seconds": 9.199369565001689,
+      "cached": false
+    },
+    {
+      "parent": 3385,
+      "raw_count": 0,
+      "seconds": 9.299599883001065,
+      "cached": false
+    },
+    {
+      "parent": 3386,
+      "raw_count": 0,
+      "seconds": 9.458525521004049,
+      "cached": false
+    },
+    {
+      "parent": 3387,
+      "raw_count": 0,
+      "seconds": 9.640837595004996,
+      "cached": false
+    },
+    {
+      "parent": 3388,
+      "raw_count": 0,
+      "seconds": 9.030785212999035,
+      "cached": false
+    },
+    {
+      "parent": 3389,
+      "raw_count": 2,
+      "seconds": 9.060229783004615,
+      "cached": false
+    },
+    {
+      "parent": 3390,
+      "raw_count": 4,
+      "seconds": 9.026143294002395,
+      "cached": false
+    },
+    {
+      "parent": 3392,
+      "raw_count": 4,
+      "seconds": 8.809444380996865,
+      "cached": false
+    },
+    {
+      "parent": 3391,
+      "raw_count": 12,
+      "seconds": 9.0879375479999,
+      "cached": false
+    },
+    {
+      "parent": 3393,
+      "raw_count": 106,
+      "seconds": 9.136783533002017,
+      "cached": false
+    },
+    {
+      "parent": 3394,
+      "raw_count": 112,
+      "seconds": 8.378438047999225,
+      "cached": false
+    },
+    {
+      "parent": 3395,
+      "raw_count": 64,
+      "seconds": 8.502783249001368,
+      "cached": false
+    },
+    {
+      "parent": 3396,
+      "raw_count": 354,
+      "seconds": 4.519361689999641,
+      "cached": false
+    },
+    {
+      "parent": 3398,
+      "raw_count": 598,
+      "seconds": 5.278173949001939,
+      "cached": false
+    },
+    {
+      "parent": 3397,
+      "raw_count": 254,
+      "seconds": 8.718379271995218,
+      "cached": false
+    },
+    {
+      "parent": 3465,
+      "raw_count": 0,
+      "seconds": 9.16427561599994,
+      "cached": false
+    },
+    {
+      "parent": 3476,
+      "raw_count": 0,
+      "seconds": 9.560923110999283,
+      "cached": false
+    },
+    {
+      "parent": 3481,
+      "raw_count": 0,
+      "seconds": 9.32286819699948,
+      "cached": false
+    },
+    {
+      "parent": 3498,
+      "raw_count": 0,
+      "seconds": 9.018035645000055,
+      "cached": false
+    },
+    {
+      "parent": 3499,
+      "raw_count": 0,
+      "seconds": 7.98299550700176,
+      "cached": false
+    },
+    {
+      "parent": 3548,
+      "raw_count": 0,
+      "seconds": 4.994907744003285,
+      "cached": false
+    },
+    {
+      "parent": 3550,
+      "raw_count": 0,
+      "seconds": 4.7593548509976245,
+      "cached": false
+    },
+    {
+      "parent": 3551,
+      "raw_count": 0,
+      "seconds": 4.51867349800159,
+      "cached": false
+    },
+    {
+      "parent": 3549,
+      "raw_count": 0,
+      "seconds": 8.39086330599821,
+      "cached": false
+    },
+    {
+      "parent": 3593,
+      "raw_count": 0,
+      "seconds": 4.428510256999289,
+      "cached": false
+    },
+    {
+      "parent": 3553,
+      "raw_count": 0,
+      "seconds": 4.841297575003409,
+      "cached": false
+    },
+    {
+      "parent": 3552,
+      "raw_count": 24,
+      "seconds": 5.050782286998583,
+      "cached": false
+    },
+    {
+      "parent": 3477,
+      "raw_count": 0,
+      "seconds": 16.487673491996247,
+      "cached": false
+    },
+    {
+      "parent": 3594,
+      "raw_count": 0,
+      "seconds": 4.46999716800201,
+      "cached": false
+    },
+    {
+      "parent": 3595,
+      "raw_count": 0,
+      "seconds": 4.873429676998057,
+      "cached": false
+    },
+    {
+      "parent": 3600,
+      "raw_count": 210,
+      "seconds": 5.514868087004288,
+      "cached": false
+    },
+    {
+      "parent": 3597,
+      "raw_count": 8,
+      "seconds": 5.764157457997499,
+      "cached": false
+    },
+    {
+      "parent": 3598,
+      "raw_count": 10,
+      "seconds": 5.807075595002971,
+      "cached": false
+    },
+    {
+      "parent": 3599,
+      "raw_count": 41,
+      "seconds": 6.005317142997228,
+      "cached": false
+    },
+    {
+      "parent": 3601,
+      "raw_count": 152,
+      "seconds": 6.529280848000781,
+      "cached": false
+    },
+    {
+      "parent": 3596,
+      "raw_count": 4,
+      "seconds": 10.929815770999994,
+      "cached": false
+    },
+    {
+      "parent": 3602,
+      "raw_count": 942,
+      "seconds": 7.222716026000853,
+      "cached": false
+    },
+    {
+      "parent": 3603,
+      "raw_count": 810,
+      "seconds": 7.780065017999732,
+      "cached": false
+    },
+    {
+      "parent": 3674,
+      "raw_count": 18,
+      "seconds": 6.092590031003056,
+      "cached": false
+    },
+    {
+      "parent": 3673,
+      "raw_count": 18,
+      "seconds": 6.541910642998118,
+      "cached": false
+    },
+    {
+      "parent": 3671,
+      "raw_count": 16,
+      "seconds": 11.30326842199429,
+      "cached": false
+    },
+    {
+      "parent": 3670,
+      "raw_count": 4,
+      "seconds": 12.154256732006615,
+      "cached": false
+    },
+    {
+      "parent": 3669,
+      "raw_count": 4,
+      "seconds": 12.785896848996344,
+      "cached": false
+    },
+    {
+      "parent": 3672,
+      "raw_count": 0,
+      "seconds": 10.740774687998055,
+      "cached": false
+    },
+    {
+      "parent": 3677,
+      "raw_count": 56,
+      "seconds": 5.681268029999046,
+      "cached": false
+    },
+    {
+      "parent": 3676,
+      "raw_count": 56,
+      "seconds": 6.199081698003283,
+      "cached": false
+    },
+    {
+      "parent": 3679,
+      "raw_count": 42,
+      "seconds": 6.133917792001739,
+      "cached": false
+    },
+    {
+      "parent": 3675,
+      "raw_count": 18,
+      "seconds": 12.371040447003907,
+      "cached": false
+    },
+    {
+      "parent": 3681,
+      "raw_count": 42,
+      "seconds": 7.290166525999666,
+      "cached": false
+    },
+    {
+      "parent": 3678,
+      "raw_count": 56,
+      "seconds": 10.394888975999493,
+      "cached": false
+    },
+    {
+      "parent": 3680,
+      "raw_count": 48,
+      "seconds": 10.2732623050033,
+      "cached": false
+    },
+    {
+      "parent": 3683,
+      "raw_count": 51,
+      "seconds": 5.773698593002337,
+      "cached": false
+    },
+    {
+      "parent": 3685,
+      "raw_count": 192,
+      "seconds": 5.686635976002435,
+      "cached": false
+    },
+    {
+      "parent": 3682,
+      "raw_count": 105,
+      "seconds": 9.232784572006494,
+      "cached": false
+    },
+    {
+      "parent": 3687,
+      "raw_count": 84,
+      "seconds": 5.201226894998399,
+      "cached": false
+    },
+    {
+      "parent": 3684,
+      "raw_count": 64,
+      "seconds": 9.80670704899967,
+      "cached": false
+    },
+    {
+      "parent": 3688,
+      "raw_count": 276,
+      "seconds": 5.543342046999896,
+      "cached": false
+    },
+    {
+      "parent": 3686,
+      "raw_count": 90,
+      "seconds": 9.034082966005371,
+      "cached": false
+    },
+    {
+      "parent": 3690,
+      "raw_count": 152,
+      "seconds": 5.255672387997038,
+      "cached": false
+    },
+    {
+      "parent": 3691,
+      "raw_count": 194,
+      "seconds": 5.208172151003964,
+      "cached": false
+    },
+    {
+      "parent": 3689,
+      "raw_count": 188,
+      "seconds": 9.36891206799919,
+      "cached": false
+    },
+    {
+      "parent": 3692,
+      "raw_count": 514,
+      "seconds": 5.7277921040004,
+      "cached": false
+    },
+    {
+      "parent": 3694,
+      "raw_count": 361,
+      "seconds": 5.615960119997908,
+      "cached": false
+    },
+    {
+      "parent": 3696,
+      "raw_count": 652,
+      "seconds": 6.029124781998689,
+      "cached": false
+    },
+    {
+      "parent": 3698,
+      "raw_count": 682,
+      "seconds": 5.898666733999562,
+      "cached": false
+    },
+    {
+      "parent": 3700,
+      "raw_count": 670,
+      "seconds": 5.093906128000526,
+      "cached": false
+    },
+    {
+      "parent": 3703,
+      "raw_count": 956,
+      "seconds": 5.597000241003116,
+      "cached": false
+    },
+    {
+      "parent": 3705,
+      "raw_count": 1000,
+      "seconds": 5.272211925999727,
+      "cached": false
+    },
+    {
+      "parent": 3707,
+      "raw_count": 1024,
+      "seconds": 5.292377391997434,
+      "cached": false
+    },
+    {
+      "parent": 3709,
+      "raw_count": 1252,
+      "seconds": 5.437246852998214,
+      "cached": false
+    },
+    {
+      "parent": 3714,
+      "raw_count": 1539,
+      "seconds": 5.925158798003395,
+      "cached": false
+    },
+    {
+      "parent": 3716,
+      "raw_count": 1928,
+      "seconds": 6.902135932999954,
+      "cached": false
+    },
+    {
+      "parent": 3734,
+      "raw_count": 313,
+      "seconds": 6.7868164500032435,
+      "cached": false
+    },
+    {
+      "parent": 3728,
+      "raw_count": 0,
+      "seconds": 9.646514325999306,
+      "cached": false
+    },
+    {
+      "parent": 3736,
+      "raw_count": 934,
+      "seconds": 7.214849973999662,
+      "cached": false
+    },
+    {
+      "parent": 3730,
+      "raw_count": 0,
+      "seconds": 10.101738177996594,
+      "cached": false
+    },
+    {
+      "parent": 3732,
+      "raw_count": 54,
+      "seconds": 10.416449123993516,
+      "cached": false
+    },
+    {
+      "parent": 3740,
+      "raw_count": 1374,
+      "seconds": 7.306235743999423,
+      "cached": false
+    },
+    {
+      "parent": 3738,
+      "raw_count": 1332,
+      "seconds": 10.311132230999647,
+      "cached": false
+    },
+    {
+      "parent": 3746,
+      "raw_count": 2650,
+      "seconds": 7.892855983001937,
+      "cached": false
+    },
+    {
+      "parent": 3742,
+      "raw_count": 1914,
+      "seconds": 10.624184815998888,
+      "cached": false
+    },
+    {
+      "parent": 3748,
+      "raw_count": 3547,
+      "seconds": 8.706999702000758,
+      "cached": false
+    },
+    {
+      "parent": 3744,
+      "raw_count": 2115,
+      "seconds": 10.05616285600263,
+      "cached": false
+    },
+    {
+      "parent": 3749,
+      "raw_count": 0,
+      "seconds": 9.683449882999412,
+      "cached": false
+    }
+  ],
+  "rank7_isometry_deduplication": "NOT YET PERFORMED",
+  "ranks8_to10": "NOT YET PERFORMED"
+}

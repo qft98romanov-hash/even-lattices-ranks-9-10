@@ -1,0 +1,246 @@
+AN EXACT RANK-TEN DETERMINANT THEOREM, CONDITIONAL ON gamma_9 <= 2
+Confidential research continuation, 7 October 2026.
+
+THEOREM. Assume the external Hermite-constant assertion gamma_9<=2.
+Every positive-definite even integral lattice L of rank10 and minimum
+squared norm at least6 has Gram determinant at least54675. The bound is
+attained by the two explicit lattices in rank10_e8_certificate.json.
+Thus e_10(6)=54675 under this external assertion.
+
+This statement is not a global classification of equality cases.
+Exactly two equality types have been classified in the subclass containing
+sqrt(3)E8. The strict global search below does not exclude additional
+non-E8-containing equality types at determinant54675.
+
+DEPENDENCIES.
+Besides gamma_9<=2, the proof uses the classical Hermite powers
+ gamma_r^r =1,4/3,2,4,8,64/3,64,256 for r=1,...,8,
+and the uniqueness, among all Euclidean lattices, of the rank-eight
+Hermite equality lattice E8 up to similarity. Mordell's inequality is
+proved below. The E8-containing rank-ten lemma is proved from the exact
+finite E8/3E8 table and the elementary binary Hermite bound. The remaining
+input is a complete finite exact search with saved coverage and maps.
+NO previous rank-nine determinant theorem, uniqueness theorem, spectral
+gap theorem, or their older certificates are used in this rank-ten proof.
+The saved low-rank9 search independently covers the formerly gap-dependent
+interval. The original rank-nine K9 matrix is used only to display convenient
+E8 and rank-ten witnesses, whose properties are directly checked anew.
+
+1. Normalizations and parity.
+For a lattice L, det(L) is the determinant of its Gram matrix, i.e. the
+square of its covolume. min(L) is the minimum nonzero squared norm.
+An even integral Gram matrix is integral, symmetric, positive definite
+and has even diagonal entries. In odd rank its determinant is even. In
+rank2m it is congruent to0 or(-1)^m modulo4. These elementary determinant
+congruences can be proved by the determinant expansion, or by integral
+alternating reduction modulo4. In particular a rank10 counterexample has
+ D=det(L)<=54672,
+because54673 and54674 are congruent to1 and2 modulo4, respectively.
+
+2. Saturated shortest-dual flags.
+Given L_r, choose a shortest nonzero vector y_r of L_r*. It is primitive,
+since divisibility by an integer>1 would give a shorter nonzero dual
+vector. Thus x-><x,y_r> maps L_r onto Z. Its kernel
+ L_(r-1)=L_r intersect y_r^perp
+is primitive, has rankr-1, and is even integral with minimum at least6.
+Choosing a lift of1 and comparing covolumes gives
+ d_(r-1)=d_r ||y_r||^2=d_r min(L_r*).
+Iterating produces a saturated flag through all ranks. The Hermite bound
+for the dual gives
+ d_(r-1)<=gamma_r*d_r^((r-1)/r).
+The primal minimum gives d_r>=6^r/gamma_r^r.
+
+Mordell's inequality follows directly. Normalize det(M)=1 in rankn.
+Its shortest-dual kernel J satisfies
+ min(M)<=min(J)<=gamma_(n-1)*det(J)^(1/(n-1))
+ <=gamma_(n-1)*gamma_n^(1/(n-1)).
+Taking the supremum over M and rearranging yields
+ gamma_n<=gamma_(n-1)^((n-1)/(n-2)).
+Consequently gamma10<=2^(9/8) under gamma9<=2.
+
+3. Exact finite determinant windows.
+Apply the preceding inequalities to D<=54672, rounding downward and
+applying the determinant congruences at each rank. Exact integer-power
+comparisons, without decimal rounding, give the following upper endpoints:
+ r:     1   2   3   4    5    6     7     8     9     10
+ upper: 6  44 210 789 2492 6459 13938 24673 40054 54672.
+For example the first step is checked by
+ 40054^40 <= 2^45*54672^36 <40055^40.
+Subsequent steps compare integer/rational powers gamma_r^r*U_r^(r-1).
+Both compute_windows.py and the independent arithmetic in
+verify_global_rank10_certificate.py check all rounding decisions.
+
+Classical lower endpoints for ranks1,...,8 are
+ 6,27,108,324,972,2187,4374,6561.
+Under gamma9<=2, the rank-nine lower bound is19683, hence19684 after odd-
+rank parity. The seed in rank1 is exactly[6], since its lower and upper
+endpoints agree. The proof therefore does not assume that arbitrary input
+lattices have a basis consisting of minimum vectors.
+
+4. Excluding every E8-containing counterexample.
+For J=sqrt(3)E8, enumeration through unscaled squared norm8 gives all
+6561 classes of E8/3E8, with minimum distribution
+ (0,1),(2,240),(4,2160),(6,2240),(8,1920).
+Thus every class of J*/J has minimum<=8/3. Any integral overlattice of J
+of the same rank which properly contains J would therefore contain a
+nonzero vector of norm<=8/3; so J is automatically primitive in any
+ambient integral lattice of minimum>=6.
+
+If a rank-ten lattice L contains J, project onto its orthogonal binary
+quotient P. Every nonzero z in P has a lift whose parallel part is a
+minimum representative of a class in J*/J. Therefore
+ ||z||^2>=6-8/3=10/3.
+Binary Gauss reduction gives det(P)>=(3/4)min(P)^2. Thus
+ det(L)=6561 det(P)>=(3/4)*6561*(10/3)^2=54675.
+This excludes such L from the strict counterexample search.
+
+If a shortest-dual rank-eight flag member has determinant6561, equality
+in the rank-eight Hermite bound implies that it is sqrt(3)E8. That would
+be contained in L, just excluded. Rank-eight determinant congruence then
+raises its lower endpoint to6564. No other rank-eight lattice is removed
+on the basis of an E8 test. The final search windows are therefore:
+ r1 [6,6]; r2 [27,44]; r3 [108,210]; r4 [324,789];
+ r5 [972,2492]; r6 [2187,6459]; r7 [4374,13938];
+ r8 [6564,24673]; r9 [19684,40054].
+
+5. Complete exact one-vector extension.
+Suppose a primitive rank-r parent J has integral Gram G, determinant d,
+adjugate A, minimum>=6, and is even. Every primitive one-rank extension
+can be represented by
+ H=[[G,p],[p^T,n]], p in Z^r, n an even integer.
+Put s=n-p^T G^{-1}p>0 and D=det(H)=ds. Replacing the last generator by
+an element of J permits p to be chosen from a closest representative of
+a class in J*/J. Its fingerprint is A p modulo d. This finite group has
+d classes. Complete dual-vector enumeration until all d fingerprints
+appear gives the exact minimum of every class, not a heuristic cover.
+Write M_a=d*mu_J(a), an integer. The extension has minimum>=6 iff
+ m^2 D + M_(ma) >=6d
+for all positive integers m with m^2D<6d. The parent already checks m=0;
+negative m give the same minima. Nonzero zero-class layers are included.
+The diagonal interval, determinant congruence and these finitely many
+layer inequalities are checked exactly.
+
+For a shortest-dual flag extension, the normal must itself be shortest
+in H*. This can be checked by direct inversion and exact enumeration,
+as in the original kernel. The faster equivalent test is also exact:
+for q!=0 in Z^r, minimize the block-inverse dual norm over m in Z,
+ q^T G^{-1}q+(m-p^T G^{-1}q)^2/s.
+The normal has squared norm d/D. Consequently it is shortest iff
+ D(q^T A q)+dist(p^T A q,d Z)^2>=d^2
+for every q with D(q^T A q)<d^2. One parent-dual list through d/D_low
+contains every q needed for any D>=D_low. This test uses only integers.
+The complete derivation and implementation contracts are in
+fast_extension_proof.txt and fast_extend.py. The old and new kernels
+were compared on exact ordered child lists, including large branches;
+additional independent low-rank tests and direct primal/dual checks passed.
+
+6. Lifting exclusions.
+Let u be ANY nonzero vector of J*. It lifts to H* with added normal
+coefficient of absolute value<=1/2 after choosing a nearest integer.
+If the new perpendicular dual vector is shortest, then
+ 1/s <= ||u||^2+1/(4s),
+so s>=3/(4||u||^2). Taking a shortest u is strongest, but is not necessary
+for validity. In the retained basis the last dual coordinate vector has
+squared norm d_prev/d. Thus a necessary condition for a further child of
+determinant at most U is
+ 3d^2 <= 4 d_prev U.
+This is the exact integer inequality used for every recorded lifting
+prune. It remains valid even if one does not assume that this chosen
+parent-dual vector is shortest. In addition, the certificate checks the
+shortest-dual property of retained flag representatives independently.
+
+7. Isometry reductions preserve complete coverage.
+Every raw candidate is either excluded by the preceding necessary
+lifting inequality or is mapped to a retained representative by an
+explicit unimodular integer matrix T satisfying
+ T^T G_rep T=G_raw.
+The representative is selected from actual raw matrices; its flag basis
+is not replaced by an unverified reduced basis. Each map is checked
+exactly. Any continuation of an omitted isometric parent transports to
+a continuation of its representative, preserving the normal-shortest
+property and all intrinsic lattice conditions. The earlier flag itself
+need not be fixed by the isometry. Signatures are used only to separate
+potential isometry comparisons; no identification is accepted without
+an exact checked map. Retaining extra representatives would merely
+increase the search, not invalidate its completeness.
+
+8. Complete search counts.
+Ranks2--6 were generated completely with the original exact kernel.
+The raw counts and complete isometry representative counts are:
+ rank2: 9 ->6;
+ rank3: 102 ->31;
+ rank4: 729 ->161;
+ rank5: 6934 ->925;
+ rank6: 28284 ->3752.
+All covering maps were checked; the complete original rank6 raw generation
+was preserved before its slow deduplication was replaced by a faster
+exact implementation. The replacement processed all28284 records, not a
+sample. Its complete map list was separately verified.
+
+Of3752 rank6 representatives,3252 were excluded before rank7 generation
+by the lifting inequality. All500 remaining parents were fully enumerated.
+Their56269 rank7 raw children split as:
+ 52208 excluded by lifting toward d8<=24673;
+ 4061 retained, covering224 isometry representatives.
+All224 rank7 representatives were fully extended to rank8, giving19481
+raw children. They split as:
+ 18110 excluded by lifting toward d9<=40054;
+ 1371 retained, covering47 isometry representatives.
+These counts do NOT claim that all56269 rank7 or all19481 rank8 candidates
+were globally classified up to isometry; only the eligible subsets were
+deduplicated. The excluded records and their exact inequalities are kept.
+
+Rank9 was searched in two disjoint parity-complete intervals:
+ [19684,24450]:45 of47 parents excluded by exact lifting; both remaining
+ parents fully enumerated, producing zero children.
+ [24452,40054]:all47 parents fully enumerated, producing3819 raw children.
+There is no missing determinant between the intervals because24451 is odd.
+The lower interval makes the proof independent of all earlier rank-nine
+lower-bound and gap theorems.
+
+9. The terminal contradiction.
+Every one of the3819 rank-nine candidates violates the necessary lifting
+inequality for a rank-ten child of determinant<=54672. In fact the smallest
+value of3d9^2/(4d8) among them is
+ 12966723/212 =61163.787735849... >54672.
+The exact count3819, all parent linkage, every determinant pair and all
+3819 inequalities are saved. An independent implementation reenumerated
+the short dual vectors of every final rank-nine matrix and checked the
+normal-shortest identities. There are zero surviving rank-nine parents;
+therefore no final rank-ten extension enumeration is needed.
+This contradicts the assumed counterexample and proves det(L)>=54675.
+The two explicit positive definite even integral min-six matrices of
+section4 attain54675, establishing the stated value of e_10(6).
+
+10. Reproduction and levels of verification.
+Run with Python assertions enabled:
+ python verify_global_rank10_certificate.py
+This performs exact independent arithmetic on all windows, saved linkage,
+source hashes, manifests, isometry maps, representative dual minima, final
+rank-nine dual minima and every recorded lifting exclusion; it also reruns
+the finite E8 certificate and the rank-ten witnesses.
+
+For complete extension-list regeneration, run:
+ python verify_global_rank10_certificate.py --replay --workers 7
+The second mode regenerates every unpruned parent list plus the full
+ranks2--6 prefix with the mathematically reviewed fast exact kernel, and
+compares each ordered list with its saved canonical SHA256 and count.
+The SHA256 is an exact-output comparison after actual regeneration, not
+a substitute for regeneration or completeness. Per-job results are saved
+in global_replay_records; global_rank10_certificate_verified.json records
+whether full regeneration actually completed. The intermediate progress
+file is not a completion certificate.
+
+The vector enumerator used in generation is the archived exact rational
+LDL kernel. The independent static checker has its own short-dual
+enumerator. This is not a second independent implementation of every
+high-dimensional discriminant-class search, nor external peer review.
+
+BOUNDARIES.
+The theorem depends on the external gamma9<=2 assertion. All consequences
+must retain that dependency unless it is adopted as an established cited
+theorem. No claim is made to classify all rank-ten minimizers, all rank48
+primitive embeddings, or all antipode clusters. For bare dimension38
+cross-section packings at the inherited squared minimum6, the theorem
+excludes improving the determinant below54675. It does not establish
+unrestricted optimality of sphere packing in dimension38.

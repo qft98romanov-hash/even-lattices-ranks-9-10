@@ -1,0 +1,1372 @@
+% Standalone XeLaTeX source. Copy to main.tex in Overleaf; select XeLaTeX.
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=23mm,headheight=15pt]{geometry}
+\usepackage{fontspec}
+\IfFontExistsTF{CMU Serif}{\setmainfont{CMU Serif}}{\setmainfont{NimbusRoman-Regular.otf}[BoldFont=NimbusRoman-Bold.otf,ItalicFont=NimbusRoman-Italic.otf,BoldItalicFont=NimbusRoman-BoldItalic.otf]}
+\IfFontExistsTF{CMU Sans Serif}{\setsansfont{CMU Sans Serif}}{\setsansfont{DejaVu Sans}}
+\IfFontExistsTF{CMU Typewriter Text}{\setmonofont{CMU Typewriter Text}[Scale=0.82]}{\setmonofont{DejaVu Sans Mono}[Scale=0.82]}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,longtable,array,enumitem}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue!50!black,urlcolor=blue!60!black,citecolor=blue!50!black,pdftitle={Rank-nine and rank-ten lattices: new results, 7 October 2026}}
+\setcounter{tocdepth}{1}\hypersetup{bookmarksdepth=2}
+\usepackage{fancyhdr}
+\usepackage{needspace}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\small Rank-nine and rank-ten lattices}
+\fancyhead[R]{\small 7 October 2026}
+\fancyfoot[C]{\thepage}
+\setlength{\parindent}{0pt}\setlength{\parskip}{5pt}
+\setlength{\emergencystretch}{3em}
+\raggedright
+\allowdisplaybreaks
+\setlist{nosep,topsep=4pt,leftmargin=*}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\renewcommand{\proofname}{Proof}
+\renewcommand{\contentsname}{Contents}
+\renewcommand{\refname}{References and source materials}
+\newcommand{\Z}{\mathbb Z}\newcommand{\R}{\mathbb R}\newcommand{\F}{\mathbb F}
+\newcommand{\GL}{\operatorname{GL}}\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\spanR}{\operatorname{span}_{\R}}\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\mink}{\operatorname{min}}
+\newcommand{\Kalt}{K_{10}^{\mathrm{alt}}}
+\newcommand{\file}[1]{{\small\nolinkurl{#1}}}
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+\begin{document}
+\begin{titlepage}
+\vspace*{18mm}
+{\Large\sffamily Confidential research report\par}
+\vspace{14mm}
+{\huge\bfseries Even integral lattices\par of ranks nine and ten\par}
+\vspace{9mm}
+{\Large Exact minima, equality cases,\par and cluster extensions\par}
+\vspace{12mm}
+{\large New computations and internal verification\par 7 October 2026\par}
+\vspace{14mm}
+\textbf{Main conclusions.}
+\[
+e_9(6)=21870,\qquad \text{with a unique minimizer up to isometry};
+\]
+\[
+e_{10}(6)=54675.
+\]
+Among rank-ten lattices containing $\sqrt3E_8$, the minimum determinant is $54675$, attained by exactly two nonisometric lattices. For both, every nontrivial antipode cluster of squared diameter $\beta<6$ lowers the density at the guaranteed radius. In rank nine, the absence of a cluster improvement holds for all sections containing $\sqrt3E_8$, with no upper bound on their determinant.
+
+\vfill
+\textbf{Status.} This report supplements the full audit of 10 September 2026. The exact finite certificates have been executed, and their logical dependencies are stated explicitly. The global rank-ten minimum is established. Its complete equality classification and the full classification of embeddings into rank 48 remain open. No external referee review or confirmation of scientific novelty has been obtained.
+\end{titlepage}
+{\small\tableofcontents}
+\newpage
+
+\section{Which questions are settled, and in what sense}
+
+The source manuscript studies sections of extremal even unimodular lattices of rank 48 and sphere packings in dimensions 38--43. The earlier investigation established a computer-assisted lower bound $e_9(6)\ge21870$ and an explicit equality example $K_9$. This report records the \emph{additional} results of the present investigation.
+
+\begin{longtable}{P{0.06\linewidth}P{0.37\linewidth}P{0.49\linewidth}}
+\toprule
+No. & Question & Established status\\\midrule
+\endhead
+1 & Uniqueness at determinant $21870$ & Settled for abstract even integral rank-nine lattices of minimum at least 6: the sole isometry class is $K_9$.\\[5pt]
+2 & The exact value of $e_{10}(6)$ & The exact value is established: $e_{10}(6)=54675$. There are exactly two equality types in the subclass containing $\sqrt3E_8$; equality outside it is not classified.\\[5pt]
+3 & Primitive embeddings into specified rank-48 lattices & There are exactly 19 minimal primitive rank-ten supersections of the fixed printed $K_9\subset P_{48p}$; all have type $K_{10}$, and none has the alternative type. The embedding orbits of arbitrary copies of $K_9$ have not been enumerated.\\[5pt]
+4 & Optimality of cluster extensions & Settled for every $\beta<6$ over both minimal rank-ten types containing $\sqrt3E_8$. In rank nine, settled for every determinant when $\sqrt3E_8$ is present. Appendix~\ref{app:uniform10} gives further partial bounds for all determinants in rank ten with $\sqrt3E_8$. The general problem remains open.\\[5pt]
+5 & External verification and novelty & Separate internal checks and a review of primary sources are completed. No external expert verdict or proof of novelty has been obtained.\\
+\bottomrule
+\end{longtable}
+
+In items 1, 2, and 4, ``settled'' means that the stated mathematical argument and exact finite certificates cover the specified scope. It does not mean formalization in a proof assistant or independent human refereeing.
+
+\section{Notation and general lemmas}
+
+\subsection{Determinant, minimum, and dual lattice}
+
+A rank-$r$ lattice $L$ is generated by a basis in Euclidean space, whose Gram matrix $G$ is positive definite. We write
+\[
+d(L)=\det G,\qquad m(L)=\min_{0\ne x\in\Z^r}x^{\mathsf T}Gx.
+\]
+Thus $d(L)$ is the square of the covolume, and $m(L)$ is the squared minimum length. A lattice is integral if all pairings are integers, and even if all squared norms are even integers. In a basis, these conditions are $G_{ij}\in\Z$ and $G_{ii}\in2\Z$.
+
+The dual lattice
+\[
+L^*=\{y\in\spanR L:(y,L)\subseteq\Z\}
+\]
+has determinant $d(L^*)=d(L)^{-1}$. For integral $L$, the finite discriminant group $A_L=L^*/L$ has order $d(L)$. Define
+\[
+\mu_L(a)=\min_{y\in a}\|y\|^2,\qquad
+R_L=\max_{a\in A_L}\mu_L(a).
+\]
+The quantity $R_L$ is the maximum of the minima of the \emph{discrete} classes; it is not the squared covering radius of the entire Euclidean space.
+
+Our object of study is
+\[
+e_r(6)=\min\{d(L):\rank L=r,\ L\text{ even integral},\ m(L)\ge6\}.
+\]
+Gram matrices $G,G'$ are integrally isometric if $G'=U^{\mathsf T}GU$ for some $U\in\GL_r(\Z)$.
+
+\subsection{Primitive sections and flags}
+
+A sublattice $J\subset L$ is primitive if $J=L\cap\spanR J$, equivalently if $L/J$ is torsion-free. For primitive $J$, the orthogonal projection $P$ of $L$ onto $\spanR(J)^\perp$ is a lattice, and
+\begin{equation}\label{eq:projectiondet}
+d(L)=d(J)d(P).
+\end{equation}
+Indeed, a basis of $J$ extends to a basis of $L$. The determinant of the block Gram matrix is the determinant of the $J$ block times that of its Schur complement; the latter is the Gram matrix of the projections of the added vectors.
+
+If $y$ is a shortest nonzero vector of $L^*$, then $y$ is primitive and
+\begin{equation}\label{eq:dualflag}
+J=L\cap y^\perp,\qquad d(J)=d(L)\|y\|^2=d(L)m(L^*).
+\end{equation}
+Primitivity of $y$ means $(y,L)=\Z$, so the projection onto its line has spacing $1/\|y\|$. The identity follows from \eqref{eq:projectiondet}.
+
+The Hermite constant is defined over \emph{all real Euclidean lattices}:
+\[
+\gamma_r=\sup_L\frac{m(L)}{d(L)^{1/r}}.
+\]
+By \eqref{eq:dualflag}, consecutive sections satisfy
+\begin{equation}\label{eq:windows}
+d_{r-1}\le\gamma_r d_r^{(r-1)/r},\qquad
+d_r\ge6^r/\gamma_r^r.
+\end{equation}
+The original proof uses the classical values
+\[
+(\gamma_r^r)_{r=1}^8=(1,4/3,2,4,8,64/3,64,256)
+\]
+and Mordell's inequality
+\begin{equation}\label{eq:mordell}
+\gamma_r\le\gamma_{r-1}^{(r-1)/(r-2)}.
+\end{equation}
+The new determinant gap and global rank-ten bound additionally import the public theorem $\gamma_9=2$ from \cite{dw}. This input is not needed for the new classification at $d_9=21870$.
+
+An even integral matrix of odd order has even determinant. In order $2m$, its determinant is congruent to $0$ or $(-1)^m$ modulo 4. These restrictions are applied when rounding every determinant window.
+
+\subsection{The complete one-step extension criterion}
+
+Let $J$ be even integral with $m(J)\ge6$. A primitive extension by one rank has the form
+\[
+K=J+\Z(y+z),\qquad y\in J^*,\quad z\perp J,\quad s=\|z\|^2>0.
+\]
+Choose $y$ shortest in its class $a=y+J$. Then
+\begin{align}
+d(K)&=d(J)s,\label{eq:extensiondet}\\
+K\text{ even integral}&\Longleftrightarrow s+\mu_J(a)\in2\Z,\label{eq:extensioneven}\\
+m(K)\ge6&\Longleftrightarrow
+m^2s+\mu_J(ma)\ge6\quad(m\in\Z\setminus\{0\}).\label{eq:extensionmin}
+\end{align}
+The last identity follows by minimizing within each layer $J+m(y+z)$. It suffices to test positive $m$ with $m^2s<6$. If the class has order $h$, the layer $m=h$ must also be respected: it gives $h^2s\ge6$.
+
+The layer $m=1$ yields the useful bound
+\begin{equation}\label{eq:gluebound}
+d(K)\ge d(J)(6-R_J).
+\end{equation}
+
+If the extension continues a flag of shortest dual normals, then
+\begin{equation}\label{eq:lift}
+s\ge\frac{3}{4m(J^*)}.
+\end{equation}
+To prove this, lift a shortest vector $u\in J^*$ to $K^*$, choosing its coefficient along the perpendicular dual normal in $[-1/2,1/2]$. Its squared norm is at most $m(J^*)+1/(4s)$, whereas the shortest normal has squared norm $1/s$. This proves \eqref{eq:lift}. For consecutive ranks 6, 7, and 8, it gives
+\begin{equation}\label{eq:lift678}
+d_8\ge\frac{3d_7^2}{4d_6}.
+\end{equation}
+
+\section{Uniqueness in rank nine}
+
+\begin{theorem}\label{thm:unique}
+Let $L$ be a positive-definite even integral rank-nine lattice with $m(L)\ge6$ and $d(L)=21870$. Then $L\cong K_9$. Together with the earlier lower bound, this classifies every minimizer of $e_9(6)$: there is exactly one isometry class.
+\end{theorem}
+
+\subsection{Why the boundary required a new analysis}
+
+The earlier enumeration assumed $d_9\le21868$. Equality at $21870$ changes the upper windows, so transferring the old conclusion without additional checks would be incorrect. Using $\gamma_9\le2^{8/7}$ gives
+\[
+\left\lfloor2^{8/7}21870^{8/9}\right\rfloor=15910.
+\]
+This is certified by the integer comparison
+\[
+15910^{63}\le2^{72}21870^{56}<15911^{63}.
+\]
+Since $d_8\equiv0,1\pmod4$, the largest permitted value is \textbf{15909}, rather than 15908.
+
+\begin{center}
+\begin{tabular}{c*{8}{r}}
+\toprule
+Rank &8&7&6&5&4&3&2&1\\\midrule
+Raw bound &15910&9494&4648&1894&634&178&39&7\\
+After congruences &15909&9494&4648&1894&633&178&39&6\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+New cases occur only at $d_6=4648$, $d_7=9494$, and $d_8=15909$. The value $d_8=6561$, previously excluded for a strict counterexample, must also be restored. Equality in the rank-eight Hermite theorem, with uniqueness of its Euclidean extremizer, then gives $L_8\cong\sqrt3E_8$.
+
+\subsection{Excluding the three new window endpoints}
+
+The exact extension generator \eqref{eq:extensiondet}--\eqref{eq:extensionmin} was run on every earlier parent representative:
+\begin{center}
+\begin{tabular}{lrl}
+\toprule
+Target case & Parents & Result\\\midrule
+Rank 6, determinant 4648 &118&No extension\\
+Rank 7, determinant 9494 &138&No extension\\
+Rank 8, determinant 15909 &6&No extension\\
+\bottomrule
+\end{tabular}
+\end{center}
+Completeness of the second parent list follows from emptiness of the first new case. For the third list, \eqref{eq:lift678} was reapplied to all 2235 earlier rank-seven records using the increased upper bound 15909. The same 96 records survive, identified with six representatives by exact unimodular matrices.
+
+These 262 endpoint exclusions were additionally checked by an independent algorithm that does not call the earlier short-vector enumerator. Explicit dual vectors violating \eqref{eq:lift} certify 188 cases; the finite discriminant quadratic form excludes the remaining 74.
+
+Here is the second method. For a parent Gram matrix $G$, set $d=\det G$ and $A=\operatorname{adj}G$. A class with pairing column $p$ is encoded by
+\[
+c=Ap\pmod d,\qquad Q(c)=p^{\mathsf T}Ap\pmod{2d}.
+\]
+The value $Q$ is well-defined: replacing $p$ by $p+Gz$ changes the numerator by
+\[
+2d\,p^{\mathsf T}z+d\,z^{\mathsf T}Gz\in2d\Z.
+\]
+All $d$ classes are enumerated by adding columns of $A$, using the recurrence
+\[
+Q(c+Ae_i)=Q(c)+2c_i+A_{ii}\pmod{2d}.
+\]
+An extension of determinant $T$ with even last diagonal entry $n$ requires
+\[
+T=dn-p^{\mathsf T}Ap,\qquad Q(c)\equiv-T\pmod{2d}.
+\]
+If this value does not occur, no extension exists, regardless of its minimum. A dual-vector exclusion only requires nonzero $p$ satisfying
+\[
+4T(p^{\mathsf T}Ap)<3d^2.
+\]
+This strictly contradicts the lifting inequality, whose proof works with this particular dual vector without requiring it to be shortest.
+
+\subsection{The three possible rank-eight parents}
+
+The earlier complete classification of the six branches, together with \eqref{eq:gluebound}, leaves only
+\[
+J_0=\sqrt3E_8,\qquad J_1=J_{14580},\qquad J_2=J_{15309a}.
+\]
+For the remaining parents, the lower bounds are 32076, 36504, 39930, or 42282, or there is no permitted continuation of the flag.
+
+To specify the two less familiar parents, let $H$ be the matrix of $\sqrt3E_7$ in the earlier certificate, and write
+\[
+\operatorname{border}(H,b,n)=\begin{pmatrix}H&b\\b^{\mathsf T}&n\end{pmatrix}.
+\]
+Then, in the fixed certificate basis,
+\begin{align*}
+J_1&=\operatorname{border}(H,(2,-3,-1,-3,-3,-3,-3)^{\mathsf T},6),\\
+J_2&=\operatorname{border}(H,(0,2,2,-1,-1,-1,-1)^{\mathsf T},6).
+\end{align*}
+Here lattice symbols also denote their Gram matrices; $H$ is the leading $7\times7$ block of the matrix $G_8$ displayed in Section 4. All changes of basis are supplied in the machine-readable package. The new proof uses the earlier complete classification as an explicitly identified input.
+
+For each parent, fix $s=21870/d(J)$ and recompute the full table of discriminant-class minima:
+\begin{center}
+\begin{tabular}{lrrrr}
+\toprule
+Parent &$s$&$R_J$&Classes&Admissible classes\\\midrule
+$\sqrt3E_8$ &$10/3$&$8/3$&6561&1920\\
+$J_{14580}$ &$3/2$&$9/2$&14580&1\\
+$J_{15309a}$ &$10/7$&$32/7$&15309&2\\
+\bottomrule
+\end{tabular}
+\end{center}
+The complete enumerations examined respectively 26641, 190491, and 227617 dual vectors. Completeness of each class table is certified by the presence of $d(J)$ distinct classes in the exactly enumerated ball. Every vector outside that ball is longer than the representatives found. For $J_2$, the layer $m=2$ is genuinely tested, since $4s=40/7<6$.
+
+\subsection{Isometries of all 1923 presentations}
+
+Let $G_8=3C$ be the leading block of $K_9$, with $C$ a Gram matrix of $E_8$. The reflections in the eight basis roots,
+\[
+R_i=I-e_i(\text{row }i\text{ of }C),
+\]
+are integral, have determinant $-1$, and preserve $C$. An orbit traversal from one admissible class produces exactly 1920 distinct classes, hence every admissible class for $J_0$. The orbit tree is retained.
+
+A parent isometry sends the glue vector to the same class as the representative chosen for the next extension. The difference of representatives lies in $J_0$; adding it to the last basis vector is a unimodular change of basis. Thus all 1920 extensions are isometric. An independent verifier explicitly constructed and multiplied 1919 such block matrices, one for each edge of the tree. No claim that the selected reflections generate the full automorphism group is needed.
+
+The other three extensions have pairing columns
+\begin{align*}
+J_1:&\quad(-2,0,1,0,0,0,0,-3)^{\mathsf T},\\
+J_2:&\quad(3,-2,-2,-2,-2,-2,-2,-3)^{\mathsf T},\\
+J_2:&\quad(0,-3,-3,0,0,0,0,-3)^{\mathsf T},
+\end{align*}
+and last diagonal entry 6. For each, an integer matrix $U$ is supplied with
+\[
+\det U=\pm1,\qquad U^{\mathsf T}K_9U=G.
+\]
+Two exact procedures checked these identities. They give one isometry class, completing the proof of Theorem~\ref{thm:unique}, relative to the original classification in lower ranks.
+
+\section{Rank ten with a \texorpdfstring{$\sqrt3E_8$}{sqrt(3)E8} sublattice}
+
+\subsection{Fixed matrices}
+
+For independent use, we display the common block of the three principal examples:
+\[
+G_8=\begin{pmatrix}
+6&-3&-3&-3&-3&-3&-3&3\\
+-3&6&3&3&3&3&3&0\\
+-3&3&6&0&3&0&0&-3\\
+-3&3&0&6&3&3&3&0\\
+-3&3&3&3&6&3&3&-3\\
+-3&3&0&3&3&6&3&0\\
+-3&3&0&3&3&3&6&0\\
+3&0&-3&0&-3&0&0&6
+\end{pmatrix},\qquad C=G_8/3.
+\]
+Set
+\[
+p=(-2,1,3,-1,1,0,1,-1)^{\mathsf T},\qquad
+q=(1,-1,1,0,-1,-2,-2,1)^{\mathsf T}.
+\]
+Then
+\begin{equation}\label{eq:examples}
+K_9=\begin{pmatrix}G_8&p\\p^{\mathsf T}&6\end{pmatrix},\quad
+K_{10}=\begin{pmatrix}G_8&p&q\\p^{\mathsf T}&6&2\\q^{\mathsf T}&2&6\end{pmatrix},\quad
+\Kalt=\begin{pmatrix}G_8&p&-p\\p^{\mathsf T}&6&-1\\-p^{\mathsf T}&-1&6\end{pmatrix}.
+\end{equation}
+The matrix $C$ is even, positive definite, and unimodular. Its leading principal minors are $2,3,4,4,4,3,2,1$. Consequently it defines $E_8$.
+
+\subsection{Classes in \texorpdfstring{$E_8/3E_8$}{E8/3E8}}
+
+For $J=\sqrt3E_8$, a class in $J^*/J$ can be encoded by $u\in E_8/3E_8$; its minimum is one third of the least $E_8$ norm in that residue class. Complete enumeration through norm 8 gives:
+\begin{center}
+\begin{tabular}{crrrrr}
+\toprule
+Minimum $E_8$ norm &0&2&4&6&8\\\midrule
+Classes &1&240&2160&2240&1920\\
+\bottomrule
+\end{tabular}
+\end{center}
+The sum is $3^8=6561$. The full vector shells at these norms contain $1,240,2160,6720,17520$ vectors. Therefore
+\begin{equation}\label{eq:e8radius}
+R_{\sqrt3E_8}=8/3.
+\end{equation}
+We call a class with minimum $E_8$ norm 8 deep; this is simply a name for the finite set of 1920 such classes.
+
+\begin{theorem}\label{thm:rank10e8}
+Let $L$ be an even integral rank-ten lattice with $m(L)\ge6$ containing $J\cong\sqrt3E_8$. Then $d(L)\ge54675$. Equality is attained by exactly two isometry classes: $K_{10}$ and $\Kalt$ in \eqref{eq:examples}.
+\end{theorem}
+
+\begin{proof}[Proof of the lower bound]
+First, $J$ is automatically primitive. Its saturation $\overline J=L\cap\spanR J$ lies in $J^*$. A nonzero class of $\overline J/J$ would, after subtraction of a vector in $J$, yield a nonzero vector of norm at most $8/3$, contradicting $m(L)\ge6$.
+
+The projection $P$ onto the two-dimensional orthogonal complement is a lattice. For nonzero $z\in P$, choose a lift $y+z\in L$. Integrality gives $y\in J^*$; subtracting a vector of $J$ makes $\|y\|^2\le8/3$. Hence
+\[
+6\le\|y\|^2+\|z\|^2\le8/3+\|z\|^2,
+\qquad m(P)\ge10/3.
+\]
+Every two-dimensional lattice satisfies
+\[
+d(P)\ge\frac34m(P)^2.
+\]
+To see this, choose a shortest primitive vector $z_1$, extend it to a basis, and reduce $z_2$ so that $|(z_1,z_2)|\le\|z_1\|^2/2$. With $a=\|z_1\|^2$ and $b=\|z_2\|^2\ge a$, its determinant is at least $ab-a^2/4\ge3a^2/4$. Thus
+\[
+d(L)=6561d(P)\ge6561\cdot\frac34\left(\frac{10}{3}\right)^2=54675.
+\]
+\end{proof}
+
+\subsection{Complete classification of equality}
+
+Equality forces, after changing a basis sign if necessary, the projected Gram matrix
+\begin{equation}\label{eq:binaryprojection}
+S=\begin{pmatrix}10/3&5/3\\5/3&10/3\end{pmatrix}.
+\end{equation}
+Its minimal directions are $\pm z_1$, $\pm z_2$, and $\pm(z_1-z_2)$. Let $a,b\in E_8/3E_8$ be the classes of the lifts. Minimum 6 requires $a$, $b$, and $a-b$ all to be deep.
+
+Conversely, every such pair gives an admissible lattice. If $u,v$ are norm-eight representatives, its Gram matrix is
+\begin{equation}\label{eq:pairmatrix}
+\begin{pmatrix}
+3C&Cu&Cv\\
+u^{\mathsf T}C&6&(u^{\mathsf T}Cv+5)/3\\
+v^{\mathsf T}C&(u^{\mathsf T}Cv+5)/3&6
+\end{pmatrix}.
+\end{equation}
+The congruence $\|u-v\|_C^2\equiv8\pmod6$ gives $u^{\mathsf T}Cv\equiv1\pmod3$, so the matrix is integral and even. The six minimal projected vectors give full minimum 6; every other nonzero projected vector has norm at least 10. Inside $J$, the minimum is 6. Therefore \eqref{eq:pairmatrix} has minimum 6 and determinant 54675.
+
+Changing representatives by $3E_8$ adds vectors of $J$ to the lifts, hence is an integral change of basis. An $E_8$ isometry also induces an isometry of the extension. Thus an upper bound on the number of classes follows from the orbits of admissible pairs under any explicitly constructed subgroup of automorphisms.
+
+All 240 roots of $E_8$ are enumerated; identifying opposite roots gives 120 reflections. Their integrality, determinant $-1$, and preservation of $C$ are checked exactly. They act transitively on the 1920 deep classes. Fix
+\[
+a=w\pmod3,\qquad w=C^{-1}p=(-1,-1,2,-1,0,0,1,1)^{\mathsf T}.
+\]
+There are exactly 561 deep classes $b$ for which $a-b$ is deep. Of the 120 reflections, 36 fix $a$. Their generated subgroup splits the 561 classes into orbits of sizes
+\[
+560+1;
+\]
+the singleton is $b=-a$, and the large orbit contains the original $K_{10}$. Hence there are at most two full-lattice types. There is no need to prove that these 36 reflections generate the whole stabilizer.
+
+Both types exist by \eqref{eq:examples}, and they are not isometric:
+\[
+\rank_{\F_3}K_{10}=4,\qquad \rank_{\F_3}\Kalt=3.
+\]
+An integral isometry induces an invertible change of basis modulo 3 and preserves rank. This distinguishes the abstract lattices independently of their chosen $E_8$ embeddings and completes the equality classification.
+
+\subsection{Discriminant groups and vector shells}
+
+Both types have $d=54675=3^7\cdot5^2$ and rank 8 modulo 5. Their ranks modulo 3 and the total $3$-adic valuation yield, respectively, the valuation lists $(1,1,1,1,1,2)$ and $(1,1,1,1,1,1,1)$. Consequently
+\begin{align*}
+A_{K_{10}}&\cong(\Z/3\Z)^4\oplus\Z/15\Z\oplus\Z/45\Z,\\
+A_{\Kalt}&\cong(\Z/3\Z)^5\oplus(\Z/15\Z)^2.
+\end{align*}
+The exact numbers of oriented vectors at small norms are:
+\begin{center}
+\begin{tabular}{lrrr}
+\toprule
+Lattice &Norm 6&Norm 8&Norm 10\\\midrule
+$K_{10}$&294&216&756\\
+$\Kalt$&294&216&762\\
+\bottomrule
+\end{tabular}
+\end{center}
+Agreement of the first two shells alone would not imply isometry; the ranks modulo 3 provide a shorter certificate of nonisometry.
+
+An additional description of the alternative is that $\Kalt$ is an even overlattice of index 3 of $\sqrt3E_8\perp\sqrt5A_2$. In the coordinates of \eqref{eq:examples}, the two vectors orthogonal to $E_8$, $(0,\ldots,0,1,1)$ and $(-w,1,-2)$, have Gram matrix
+\[
+\begin{pmatrix}10&-5\\-5&10\end{pmatrix}.
+\]
+The direct sum has determinant $6561\cdot75$; division by the squared index $9$ gives 54675. The nonzero glue classes have minima $8/3$ and $10/3$, summing to 6.
+
+\section{A rank-nine gap and a preliminary rank-ten bound}
+
+\begin{proposition}\label{prop:gap}
+Using the public theorem $\gamma_9=2$, every even integral rank-nine lattice with $m(L)\ge6$ and $d(L)\le24450$ is isometric to $K_9$. In particular, $L\not\cong K_9$ implies $d(L)\ge24452$.
+\end{proposition}
+
+\begin{proof}
+The earlier lower bound gives $D=d(L)\ge21870$. For a shortest-dual section $J$, \eqref{eq:windows} and $\gamma_9=2$ give $d(J)\le2D^{8/9}$. The exact comparison
+\[
+2^9\cdot24450^8<15912^9
+\]
+implies $d(J)<15912$. Since rank eight allows only residues $0,1\pmod4$, this gives $d(J)\le15909$. This is precisely the verified expanded window of Section 3; no new classification outside that window is being assumed.
+
+Every other branch has a lower bound above 24450. The remaining parents are $J_0,J_1,J_2$. With a shortest glue-class representative, the last diagonal $n=s+\mu_J(a)$ is an even integer at least 6. For each of the three parents,
+\[
+d(J)(8-R_J)>24450,
+\]
+so $n=6$. Complete enumeration of all classes with
+\[
+s=6-\mu_J(a),\qquad D=d(J)s
+\]
+and verification of \eqref{eq:extensionmin} throughout $21870\le D\le24450$ gives only $D=21870$: exactly the earlier $1920+1+2$ classes. Every one is isometric to $K_9$. As a rank-nine determinant is even, the next value not excluded outside this class is 24452.
+\end{proof}
+
+The proposition does not assert that determinant 24452 is attained. It establishes an excluded interval, rather than the exact second value in the determinant spectrum.
+
+\begin{theorem}\label{thm:global10}
+With $\gamma_9=2$, the original rank-nine certificate, and the new results of Sections 3--5,
+\[
+\boxed{31595\le e_{10}(6)\le54675}.
+\]
+\end{theorem}
+
+\begin{proof}
+The upper bound follows from both matrices in \eqref{eq:examples}. If $D=d(L)\ge54675$, the lower bound is immediate. Otherwise, Theorem~\ref{thm:rank10e8} excludes every copy of $\sqrt3E_8$ in $L$.
+
+A shortest-dual rank-nine section $J$ is therefore not isometric to $K_9$, because $K_9$ contains $\sqrt3E_8$. Proposition~\ref{prop:gap} gives $d(J)\ge24452$. The theorem $\gamma_9=2$ and Mordell's inequality give $\gamma_{10}\le2^{9/8}$. Consequently,
+\[
+24452\le d(J)=D m(L^*)\le2^{9/8}D^{9/10},
+\]
+and hence
+\[
+D\ge24452^{10/9}/2^{5/4}=31594.9287\ldots.
+\]
+The rounding is checked without floating-point arithmetic: the comparison
+\[
+2^{45}D^{36}\ge24452^{40}
+\]
+first holds at the integer $D=31595$. This value also satisfies the required congruence $D\equiv0,3\pmod4$.
+\end{proof}
+
+Smaller sets of external inputs yield weaker but useful control bounds. The classical constants through rank eight and the original value of $e_9(6)$ alone give $e_{10}(6)\ge24663$. Neumaier's theorem $\gamma_{10}<16/7$ \cite{neumaier} gives 26495. Using $\gamma_9=2$ without the new gap gives 27911. The value 31595 requires the full chain of new results stated above.
+
+The next section strengthens this preliminary bound to an exact value. Its new complete chain does not use the original rank-nine lower bound or the previous gap certificate.
+
+% Final insertion released after independent high- and low-range coverage audits.
+% Final insertion released after independent high- and low-range coverage audits.
+\section{The global determinant bound in rank ten}\label{sec:global10exact}
+
+\begin{theorem}\label{thm:e10exact}
+Every positive-definite even integral lattice of rank ten with minimum squared norm at least 6 has determinant at least 54675. Consequently,
+\[
+\boxed{e_{10}(6)=54675}.
+\]
+This is a computer-assisted result with the inputs specified explicitly below. The two known examples $K_{10}$ and $\Kalt$ attain the bound; a complete classification of the \emph{global} equality cases does not follow from this search below the bound.
+\end{theorem}
+
+\subsection{Why a finite enlarged window suffices}
+
+Suppose that a counterexample $L_{10}$ exists with determinant $D<54675$. Evenness in rank ten gives $D\equiv0,3\pmod4$, so $D\le54672$. Theorem \ref{thm:rank10e8} excludes any copy of $\sqrt3E_8$ in $L_{10}$. Neither the earlier lower bound for $e_9(6)$ nor Proposition \ref{prop:gap} is used in what follows.
+
+The public theorem $\gamma_9=2$ and Mordell's inequality give $\gamma_{10}\le2^{9/8}$. Successive application of \eqref{eq:windows}, together with the exact classical constants through rank eight and determinant congruences, gives:
+\begin{center}
+\begin{tabular}{crr}
+\toprule
+Rank & Lower bound & Upper bound\\\midrule
+1&6&6\\
+2&27&44\\
+3&108&210\\
+4&324&789\\
+5&972&2492\\
+6&2187&6459\\
+7&4374&13938\\
+8&6564&24673\\
+9&19684&40054\\
+10&---&54672\\
+\bottomrule
+\end{tabular}
+\end{center}
+All rounding is checked using integer powers, without floating-point arithmetic. For example, the top transition uses the comparison
+\[
+d_9^{40}\le2^{45}D^{36},
+\]
+and the next uses $d_8^9\le2^9d_9^8$. The integer upper bounds obtained from the real-valued bounds in ranks eight and four are 24675 and 790; the congruence modulo 4 reduces them to 24673 and 789.
+
+We explain the lower endpoints without invoking the earlier computations. In ranks one through eight, the Hermite inequality gives, respectively,
+\[
+6,\ 27,\ 108,\ 324,\ 972,\ 2187,\ 4374,\ 6561.
+\]
+Equality in rank eight is possible only for $\sqrt3E_8$, which has already been excluded analytically. The next permitted determinant is 6564. In rank nine, the inequality $\gamma_9\le2$ gives $d_9\ge3^9=19683$; evenness of the determinant raises the bound to 19684. No lower endpoint is needed in rank ten. In particular, the unique initial object in the flag is $[6]$; this follows from the window and is not an assumption that the lattice is generated by its minimal vectors.
+
+The full rank-nine interval is divided into $[19684,24450]$ and $[24452,40054]$. The only omitted integer between them is 24451, which is odd and therefore impossible in rank nine. The splitting point is not an input theorem about the determinant spectrum.
+
+Any hypothetical counterexample has a primitive flag of shortest-dual sections lying entirely within these windows. To reconstruct the flag from the bottom up, it suffices to enumerate all one-step extensions using \eqref{eq:extensiondet}--\eqref{eq:extensionmin}, with the additional requirement that the perpendicular dual normal be shortest.
+
+\subsection{An exact integer test for the dual normal}
+
+We describe the acceleration on which completeness of the search depends. Let a parent have Gram matrix $G$, determinant $d$, and adjugate matrix $A=\operatorname{adj}G$. Let the new vector be specified by its column of pairings $p$ and its even diagonal entry $n$. The determinant of the child is
+\[
+D=nd-p^{\mathsf T}Ap,\qquad s=D/d.
+\]
+The squared norm of the dual vector with coordinates $(q,m)$ is
+\[
+q^{\mathsf T}G^{-1}q+
+\frac{(m-p^{\mathsf T}G^{-1}q)^2}{s}.
+\]
+If $q=0$, a nonzero vector is no shorter than the perpendicular normal of squared norm $1/s$. If $q\ne0$, minimizing over integer $m$ gives the distance to the nearest integer. Thus the normal is shortest if and only if the exact integer condition
+\begin{equation}\label{eq:integerdualtest}
+D(q^{\mathsf T}Aq)+
+\operatorname{dist}(p^{\mathsf T}Aq,d\Z)^2\ge d^2
+\end{equation}
+holds for every nonzero $q$ with $D(q^{\mathsf T}Aq)<d^2$. All other $q$ are automatically safe.
+
+If $D\ge D_{\min}$, a single complete list of parent dual vectors up to squared norm $d/D_{\min}$ contains all required $q$. It is constructed using the existing exact rational enumerator; one representative of each pair $\pm q$ suffices, since condition \eqref{eq:integerdualtest} is invariant under changing the sign.
+
+The class with pairing column $p$ is encoded by $Ap\bmod d$. If $M_a$ is the integer numerator of its exact minimum, then the layer condition becomes
+\begin{equation}\label{eq:integerlayertest}
+m^2D+M_{ma}\ge6d
+\qquad(m>0,\ m^2D<6d).
+\end{equation}
+This check includes nonzero layers of the zero class. The complete minimum tables cover exactly $d$ classes; the diagonal entry $n$ and the congruences for $D$ are checked exactly. The acceleration changes the form of the computation, but not the set of admissible extensions.
+
+Seeing one vector in each class would not by itself establish completeness of the minimum table. The entire dual ball is enumerated through a rational bound at which all $d$ classes have been covered; the least norm seen in each class is then its global minimum. Ball completeness follows from recursion using an exact $LDL^{\mathsf T}$ decomposition: all previously separated square terms are nonnegative, and the remaining budget gives the complete integer interval for the next coordinate. Its endpoints are obtained with rational arithmetic and integer square roots, with no inward floating-point rounding. For each class, \emph{every} even $n$ in the determinant window is considered; no condition $n=6$ is imposed here.
+
+For every parent used, the equality
+\[
+m(J^*)=
+\frac{\det(\text{leading block of the parent})}{\det(\text{parent})}
+\]
+is checked separately. Consequently, the inequality for the next step,
+\begin{equation}\label{eq:continuationfloor}
+d_{r+1}\ge\frac{3d_r^2}{4d_{r-1}},
+\end{equation}
+is applied to a verified shortest-dual flag, rather than to an arbitrary section chosen from a basis.
+
+\subsection{Complete candidate coverage and the final exclusion}
+
+The following exact results were obtained in the enlarged window. The ``Retained'' column counts records not excluded by the necessary bound \eqref{eq:continuationfloor} for the next rank. The representatives are used to cover these records, not to assert a complete classification of all lattices of the given rank.
+\begin{center}
+\begin{tabular}{crrrr}
+\toprule
+Rank & All records & Excluded from continuation & Retained & Representatives\\\midrule
+2&9&0&9&6\\
+3&102&0&102&31\\
+4&729&0&729&161\\
+5&6934&0&6934&925\\
+6&28284&0&28284&3752\\
+7&56269&52208&4061&224\\
+8&19481&18110&1371&47\\
+9, lower interval&0&0&0&0\\
+9, upper interval&3819&3819&0&0\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+In rank seven, all 3752 rank-six parents are covered. Only 500 of them permit continuation after the preliminary necessary bound; the others are excluded before the expensive enumeration. In rank eight, all 224 retained representatives are processed, as are all 47 parents for each rank-nine interval. No parent in a required input list is replaced by a selected trial computation.
+
+During reduction to representatives, every retained record is accompanied by an explicit unimodular isometry; all such matrices have been checked by exact multiplication. Therefore, even without assuming that the isometry-recognition algorithm is flawless, merging classes cannot remove a mathematically new possibility without a certified transport to a retained representative. Completeness of the initial list is established separately by the extension generator.
+
+An isometry need not preserve the earlier marked subflag: continuation depends on the parent lattice itself and all its discriminant classes. Each representative is chosen from the actual generated matrices, so it has a valid shortest-dual flag of its own. Any next extension transports across the isometry to that representative. The exclusion bound depends on the intrinsic invariant $m(J^*)$, rather than on an arbitrary marking; a different choice of the preceding flag cannot restore an excluded case.
+
+For the upper rank-nine interval, the bound \eqref{eq:continuationfloor} exceeds the permitted upper limit 54672 for all 3819 records. The smallest of these necessary bounds is
+\[
+\frac{12966723}{212}=61163.7877\ldots>54672.
+\]
+Thus none of these records can be the penultimate member of the flag of a hypothetical counterexample. The lower interval produced no records; we additionally give a short independent certificate for it.
+
+For 45 of the 47 rank-eight parents, an explicit dual vector gives, through \eqref{eq:lift}, a necessary lower bound on the next determinant exceeding 24450. For this purpose, the chosen vector need not even be proved shortest. The two remaining parents have determinants 14641 and 13689. Independent exact enumeration of dual vectors up to squared norm 4 covers all 14641 and 13689 discriminant classes, respectively. Hence both have $R_J\le4$. By \eqref{eq:extensionmin}, the layer $m=1$ requires $s\ge6-R_J\ge2$, so the determinant of an extension is at least 29282 or 27378, respectively. Both numbers exceed 24450. The entire lower interval is therefore excluded.
+
+Thus no branch of the full rank-nine interval continues to a rank-ten counterexample. Direct enumeration of rank-ten matrices is unnecessary: a necessary condition for continuation fails at an earlier stage.
+
+The matrices $K_{10}$ and $\Kalt$ have minimum 6 and determinant 54675, so the lower bound is attained. This completes the proof of Theorem \ref{thm:e10exact}.
+
+For the singleton antipode construction in dimension 38 at the guaranteed radius $\sqrt6/2$, this gives
+\[
+\delta_{38}\le\frac{(3/2)^{19}}{\sqrt{54675}}.
+\]
+The displayed embedding of $K_{10}$ attains this value. Consequently, replacing the rank-ten section by another of minimum at least 6 cannot improve this singleton construction. This is not an upper bound for all packings in dimension 38, nor does it resolve the general problem of clusters with more than one point.
+
+\subsection{Dependencies, reproducibility, and the classification boundary}
+
+The complete argument uses the public result $\gamma_9\le2$, the classical Hermite constants through rank eight and uniqueness of Hermite equality in rank eight, Mordell's inequality, the discriminant-class minima of $\sqrt3E_8$, the rank-ten subclass Theorem \ref{thm:rank10e8} based on the planar Hermite bound, and the new complete flag enumeration. \emph{The old rank-nine lower-bound certificate and the old gap proof are not dependencies of this argument.} The public classification of perfect forms underlying $\gamma_9=2$ is not reproduced by this package.
+
+The optimized generator uses the existing rational vector enumerator. Independent verification of the full chain covers the exact windows, every parent list, the exclusions, and the maps to representatives; the dual minima of 8966 matrices were checked again using a separate enumerator. The lower interval was additionally excluded by a program that imports neither the original extension generator nor its vector enumerator. These checks constitute an internal audit, not external refereeing.
+
+In addition, a complete generation replay reproduced all 1897 required parent lists and 115627 raw matrices from scratch; every result matched the stored records. The replay completed with status \file{PASS_FULL_EXACT_REPLAY}. It uses the audited generators and therefore does not replace an independent implementation of the entire program.
+
+The principal files are \file{rank10/fast_extension_proof.txt},
+\file{rank10/verify_global_rank10_certificate.py},
+\file{independent_review/check_rank10_global_chain.py},
+\file{independent_review/check_global_rank10_windows.py}, and
+\file{independent_review/check_rank9_low_by_radius.py}.
+
+The exact \emph{value} of the global minimum is established. Theorem \ref{thm:rank10e8} classifies exactly two equality cases only under the assumption that $\sqrt3E_8$ is present. The search in this section uses the strict window $D\le54672$; it does not classify additional lattices of determinant 54675 that contain no $\sqrt3E_8$. At equality, the upper windows increase to $d_9\le40056$, $d_8\le24676$, $d_7\le13940$, and $d_6\le6460$; these additional endpoints cannot be discarded on the strength of the large margin in the final exclusion of the strict search.
+
+\subsection{A new independent consequence for rank nine}
+
+\begin{corollary}\label{cor:newrank9}
+The public bound $\gamma_9\le2$, together with the new flag enumeration and the class table of $\sqrt3E_8$, gives an alternative proof of
+\[
+e_9(6)=21870,\qquad d(L)\le24450\Longrightarrow L\cong K_9.
+\]
+It does not use the old rank-nine certificate.
+\end{corollary}
+
+\begin{proof}
+Let $L$ have rank nine, minimum at least 6, and $D\le24450$. Its shortest-dual parent of rank eight has determinant at most 15909; its entire flag lies within the new, wider window. All necessary filters applied to this prefix remain valid, since the final determinant is at most 24450 and therefore at most 40054.
+
+If the parent is not isometric to $\sqrt3E_8$, it belongs to the new list and is excluded by the lower interval. Hence the parent is $\sqrt3E_8$. Its class has minimum $\mu\in\{0,2/3,4/3,2,8/3\}$. After choosing a shortest representative, the adjoined vector has even squared norm $n\ge6$, and
+\[
+D=6561(n-\mu).
+\]
+For $n=6$, the smallest value is 21870 and the next is 26244. For $n\ge8$, we have $D\ge34992$. Thus $D\le24450$ allows only determinant 21870 and only one of the 1920 deep classes with $\mu=8/3$. Their verified transitive orbit gives a single isometry type $K_9$. This example exists and has minimum 6, proving both assertions.
+\end{proof}
+
+Thus the dependencies are not circular: the new enumeration proves Theorem \ref{thm:e10exact} directly and then, separately, yields Corollary \ref{cor:newrank9}. The earlier route to uniqueness retains a different set of assumptions and does not require the public constant $\gamma_9=2$ in its own equality case.
+
+\subsection{The first rank-nine determinants and the first case without \texorpdfstring{$\sqrt3E_8$}{sqrt(3)E8}}
+
+\begin{corollary}\label{cor:spectrum9}
+Under the same assumptions, the set of determinants strictly below 32076 of even integral rank-nine lattices of minimum at least 6 is exactly
+\[
+\{21870,\ 26244,\ 30618\}.
+\]
+At each of these three determinants there is exactly one isometry class. Thus the next determinant after $K_9$ is exactly 26244. The least determinant of a lattice of this rank and minimum containing no $\sqrt3E_8$ is exactly 32076.
+\end{corollary}
+
+\begin{proof}
+The smallest determinant among all 3819 upper-interval records is 32076. For the rank-nine conclusion, we do not apply the last exclusion, which concerns rank ten: we use the complete list \emph{before} that exclusion. For any $d_9<32076$, all necessary upper windows lie within the new prefix constructed for $d_9\le40054$. Hence the shortest-dual parent must be $\sqrt3E_8$.
+
+As in the preceding proof, $D=6561(n-\mu)$, where $n\ge6$ is even and $\mu\in\{0,2/3,4/3,2,8/3\}$. For $n\ge8$, we have $D\ge34992$. For $n=6$, exactly the three stated values are below 32076. All are attained: $s=6-\mu\ge10/3$ gives first-layer minimum 6, while layers $|m|\ge2$ have squared norms at least $4s>6$.
+
+The exact $E_8$ reflection computation is transitive on each of the three relevant class sets, of sizes 1920, 2240, and 2160. These integral isometries transport the one-vector extensions and prove uniqueness at each determinant. The respective counts of oriented minimal vectors are 258, 246, and 242.
+
+In the basis of $G_8$ from Section 4, examples of determinants 26244 and 30618 are the matrices $\left(\begin{smallmatrix}G_8&p\\p^{\mathsf T}&6\end{smallmatrix}\right)$ with the respective columns
+\[
+p=(1,-1,0,-1,-1,-3,0,0)^{\mathsf T},\qquad
+p=(0,1,-1,1,0,1,2,2)^{\mathsf T}.
+\]
+An example containing no $\sqrt3E_8$ has Gram matrix
+\[
+G_{32076}=
+\begin{pmatrix}
+6&-3&-3&-3&-3&-3&-3&-3&-3\\
+-3&6&0&0&0&0&0&0&0\\
+-3&0&6&0&0&3&0&0&1\\
+-3&0&0&6&3&0&3&3&2\\
+-3&0&0&3&6&0&3&3&2\\
+-3&0&3&0&0&6&0&1&1\\
+-3&0&0&3&3&0&6&3&3\\
+-3&0&0&3&3&1&3&6&2\\
+-3&0&1&2&2&1&3&2&6
+\end{pmatrix}.
+\]
+Exact verification gives positive definiteness, determinant 32076, minimum 6, and 180 oriented minimal vectors. A copy of $\sqrt3E_8$ would be primitive and would give
+\[
+D=3^7(3n-p^{\mathsf T}C^{-1}p),\qquad C=G_8/3.
+\]
+Since $n$ is even and $C^{-1}$ is an even integral Gram matrix, this determinant is divisible by $2\cdot3^7=4374$. But $32076\equiv1458\pmod{4374}$, so the example contains no $\sqrt3E_8$. The lower bound has already been proved by prefix completeness.
+\end{proof}
+
+Exact examples and checks are stored in \file{rank10/rank9_low_spectrum.json} and \file{rank10/verify_rank9_low_spectrum.py}. Excluding smaller determinants uses the complete prefix certificate; checking a single matrix does not replace it. No uniqueness assertion is made at determinant 32076.
+
+
+\section{Cluster extensions: the general geometry}
+
+\subsection{Comparing densities}
+
+Let $K$ be a primitive rank-$k$ section of an even unimodular rank-48 lattice of minimum 6. For a finite cluster $S\subset K^*$, put
+\[
+s=|S|,\qquad\beta=\max_{u,v\in S}\|u-v\|^2<6.
+\]
+The antipode construction guarantees sphere radius $\sqrt{6-\beta}/2$ in dimension $n=48-k$ and center density
+\begin{equation}\label{eq:density}
+\delta(S,K)=\frac{s(6-\beta)^{n/2}}{2^n\sqrt{d(K)}}.
+\end{equation}
+If a particular ambient embedding has a larger actual minimum, its improved radius requires a separate analysis. All assertions in this report concern the radius guaranteed specifically by $6-\beta$.
+
+Relative to a singleton cluster over the same $K$, the factor is
+\begin{equation}\label{eq:ratio}
+R=s(1-\beta/6)^{n/2}.
+\end{equation}
+For $\beta<6$, distinct points of $S$ have distinct classes in $K^*/K$: otherwise their difference would be a nonzero vector of $K$ of norm less than 6. Thus $s\le d(K)$.
+
+\subsection{Projection onto eight dimensions and its fibers}
+
+Let $J\cong\sqrt3E_8\subset K$. The orthogonal projection of $K^*$ onto $\spanR J$ lies in $J^*$, by its integral pairings with $J$. Hence every positive squared distance between projected points belongs to $(2/3)\Z$.
+
+Each nonempty projection fiber is a translate of the lattice
+\[
+T=K^*\cap(\spanR J)^\perp.
+\]
+If the Gram matrix of $K$ is written in blocks as $\begin{psmallmatrix}A&B\\B^{\mathsf T}&D\end{psmallmatrix}$, then the Gram matrix of $T$ is the inverse of the Schur complement $D-B^{\mathsf T}A^{-1}B$. For our examples,
+\begin{equation}\label{eq:fibers}
+K_9:\ T=[3/10],\qquad
+K_{10},\Kalt:\ T=\frac15\begin{pmatrix}2&-1\\-1&2\end{pmatrix}\cong A_2/\sqrt5.
+\end{equation}
+Neither surjectivity of the projection nor its particular glue data is needed in the estimates that follow.
+
+\subsection{Bounding sets with few distances}
+
+An equidistant set in $\R^8$ has at most 9 points. A convenient general bound for a set $P\subset\R^8$ with $r$ distinct positive squared distances is
+\begin{equation}\label{eq:fewdist}
+|P|\le\binom{9+r}{r}.
+\end{equation}
+For each $x\in P$, consider
+\[
+f_x(y)=\prod_{i=1}^r(\|x-y\|^2-d_i).
+\]
+The evaluation matrix on $P$ is diagonal with nonzero diagonal entries, so the polynomials $f_x$ are linearly independent. The expansion $\|x-y\|^2=\|y\|^2-2(x,y)+\|x\|^2$ places them in the sum of spaces
+\[
+\sum_{j=0}^r\|y\|^{2j}\mathcal P_{\le r-j}(\R^8).
+\]
+The sum of the dimensions is $\sum_{k=0}^r\binom{8+k}{k}=\binom{9+r}{r}$, proving \eqref{eq:fewdist}. The bound is not optimal, but it suffices here.
+
+For a projected cluster this yields bounds of 9 when $\beta<4/3$, 55 when $\beta<2$, 220 when $\beta<8/3$, 715 when $\beta<3$, and 24310 when $\beta<6$. The first uses the sharper equidistant-set bound.
+
+\section{No improvement throughout the rank-nine family}
+
+\begin{theorem}\label{thm:cluster9}
+Let $K$ be any even integral rank-nine lattice with $m(K)\ge6$ containing $\sqrt3E_8$, and let $S\subset K^*$ be a finite cluster with $\beta<6$. Then
+\[
+\delta(S,K)\le\frac{6^{39/2}}{2^{39}\sqrt{21870}}.
+\]
+Equality is possible only when $s=1$ and $d(K)=21870$. For every nontrivial cluster, the ratio to the right-hand side is at most
+\[
+9(8/9)^{39/2}=0.9052495585\ldots<1.
+\]
+The bound 0.90525 is not claimed to be sharp.
+\end{theorem}
+
+\begin{proof}
+The embedded $J=\sqrt3E_8$ is automatically primitive, as in Section 4. Equation~\eqref{eq:gluebound} gives $D=d(K)\ge21870$. The one-dimensional fiber $T$ has spacing
+\[
+\tau=\sqrt{6561/D}\le\tau_0=\sqrt{3/10}.
+\]
+Set $f(\beta)=(1-\beta/6)^{39/2}$. The ratio to the singleton packing over $K_9$ is
+\begin{equation}\label{eq:familyratio}
+R=\sqrt{10/3}\,\tau s f(\beta).
+\end{equation}
+Let $M$ be the number of nonempty projection fibers, and let $s_i$ be the number of points in the $i$th fiber. Their vertical span is at least
+\[
+\ell_i=(s_i-1)\tau,\qquad \ell_i\le\sqrt\beta.
+\]
+The largest vertical distance between two fibers is at least $(\ell_i+\ell_j)/2$. Thus, for different projected points $p_i,p_j$,
+\begin{equation}\label{eq:crossspans}
+\beta\ge\|p_i-p_j\|^2+(\ell_i+\ell_j)^2/4.
+\end{equation}
+
+\textbf{One projected point.} If $M=1$ and $s\ge2$, then $\beta\ge(s-1)^2\tau^2$, giving
+\[
+R\le\frac{s}{s-1}\sqrt{10\beta/3}\,f(\beta).
+\]
+The maximum of $\sqrt\beta f(\beta)$ occurs at $\beta=3/20$. Therefore
+\[
+R\le\sqrt2(39/40)^{39/2}<1.
+\]
+For $s=1$, we have $\beta=0$ and $R=\sqrt{21870/D}\le1$, with the stated equality case.
+
+\textbf{Several projected points, $\beta<4/3$.} Necessarily $\beta\ge2/3$, and $M\le9$. If every fiber is a singleton, then
+\[
+R\le9f(2/3)=9(8/9)^{39/2}<1.
+\]
+Otherwise, let $t\ge u$ be the two largest fiber cardinalities. Then $t\ge2$, $u\ge1$, and $s\le t+(M-1)u$, while \eqref{eq:crossspans} gives
+\[
+\tau(t+u-2)\le2\sqrt{\beta-2/3}.
+\]
+Since
+\[
+\frac{t+(M-1)u}{t+u-2}\le M+1
+\]
+(after multiplication, the difference is $M(t-2)+2(u-1)\ge0$), we obtain
+\[
+R\le20\sqrt{(10/3)(\beta-2/3)}\,f(\beta).
+\]
+The right-hand side is maximized at $\beta=4/5$, with value
+\[
+\frac{40}{3}(13/15)^{39/2}<1.
+\]
+Both critical-point calculations follow from
+\[
+\frac{d}{d\beta}\log\big((\beta-c)^{1/2}f(\beta)\big)=0
+\Longleftrightarrow 6-\beta=39(\beta-c).
+\]
+
+\textbf{The interval $4/3\le\beta<2$.} Call a fiber heavy if $\ell_i>\sqrt{\beta-4/3}$. The projections of two heavy fibers cannot be at squared distance $4/3$, since that would violate \eqref{eq:crossspans}. Their squared distance must be $2/3$, so there are at most 9 heavy fibers. There are at most 55 fibers altogether, giving
+\[
+\tau s=M\tau+\sum_i\ell_i
+\le55\tau_0+46\sqrt{\beta-4/3}+9\sqrt\beta.
+\]
+For $4/3\le\beta<3/2$, the bounds $\sqrt{5/9}<3/4$ and $\sqrt5<9/4$ yield
+\[
+R<\frac{439}{4}f(4/3)<1.
+\]
+For $3/2\le\beta<2$, the bounds $\sqrt{20/9}<3/2$ and $\sqrt{20/3}<8/3$ give
+\[
+R<148f(3/2)<1.
+\]
+
+\textbf{The remaining diameters.} We always have $s_i\le1+\sqrt\beta/\tau$, hence
+\[
+R\le M(1+\sqrt{10\beta/3})f(\beta).
+\]
+Using \eqref{eq:fewdist} and rational upper bounds on the square roots gives:
+\begin{center}
+\begin{tabular}{crr}
+\toprule
+Interval for $\beta$ & Bound on $M$ & Upper bound on $R$\\\midrule
+$[2,8/3)$ &220&$880f(2)$\\
+$[8/3,3)$ &715&$(12155/4)f(8/3)$\\
+$[3,6)$ &24310&$133705f(3)$\\
+\bottomrule
+\end{tabular}
+\end{center}
+Each value is strictly less than 1. All comparisons are verified exactly after squaring; for example,
+\[
+2(39/40)^{39}<1,\qquad (1600/9)(13/15)^{39}<1.
+\]
+The checks also verify that every resulting upper bound is at most $9(8/9)^{39/2}$. These cases cover every $\beta<6$, completing the proof.
+\end{proof}
+
+This theorem covers an infinite family with unbounded determinant. It is not based on a bounded enumeration of lattices or clusters. An arbitrary rank-nine lattice without $\sqrt3E_8$, however, lies outside its scope.
+
+\section{All diameters for both minimal rank-ten types}
+
+\begin{theorem}\label{thm:cluster10}
+For $K=K_{10}$ or $K=\Kalt$, every finite $S\subset K^*$ with $s>1$ and $\beta<6$ satisfies
+\[
+s(1-\beta/6)^{19}<1.
+\]
+Thus the singleton cluster is strictly optimal at the guaranteed radius of the antipode construction. By Theorem~\ref{thm:rank10e8}, this covers every minimizer in the rank-ten subclass containing $\sqrt3E_8$.
+\end{theorem}
+
+\subsection{Finite problems in the triangular fiber}
+
+The fiber in \eqref{eq:fibers} has quadratic form
+\[
+\| (u,v)\|_T^2=\frac25(u^2-uv+v^2).
+\]
+Its positive norms below $14/5$ are $2/5,6/5,8/5$. The maximum fiber-cluster cardinalities are:
+\begin{center}
+\begin{tabular}{crrr}
+\toprule
+Squared diameter interval &$[2/5,6/5)$&$[6/5,8/5)$&$[8/5,14/5)$\\\midrule
+Maximum cardinality &3&4&7\\
+\bottomrule
+\end{tabular}
+\end{center}
+These assertions use small complete finite certificates. After translating one point to zero, the respective balls contain 7, 13, and 19 points. Contradicting the bounds would require choosing respectively 3, 4, and 7 other points. All
+\[
+\binom63=20,\qquad \binom{12}4=495,\qquad \binom{18}7=31824
+\]
+subsets are checked. No admissible set of a forbidden size occurs; witnesses of sizes 3, 4, and 7 are retained. Completeness of the balls follows from
+\[
+2(u^2-uv+v^2)\ge\frac32u^2,\qquad
+2(u^2-uv+v^2)\ge\frac32v^2:
+\]
+when the norm is below $14/5$, it suffices to examine all 49 pairs with $|u|,|v|\le3$. Distances are compared using the integer values $2(u^2-uv+v^2)$.
+
+\subsection{Several fibers containing multiple points}
+
+Two points in one fiber and a point with another projection force
+\[
+\beta\ge2/3+(2/5)/4=23/30.
+\]
+This is the usual midpoint estimate: at least one endpoint of a segment of length at least $\sqrt{2/5}$ is vertically separated from any given point by at least half that length.
+
+For two fibers containing multiple points, choose nonzero within-fiber differences $a,b\in T$. The four cross-fiber differences have the form $z+(\pm a\pm b)/2$. Comparing opposite pairs shows that the largest squared vertical distance is at least
+\[
+\frac14\max(\|a+b\|^2,\|a-b\|^2)\ge3/10.
+\]
+If either vector is not minimal, then $(\|a\|^2+\|b\|^2)/4\ge2/5$. If both are minimal, they belong to the six roots of the triangular lattice and satisfy $|(a,b)|\ge1/5$, giving $3/10$. All 36 root pairs are checked additionally.
+
+Consequently, for the projections $p,q$ of two fibers containing multiple points,
+\begin{equation}\label{eq:twoheavy10}
+\beta\ge\|p-q\|^2+3/10.
+\end{equation}
+For $\beta<29/30$, at most one fiber contains multiple points. For $\beta<49/30$, the projections of all such fibers are equidistant with squared distance $2/3$, so there are at most 9 of them, even if the entire projected set allows two distances.
+
+\subsection{A table covering every diameter}
+
+Combining the projected-set and fiber bounds gives the following upper bounds $B$ on $s$. Every interval is closed at the left endpoint and open at the right endpoint.
+\begin{longtable}{P{0.22\linewidth}rP{0.59\linewidth}}
+\toprule
+Interval for $\beta$ &$B$&Justification\\\midrule
+\endhead
+$[2/5,2/3)$&3&One projected point.\\
+$[2/3,23/30)$&9&Either every fiber is a singleton, or there is only one projected point.\\
+$[23/30,29/30)$&11&At most 9 projected points; one fiber may have 3 points.\\
+$[29/30,6/5)$&27&At most 9 fibers, each of size at most 3.\\
+$[6/5,4/3)$&36&At most 9 fibers, each of size at most 4.\\
+$[4/3,8/5)$&82&At most 55 fibers, including at most 9 nonsingleton fibers of size at most 4: $55+9\cdot3$.\\
+$[8/5,49/30)$&109&At most 55 fibers, including at most 9 nonsingleton fibers of size at most 7: $55+9\cdot6$.\\
+$[49/30,2)$&385&At most 55 fibers, each of size at most 7.\\
+$[2,8/3)$&1540&At most 220 fibers, each of size at most 7.\\
+$[8/3,6)$&54675&The cluster injects into $K^*/K$.\\
+\bottomrule
+\end{longtable}
+No nontrivial cluster exists for $\beta<2/5$. For each row with left endpoint $b$, exact arithmetic gives
+\[
+B^2(1-b/6)^{38}<1.
+\]
+The function $(1-\beta/6)^{19}$ decreases, so the required strict inequality holds throughout the interval. This proves Theorem~\ref{thm:cluster10} with no point cap, no restriction to diameter 1, and no cap on a search graph.
+
+A separate, shorter table certificate is also completed for $K_9$, using a one-dimensional fiber of spacing $\sqrt{3/10}$. It now follows from the stronger Theorem~\ref{thm:cluster9}; its independent availability gives an additional check of the fixed case.
+
+\section{Verified results for the rank-48 ambient lattices}
+
+\subsection{Matrices of the original embeddings}
+
+The ambient Gram matrices of $P_{48p}$ and $P_{48m}$ and the matrices of their selected sections are extracted from the source PDF. With rows of $T$ representing the section basis in ambient coordinates, the checks include
+\[
+G_K=T G_{48}T^{\mathsf T},\qquad
+T G_{48}B^{\mathsf T}=0,
+\]
+where the rows of $B$ form a full integer basis of the orthogonal complement. Both ambient matrices are checked for symmetry, evenness, positive definiteness, and determinant 1. Primitivity of $T$ is certified by a Smith normal form with every nonzero invariant factor equal to 1.
+
+\begin{center}
+\begin{tabular}{lrrl}
+\toprule
+Section &Complement rank&Determinant&Invariants of $A_K$\\\midrule
+$K_8\subset P_{48p}$&40&6561&$3,3,3,3,3,3,3,3$\\
+$K_9\subset P_{48p}$&39&21870&$3,3,3,3,3,3,30$\\
+$K_{10}\subset P_{48p}$&38&54675&$3,3,3,3,15,45$\\
+$K_5\subset P_{48m}$&43&3072&$4,16,48$\\
+$K_3\subset P_{48m}$&45&128&$2,8,8$\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+For each complement, the same determinant is verified and an explicit norm-six vector is retained. The assertion that the \emph{entire} ambient lattice has minimum 6 remains an input from its known extremality. The new positivity and unimodularity checks alone do not exclude norms 2 and 4 in dimension 48.
+
+For primitive $K\subset\Lambda$ with unimodular $\Lambda$, the natural pairing map $\Lambda\to K^*$ is surjective and has kernel $K^\perp\cap\Lambda$. Consequently,
+\[
+\Lambda/(K\oplus K^\perp)\cong K^*/K,\qquad
+d(K^\perp)=d(K).
+\]
+In the even case, the induced correspondence of discriminant groups reverses the signs of their quadratic forms. These correspondences are also verified for the printed matrices.
+
+\subsection{Excluding the alternative type over the fixed section}
+
+\begin{theorem}\label{thm:nonembedding}
+No isometric copy of $\Kalt$ in the printed lattice $P_{48p}$ contains the particular printed section $K_9\subset P_{48p}$.
+\end{theorem}
+
+Fix the \emph{specific marked} basis $t_1,\ldots,t_9$ of the printed $K_9\subset P_{48p}$. Consider the system
+\begin{equation}\label{eq:marked}
+\|w\|^2=6,\qquad ((t_i,w))_{i=1}^9=(-p,-1).
+\end{equation}
+A solution $w\in P_{48p}$ would extend this marked $K_9$ to precisely the block Gram matrix $\Kalt$ in \eqref{eq:examples}.
+
+The complete exact search for \eqref{eq:marked} reduces it to a closest-vector problem in an affine class of the rank-39 orthogonal complement. An independent Python implementation with unbounded integers and rational arithmetic visits 611239 nodes and finds no feasible leaf. The outcome agrees with the C++ implementation. No floating-point pruning is used in the final certificate.
+
+As a positive control, the same algorithm is run for the pairing column of the original $K_{10}$. It visits 610015 nodes and finds exactly one vector, equal to the last row of the printed $K_{10}$ embedding matrix.
+
+\begin{proof}[Why the empty marked fiber excludes every copy over this $K_9$]
+Suppose a copy of $\Kalt$ contains the fixed $K_9$, and hence its fixed $J=\sqrt3E_8$. Its projection onto the two-dimensional orthogonal complement of $J$ has minimum at least $10/3$ and determinant $25/3$. As in Theorem~\ref{thm:rank10e8}, it must be hexagonal. The projection $z_1$ of the fixed ninth vector has norm $10/3$, so it extends to an acute basis $z_1,z_2$ with matrix \eqref{eq:binaryprojection}. Choose a shortest lift $w$ of the second vector. It has full norm 6, and its $J$ component has norm $8/3$. Primitivity of $J$ and the fact that $z_1,z_2$ form a basis ensure that the fixed $J$ basis, $t_9$, and $w$ form a full integral basis of the copy of $\Kalt$.
+
+Let $q'$ be the pairing column of $w$ with the fixed basis of $J$. If $q'$ and $p$ are independent modulo 3, then the matrix
+\[
+\begin{pmatrix}0&p&q'\\p^{\mathsf T}&0&c\\(q')^{\mathsf T}&c&0\end{pmatrix}
+\]
+has rank 4 over $\F_3$. This contradicts the invariant $\rank_{\F_3}\Kalt=3$. Hence $q'\equiv0,p$, or $-p\pmod3$. The zero class is impossible: its minimum is 0, whereas a lift of a minimal projected vector requires $8/3$. The class $p$ is excluded by integrality of the full pairing: the $J$ component contributes $8/3\pmod\Z$, and the perpendicular component contributes $5/3$, giving the noninteger sum $13/3$.
+
+Therefore $q'\equiv-p\pmod3$. Since $C$ is unimodular, this is equivalent to the discriminant class being the negative of that of the ninth vector. Subtracting a vector of $J$ makes the $J$ projection of $w$ exactly the negative of the $J$ projection of $t_9$. Its projected norm is still the same minimum $8/3$, so the full norm remains 6, and the pairing with $t_9$ becomes
+\[
+-8/3+5/3=-1.
+\]
+This gives a solution of \eqref{eq:marked}, contradicting its exact emptiness. The theorem follows without requiring a classification of bases or copies of $E_8$ inside $K_9$.
+\end{proof}
+
+\subsection{Why the integer search is complete}
+
+Put $A=T_9G_{48}$ and $b=(-p,-1)$. An integer right inverse $Q$ gives a particular solution $w_0=Qb$, while the certified integer kernel basis $B$ gives every solution of the linear constraints:
+\[
+w=w_0+B^{\mathsf T}x,\qquad x\in\Z^{39}.
+\]
+Set $C_0=BG_{48}B^{\mathsf T}$, $g=BG_{48}w_0$, and $c=-C_0^{-1}g$. Exact computation gives
+\[
+w_0^{\mathsf T}G_{48}w_0-g^{\mathsf T}C_0^{-1}g=7/2.
+\]
+Thus the condition that the norm be at most 6 is equivalent to
+\[
+(x-c)^{\mathsf T}C_0(x-c)\le5/2.
+\]
+The exact factorization $C_0=L\diag(D_i)L^{\mathsf T}$ rewrites the left-hand side as
+\[
+\sum_iD_i\left(x_i+\sum_{j>i}L_{ji}x_j-y_i\right)^2,\qquad y=L^{\mathsf T}c.
+\]
+Cauchy's inequality gives proven integer bounds $|x_i|\le B_i$, with
+\[
+B_i\ge|c_i|,\qquad (B_i-|c_i|)^2\ge(5/2)(C_0^{-1})_{ii}.
+\]
+The largest bound $B_i$ is 28.
+
+The acceleration uses an \emph{enclosing integer relaxation}, rather than trusting floating-point rounding. Set $S=2^{24}$, round $SL_{ji}$ and $Sy_i$ to integers with error at most $1/2$, put $d_i=\lfloor SD_i\rfloor>0$, and, for a fixed tail, define
+\[
+C_i=\operatorname{round}(Sy_i)-\sum_{j>i}x_j\operatorname{round}(SL_{ji}),\qquad
+E_i=\left\lceil\frac{1+\sum_{j>i}B_j}{2}\right\rceil.
+\]
+The exact center differs from $C_i/S$ by at most $E_i/S$. Hence each exact contribution is bounded below by
+\[
+\frac{d_i}{S^3}\max(0,|Sx_i-C_i|-E_i)^2.
+\]
+Every true solution must therefore lie in the relaxation
+\[
+\sum_i d_i\max(0,|Sx_i-C_i|-E_i)^2\le5S^3/2.
+\]
+With remaining integer budget $R$, an exact enclosing interval for the next coordinate is
+\[
+|Sx_i-C_i|\le E_i+\operatorname{isqrt}(\lfloor R/d_i\rfloor).
+\]
+Enumeration of all these intervals, clipped only by the proven $B_i$, gives no leaf even in the enlarged set; the original system is therefore empty. The independent Python verifier recomputes the kernel, factorization, coordinate bounds, and rounding bounds. The prepared coefficients are not accepted on trust.
+
+Theorem~\ref{thm:nonembedding} does \textbf{not} exclude every embedding $\Kalt\hookrightarrow P_{48p}$. A copy containing another section $K_9$ might lie in a different orbit of the ambient automorphism group. Those orbits are not fully enumerated. The verification of the printed matrices and this new exclusion have undergone an additional internal audit, but they do not constitute a complete embedding classification.
+
+\subsection{All 19 minimal supersections of the fixed \texorpdfstring{$K_9$}{K9}}
+
+\begin{theorem}\label{thm:nineteen}
+In the printed lattice $\Lambda=P_{48p}$, there are exactly 19 distinct primitive rank-ten sublattices $S$ containing the fixed printed $K_9$, with $d(S)=54675$ and $m(S)\ge6$. All 19 are isometric to the original $K_{10}$. This is the smallest possible determinant for supersections of this particular $K_9$.
+\end{theorem}
+
+The number 19 counts \emph{concrete sublattices in ambient coordinates}, not automorphism-group orbits. It concerns one fixed section $K_9$, rather than all embeddings of the abstract lattice.
+
+\begin{proof}
+Every such $S$ contains the fixed $\sqrt3E_8$. Theorem~\ref{thm:rank10e8} therefore gives the lower bound 54675 and a hexagonal projection in the equality case. Let $a=C^{-1}p\pmod3$ be the class of the fixed ninth vector. The three classes $a,b,a-b$ of an acute projected basis are deep. Exactly 561 classes $b$ satisfy this condition. The involution
+\[
+b\longmapsto a-b
+\]
+has the unique fixed point $b=-a$ and 280 two-element orbits. Thus 281 unoriented target classes suffice.
+
+Choose a representative $v$ of norm 8 in each class $b$, and put
+\[
+q=Cv,\qquad t=(p^{\mathsf T}v+5)/3,\qquad r_b=(q,t)^{\mathsf T}.
+\]
+Integrality of $t$ follows from the depth of $a-b$. Adding a vector of $J$ to a closest lift makes its $J$-component exactly $v/3$. Every desired supersection therefore appears in one of the systems
+\[
+T_9G_{48}u=r_b,\qquad u^{\mathsf T}G_{48}u=6,\qquad u\in\Z^{48}.
+\]
+Direct verification gives $r_b^{\mathsf T}K_9^{-1}r_b=7/2$ for every target. Each search consequently has residual squared norm $5/2$ in the same full rank-39 integer kernel and is covered by the enclosing integer relaxation proved above.
+
+Complete enumeration of all 281 targets gives:
+\begin{center}
+\begin{tabular}{lr}
+\toprule
+Exact search nodes &171472428\\
+Empty target fibers &262\\
+Fibers with a unique norm-6 vector &19\\
+Total leaves and solutions &19\\
+\bottomrule
+\end{tabular}
+\end{center}
+The singleton orbit $b=-a$ is empty; every solution has the original type $K_{10}$. The full Python verification with arbitrary-precision integers recomputes the rational prerequisites and every target search, comparing the node counts and vector lists with the C++ implementation. A separate generator from the rank-ten investigation produces the same set of 561 discriminant classes; equality of the sets is checked using exact fingerprints computed with the adjugate matrix.
+
+It remains to certify that the count is of sublattices, not several generators of one sublattice. Choosing one representative of the pair $b,a-b$ removes the two acute orientations of the projected basis. For the other 560 oriented classes, the order in $K_9^*/K_9$ is 6. Opposite generators cannot have the same $K_9$-projection, because that would imply that twice the projection belongs to $K_9$. Generators with the same sign and the same projection also coincide.
+
+A direct check in ambient coordinates supplies additional verification. For each solution $u$, the rows of $T_{10}=[T_9;u]$ have Smith form $[I_{10}\mid0]$. Their lattice is therefore saturated and is the full section of its real span. With $d=21870$, introduce the integer vector
+\[
+N(u)=d\,u-T_9^{\mathsf T}\operatorname{adj}(K_9)r_b.
+\]
+The vector $N(u)/d$ is the component perpendicular to the fixed $K_9$ and has squared norm $5/2$. Two supersection spans coincide if and only if their $N$ vectors differ by sign, since all nonzero normal vectors have the same length. The 19 vectors $N$ are pairwise distinct up to sign. Thus there are exactly 19 distinct saturated sublattices. The catalogue stores the complete vector coordinates, Gram matrices, Smith forms, and normal vectors.
+\end{proof}
+
+This classification settles the problem of optimal supersections of \emph{this particular} embedding of $K_9$. It does not determine how many of the 19 sections are equivalent under the stabilizer of $K_9$ in the ambient automorphism group, nor classify the other embedding orbits of $K_9$.
+
+Theorems~\ref{thm:nonembedding} and~\ref{thm:nineteen} do not use the global lower bound for $e_9(6)$ or its original large enumeration. Their inputs are the exact printed matrices and primitivity, the finite table of classes in $E_8/3E_8$, the elementary two-dimensional bound, and exhaustive searches in the specified affine fibers. Under the explicit hypothesis $m(S)\ge6$, they also do not require a new proof that the whole ambient lattice has minimum 6; admissibility of the intrinsic matrices found is checked independently.
+
+\section{Literature, verification, and remaining problems}
+
+\subsection{What the literature review establishes}
+
+Dutour Sikirić and van Woerden \cite{dw}, version 2 of 7 February 2026, classify 2237251040 perfect similarity classes in rank nine and derive $\gamma_9=2$. Their work includes the known perfect class $Q_{129}$ with 258 minimal vectors, connected with earlier work of Watson and also described in \cite{vwthesis}.
+
+There is now an exact perfection certificate for our $K_9$: its 258 minimal vectors give 129 opposite pairs, whose symmetric outer products span a space of dimension
+\[
+\dim\operatorname{Sym}_9=45.
+\]
+An explicit $45\times45$ minor has determinant 3. Thus $K_9$ is a perfect form and belongs to the already known similarity class $Q_{129}$ with this number of minimal vectors.
+
+Accordingly, the lattice $K_9$ itself must not be presented as a new discovery of this investigation. The subject of a possible new paper is the global \emph{even integral} determinant problem at minimum 6, completeness of its equality classification, and the additional results of this report. Perfection of one example does not prove global discrete optimality: an integral minimizer need not automatically be a perfect real quadratic form.
+
+The review includes primary sources on integral laminated lattices \cite{cs,pp}, the Martinet--Batut tables \cite{martinet}, and the classification of strongly perfect rank-ten lattices \cite{nv}. Their hypotheses differ: recursive lamination, catalogue examples, or strong perfection are not equivalent to an arbitrary even integral rank-ten lattice of minimum 6. No full solution to our global problem was found among the statements examined. Failure to find a reference is not a proof of novelty.
+
+The unpublished manuscript, its title, and the new target determinants were not used as queries to external search services. No messages were sent to colleagues or referees during this research run.
+
+\Needspace{12cm}
+\subsection{Reproduction map}
+
+All paths below are relative to \file{research_20261007}. Use ordinary Python 3 with assertions enabled; do not use \texttt{-O}. The original exact package is in the \file{recovered/} subdirectory.
+
+\begin{longtable}{P{0.34\linewidth}P{0.59\linewidth}}
+\toprule
+Claim & Main verifier\\\midrule
+\endhead
+New windows and uniqueness of $K_9$ &\file{equality/verify_equality.py}\\[3pt]
+Gap through determinant 24450 &\file{equality/rank9_gap.py}\\[3pt]
+Independent endpoint certificates and isometries &\file{independent_review/check_equality_independent.py}\\[3pt]
+Perfection of $K_9$ &\file{independent_review/check_k9_perfect.py}\\[3pt]
+Rank-ten subclass and its two types &\file{rank10/verify_rank10_e8_classification.py}\\[3pt]
+Preliminary lower bound 31595 &\file{rank10_theory/verify_rank10_bounds.py}\\[3pt]
+Exact global value $e_{10}(6)$ &\file{rank10/verify_global_rank10_certificate.py}\\[3pt]
+Independent full chain &\file{independent_review/check_rank10_global_chain.py}\\[3pt]
+Independent low rank-nine interval &\file{independent_review/check_rank9_low_by_radius.py}\\[3pt]
+First three determinants and the no-$\sqrt3E_8$ case &\file{rank10/verify_rank9_low_spectrum.py}\\[3pt]
+Uniform partial rank-ten cluster bounds &\file{clusters/verify_rank10_single_projection.py}\\[3pt]
+Fixed-section clusters of all diameters &\file{clusters/verify_fixed_section_cluster_optimality.py}\\[3pt]
+Every rank-nine section with $\sqrt3E_8$ &\file{clusters/verify_all_E8_rank9_cluster_optimality.py}\\[3pt]
+Printed embeddings and complements &\file{embeddings/verify_ambient_embeddings.py}\\[3pt]
+Marked extension and positive control &\file{embeddings/verify_A10_extension_exact.py}\\
+All 19 supersections of the fixed $K_9$ &\file{embeddings/verify_all_fixed_K9_extensions.py}\\
+\bottomrule
+\end{longtable}
+
+JSON tables and complete logs accompany the programs. Checksums certify file integrity, not mathematical completeness. Completeness is established by exact determinant windows, finite groups of the required order, exhaustive ball enumeration with rational bounds, orbit trees, and explicit unimodular isometries.
+
+The original enumeration in lower ranks and its corrections are discussed in detail in the audit of 10 September 2026 \cite{audit}. The new window and orbit computations were executed afresh in this run. The independent check of 262 endpoints uses a different mathematical procedure, and independent integer matrix products verify the isometries. The complete rank-ten orbit enumeration reuses the audited exact arithmetic module of the original package. This must be distinguished from an entirely independent second implementation of the whole original proof.
+
+The cluster bounds are verified by a separate standard-library Python program. Their main content is a geometric proof; computation certifies only the small finite fibers and rational inequalities. Internal review notes on uniqueness, rank ten, and the cluster arguments are included in the package.
+
+\Needspace{8cm}
+\subsection{The precise remaining work}
+
+\begin{enumerate}
+\item \textbf{Global rank-ten equality.} The value $e_{10}(6)=54675$ is established; all lattices of this determinant must still be classified without assuming a copy of $\sqrt3E_8$. The strict search does not cover the additional endpoints of the equality window.
+\item \textbf{Embeddings.} Classify the primitive-embedding orbits of $K_9$, $K_{10}$, and $\Kalt$ in the selected rank-48 lattices. The catalogue of 19 minimal supersections of one fixed $K_9$ does not classify the other embeddings or ambient orbits.
+\item \textbf{Clusters outside the settled family.} Study rank-nine sections without $\sqrt3E_8$, mixed clusters with noncollinear fibers and the remaining diameters for rank-ten sections of larger determinant, as well as other ranks, especially the construction in dimension 43. The actual radius in a particular ambient embedding is a separate possible direction.
+\item \textbf{External review.} Submit the precise statements, programs, completeness proofs, and external assumptions to a specialist. Parallel internal auditing is not external refereeing.
+\item \textbf{Novelty.} Compare the discrete integral theorem against the full available literature and catalogues. The attaining example $K_9$ is already identified with a known perfect class; the title and introduction of a future paper should preserve that distinction.
+\end{enumerate}
+
+\newpage
+\appendix
+\section{Additional uniform rank-ten cluster bounds}\label{app:uniform10}
+
+The following results apply to an even integral rank-ten lattice $K$ of \emph{any determinant}, with $m(K)\ge6$, containing $J\cong\sqrt3E_8$. They supplement Theorem \ref{thm:cluster10}, but do not establish optimality for all clusters throughout this family.
+
+\subsection{Normalization and planar-fiber geometry}
+
+The sublattice $J$ is automatically primitive. Let $P$ be the projection of $K$ onto $(\spanR J)^\perp$, and put
+\[
+T=P^*=K^*\cap(\spanR J)^\perp,\qquad V=\operatorname{covol}(T).
+\]
+Subtracting a nearest representative in $J$ from a lift of a nonzero vector of $P$, and using $R_J=8/3$, gives
+\[
+m(P)=m(T^*)\ge c:=10/3.
+\]
+Since $d(K)=6561d(P)=6561/V^2$, the ratio of the guaranteed center density to that of the singleton packing of determinant 54675 is
+\begin{equation}\label{eq:uniform10ratio}
+R=\frac5{\sqrt3}\,V s\,g(\beta),\qquad
+g(\beta)=(1-\beta/6)^{19}.
+\end{equation}
+Again, $s$ is the number of cluster points and $\beta<6$ is its squared diameter.
+
+Let $a$ be the length of a primitive vector of $T$ along a lattice line. The primitive vector of $T^*$ perpendicular to that line has length $a/V$: in a basis beginning with this vector of $T$, the height of the second basis vector is $V/a$. Consequently,
+\begin{equation}\label{eq:planarspacing}
+\frac Va\le\frac1{\sqrt c}.
+\end{equation}
+In particular, this holds for a shortest nonzero vector of $T$.
+
+\subsection{All clusters with a single projection}
+
+\begin{proposition}\label{prop:onefiber10}
+If a nontrivial finite cluster $S\subset K^*$ lies entirely in one fiber of the projection onto $J^*$, then $R<1$. This holds uniformly over all determinants of $K$ and all $\beta<6$.
+\end{proposition}
+
+\begin{proof}
+The fiber is a translate of the planar lattice $T$. First suppose that the cluster points are collinear, and let $a$ be the primitive spacing along their line. A segment containing them has length at least $(s-1)a$ and at most $\sqrt\beta$. Using \eqref{eq:planarspacing}, we obtain
+\[
+sV\le\frac{s}{s-1}\sqrt{\beta/c}\le2\sqrt{\beta/c},
+\qquad
+R\le\sqrt{10\beta}\,g(\beta).
+\]
+The right-hand side attains its maximum on $(0,6)$ at $\beta=2/13$. The square of this maximum is
+\[
+\frac{20}{13}\left(\frac{38}{39}\right)^{38}<1.
+\]
+The critical-point equation is $6-\beta=38\beta$, and the last comparison is verified exactly.
+
+For a noncollinear cluster, we use the following elementary area bound:
+\begin{equation}\label{eq:planaranticode}
+sV\le\frac83\beta.
+\end{equation}
+We prove it as follows. After translating the fiber to $T$, let $C$ be the convex hull of the cluster, and set $N=|C\cap T|\ge s$. Adding all lattice points of the hull does not increase its diameter, which is at most $\sqrt\beta$. Write $I$ and $B$ for the numbers of interior and boundary lattice points, respectively, so that $N=I+B$. Pick's theorem, after a change of coordinates from $T$ to $\Z^2$, states that
+\[
+\frac{\operatorname{area}(C)}V=I+\frac B2-1
+\ge\frac{N-2}{2}.
+\]
+Hence
+\[
+NV\le\frac{2N}{N-2}\operatorname{area}(C).
+\]
+If $N=3$, the hull is a triangle of diameter at most $\sqrt\beta$, so its area is at most $\sqrt3\beta/4$. Thus $NV\le3\sqrt3\beta/2<8\beta/3$.
+
+If $N=4$, the hull is a triangle or a quadrilateral. Its area is at most $\beta/2$: for a quadrilateral, the area is half the magnitude of the cross product of its diagonals, both of which have length at most $\sqrt\beta$. Thus $NV\le2\beta<8\beta/3$.
+
+If $N\ge5$, the planar isodiametric inequality bounds the area of a set of diameter $d$ by $\pi d^2/4$. Therefore,
+\[
+NV\le\frac{N\pi}{2(N-2)}\beta
+\le\frac{5\pi}{6}\beta<\frac83\beta,
+\]
+where $\pi<16/5$ suffices. This proves \eqref{eq:planaranticode}. The constant $8/3$ is deliberately not optimized.
+
+Substituting \eqref{eq:planaranticode} into \eqref{eq:uniform10ratio} gives
+\[
+R\le\frac{40}{3\sqrt3}\,\beta g(\beta).
+\]
+The maximum is attained at $\beta=3/10$ and equals
+\[
+\frac4{\sqrt3}\left(\frac{19}{20}\right)^{19}<1,
+\qquad
+\frac{16}{3}\left(\frac{19}{20}\right)^{38}<1
+\]
+after squaring. This completes both cases.
+\end{proof}
+
+Pick's theorem and the isodiametric inequality are used here as classical exact geometric theorems; numerical checks do not replace them. A singleton cluster is treated separately: $d(K)\ge54675$ already gives $R\le1$.
+
+\subsection{Multiple projections with collinear fibers}
+
+\begin{proposition}\label{prop:collinear10}
+Suppose that $S\subset K^*$ has at least two distinct projections onto $J^*$, that $\beta<4/3$, and that every fiber containing more than one cluster point is collinear. The lines in different fibers may have different directions. Then
+\[
+R\le C_{\mathrm{col}}<1,
+\]
+where the exact upper bound used is
+\[
+C_{\mathrm{col}}=\sqrt{1620\cdot\frac{16}{117}
+\left(\frac{304}{351}\right)^{38}}
+=0.969365242080\ldots.
+\]
+\end{proposition}
+
+\begin{proof}
+The number $M$ of projections satisfies $2\le M\le9$, and $\beta\ge2/3$. If all fibers are singletons, then $s=M\le9$ and $d(K)\ge54675$ give
+\[
+R\le9(8/9)^{19}<1.
+\]
+This bound is also smaller than the stated numerical bound.
+
+Otherwise, put $a=\sqrt{m(T)}$, and let $t\ge u$ be the two largest fiber cardinalities. Then $t\ge2$, $u\ge1$, and $s\le t+(M-1)u$. A collinear fiber containing $s_i$ points has diameter $d_i\ge(s_i-1)a$.
+
+Averaging the squares of the four cross distances between the endpoints of two segments gives a contribution in the perpendicular plane of at least $(d_i^2+d_j^2)/4$. The angle between the fiber lines cancels in the average, so parallelism is not required. Including the distance between their projections gives
+\[
+\beta\ge\frac23+\frac{d_i^2+d_j^2}{4},\qquad
+a^2\big((t-1)^2+(u-1)^2\big)\le4\Delta,\qquad
+\Delta=\beta-\frac23.
+\]
+For integers $t\ge u\ge1$ with $t\ge2$, we have
+\begin{equation}\label{eq:fiberinteger}
+\frac{t+(M-1)u}{\sqrt{(t-1)^2+(u-1)^2}}
+\le\max(M+1,\sqrt2M)\le9\sqrt2.
+\end{equation}
+Indeed, put $x=t-1\ge y=u-1\ge0$. If $y=0$, the ratio is $(M+x)/x\le M+1$. If $y\ge1$, set $r=x/y\ge1$; the ratio is at most
+\[
+\frac{2M-1+r}{\sqrt{1+r^2}}.
+\]
+Its derivative has the sign of $1-(2M-1)r<0$ for $M\ge2$ and $r\ge1$, so its maximum is $\sqrt2M$, attained at $r=1$.
+
+Equations \eqref{eq:planarspacing}, \eqref{eq:fiberinteger}, and \eqref{eq:uniform10ratio} imply
+\[
+R\le18\sqrt{5\Delta}\,(1-\beta/6)^{19}.
+\]
+The right-hand side attains its maximum when
+\[
+6-\beta=38(\beta-2/3),\qquad
+\beta=\frac{94}{117},\qquad \Delta=\frac{16}{117}.
+\]
+Its square is $1620(16/117)(304/351)^{38}<1$, as verified by exact rational arithmetic.
+\end{proof}
+
+\subsection{Scope and certificate}
+
+Proposition \ref{prop:onefiber10} covers all single-fiber clusters for every $\beta<6$ and every determinant. Proposition \ref{prop:collinear10} adds clusters with multiple collinear fibers when $\beta<4/3$. These proofs do not exclude mixed clusters with a noncollinear planar fiber, or general clusters with multiple fibers and larger diameter. Summing the single-fiber bound alone is insufficient.
+
+These two results use the finite class table of $E_8/3E_8$, primitive planar dual spacing, and elementary geometry. They do not require the global lower bound for $e_9(6)$, the theorem $\gamma_9=2$, or the large flag enumeration. The exact comparisons, critical points, and constants are checked by \file{clusters/verify_rank10_single_projection.py}; its JSON certificate and log accompany it.
+
+\clearpage
+\begin{thebibliography}{10}
+\bibitem{audit}
+Internal research report. \emph{Rank-nine determinant bound: audit and full theory}. 10 September 2026. Original package \file{rank9_audit_evidence_20260910.zip}, English and Russian versions; unpublished.
+
+\bibitem{source}
+Ivan Dorofeev, Xiaoming Sun, Chengu Wang.
+\emph{Optimal Extensions of Cross-Sections: Sphere Packings in Dimensions 38 to 43}.
+Supplied unpublished file \file{main (4).pdf}.
+
+\bibitem{dw}
+Mathieu Dutour Sikirić, Wessel van Woerden.
+\emph{The lattice packing problem in dimension 9 by Voronoi's algorithm}.
+arXiv:2508.20719v2, 7 February 2026.
+\url{https://arxiv.org/html/2508.20719v2}.
+
+\bibitem{neumaier}
+Arnold Neumaier.
+\emph{Bounding basis reduction properties}.
+Designs, Codes and Cryptography 84 (2017), 237--259.
+Theorem 3.4.
+\url{https://doi.org/10.1007/s10623-016-0273-9}.
+
+\bibitem{cs}
+J. H. Conway, N. J. A. Sloane.
+\emph{Complex and Integral Laminated Lattices}.
+Transactions of the American Mathematical Society 280 (1983), 463--490.
+\url{https://neilsloane.com/doc/Me106.pdf}.
+
+\bibitem{martinet}
+Jacques Martinet, Christian Batut. Lattice catalogue and minimum-six tables.
+\url{https://jamartin.perso.math.cnrs.fr/Lattices/index.html};
+\url{https://jamartin.perso.math.cnrs.fr/Lattices/Min6.gp}.
+
+\bibitem{nv}
+Gabriele Nebe, Boris Venkov.
+\emph{The strongly perfect lattices of dimension 10}.
+Journal de Théorie des Nombres de Bordeaux 12 (2000), 503--518.
+\url{https://www.numdam.org/item/JTNB_2000__12_2_503_0.pdf}.
+
+\bibitem{pp}
+W. Plesken, M. Pohst.
+\emph{Constructing Integral Lattices with Prescribed Minimum. II}.
+Mathematics of Computation 60 (1993), 817--825.
+\url{https://doi.org/10.1090/S0025-5718-1993-1176715-1}.
+
+\bibitem{vwthesis}
+Wessel P. J. van Woerden.
+\emph{Perfect Quadratic Forms: an Upper Bound and Challenges in Enumeration}.
+MSc thesis, Leiden, 2018, sections 10.2--10.3.
+\url{https://wesselvanwoerden.com/publication/van-2018-perfect/msc-scriptie-wpj-van-woerden.pdf}.
+
+\bibitem{watson}
+G. L. Watson. \emph{The number of minimum points of a positive quadratic form}.
+Dissertationes Mathematicae 84 (1971), 1--46.
+\url{https://eudml.org/doc/268650}.
+Historical reference as cited in \cite{dw}; the full original PDF was not read in this research run.
+\end{thebibliography}
+\end{document}

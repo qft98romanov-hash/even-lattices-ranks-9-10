@@ -1,0 +1,177 @@
+% Confidential research addendum. These statements become global only after
+% the separate rank-ten equality search has proved that every minimizer
+% contains sqrt(3) E8. Before that, restrict K to the two known equality types.
+
+\begin{proposition}[Intrinsic structure of the rank-ten equality lattices]
+\label{prop:intrinsic-rank-ten}
+Let $K$ be either of the two rank-ten equality lattices. Then:
+\begin{enumerate}
+\item $m(K^*)=2/5$, and $K^*$ has exactly six minimal vectors. Their span
+      is a two-dimensional plane $V$ and their generated lattice is
+      isometric to $A_2/\sqrt5$.
+\item $K$ has exactly one sublattice isometric to $\sqrt3E_8$. It is
+      intrinsically determined by
+      \[
+         J=K\cap V^\perp.
+      \]
+\item $K$ has exactly three primitive rank-nine sublattices of determinant
+      $21870$. All three contain $J$ and are isometric to $K_9$.
+\end{enumerate}
+After the global equality classification, the proposition applies to every
+positive-definite even integral rank-ten lattice of minimum at least $6$
+and determinant $54675$.
+\end{proposition}
+
+\begin{proof}
+Choose a copy $J\cong\sqrt3E_8$ in $K$. The glue-radius bound $8/3<6$
+forces $J$ to be primitive. Equality in the binary determinant bound gives
+the projected lattice $P$ perpendicular to $J$ the Gram matrix
+\[
+ \frac53\begin{pmatrix}2&1\\1&2\end{pmatrix}.
+\]
+Consequently the perpendicular dual fiber
+\[
+ T=K^*\cap\operatorname{span}(J)^\perp
+\]
+has Gram matrix
+\[
+ \frac15\begin{pmatrix}2&-1\\-1&2\end{pmatrix};
+\]
+it has exactly six vectors of norm $2/5$, and they generate $T$.
+The projection of any vector of $K^*$ onto $\operatorname{span}(J)$
+belongs to $J^*$. Every nonzero vector of $J^*\cong E_8/\sqrt3$ has
+norm at least $2/3$. Therefore every vector of $K^*$ of norm at most
+$2/5$ belongs to $T$. This proves the first assertion and defines $V$
+without any reference to the chosen copy of $J$.
+
+Apply the same argument to any other copy $J'$ of $\sqrt3E_8$.
+Its perpendicular dual fiber must contain the same six minimal vectors,
+which span $V$. Hence $\operatorname{span}(J')=V^\perp$.
+Automatic primitivity gives $J'=K\cap V^\perp=J$.
+
+Every primitive rank-nine sublattice $H$ of $K$ is the kernel in $K$
+of a primitive vector $y\in K^*$, unique up to sign:
+\[
+ H=\{x\in K:\langle x,y\rangle=0\}.
+\]
+Here primitivity of $y$ means that $x\mapsto\langle x,y\rangle$
+maps $K$ onto $\mathbb Z$. A lift of $1$ has perpendicular height
+$1/\|y\|$, so the covolume identity gives
+\[
+ \det H=(\det K)\|y\|^2.
+\]
+Thus $\det H=21870$ if and only if $\|y\|^2=2/5$.
+All six minimal dual vectors are primitive, and distinct pairs
+$\{y,-y\}$ give distinct kernels. There are exactly three kernels.
+Since $y\in V$, they all contain $J$. Their projected rank-one lattice
+perpendicular to $J$ has squared step
+$21870/6561=10/3$. Its glue class must therefore be a deepest
+$J^*/J$ class, of minimum $8/3$. Transitivity on the $1920$ deepest
+classes identifies every such rank-nine extension with $K_9$.
+\end{proof}
+
+In the displayed bases, the six primitive dual pairing columns are
+\[
+ (0,\ldots,0,\pm1,0),\quad
+ (0,\ldots,0,0,\pm1),\quad
+ (0,\ldots,0,\pm1,\pm1),
+\]
+where the signs in the last pair agree. The three kernels therefore
+have integral bases obtained from the eight basis vectors of $J$ by
+adjoining, respectively, $e_{10}$, $e_9$, and $e_9-e_{10}$.
+The latter generator need not itself be shortest; changing it by a
+vector of $J$ supplies a norm-six representative.
+
+\begin{corollary}[A uniform loss for nontrivial clusters]
+\label{cor:uniform-rank-ten-cluster-loss}
+Let $K$ be either rank-ten equality lattice and let $S\subset K^*$
+be a finite set with $|S|>1$ and squared diameter $\beta<6$.
+At the guaranteed antipode radius $\sqrt{6-\beta}/2$ in dimension $38$,
+the ratio to the singleton construction over the same section, at
+radius $\sqrt6/2$, satisfies
+\[
+ \frac{\delta(S,K)}{\delta(\{0\},K)}
+ =|S|(1-\beta/6)^{19}
+ \le 9\left(\frac89\right)^{19}
+ =0.9601621523027026\ldots<1.
+\]
+Thus every nontrivial cluster loses at least
+$3.9837847697297\ldots\%$ of this guaranteed center density.
+The numerical constant is a proved upper bound, not a claim of sharpness.
+After the global equality classification, this conclusion covers all
+determinant-minimal rank-ten sections.
+\end{corollary}
+
+\begin{proof}
+For each of the ten intervals in the established all-diameter cluster
+table, write $b$ for its included left endpoint and $B$ for its
+cardinality bound. The pairs $(b,B)$ are
+\[
+ (2/5,3),\ (2/3,9),\ (23/30,11),\ (29/30,27),\ (6/5,36),
+\]
+\[
+ (4/3,82),\ (8/5,109),\ (49/30,385),\ (2,1540),\ (8/3,54675).
+\]
+On each interval, monotonicity gives
+$|S|(1-\beta/6)^{19}\le B(1-b/6)^{19}$.
+Direct exact rational comparison of these ten numbers shows that the
+largest is $9(8/9)^{19}$, the value for $(b,B)=(2/3,9)$.
+There are no nontrivial clusters below $\beta=2/5$.
+\end{proof}
+
+\begin{corollary}[Scope of the dimension-thirty-eight consequence]
+\label{cor:rank-ten-density-scope}
+Let $M$ be a positive-definite even unimodular lattice of rank $48$
+with minimum at least $6$, and let $K\subset M$ be a primitive
+rank-ten section. At radius $\sqrt6/2$, the singleton construction
+from the orthogonal complement $N=M\cap K^\perp$ has center density
+\[
+ \delta_0(K)=\frac{(3/2)^{19}}{\sqrt{\det K}}
+ \le\frac{(3/2)^{19}}{\sqrt{54675}}.
+\]
+Equality in this guaranteed-radius comparison holds precisely when
+$\det K=54675$. Under the global equality classification, every such
+section has the intrinsic structure above, and every nontrivial
+cluster over it has the uniform loss just proved.
+\end{corollary}
+
+\begin{proof}
+Primitivity and unimodularity give $\det N=\det K$. The minimum of $N$
+is at least $6$, and its rank is $38$, so the stated radius gives the
+displayed center density. The determinant theorem yields the inequality.
+For a finite cluster, the usual unimodular gluing correspondence supplies
+one translate of $N$ for each cluster point. Since $\beta<6$, these are
+distinct modulo $N$: two cluster points in the same class modulo $K$
+would differ by a nonzero vector of $K$ of norm at least $6$.
+Ambient minimum $6$ gives squared distance at least $6-\beta$ between
+different translates. This proves the stated guaranteed-radius formula.
+\end{proof}
+
+These statements do not bound the actual density obtainable by increasing
+the radius when a particular orthogonal complement has minimum greater
+than $6$, or when a particular cluster has better separation than
+$6-\beta$. They do not compare nontrivial clusters over sections of
+larger determinant with the optimum singleton construction, and do not
+prove optimality among all sphere packings in dimension $38$.
+
+For ambient embeddings, the structural proposition shows that every
+optimal rank-ten section contains exactly three copies of $K_9$.
+Thus a global ambient classification can be organized by extending
+embeddings of $K_9$. The already verified catalogue of $19$ supersections
+concerns only the fixed printed copy of $K_9$ in the printed $P_{48p}$;
+it is neither a catalogue of all optimal rank-ten sections in that ambient
+nor a count of ambient automorphism orbits.
+
+\paragraph{Independent exact audit.}
+The standard-library script
+\texttt{audit\_two\_types\_and\_cluster\_gap.py}
+uses its own rational ellipsoid enumeration and matrix arithmetic.
+It checks all $6561$ residue classes, transitivity of the $1920$ deepest
+classes, the $560+1$ second-class orbits, and $559$ explicit integral
+unimodular $10\times10$ Gram congruences connecting the large orbit.
+The ranks of the two Gram matrices modulo $3$ are $4$ and $3$, so these
+two types cannot become isometric after forgetting the chosen $E_8$ copy.
+Direct dual enumeration finds exactly the six vectors of norm $2/5$ in
+each type, and each of the three kernel Gram matrices has determinant
+$21870$, minimum $6$, and $258$ norm-six vectors. Finally, all ten
+uniform cluster comparisons are checked as rational inequalities.

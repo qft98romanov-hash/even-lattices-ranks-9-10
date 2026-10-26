@@ -1,0 +1,43 @@
+{
+  "status": "PASS",
+  "strict_upper_windows": {
+    "10": 54672,
+    "9": 40054,
+    "8": 24673,
+    "7": 13938,
+    "6": 6459,
+    "5": 2492,
+    "4": 789,
+    "3": 210,
+    "2": 44,
+    "1": 6
+  },
+  "raw_floors": {
+    "9": 40054,
+    "8": 24675,
+    "7": 13938,
+    "6": 6459,
+    "5": 2492,
+    "4": 790,
+    "3": 210,
+    "2": 44,
+    "1": 7
+  },
+  "hermite_lower_windows": {
+    "1": 6,
+    "2": 27,
+    "3": 108,
+    "4": 324,
+    "5": 972,
+    "6": 2187,
+    "7": 4374,
+    "8": 6561,
+    "9": 19684
+  },
+  "restricted_lower_rank8": 6564,
+  "previous_gap_based_lower_rank9": 24452,
+  "final_lifting_records": 3819,
+  "minimum_required_rank10_determinant": "12966723/212",
+  "external_input": "gamma9<=2, together with Mordell gamma10<=gamma9^(9/8)",
+  "scope": "Exact windows and final lifting arithmetic; not a replay of all parent extension searches."
+}

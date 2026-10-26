@@ -1,0 +1,37 @@
+[
+  {
+    "rank": 2,
+    "raw_file": "rank2_exact_classes_regen.json.raw",
+    "bytes": 155,
+    "sha256": "0ead2a5e3614d5fae8203365d4d65251f4e247e217b7719e6528dddfd7663c5f",
+    "comparison": "BYTE_IDENTICAL"
+  },
+  {
+    "rank": 3,
+    "raw_file": "rank3_exact_classes_regen.json.raw",
+    "bytes": 2045,
+    "sha256": "d19590f66a969b946ea71da379f4e8ca78af12d625059e2b83c323e15d604611",
+    "comparison": "BYTE_IDENTICAL"
+  },
+  {
+    "rank": 4,
+    "raw_file": "rank4_exact_classes_regen.json.raw",
+    "bytes": 18199,
+    "sha256": "15397ff872046dd9f8e351ab9a5fc0f661903406e71b83a0d9519a2b9403c781",
+    "comparison": "BYTE_IDENTICAL"
+  },
+  {
+    "rank": 5,
+    "raw_file": "rank5_isometry_classes_regen.json.raw",
+    "bytes": 141527,
+    "sha256": "d868f080820dbc120ab9ec5c30b3eada591a68220fe6ba64b546b8e7c2316a6f",
+    "comparison": "BYTE_IDENTICAL"
+  },
+  {
+    "rank": 6,
+    "raw_file": "rank6_isometry_classes_regen.json.raw",
+    "bytes": 256697,
+    "sha256": "ced694e3e04ffa371b6a1d104bd21036d9aff33cb6a9e53a927efbedf47100ea",
+    "comparison": "BYTE_IDENTICAL"
+  }
+]

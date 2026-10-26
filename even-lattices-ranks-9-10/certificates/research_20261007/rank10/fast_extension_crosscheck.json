@@ -1,0 +1,44 @@
+[
+  {
+    "parent": 1,
+    "raw_count": 1296,
+    "original_seconds": 16.70526974799577,
+    "fast_seconds": 2.0285586820027675,
+    "exact_ordered_children_equal": true
+  },
+  {
+    "parent": 33,
+    "raw_count": 24,
+    "original_seconds": 13.965905099998054,
+    "fast_seconds": 2.5866984669992235,
+    "exact_ordered_children_equal": true
+  },
+  {
+    "parent": 34,
+    "raw_count": 32,
+    "original_seconds": 12.629251063997799,
+    "fast_seconds": 2.1165537090055295,
+    "exact_ordered_children_equal": true
+  },
+  {
+    "parent": 0,
+    "raw_count": 0,
+    "original_seconds": 14.700841598998522,
+    "fast_seconds": 1.9461205760017037,
+    "exact_ordered_children_equal": true
+  },
+  {
+    "parent": 2,
+    "raw_count": 0,
+    "original_seconds": 33.39085238499683,
+    "fast_seconds": 7.832370791998983,
+    "exact_ordered_children_equal": true
+  },
+  {
+    "parent": 3,
+    "raw_count": 0,
+    "original_seconds": 14.972360186002334,
+    "fast_seconds": 2.3899733049984206,
+    "exact_ordered_children_equal": true
+  }
+]

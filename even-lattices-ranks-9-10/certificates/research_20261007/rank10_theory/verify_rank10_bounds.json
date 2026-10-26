@@ -1,0 +1,61 @@
+{
+  "E9": 21870,
+  "strict_counterexample_upper": 54672,
+  "bounds": {
+    "classical_mordell": {
+      "first_integer": 24662,
+      "first_allowed_determinant": 24663,
+      "rank9_upper_floor": 44774,
+      "rank9_even_upper": 44774
+    },
+    "neumaier_theorem_3_4": {
+      "first_integer": 26494,
+      "first_allowed_determinant": 26495,
+      "rank9_upper_floor": 41976,
+      "rank9_even_upper": 41976
+    },
+    "using_gamma9_equals2": {
+      "first_integer": 27911,
+      "first_allowed_determinant": 27911,
+      "rank9_upper_floor": 40054,
+      "rank9_even_upper": 40054
+    }
+  },
+  "status": "EXACT_INTEGER_ENDPOINTS_PASS",
+  "with_unique_rank9_and_E8_codim2_theorems": {
+    "rank9_parent_floor": 21872,
+    "bounds": {
+      "classical_mordell": {
+        "first_integer": 24664,
+        "first_allowed_determinant": 24664
+      },
+      "neumaier_theorem_3_4": {
+        "first_integer": 26497,
+        "first_allowed_determinant": 26499
+      },
+      "using_gamma9_equals2": {
+        "first_integer": 27914,
+        "first_allowed_determinant": 27915
+      }
+    }
+  },
+  "with_rank9_gap_and_E8_codim2_theorems": {
+    "rank9_parent_floor": 24446,
+    "Hermite_input": "public gamma9=2 and Mordell",
+    "first_integer": 31587,
+    "first_allowed_determinant": 31587,
+    "gap_window_endpoint_check": "2^9*24444^8 <15909^9 <=2^9*24446^8"
+  },
+  "final_gap_refinement": {
+    "rank9_parent_floor": 24452,
+    "rank9_gap_through": 24450,
+    "Hermite_input": "public gamma9=2 and Mordell",
+    "first_integer": 31595,
+    "first_allowed_determinant": 31595,
+    "gap_window_endpoint_check": "2^9*24450^8 <15912^9 <=2^9*24452^8",
+    "rank10_interval": [
+      31595,
+      54675
+    ]
+  }
+}

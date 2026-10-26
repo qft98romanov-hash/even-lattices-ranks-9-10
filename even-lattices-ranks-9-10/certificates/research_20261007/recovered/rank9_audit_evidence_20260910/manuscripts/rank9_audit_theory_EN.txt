@@ -1,0 +1,1974 @@
+% Confidential research document. Compile with XeLaTeX, twice.
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=25mm,headheight=14pt]{geometry}
+\usepackage{fontspec}
+\setmainfont{Latin Modern Roman}
+\setsansfont{Latin Modern Sans}
+\setmonofont{DejaVu Sans Mono}[Scale=0.82]
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{microtype,booktabs,longtable,tabularx,array,enumitem}
+\usepackage{xcolor,fancyhdr,hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue!45!black,urlcolor=blue!45!black,
+ citecolor=blue!45!black,pdftitle={Rank-nine determinant theorem: full theory and audit}}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\small Confidential research audit}
+\fancyhead[R]{\small Rank nine, minimum six}
+\fancyfoot[C]{\thepage}
+\setlength{\emergencystretch}{2em}
+\setlist{topsep=4pt,itemsep=3pt}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\Z}{\mathbb Z}\newcommand{\Q}{\mathbb Q}\newcommand{\R}{\mathbb R}
+\newcommand{\F}{\mathbb F}\newcommand{\GL}{\mathrm{GL}}
+\newcommand{\rk}{\operatorname{rk}}\newcommand{\covol}{\operatorname{covol}}
+\newcommand{\adj}{\operatorname{adj}}\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\Span}{\operatorname{span}}\newcommand{\ord}{\operatorname{ord}}
+\newcommand{\dist}{\operatorname{dist}}\newcommand{\vol}{\operatorname{vol}}
+\newcommand{\rhog}{\rho_{\mathrm{glue}}}
+\newcommand{\Ext}[3]{\mathcal E\!\left(#1;#2;#3\right)}
+\newcommand{\code}[1]{\texttt{\small\detokenize{#1}}}
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+\title{The Rank-Nine Determinant Theorem\\
+\large Full mathematical foundations, exact finite reduction, and a detailed audit}
+\author{Confidential research working document}
+\date{10 September 2026}
+\begin{document}
+\maketitle
+\begin{center}
+\fbox{\begin{minipage}{0.91\textwidth}
+\textbf{Status and scope.} This document explains the computer-assisted
+result \(e_9(6)=21870\), audits the mathematical reduction and its exact
+certificates, and distinguishes certificate validation from exhaustive
+regeneration. The precise replay status is recorded in
+Section~\ref{sec:audit}. The audit is internal; an independent coauthor or
+external verification has not been represented as completed. The supplied
+source manuscript is confidential. Its ambient embeddings, kissing numbers,
+and separate cluster constructions are outside the checks reported here.
+\end{minipage}}
+\end{center}
+\begin{abstract}
+We study positive-definite even integral lattices of rank nine and minimum
+at least six, where ``minimum'' always means squared Euclidean length. The
+claimed exact optimum is determinant \(21870\). An explicit lattice
+attains this value. To prove the lower bound, a hypothetical counterexample
+is cut repeatedly by shortest primitive dual vectors. Hermite bounds,
+Mordell's inequality, determinant congruences, and a lifting inequality
+place this saturated flag in finite determinant windows. Complete exact
+one-vector extension enumeration reaches \(2235\) labelled rank-seven
+forms; \(96\) survive the lifting bound and are identified with six
+representatives. Exact discriminant-class minima close their possible
+rank-eight continuations.
+
+The exposition supplies the linear algebra, lattice theory, arithmetic
+algorithms, completeness arguments, matrices, and numerical derivations
+needed to understand this proof. It also corrects the scaling notation for
+the determinant-\(8192\) lattice, makes the parent-minimum hypothesis in the
+layer criterion explicit, and identifies an omitted zero-residue layer in
+one generic helper. That helper defect does not change the particular
+branch conclusions, for a proved numerical reason. The result determines
+an abstract rank-nine determinant minimum and its consequence for the
+bare dimension-39 cross-section construction. Uniqueness, full
+classification, rank ten, and cluster optimality remain separate questions.
+\end{abstract}
+\newpage
+\tableofcontents
+\newpage
+
+\section{The original problem and the exact claim being audited}
+\label{sec:question}
+
+The source is the supplied confidential manuscript by I.~Dorofeev,
+X.~Sun, and C.~Wang, \emph{Optimal Extensions of Cross-Sections: Sphere
+Packings in Dimensions 38 to 43}. The relevant passage in Section~7,
+page~13 reads as follows. Only line breaks and mathematical typesetting
+have been changed.
+
+\begin{quotation}\small
+Table 4 localizes what is left for the bare cross-section route and
+separates unconditional ceilings from current-record benchmarks. In
+dimensions 40, 41 and 42 the bare route is closed: the sections of
+Corollary 11 are optimal among bare cross-section packings. This does not
+rule out antipode clusters over these or other sections. In dimension 43
+the bare route is also closed, while the cluster route is essential for
+our improvement and may admit further gains.
+
+The interesting bare cases are dimensions 39 and 38. In dimension 39, any
+rank-9 section with determinant below 21870 would improve our present
+packing. The current published rank-9 lattice record corresponds to the
+benchmark 19683: under the published-literature convention used here, a
+determinant below that is not excluded by an optimality theorem, but would
+simultaneously produce a new 9-dimensional lattice record. Thus
+\([19683,21870)\) is the portion of the search interval that could improve
+dimension 39 without necessarily improving that lower-dimensional record.
+If the recent dimension-9 preprint cited above is correct, then
+determinants below 19683 are excluded and this interval is the full
+rigorous search window. Likewise, for dimension 38 one seeks determinant
+below 54675. The current rank-10 lattice record gives the exact benchmark
+\(3^{11}/4=44286.75\); because section determinants are integral,
+\(\det K\le44286\) would also improve the rank-10 lattice record, while
+\(44287\le\det K<54675\) could improve dimension 38 without doing so.
+
+Any such section inside an even ambient lattice must itself be an even
+integral lattice of minimum at least 6, which is a real constraint: at the
+rank-9 benchmark \(19683=3^9\) the natural candidate, the rescaled
+laminated lattice \(\sqrt{\tfrac32}\,\Lambda_9\), is not integral, so a rank-9
+section of that determinant would have to be some other lattice. We do not
+know which even integral lattices of minimum 6 occur in ranks 9 and 10, and
+determining their smallest determinant would sharpen these searches. The
+current lattice records alone do not provide rigorous determinant floors
+in these ranks; the recent dimension-9 preprint, if correct, supplies the
+rank-9 floor. We leave the corresponding integral-section questions open.
+\end{quotation}
+
+The statements about the literature in this quotation are part of the
+historical source text. The proof developed below does not use the
+dimension-nine preprint mentioned there. Its rank-nine Hermite estimate is
+the unconditional bound derived from dimension eight by Mordell's
+inequality.
+
+\begin{definition}
+For a positive integer \(r\), put
+\[
+e_r(6)=\inf\{\det L: L\text{ is positive definite, even and integral},
+\ \rk L=r,\ \min L\ge6\}.
+\]
+The set is nonempty, since \(\sqrt6\Z^r\) belongs to it. Its determinants
+are positive integers, so the infimum is a minimum.
+\end{definition}
+
+\begin{theorem}[the audited rank-nine statement]
+\label{thm:main}
+Every positive-definite even integral lattice \(L\) of rank nine with
+\(\min L\ge6\) satisfies \(\det L\ge21870\). The explicit Gram matrix in
+Section~\ref{sec:k9} attains this bound. Consequently
+\[
+\boxed{e_9(6)=21870.}
+\]
+The lower-bound proof uses the complete finite computations specified
+below, together with the stated classical Hermite theorem in ranks at
+most eight.
+\end{theorem}
+
+This quantifies over \emph{all abstract} even integral lattices of rank
+nine. It therefore gives a necessary lower bound for every rank-nine
+section inside an even ambient lattice of minimum six. A converse statement
+that every such abstract lattice embeds in a particular ambient lattice
+would be a different assertion and is not used.
+
+The theorem closes the rank-nine minimum-determinant part of the quoted
+question. It does not give a list of all rank-nine lattices, prove that the
+minimizer is unique, or settle the rank-ten question in the same passage.
+
+\section{Lattices, Gram matrices, and normalization}
+
+\subsection{Why the determinant is the square of the covolume}
+Let \(V\) be an \(r\)-dimensional Euclidean space and let
+\(b_1,\ldots,b_r\) be a real basis. A lattice is the discrete subgroup
+\[
+L=\Z b_1+\cdots+\Z b_r.
+\]
+In an orthonormal coordinate system, write \(B\) for the matrix whose
+columns are the \(b_i\). The Gram matrix is
+\[
+G=B^{\mathsf T}B,\qquad G_{ij}=\langle b_i,b_j\rangle.
+\]
+For an integer coordinate column \(x\), the associated lattice vector is
+\(Bx\), and
+\[
+\|Bx\|^2=x^{\mathsf T}Gx.
+\]
+The volume of a fundamental parallelepiped is
+\(\covol L=|\det B|\). Thus
+\[
+\det L:=\det G=(\covol L)^2.
+\]
+This convention matters: a bound on the Gram determinant is the square of
+the corresponding covolume bound.
+
+Another lattice basis has the form \(BX\), where
+\(X\in\GL_r(\Z)\), equivalently \(X\) is integral and \(\det X=\pm1\).
+The new Gram matrix is \(X^{\mathsf T}GX\). Its determinant is unchanged.
+Two Gram matrices \(A,R\) define integrally isometric lattices precisely
+when an integer matrix \(X\) satisfies
+\[
+X^{\mathsf T}RX=A,\qquad |\det X|=1.
+\]
+The equality alone, without unimodularity or a same-determinant argument,
+can describe a proper sublattice and is not generally an isometry
+certificate.
+
+\subsection{Minimum, integrality, evenness, and scaling}
+The minimum is
+\[
+\min L=\min_{0\ne x\in\Z^r}x^{\mathsf T}Gx.
+\]
+Throughout this note it is a \emph{squared} length. Positive definiteness
+implies that a bounded ball meets the lattice in finitely many points, so
+this positive minimum is attained.
+
+The lattice is integral if \(G\) has integer entries. It is even if,
+in addition, its diagonal entries are even. Indeed,
+\[
+x^{\mathsf T}Gx=\sum_iG_{ii}x_i^2+2\sum_{i<j}G_{ij}x_ix_j.
+\]
+Thus even diagonal entries suffice, and taking \(x=e_i\) proves their
+necessity. A positive-definite even integral lattice has positive norms in
+\(2\Z\); therefore proving \(\min L\ge6\) amounts to excluding norms
+\(2\) and \(4\). An exact enumeration through norm \(5\) is a convenient
+single check.
+
+If all vectors are multiplied by \(c>0\), then
+\[
+G(cL)=c^2G(L),\quad \min(cL)=c^2\min L,\quad
+\det(cL)=c^{2r}\det L.
+\]
+For example, \(\sqrt3E_7\) has Gram matrix three times a root Gram matrix
+of \(E_7\). If \(C\) is such a root Gram matrix, \(4C^{-1}\) is the Gram
+matrix of \(2E_7^*\), not of \(4E_7^*\). The latter would have Gram
+matrix \(16C^{-1}\). This resolves a notation error in the earlier draft
+and in a legacy transcript; the actual integer matrix used in the
+computation is unchanged.
+
+\subsection{Indices and saturated sublattices}
+If \(J\subset L\) has the same rank and index \(h\), a basis matrix of
+\(J\) is \(BX\) with \(|\det X|=h\). Hence
+\begin{equation}
+\det J=h^2\det L.
+\label{eq:index}
+\end{equation}
+For a lower-rank sublattice \(J\subset L\), its saturation is
+\[
+J^{\mathrm{sat}}=L\cap\Span_{\Q}J.
+\]
+The following conditions are equivalent: \(J=J^{\mathrm{sat}}\);
+\(L/J\) is torsion-free; and a basis of \(J\) extends to a basis of
+\(L\). The equivalence follows from Smith normal form: the torsion
+invariant factors in a presentation of the inclusion must all equal one.
+A sublattice with these properties is called saturated or primitive.
+
+Saturation is essential in the proof. If \(J\) has corank one and is
+saturated, then \(L/J\cong\Z\), so one vector extends a basis of \(J\)
+to a basis of \(L\). Without saturation, a one-vector extension does not
+describe the whole lattice and a determinant computation may miss an
+index-square factor.
+
+\section{Duality, discriminant groups, and class minima}
+\label{sec:discriminant}
+
+\subsection{The dual lattice in coordinates}
+The dual is
+\[
+L^*=\{y\in V:\langle y,L\rangle\subseteq\Z\}.
+\]
+Writing \(y=B\xi\), its pairing column with the lattice basis is
+\(p=G\xi\). Thus
+\[
+y\in L^*\ \Longleftrightarrow\ p\in\Z^r,
+\qquad \xi=G^{-1}p,
+\qquad \|y\|^2=p^{\mathsf T}G^{-1}p.
+\]
+The dual Gram matrix in the dual basis is \(G^{-1}\), and
+\(\det L^*=1/\det L\). When \(L\) is integral, \(L\subseteq L^*\).
+The quotient
+\[
+A_L=L^*/L\cong\Z^r/G\Z^r
+\]
+is the discriminant group. Its order is \(\det G\).
+
+More explicitly, if \(UGV=\diag(s_1,\ldots,s_r)\) is a Smith normal
+form, where \(U,V\) are unimodular and \(s_i\mid s_{i+1}\), then
+\[
+A_L\cong\bigoplus_{i=1}^r\Z/s_i\Z,
+\qquad |A_L|=\prod_i s_i=\det G.
+\]
+Smith normal form explains the finite group; the actual verification code
+can avoid computing it by using fractional-coordinate fingerprints.
+
+\subsection{The finite quadratic form and what it does not record}
+For an even integral lattice, the functions
+\[
+b_L(a,b)=\langle y,z\rangle\bmod\Z,
+\qquad q_L(a)=\|y\|^2\bmod2\Z
+\]
+are well defined for \(a=y+L\), \(b=z+L\). To verify the second claim,
+replace \(y\) by \(y+x\), \(x\in L\). The norm changes by
+\(2\langle y,x\rangle+\|x\|^2\in2\Z\). Also
+\[
+q_L(a+b)-q_L(a)-q_L(b)=2b_L(a,b)\pmod{2\Z}.
+\]
+This finite quadratic form controls the parity condition in an even
+extension. It does not determine the smallest Euclidean norm in a class:
+the residue of a number modulo \(2\Z\) loses its integer part.
+
+Define instead
+\[
+\mu_L(a)=\min_{y\in a}\|y\|^2,
+\qquad \rhog(L)^2=\max_{a\in A_L}\mu_L(a).
+\]
+The zero class has \(\mu_L(0)=0\), and
+\(\mu_L(-a)=\mu_L(a)\). The number \(\rhog(L)\) is a
+\emph{discrete glue radius}. It is the largest distance from a dual
+lattice point to \(L\). It must not be confused with the ordinary
+covering radius
+\[
+R(L)=\sup_{v\in V}\dist(v,L),
+\qquad \rhog(L)\le R(L).
+\]
+Equality is not assumed. The exact quantity needed in the proof is the
+maximum over the finite group \(A_L\).
+
+\subsection{Exact fingerprints and a completeness certificate}
+Let \(d=\det G\), \(A=\adj G=dG^{-1}\). Both \(d\) and \(A\) are
+integral. Associate to a pairing column \(p\in\Z^r\) the fingerprint
+\begin{equation}
+\kappa(p)=Ap\pmod d\in(\Z/d\Z)^r.
+\label{eq:fingerprint}
+\end{equation}
+Then
+\[
+\kappa(p)=\kappa(q)
+\Longleftrightarrow G^{-1}(p-q)\in\Z^r
+\Longleftrightarrow p-q\in G\Z^r.
+\]
+Consequently fingerprints distinguish precisely the discriminant classes,
+and there are exactly \(d\) possible fingerprints.
+
+Enumerate every integer \(p\) satisfying
+\(p^{\mathsf T}Ap\le dB\), for a rational bound \(B\), and record the
+smallest value \(p^{\mathsf T}Ap/d\) for each fingerprint. If all \(d\)
+fingerprints occur, these recorded numbers are the \emph{exact} class
+minima. Indeed, each class has a representative of norm at most \(B\),
+and every vector of smaller norm was included in the exhaustive ball.
+This is more than finding one short representative per class: the
+exhaustiveness of the ball is part of the argument.
+
+The program either fixes a bound that covers all classes and verifies the
+count \(d\), or increases an integral bound until that count is reached.
+For an arbitrary positive-definite lattice this procedure terminates,
+because there are finitely many classes, each having a finite minimum.
+The implementation's emergency bound is a failure guard: reaching it
+raises an error instead of silently declaring an incomplete table complete.
+
+\section{One-vector extensions and the full layer criterion}
+\label{sec:extension}
+
+\subsection{The Schur complement as perpendicular squared length}
+Suppose \(J\subset K\) is a saturated corank-one sublattice and
+\(G\) is a Gram matrix of \(J\). Choose \(v\in K\) whose image
+generates \(K/J\). Then a Gram matrix of \(K\) is
+\begin{equation}
+\Ext{G}{p}{n}:=
+\begin{pmatrix}G&p\\p^{\mathsf T}&n\end{pmatrix},
+\qquad p_i=\langle b_i,v\rangle.
+\label{eq:border}
+\end{equation}
+Write \(v=y+z\), where \(y\in\Span_{\R}J\), \(z\perp J\).
+Integrality implies \(p\in\Z^r\), so \(y\in J^*\), with coordinates
+\(G^{-1}p\). Put
+\[
+s=\|z\|^2=n-p^{\mathsf T}G^{-1}p.
+\]
+Block elimination gives
+\begin{equation}
+\det K=(\det J)s,
+\qquad K>0\ \Longleftrightarrow\ G>0\text{ and }s>0.
+\label{eq:schur}
+\end{equation}
+Here \(K>0\) denotes positive definiteness. The identity is the algebraic
+expression of ``base volume times height'' for a parallelepiped.
+
+Replacing \(v\) by \(v+x\), \(x\in J\), is a unimodular change of
+basis. It changes \(y\) within its class \(a\in A_J\), while \(s\)
+is unchanged. We can therefore choose \(y\) to be a minimum-norm
+representative, with \(\|y\|^2=\mu_J(a)\). The last diagonal entry is
+then \(n=s+\mu_J(a)\).
+
+\begin{proposition}[complete extension criterion]
+\label{prop:layers}
+Assume that \(J\) is positive definite, even and integral, and
+\(\min J\ge6\). A choice of \(a\in A_J\) and \(s\in\Q_{>0}\)
+defines a positive-definite corank-one lattice extension. It is integral
+if and only if \(s+\mu_J(a)\in\Z\). It is even integral with minimum
+at least six if and only if
+\begin{align}
+s+q_J(a)&=0\quad\text{in }\Q/2\Z,\label{eq:parity}\\
+m^2s+\mu_J(ma)&\ge6\quad(m\in\Z\setminus\{0\}).
+\label{eq:layers}
+\end{align}
+Its determinant is \((\det J)s\).
+\end{proposition}
+
+\begin{proof}
+Choose \(y\in a\) and a new perpendicular vector \(z\) of squared
+length \(s\). Set \(K=J+\Z(y+z)\). Pairings between \(y+z\) and
+\(J\) are integral. Evenness requires its norm to belong to \(2\Z\),
+which is exactly \eqref{eq:parity}. For any integer \(m\), the layer
+\(J+m(y+z)\) has fixed perpendicular component \(mz\). Its least
+squared norm is therefore
+\[
+m^2s+\min_{x\in J}\|x+my\|^2=m^2s+\mu_J(ma).
+\]
+For \(m=0\), the zero vector must be omitted when testing the lattice
+minimum; all remaining vectors already have norm at least six by the
+hypothesis on \(J\). For \(m\ne0\), every vector is nonzero and
+\eqref{eq:layers} is necessary and sufficient. Formula
+\eqref{eq:schur} proves the determinant statement.
+\end{proof}
+
+The explicit assumption \(\min J\ge6\) is essential. A layer test for
+\(m\ne0\) cannot repair an already short nonzero vector in the parent.
+The earlier exposition relied on this hypothesis through the flag context;
+the proposition above states it in its own right.
+
+\subsection{Two finite ways of checking all layers}
+Because \(\mu_J(ma)\ge0\), only positive integers with
+\[
+m^2s<6
+\]
+need testing. Negative \(m\) give the same minima. Thus the largest
+necessary positive layer is
+\(\lceil\sqrt{6/s}\rceil-1\); a program need not compute this square
+root and can simply continue while the exact rational inequality
+\(m^2s<6\) holds. Equality \(m^2s=6\) is already safe.
+
+Alternatively, let \(h=\ord(a)\). Testing \(m=1,\ldots,h\) is
+sufficient, since for every \(m>h\) its positive residue representative
+\(r\in\{1,\ldots,h\}\) satisfies \(ma=ra\) and \(r\le m\).
+Symmetry allows a shorter test, but it must include the zero residue:
+\begin{equation}
+\begin{cases}
+m^2s+\mu_J(ma)\ge6,&1\le m\le\lfloor h/2\rfloor,\\
+h^2s\ge6.&
+\end{cases}
+\label{eq:orderlayers}
+\end{equation}
+For each nonzero residue modulo \(h\), choose its representative with
+smallest absolute value; for the zero residue, the shortest \emph{nonzero}
+layer index is \(h\), not zero. Omitting the last inequality can falsely
+accept an extension containing a short perpendicular vector. The audit of
+one legacy helper found exactly this generic omission; its harmlessness
+for the actual input is proved in Section~\ref{sec:audit}.
+
+\subsection{Why there are only finitely many candidate extensions}
+Fix an allowed determinant interval \(D_-\le\det K\le D_+\), put
+\(d=\det J\), and use a shortest representative of class \(a\). Then
+\[
+\mu_J(a)+\frac{D_-}{d}\le n\le
+\mu_J(a)+\frac{D_+}{d},\qquad n\in2\Z.
+\]
+There are finitely many possible even values of \(n\), and exactly
+\(d\) possible classes. For every pair \((a,n)\), the Schur complement,
+parity, determinant congruence, and minimum tests are exact rational or
+integer tests. This proves finiteness without any unproved bound on the
+entries of an arbitrary Gram matrix.
+
+\begin{corollary}[glue-radius lower bound]
+\label{cor:glue}
+Every positive-definite integral one-vector extension \(K\supset J\)
+with minimum at least six satisfies
+\begin{equation}
+\det K\ge\det J\bigl(6-\rhog(J)^2\bigr).
+\label{eq:gluebound}
+\end{equation}
+\end{corollary}
+\begin{proof}
+The layer \(m=1\) gives \(s\ge6-\mu_J(a)\). Since
+\(\mu_J(a)\le\rhog(J)^2\), multiply by \(\det J\).
+\end{proof}
+This is a necessary bound, not a sufficient construction criterion.
+Equality additionally requires a deepest discriminant class, correct
+parity, and all other layer inequalities. If the radius square exceeds
+six, the bound remains true but need not be useful.
+
+\section{Shortest dual vectors and saturated flags}
+\label{sec:flag}
+
+\begin{lemma}[a primitive dual normal]
+\label{lem:normal}
+Let \(M\) have rank \(r\ge2\), and choose a shortest nonzero
+\(y\in M^*\). Then \(y\) is primitive in \(M^*\), and
+\(J=M\cap y^\perp\) is a saturated rank-\(r-1\) sublattice. Moreover
+\begin{equation}
+\det J=(\det M)\|y\|^2=(\det M)\min M^*.
+\label{eq:normaldet}
+\end{equation}
+\end{lemma}
+\begin{proof}
+If \(y=hy_0\), where \(h>1\) is integral and \(y_0\in M^*\), then
+\(y_0\) is shorter, a contradiction. In the dual basis, the integer
+coordinates of \(y\) therefore have greatest common divisor one. By
+B\'ezout's identity the map \(x\mapsto\langle x,y\rangle\) from
+\(M\) to \(\Z\) is onto. Its kernel is \(J\), and
+\(M/J\cong\Z\), proving rank and saturation.
+
+Choose \(v\in M\) with \(\langle v,y\rangle=1\). Its component
+perpendicular to \(J\) is \(y/\|y\|^2\), with square norm
+\(1/\|y\|^2\). Apply the Schur complement to the basis \((J,v)\):
+\(\det M=\det J/\|y\|^2\).
+\end{proof}
+
+Starting from a hypothetical counterexample \(L_9\), repeatedly apply
+this lemma to obtain
+\begin{equation}
+L_1\subset L_2\subset\cdots\subset L_8\subset L_9,
+\qquad d_r=\det L_r,
+\label{eq:flagchain}
+\end{equation}
+where every inclusion is saturated, every lattice is even and integral
+with minimum at least six, and
+\[
+\min L_r^*=d_{r-1}/d_r\qquad(2\le r\le9).
+\]
+All shortest-vector ties are allowed. No canonical choice of a shortest
+dual normal is required; at least one such flag exists for every
+hypothetical counterexample.
+
+For a proposed step \(J\subset K\) with Schur complement \(s\), the
+dual vector orthogonal to \(J\) has norm square \(1/s\). Therefore the
+shortest-dual condition is exactly
+\begin{equation}
+\min K^*=1/s.
+\label{eq:shortdual}
+\end{equation}
+Its verification is finite: enumerate every vector of the dual form
+through the rational bound \(1/s\), and check that no nonzero vector
+has smaller norm. The normal itself occurs, so this test also has an
+explicit witness at the bound.
+
+\section{Hermite bounds and an elementary proof of Mordell's inequality}
+\label{sec:hermite}
+
+The Hermite invariant of a rank-\(r\) Euclidean lattice is
+\[
+\frac{\min L}{(\det L)^{1/r}}.
+\]
+It is invariant under uniform scaling. The Hermite constant is its
+supremum over all lattices, without an integrality condition:
+\[
+\gamma_r=\sup_{\rk L=r}\frac{\min L}{(\det L)^{1/r}}.
+\]
+It follows directly that
+\begin{equation}
+\min L\le\gamma_r(\det L)^{1/r},
+\qquad \min L^*\le\gamma_r(\det L)^{-1/r}.
+\label{eq:hermite}
+\end{equation}
+The constants are finite. For completeness, a short route to finiteness
+uses the convex-body lattice theorem: a centrally symmetric convex body
+of volume greater than \(2^r\covol L\) contains a nonzero lattice
+point. To see the underlying argument, a measurable set of volume greater
+than one fundamental domain has two distinct points differing by a
+lattice vector, by translating its pieces into that domain. Apply this to
+half the symmetric body; its difference set lies in the original body by
+convexity and symmetry. Taking Euclidean balls gives a finite upper bound
+for \(\gamma_r\). No numerical version of that bound enters the search.
+
+\begin{theorem}[classical low-dimensional Hermite theorem; external input]
+\label{thm:hermiteexternal}
+For \(1\le r\le8\), the exact values are
+\[
+\begin{array}{c|rrrrrrrr}
+r&1&2&3&4&5&6&7&8\\\hline
+\gamma_r^r&1&4/3&2&4&8&64/3&64&256.
+\end{array}
+\]
+In dimension eight, equality in the Hermite bound is attained only by
+lattices similar to \(E_8\).
+\end{theorem}
+
+This is a substantive external theorem, not a fact proved by the finite
+programs. The values are tabulated, for example, by Wen and Chang
+\cite{WenChang}; the classical lattice sources are
+\cite{CS,Martinet,Blichfeldt}. The dimension-eight equality statement is
+also a consequence of Viazovska's optimality and uniqueness theorem for
+periodic packings \cite{Viazovska}, because a lattice packing is periodic.
+We state this dependency explicitly instead of silently turning an
+enumeration into a proof of the Hermite constants themselves.
+
+\begin{proposition}[Mordell's inequality]
+For \(r\ge3\),
+\begin{equation}
+\gamma_r\le\gamma_{r-1}^{(r-1)/(r-2)}.
+\label{eq:mordell}
+\end{equation}
+\end{proposition}
+\begin{proof}
+Scale any rank-\(r\) lattice \(M\) to determinant one. Choose a
+shortest nonzero vector of \(M^*\), and let \(J\) be its primitive
+orthogonal section. Lemma~\ref{lem:normal} gives
+\(\det J=\min M^*\le\gamma_r\). Since \(J\subset M\),
+\[
+\min M\le\min J
+\le\gamma_{r-1}(\det J)^{1/(r-1)}
+\le\gamma_{r-1}\gamma_r^{1/(r-1)}.
+\]
+Take the supremum over all determinant-one \(M\). Finiteness and
+positivity of \(\gamma_r\) justify division and give
+\(\gamma_r^{(r-2)/(r-1)}\le\gamma_{r-1}\), which is the claim.
+No existence of a lattice attaining the supremum is needed.
+\end{proof}
+
+For the rank-nine proof this gives
+\[
+\gamma_9\le\gamma_8^{8/7}=2^{8/7}.
+\]
+Applying \eqref{eq:hermite} to each stage of
+\eqref{eq:flagchain} yields the two complementary bounds
+\begin{align}
+d_r&\ge 6^r/\gamma_r^r,\label{eq:lowerwindow}\\
+d_{r-1}&\le\gamma_r d_r^{(r-1)/r}.
+\label{eq:upperwindow}
+\end{align}
+The first prevents a lattice of minimum six from having too small a
+determinant. The second prevents its shortest-dual section from having too
+large a determinant. Their interaction makes a search beginning in rank
+one possible.
+
+\section{Determinant congruences and the exact flag windows}
+\label{sec:windows}
+
+\subsection{The congruence modulo four}
+\begin{lemma}
+\label{lem:mod4}
+If \(G\) is a symmetric integral \(r\times r\) matrix with even
+diagonal, then its determinant is even for odd \(r\). If \(r=2m\),
+\[
+\det G\equiv0\text{ or }(-1)^m\pmod4.
+\]
+\end{lemma}
+\begin{proof}
+Over \(\F_2\), the form defined by \(G\) is alternating, since its
+diagonal vanishes. An alternating form has even rank: if it is nonzero,
+choose vectors with pairing one, split off their nonsingular
+two-dimensional plane, and continue on the orthogonal complement.
+Thus in odd dimension the determinant is zero modulo two.
+
+Now let \(r=2m\). If \(G\bmod2\) is singular, its nullity is an even
+positive number, hence at least two. At least two of its Smith invariant
+factors are even, so \(4\mid\det G\). Otherwise an odd off-diagonal
+entry gives an invertible block over \(\Z/4\Z\) of the form
+\[
+P=\begin{pmatrix}2a&b\\b&2c\end{pmatrix},\qquad b\text{ odd}.
+\]
+Its determinant is \(4ac-b^2\equiv-1\pmod4\). Orthogonal block
+elimination over \(\Z/4\Z\) splits off this block: invertibility of
+\(P\) allows the cross block to be killed by a triangular congruence
+matrix. Congruence preserves the property of having even diagonal. The
+remaining block is nonsingular modulo two and the process repeats.
+There are \(m\) blocks. A change of basis multiplies the determinant by
+the square of a unit modulo four, which equals one, so the product is
+\((-1)^m\pmod4\).
+\end{proof}
+
+In particular, a hypothetical rank-nine determinant strictly below
+\(21870\) satisfies
+\begin{equation}
+d_9\le21868.
+\label{eq:topwindow}
+\end{equation}
+The even-rank restrictions alternate: ranks \(2,6\) allow residues
+\(0,3\), while ranks \(4,8\) allow residues \(0,1\).
+
+\subsection{The exceptional rank-eight equality case}
+The Hermite lower bound gives \(d_8\ge6^8/256=6561=3^8\). Equality
+forces \(L_8\cong\sqrt3E_8\) by
+Theorem~\ref{thm:hermiteexternal}. We exclude it within a hypothetical
+counterexample before raising the lower end of the rank-eight window.
+
+A standard model of \(E_8\) is
+\[
+D_8\ \cup\ \bigl((\tfrac12,\ldots,\tfrac12)+D_8\bigr),
+\qquad
+D_8=\{x\in\Z^8:\textstyle\sum x_i\text{ is even}\}.
+\]
+This is a lattice because twice the half-vector belongs to \(D_8\).
+It is integral and even; a direct calculation verifies the pairings and
+parity in both cosets. Since \(D_8\) has index two in \(\Z^8\), it has
+determinant four. The displayed union has index two over \(D_8\), so
+\(E_8\) has determinant one by \eqref{eq:index}. Its minimum is two:
+nonzero integral vectors of even coordinate sum have norm at least two,
+half-integral vectors have norm at least \(8/4=2\), and this bound is
+attained. Thus \(E_8\) is even unimodular and \(E_8^*=E_8\).
+
+For \(J=\sqrt3E_8\), dual classes can be written as
+\[
+J^*/J=(E_8/\sqrt3)/(\sqrt3E_8)\cong E_8/3E_8.
+\]
+There are \(3^8=6561\) classes. Exact enumeration gives the following
+distribution of minimum \emph{unscaled} norms in \(E_8/3E_8\):
+\begin{center}
+\begin{tabular}{c|rrrrr}
+minimum norm in the residue class&0&2&4&6&8\\\hline
+number of classes&1&240&2160&2240&1920
+\end{tabular}
+\end{center}
+The counts add to \(6561\). Exhaustive enumeration through norm eight,
+together with occurrence of every class, makes the minima exact by the
+argument in Section~\ref{sec:discriminant}. Scaling the vectors by
+\(1/\sqrt3\) gives
+\[
+\rhog(\sqrt3E_8)^2=8/3.
+\]
+Consequently a rank-nine continuation has determinant at least
+\[
+6561(6-8/3)=6561\cdot10/3=21870.
+\]
+This contradicts \eqref{eq:topwindow}. The next integer above \(6561\)
+allowed by Lemma~\ref{lem:mod4} is \(6564\).
+
+\subsection{Integer-power verification of every endpoint}
+The top upper bound is
+\[
+d_8\le2^{8/7}d_9^{8/9}
+\le2^{8/7}21868^{8/9}.
+\]
+Its floor is certified without floating point by
+\begin{equation}
+15908^{63}\le2^{72}21868^{56}<15909^{63}.
+\label{eq:integer63}
+\end{equation}
+For subsequent stages let \(c_r=\gamma_r^r=a_r/b_r\) in reduced
+form. A nonnegative integer \(u\) satisfies
+\(u\le\gamma_rD^{(r-1)/r}\) precisely when
+\[
+b_ru^r\le a_rD^{r-1}.
+\]
+Thus the raw floor \(U\) is certified by a pair of integer inequalities
+\begin{equation}
+b_rU^r\le a_rD^{r-1}<b_r(U+1)^r.
+\label{eq:integerfloor}
+\end{equation}
+Round this floor down further only if the determinant congruence requires
+it. The complete recursion is:
+\begin{center}
+\begin{tabular}{rrrr}
+\toprule
+parent rank&parent upper bound&raw child floor&congruence-adjusted floor\\
+\midrule
+9&21868&15908&15908\\
+8&15908&9493&9492\\
+7&9492&4647&4647\\
+6&4647&1894&1894\\
+5&1894&634&633\\
+4&633&178&178\\
+3&178&39&39\\
+2&39&7&6\\
+\bottomrule
+\end{tabular}
+\end{center}
+All raw floors are checked by \eqref{eq:integer63} or
+\eqref{eq:integerfloor}. Combining them with the lower Hermite bounds and
+the excluded \(E_8\) case yields
+\begin{equation}
+\begin{array}{c|c|c}
+r&\text{determinant window}&\text{congruence}\\\hline
+8&6564\le d_8\le15908&d_8\equiv0,1\pmod4\\
+7&4374\le d_7\le9492&d_7\equiv0\pmod2\\
+6&2187\le d_6\le4647&d_6\equiv0,3\pmod4\\
+5&972\le d_5\le1894&d_5\equiv0\pmod2\\
+4&324\le d_4\le633&d_4\equiv0,1\pmod4\\
+3&108\le d_3\le178&d_3\equiv0\pmod2\\
+2&27\le d_2\le39&d_2\equiv0,3\pmod4\\
+1&d_1=6&d_1\equiv0\pmod2.
+\end{array}
+\label{eq:windows}
+\end{equation}
+For example, the lower rank-seven endpoint is
+\(6^7/64=4374\), and the lower rank-six endpoint is
+\(6^6/(64/3)=2187\). The rank-one window forces the unique seed Gram
+matrix \([6]\).
+
+\subsection{A transparent rank-two example}
+For the seed \([6]\), dual classes are indexed by \(j\bmod6\), and
+the shortest representatives have pairing columns
+\(j=0,\pm1,\pm2,3\), with class minima \(j^2/6\). Bordering the
+parent gives
+\[
+\begin{pmatrix}6&j\\j&n\end{pmatrix},\qquad
+\det=6n-j^2.
+\]
+The determinant interval \([27,39]\), evenness, and the exact flag
+tests leave seven labelled presentations. The two signs for \(j=1\)
+and for \(j=2\) each give an isometric pair. The five representatives
+may be written
+\[
+\begin{pmatrix}6&3\\3&6\end{pmatrix},\quad
+\begin{pmatrix}6&2\\2&6\end{pmatrix},\quad
+\begin{pmatrix}6&1\\1&6\end{pmatrix},\quad
+\begin{pmatrix}6&0\\0&6\end{pmatrix},\quad
+\begin{pmatrix}6&3\\3&8\end{pmatrix}.
+\]
+Their determinants are \(27,32,35,36,39\). This small example illustrates
+both exhaustiveness by discriminant classes and why a labelled child
+count differs from an isometry-class count.
+
+\section{The dual-vector lifting inequality}
+\label{sec:lifting}
+
+\begin{lemma}
+\label{lem:lifting}
+Let \(J\subset K\) be a saturated corank-one inclusion for which the
+normal to \(J\) is shortest in \(K^*\). If
+\(s=\det K/\det J\) and \(\lambda=\min J^*\), then
+\[
+s\ge\frac{3}{4\lambda}.
+\]
+\end{lemma}
+\begin{proof}
+Write \(K=J+\Z v\), and let \(y_0\in K^*\) be the perpendicular
+normal with \(\langle y_0,v\rangle=1\). Then \(\|y_0\|^2=1/s\).
+Choose \(u\in J^*\) with \(\|u\|^2=\lambda\). Rounding
+\(\langle u,v\rangle\) to a nearest integer gives
+\(c\in[-1/2,1/2]\) with
+\(\langle u,v\rangle+c\in\Z\). Hence \(u+cy_0\in K^*\).
+This vector is nonzero because its projection \(u\) to \(J\)'s span
+is nonzero. Orthogonality gives
+\[
+\|u+cy_0\|^2=\lambda+c^2/s\le\lambda+1/(4s).
+\]
+Since \(y_0\) is shortest in \(K^*\),
+\(1/s\le\lambda+1/(4s)\). Rearranging proves the claim.
+\end{proof}
+
+The constant \(1/4\) comes from the squared maximum distance to the
+nearest integer. It is a rigorous universal rounding bound; no
+probabilistic argument is involved. In the consecutive flag steps
+\(L_6\subset L_7\subset L_8\), the previous normal identity gives
+\(\min L_7^*=d_6/d_7\). Thus
+\begin{equation}
+d_8\ge\frac{3d_7^2}{4d_6}.
+\label{eq:pairbound}
+\end{equation}
+Any determinant pair for which the right side exceeds \(15908\) can be
+discarded before enumerating rank-eight extensions. Equality at the upper
+endpoint would not permit discarding the pair.
+
+The same inequality is used as a parent-level optimization in the
+bottom-up generator: if \(D_+/\det J<3/(4\min J^*)\), no child in
+the window can have its normal shortest. The generator returns an empty
+list together with the exact inequality, rather than relying on a
+heuristic estimate for the dual minimum.
+
+\section{How the exact finite computation works}
+\label{sec:algorithms}
+
+\subsection{Rational elimination and positive definiteness}
+Every Gram matrix and pairing vector is integral. Inverses, Schur
+complements, class minima, and recursion bounds are represented by reduced
+rational numbers. An exact \(LDL^{\mathsf T}\) decomposition writes
+\[
+A=L\diag(d_1,\ldots,d_r)L^{\mathsf T},
+\]
+where \(L\) is unit lower triangular. Recursively,
+\begin{align*}
+d_k&=A_{kk}-\sum_{h<k}L_{kh}^2d_h,\\
+L_{ik}&=\frac{A_{ik}-\sum_{h<k}L_{ih}L_{kh}d_h}{d_k}
+\quad(i>k).
+\end{align*}
+All \(d_k>0\) certify positive definiteness, since this is a congruence
+to a positive diagonal matrix. Reconstruction of \(A\) can be checked
+entry by entry. The same formulas apply to a positive-definite rational
+matrix such as \(G^{-1}\).
+
+Bareiss elimination computes integer determinants while controlling
+denominator growth. If the current pivot is \(p\) and the previous
+pivot is \(p_{\mathrm{old}}\), the trailing entries are updated by
+\[
+a_{ij}\longleftarrow
+\frac{p\,a_{ij}-a_{ik}a_{kj}}{p_{\mathrm{old}}}.
+\]
+The initial previous pivot is one; the divisions are exact by the
+determinantal identities underlying fraction-free elimination. Row swaps
+are accompanied by a sign change. An exact implementation should verify
+divisibility instead of treating integer truncation as a proof. In the
+audited positive-definite Gram matrices all leading pivots are nonzero.
+Unimodular isometry matrices need row pivoting and an appropriate sign
+check. The supplementary audit also compared determinants with an
+independent permutation formula on small cases and on the displayed
+rank-nine matrix.
+
+\subsection{Exact ellipsoid enumeration and integer endpoints}
+The decomposition gives
+\begin{equation}
+x^{\mathsf T}Ax=
+\sum_{k=1}^r d_k\left(x_k+\sum_{j>k}L_{jk}x_j\right)^2.
+\label{eq:ldlenumeration}
+\end{equation}
+Enumerate coordinates from \(x_r\) down to \(x_1\). Suppose the higher
+coordinates are fixed and have used norm \(U\le B\). At level \(k\),
+put
+\[
+c=-\sum_{j>k}L_{jk}x_j,\qquad R=(B-U)/d_k.
+\]
+The allowed coordinates satisfy \((x_k-c)^2\le R\). Write
+\(c=a/b\), \(b>0\), and \(R=p/q\ge0\), \(q>0\). Then
+\[
+(bx_k-a)^2\le b^2p/q.
+\]
+The left side is an integer square. Define
+\[
+N=\left\lfloor\sqrt{\left\lfloor b^2p/q\right\rfloor}\right\rfloor.
+\]
+The exact coordinate interval is
+\begin{equation}
+\left\lceil\frac{a-N}{b}\right\rceil
+\le x_k\le
+\left\lfloor\frac{a+N}{b}\right\rfloor.
+\label{eq:exactinterval}
+\end{equation}
+All operations use integer division and integer square root. Flooring
+before taking the integer square root is exact here because the quantity
+being bounded is itself an integer square. Another audited enumerator
+uses a slightly larger interval from a rational square-root ceiling and
+then an exact membership test; that method is also complete.
+
+To prove exhaustiveness, take any \(x\) with
+\(x^{\mathsf T}Ax\le B\). Each partial sum in
+\eqref{eq:ldlenumeration} is nonnegative and at most \(B\). At each
+recursion level its coordinate therefore lies in
+\eqref{eq:exactinterval}. Induction down the coordinates shows that the
+algorithm visits \(x\). Conversely, every emitted vector satisfies the
+exact sum bound. This proves both directions, including vectors exactly
+on the boundary. Floating-point rounding cannot delete a boundary vector,
+because it is never used in a membership decision.
+
+\subsection{Isometries and the safe role of invariants}
+To test whether \(A\) is isometric to \(R\), an exhaustive method
+enumerates all target vectors of the prescribed basis norms \(A_{ii}\),
+then chooses columns \(x_i\) satisfying
+\[
+x_i^{\mathsf T}Rx_j=A_{ij}\quad\text{for all }i,j.
+\]
+Each pool is finite and can be generated by the exact ellipsoid routine.
+At a completed assignment, verify \(|\det X|=1\). This is a complete
+search for a basis isometry.
+
+Short-vector shell counts and pairing histograms are useful filters:
+different invariants can rule out isometry, while equal invariants only
+trigger the full test. The shell bound must be common to the forms being
+compared; a basis-dependent cutoff is not an isometry invariant. Most
+importantly, every \emph{positive merger} is certified by an explicit
+unimodular matrix. A failure to merge two isometric forms only increases
+work. An unsupported merger can delete a necessary branch and would
+invalidate the proof. The archived maps make all positive mergers directly
+checkable independently of the search heuristic used to find them.
+
+\subsection{The induction proving completeness after deduplication}
+\label{subsec:completeness}
+Let \(\mathcal R_r\) be the retained representatives in rank \(r\).
+The induction invariant is:
+\begin{quote}
+Every rank-\(r\) lattice occurring in a hypothetical flag satisfying
+\eqref{eq:windows} is isometric to a representative in \(\mathcal R_r\).
+\end{quote}
+For \(r=1\), the window forces \([6]\), so the invariant holds.
+Assume it holds for rank \(r\), and consider an actual flag inclusion
+\(L_r\subset L_{r+1}\). Transfer it along an isometry of \(L_r\)
+to its retained representative \(J\). Saturation writes the child as a
+one-vector extension of \(J\). Translation of its generator by \(J\)
+makes its projection a shortest representative of a discriminant class.
+That class occurs in the complete class table, and its even last diagonal
+entry lies in the enumerated interval. The layer and shortest-normal tests
+accept the transferred child, because those are isometry-invariant
+conditions that the actual flag satisfies. Deduplication then sends it to
+a retained representative by an explicit integral isometry. This proves
+the invariant in rank \(r+1\).
+
+Deduplication need not remember the entire earlier flag. An isometry of
+\(L_r\) transports that flag, so the necessary existence of an earlier
+flag is preserved. The later extension tests use only the current parent
+lattice and its actual dual minimum; they do not require a fixed basis
+embedding of \(L_{r-1}\) into the representative. At the rank-seven
+pruning stage the recorded determinant pair supplies
+\(d_6/d_7=\min L_7^*\), an invariant of \(L_7\). This explains why
+forgetting earlier labelled embeddings cannot remove a valid
+counterexample.
+
+\section{Enumeration data and reduction to six branches}
+\label{sec:counts}
+
+The lower flag starts with \([6]\). Complete regeneration gives
+\begin{center}
+\begin{tabular}{rrr}
+\toprule
+child rank&labelled children&retained isometry classes\\\midrule
+2&7&5\\
+3&52&14\\
+4&279&47\\
+5&1456&118\\
+6&1905&138\\
+\bottomrule
+\end{tabular}
+\end{center}
+The total number of labelled children in these five stages is
+\(7+52+279+1456+1905=3699\). Each labelled child has a checked
+unimodular map to its retained representative. Additional bridge
+certificates identify the regenerated representative sets with the frozen
+sets used by the later computations. These bridges are needed because
+two equally valid runs can select different bases or representatives.
+
+All \(138\) rank-six parents are then extended. Four disjoint index
+ranges cover \([0,138)\); their child counts are
+\[
+102,\quad0,\quad1868,\quad265,
+\qquad102+0+1868+265=2235.
+\]
+The zero-count chunk is included and checked: it is not a missing range.
+Ten parents have children. The \(2235\) labelled forms realize \(31\)
+distinct pairs \((d_6,d_7)\) and \(28\) distinct rank-seven
+determinants. The boundary dual enumeration in their validation contains
+\(5222\) vectors; boundary vectors are retained so that shortest-vector
+ties are tested correctly.
+
+Applying \eqref{eq:pairbound} eliminates \(25\) pairs and \(2139\)
+forms. The six remaining pairs contain \(96\) forms:
+\begin{equation}
+\begin{array}{r|r|r|l}
+d_6&d_7&\text{labelled count}&\text{representative}\\\hline
+2187&4374&2&\sqrt3E_7\\
+2187&6318&54&H_{6318}\\
+2835&7722&32&H_{7722}\\
+4096&8192&1&2E_7^*\\
+3240&8100&1&H_{8100}\\
+3267&7986&6&H_{7986}
+\end{array}
+\label{eq:sixpairs}
+\end{equation}
+The sum is \(2+54+32+1+1+6=96\), and
+\(2139+96=2235\). Every survivor is linked by an explicit
+\(\GL_7(\Z)\)-map to the representative in its row.
+
+These are six representatives sufficient for the counterexample search.
+They are not asserted to constitute all even integral rank-seven lattices
+of minimum six. The determinant windows and the existence of the selected
+shortest-dual flag impose additional restrictions.
+
+\section{Explicit matrices and closure of all six branches}
+\label{sec:branches}
+
+When the parent is fixed, write \(\Ext{G}{p}{n}\) for the block matrix
+\eqref{eq:border}. Giving \(G,p,n\) specifies every entry of the
+extension matrix and is easier to inspect than repeating a large common
+block. The following choices agree with the certificate representatives,
+or are explicitly linked to them by the archived integral isometries.
+
+\subsection{The root-lattice branch \texorpdfstring{\(\sqrt3E_7\)}{sqrt(3) E7}}
+Use
+\begin{equation}
+H=\begin{pmatrix}
+6&-3&-3&-3&-3&-3&-3\\
+-3&6&3&3&3&3&3\\
+-3&3&6&0&3&0&0\\
+-3&3&0&6&3&3&3\\
+-3&3&3&3&6&3&3\\
+-3&3&0&3&3&6&3\\
+-3&3&0&3&3&3&6
+\end{pmatrix}.
+\label{eq:H4374}
+\end{equation}
+It has determinant \(4374=2\cdot3^7\) and minimum six.
+The matrix \(H/3\) is a Gram matrix of a root basis of \(E_7\).
+Because some off-diagonal entries are positive, it is not being called a
+Cartan matrix of a simple-root basis.
+
+Its \(4374\) discriminant classes have minimum distribution
+\begin{center}\small
+\begin{tabular}{c|rrrrrrrrrrr}
+minimum&0&$1/2$&$2/3$&$7/6$&$4/3$&$11/6$&2&$5/2$&$8/3$&$19/6$&$9/2$\\\hline
+count&1&56&126&576&756&756&728&672&576&126&1
+\end{tabular}
+\end{center}
+Thus \(\rhog(H)^2=9/2\). The broad extension enumeration in the
+rank-eight window accepts \(1375\) labelled discriminant classes:
+\(126\) have determinant \(12393\), \(576\) have determinant
+\(14580\), and \(673\) have determinant \(15309\). Root reflections
+act on the finite group and group these into four extension types.
+
+For clarity, a reflection in a norm-two root \(b_i\) of the root
+lattice is \(x\mapsto x-\langle x,b_i\rangle b_i\). If \(C=H/3\)
+and \(p\) is a pairing column for the scaled lattice, the induced
+pairing update is
+\[
+p_j\longmapsto p_j-p_iC_{ij}.
+\]
+It is an integral isometry and preserves class minima. The computation
+forms the orbits of these explicitly verified maps, together with any
+stated sign action. Completeness does not require an unproved assertion
+that these generators give the full Weyl group: their subgroup orbits
+already cover the finite class set, and the listed orbit-to-target
+identifications suffice.
+
+The four target matrices are
+\begin{align*}
+J_{12393}&=\Ext{H}{(1,-3,0,-3,-3,-3,-3)^{\mathsf T}}{6},\\
+J_{14580}&=\Ext{H}{(2,-3,-1,-3,-3,-3,-3)^{\mathsf T}}{6},\\
+J_{15309,a}&=\Ext{H}{(0,2,2,-1,-1,-1,-1)^{\mathsf T}}{6},\\
+J_{15309,b}&=\Ext{H}{(0,-3,0,-3,-3,-3,-3)^{\mathsf T}}{8}.
+\end{align*}
+The two forms of determinant \(15309\) are distinct targets; determinant
+alone is not used to identify lattices. Their exact class tables give
+\begin{center}
+\begin{tabular}{lrrr}
+\toprule
+target&dual vectors enumerated&$\rhog^2$&rank-nine determinant floor\\\midrule
+$J_{12393}$&73253&$58/17$&$12393\cdot44/17=32076$\\
+$J_{14580}$&190491&$9/2$&$14580\cdot3/2=21870$\\
+$J_{15309,a}$&314953&$32/7$&$15309\cdot10/7=21870$\\
+$J_{15309,b}$&72119&$68/21$&$15309\cdot58/21=42282$\\
+\bottomrule
+\end{tabular}
+\end{center}
+Every table covers exactly the number of discriminant classes equal to
+the target determinant. The vector counts are reproducibility diagnostics,
+not substitutes for those completeness checks. The least rank-nine floor
+in this branch is \(21870\).
+
+\subsection{The branch \texorpdfstring{\(H_{6318}\)}{H6318}}
+Let \(G_6\) be the leading \(6\times6\) block of \(H\). Then
+\(G_6\) is a Gram matrix of \(\sqrt3E_6\), with determinant \(2187\),
+and set
+\[
+H_{6318}=\Ext{G_6}{(2,-3,-2,-3,-3,-3)^{\mathsf T}}{6}.
+\]
+The exact class table contains all \(6318\) classes and has
+\(\rhog(H_{6318})^2=105/26\). A broad enumeration, retaining all
+minimum-six extensions in the rank-eight window, gives twelve labelled
+children: two isometric to \(J_{12393}\) and ten isometric to
+\[
+J_{13689}=\Ext{H_{6318}}{(1,2,2,0,0,0,-3)^{\mathsf T}}{6}.
+\]
+Every positive identification has an explicitly checked unimodular map.
+The exact radius of this new target is \(10/3\), so
+\[
+\det L_9\ge13689(6-10/3)=13689\cdot8/3=36504.
+\]
+For \(J_{12393}\), the already computed floor is \(32076\).
+
+There is a useful distinction between unrestricted children and actual
+flag continuations. For this parent pair,
+\[
+\frac{3\cdot6318^2}{4\cdot2187}=13689.
+\]
+Thus the determinant-\(12393\) children cannot be steps in the selected
+shortest-dual flag. Keeping them in the broad enumeration is safe: it
+adds possibilities, and those added possibilities close as well.
+
+\subsection{The branch \texorpdfstring{\(H_{7722}\)}{H7722}}
+A representative is
+\[
+H_{7722}=\begin{pmatrix}
+6&-3&-3&-3&-3&-3&2\\
+-3&6&3&1&3&3&-3\\
+-3&3&6&0&3&0&-2\\
+-3&1&0&6&3&3&-3\\
+-3&3&3&3&6&3&-3\\
+-3&3&0&3&3&6&-3\\
+2&-3&-2&-3&-3&-3&6
+\end{pmatrix}.
+\]
+The exact dual minimum is \(105/286=2835/7722\), as required by its
+flag pair. Its glue-radius square is \(93/22\), so every unrestricted
+extension has determinant at least
+\[
+7722(6-93/22)=7722\cdot39/22=13689.
+\]
+The unrestricted enumeration yields exactly two opposite classes, each
+giving determinant \(13689\). One presentation is
+\[
+\Ext{H_{7722}}{(1,0,2,0,0,0,-3)^{\mathsf T}}{6}.
+\]
+It is explicitly integrally isometric to \(J_{13689}\).
+
+However, the shortest-dual flag condition gives the stronger bound
+\begin{equation}
+d_8\ge\frac{3\cdot7722^2}{4\cdot2835}
+=\frac{552123}{35}>13689.
+\label{eq:7722flag}
+\end{equation}
+The decimal approximation \(15774.942857\ldots\) is only explanatory;
+the exact rational inequality is used. Hence neither of those two
+unrestricted children is flag-compatible. This branch has \emph{no}
+rank-eight continuation in the hypothetical flag. Calling the
+determinant-\(13689\) forms admissible flag continuations would be
+incorrect. As a redundant check, even these additional forms have
+rank-nine floor \(36504\).
+
+For opposite classes, replacing the extension vector by its negative
+gives a sign isometry if the representative projections are exact
+negatives. If chosen shortest representatives differ by a lattice vector,
+first translate the generator by that vector. The resulting matrix is
+unimodular. The certificate checks the actual \(8\times8\) matrix and
+its determinant \(-1\), rather than relying on a label ``opposite''.
+
+\subsection{The determinant-\texorpdfstring{\(8192\)}{8192} branch and the scaling correction}
+Use the actual simple-root Cartan matrix
+\[
+C=\begin{pmatrix}
+2&0&-1&0&0&0&0\\
+0&2&0&-1&0&0&0\\
+-1&0&2&-1&0&0&0\\
+0&-1&-1&2&-1&0&0\\
+0&0&0&-1&2&-1&0\\
+0&0&0&0&-1&2&-1\\
+0&0&0&0&0&-1&2
+\end{pmatrix}.
+\]
+It has determinant two. The target Gram matrix is \(4C^{-1}\), and
+therefore
+\[
+\det(4C^{-1})=4^7/2=8192.
+\]
+Since multiplying vectors by two multiplies their Gram matrix by four,
+the lattice is \(2E_7^*\). The earlier notation \(4E_7^*\) was a
+scaling error in the prose; the matrix \(4C^{-1}\) in the computation
+has always been the determinant-\(8192\) object.
+
+Its exact radius square is \(7/2\), from all \(8192\) discriminant
+classes. Thus
+\[
+d_8\ge8192(6-7/2)=8192\cdot5/2=20480>15908.
+\]
+No rank-eight child in the window is possible.
+
+\subsection{The branch \texorpdfstring{\(H_{8100}\)}{H8100}}
+The chosen matrix is
+\[
+H_{8100}=\begin{pmatrix}
+6&3&0&-3&-3&-3&-3\\
+3&6&-3&0&-3&-3&-3\\
+0&-3&6&-3&0&0&0\\
+-3&0&-3&6&0&2&2\\
+-3&-3&0&0&6&1&1\\
+-3&-3&0&2&1&6&1\\
+-3&-3&0&2&1&1&6
+\end{pmatrix}.
+\]
+Its exact radius square is \(15/4\), certified by \(8100\) classes.
+The continuation bound is
+\[
+d_8\ge8100(6-15/4)=8100\cdot9/4=18225>15908.
+\]
+Again no rank-eight child in the required window is possible.
+
+\subsection{The branch \texorpdfstring{\(H_{7986}\)}{H7986}}
+Use
+\[
+H_{7986}=\begin{pmatrix}
+6&3&0&-3&-3&-3&-3\\
+3&6&-3&0&-3&-3&-2\\
+0&-3&6&-3&0&1&-1\\
+-3&0&-3&6&1&2&3\\
+-3&-3&0&1&6&0&0\\
+-3&-3&1&2&0&6&2\\
+-3&-2&-1&3&0&2&6
+\end{pmatrix}.
+\]
+The class table gives \(\rhog(H_{7986})^2=25/6\). Consequently
+\[
+d_8\ge7986(6-25/6)=7986\cdot11/6=14641.
+\]
+The exact flag extension test finds two opposite presentations, both
+isometric to
+\[
+J_{14641}=\Ext{H_{7986}}{(-2,-3,0,2,0,2,2)^{\mathsf T}}{6}.
+\]
+Here the normal is shortest: these are actual flag-compatible extensions,
+unlike the determinant-\(13689\) children of \(H_{7722}\). The
+rank-eight target has exactly \(14641\) discriminant classes and
+\(\rhog(J_{14641})^2=36/11\). Therefore
+\[
+d_9\ge14641(6-36/11)=14641\cdot30/11=39930.
+\]
+
+\subsection{The six branches in one logical table}
+\begin{center}\small
+\begin{tabularx}{\textwidth}{lXr}
+\toprule
+rank-seven parent&what happens at rank eight&rank-nine floor\\\midrule
+$\sqrt3E_7$&four listed unrestricted types&$\ge21870$\\
+$H_{6318}$&two unrestricted types; both closed&$\ge32076$\\
+$H_{7722}$&no flag-compatible continuation&---\\
+$2E_7^*$&rank-eight floor $20480>15908$&---\\
+$H_{8100}$&rank-eight floor $18225>15908$&---\\
+$H_{7986}$&one flag-compatible type, determinant $14641$&$\ge39930$\\
+\bottomrule
+\end{tabularx}
+\end{center}
+Each row uses either a direct obstruction in rank eight or an exact
+rank-nine determinant floor. Every surviving possibility is covered, and
+none allows a determinant below \(21870\).
+
+\section{Assembly of the lower-bound proof}
+\begin{proof}[Proof of the lower-bound part of Theorem~\ref{thm:main}]
+Suppose that \(L\) is a positive-definite even integral rank-nine
+lattice of minimum at least six and determinant below \(21870\).
+By Lemma~\ref{lem:mod4}, its determinant is at most \(21868\).
+Repeated shortest-dual sections produce the saturated flag
+\eqref{eq:flagchain}. The Hermite bounds and Mordell's inequality give
+the upper and lower windows. The equality case \(d_8=6561\) closes
+separately by the exact \(\sqrt3E_8\) class table. Thus every stage
+has determinant in \eqref{eq:windows}.
+
+The complete extension criterion and the induction in
+Section~\ref{subsec:completeness} show that the flag is represented in the
+regenerated search. It reaches one of \(2235\) labelled rank-seven
+forms. The lifting inequality excludes \(2139\), and explicit
+unimodular maps identify all \(96\) survivors with the six representatives
+in \eqref{eq:sixpairs}. Section~\ref{sec:branches} excludes every
+continuation compatible with the flag and the determinant windows.
+This contradicts the assumed existence of \(L\), proving
+\(\det L\ge21870\).
+\end{proof}
+
+The finite computations enter at identifiable points: the lower flag
+lists, their completeness and isometry maps, the rank-seven list and its
+linkage, and the exact class minima and extension lists in the branches.
+The implication from these finite facts to the universal theorem is the
+ordinary mathematical argument above. A transcript containing the
+expected counts alone would not establish those finite facts.
+
+\section{The equality witness and a small independent sharpness proof}
+\label{sec:k9}
+
+The source manuscript provides the symmetric matrix
+\begin{equation}
+K_9=\begin{pmatrix}
+6&-3&-3&-3&-3&-3&-3&3&-2\\
+-3&6&3&3&3&3&3&0&1\\
+-3&3&6&0&3&0&0&-3&3\\
+-3&3&0&6&3&3&3&0&-1\\
+-3&3&3&3&6&3&3&-3&1\\
+-3&3&0&3&3&6&3&0&0\\
+-3&3&0&3&3&3&6&0&1\\
+3&0&-3&0&-3&0&0&6&-1\\
+-2&1&3&-1&1&0&1&-1&6
+\end{pmatrix}.
+\label{eq:K9}
+\end{equation}
+It is integral and even by inspection. The archived verifier checks
+positive definiteness, determinant \(21870\), absence of nonzero
+vectors of norm below six, and the presence of \(258\) oriented
+minimum vectors. These checks were rerun in the current audit.
+
+There is also a much smaller argument for its minimum, reducing the
+remaining check to \(64\) explicitly bounded integer tuples. This
+argument was reconstructed during the audit and does not rely on the
+archived dual-ellipsoid enumerator.
+
+Let \(G\) be the leading \(8\times8\) block of \(K_9\), set
+\(C=G/3\), and let
+\[
+p=(-2,1,3,-1,1,0,1,-1)^{\mathsf T}.
+\]
+Exact elementary matrix calculations give
+\begin{gather}
+\det C=1,\qquad C>0,\qquad
+\diag(C^{-1})=(4,2,4,2,4,2,2,2),\label{eq:Cfacts}\\
+w=C^{-1}p=(-1,-1,2,-1,0,0,1,1)^{\mathsf T},
+\qquad w^{\mathsf T}Cw=8.
+\label{eq:wfacts}
+\end{gather}
+For instance \(C>0\) can be checked by its positive rational
+\(LDL^{\mathsf T}\) pivots, a short matrix calculation. It has even
+diagonal and is integral, so every nonzero integer vector has norm at
+least two, and a basis vector attains two. Thus \(G=3C\) has minimum
+six and determinant \(3^8=6561\).
+
+The projection of the ninth basis vector has coordinates
+\(G^{-1}p=w/3\), so its squared norm is
+\[
+p^{\mathsf T}G^{-1}p=8/3.
+\]
+Its Schur complement is
+\begin{equation}
+s=6-8/3=10/3.
+\label{eq:K9schur}
+\end{equation}
+This proves positive definiteness of \(K_9\) and
+\[
+\det K_9=6561\cdot10/3=21870.
+\]
+To prove the minimum by the layer criterion, it remains only to show that
+the projected discriminant class has minimum exactly \(8/3\).
+
+After multiplying coordinates by three, this amounts to showing
+\begin{equation}
+\min_{r\in w+3\Z^8}r^{\mathsf T}Cr=8.
+\label{eq:64target}
+\end{equation}
+For \(r=w+3x\), even integrality gives
+\[
+r^{\mathsf T}Cr-w^{\mathsf T}Cw
+=6x^{\mathsf T}Cw+9x^{\mathsf T}Cx\in6\Z.
+\]
+Thus a norm smaller than eight in this residue class could only be two.
+For a vector of norm two, Cauchy--Schwarz in the inner product defined
+by \(C\) implies
+\[
+|r_i|^2
+=|\langle C^{-1}e_i,r\rangle_C|^2
+\le(C^{-1})_{ii}\,r^{\mathsf T}Cr
+\le8.
+\]
+All coordinates are therefore integers of absolute value at most two.
+Combining these bounds with \(r\equiv w\pmod3\) leaves
+\[
+r_1,r_2,r_3,r_4\in\{-1,2\},\quad r_5=r_6=0,
+\quad r_7,r_8\in\{-2,1\}.
+\]
+There are \(2^6=64\) tuples. Direct evaluation of
+\(r^{\mathsf T}Cr\), using integer additions and multiplications,
+gives:
+\begin{center}\small
+\begin{tabular}{c|rrrrrrrrrrr}
+norm&8&14&20&26&32&38&44&50&56&62&86\\\hline
+count&5&9&14&10&8&5&4&4&1&3&1
+\end{tabular}
+\end{center}
+The counts add to \(64\), and norm two does not occur. Since \(w\)
+itself has norm eight, \eqref{eq:64target} follows. A short direct
+reproduction appears in Appendix~\ref{app:64}.
+
+We have now proved \(\mu_G(a)=8/3\). The layers \(m=\pm1\) have
+minimum
+\[
+10/3+8/3=6.
+\]
+Every layer with \(|m|\ge2\) has perpendicular norm at least
+\(4\cdot10/3=40/3>6\). The parent layer already has minimum six.
+Hence \(\min K_9=6\). This proves the upper-bound part of
+Theorem~\ref{thm:main} and explains structurally why the threshold
+\(21870\) appears: it is \(\det(\sqrt3E_8)\) times the least
+perpendicular squared length permitted by a deepest dual class.
+
+The auxiliary count \(258\) is a useful independent diagnostic but is
+not required to establish the minimum or the determinant optimum. The
+\(64\)-tuple argument is not claimed to enumerate all vectors of norm
+eight; its coordinate bounds were derived for a hypothetical norm-two
+vector and are used only to rule that possibility out.
+
+\section{Orthogonal complements in unimodular lattices and packing density}
+\label{sec:packing}
+
+\subsection{The determinant identity for a primitive section}
+Let \(\Lambda\) be integral unimodular, meaning
+\(\det\Lambda=1\), equivalently \(\Lambda^*=\Lambda\). Let
+\(K\subset\Lambda\) be saturated, and define
+\[
+L=\Lambda\cap(\Span_{\R}K)^\perp.
+\]
+Then \(L\) is saturated as well: if \(nx\) is orthogonal to \(K\)
+for a nonzero integer \(n\), so is \(x\). We prove
+\begin{equation}
+\det L=\det K.
+\label{eq:ambientdet}
+\end{equation}
+
+Because \(K\) is primitive as an abelian subgroup, a basis of it extends
+to a basis of \(\Lambda\). Any integer-valued linear functional on
+\(K\) therefore extends to one on \(\Lambda\). Unimodularity
+identifies such functionals with pairings against elements of
+\(\Lambda\). Consequently the restriction map
+\[
+\Lambda\longrightarrow K^*,\qquad
+x\longmapsto\bigl(k\mapsto\langle x,k\rangle\bigr)
+\]
+is onto, and its kernel is \(L\). Modding out the image of \(K\)
+gives
+\[
+\Lambda/(K\oplus L)\cong K^*/K.
+\]
+Put \(h=[\Lambda:K\oplus L]\). Then \(h=\det K\). By
+orthogonality and the index-square formula,
+\[
+\det K\det L=\det(K\oplus L)=h^2\det\Lambda=h^2.
+\]
+Substituting \(h=\det K\) proves \eqref{eq:ambientdet}.
+
+This derivation also pinpoints why unimodularity and primitivity cannot
+be suppressed from the statement. For a nonsaturated section, the quotient
+has extra torsion; for a nonunimodular ambient lattice, the restriction
+map need not be onto in the same way.
+
+\subsection{What density the determinant controls}
+Suppose \(\Lambda\) has rank \(48\), is even unimodular, and has
+minimum six. A primitive rank-nine section \(K\) and its orthogonal
+complement \(L\) have ranks nine and \(39\). Both inherit minimum at
+least six. Put balls of radius
+\[
+r_0=\sqrt6/2=\sqrt{3/2}
+\]
+around points of \(L\). Their interiors are disjoint. The center density,
+which omits the volume of the unit ball, is
+\[
+\delta_{\mathrm{bare}}(L)=\frac{r_0^{39}}{\covol L}
+=\frac{(3/2)^{39/2}}{\sqrt{\det K}}.
+\]
+Ordinary packing density is this quantity multiplied by
+\(\vol(B_{39}(1))\). Theorem~\ref{thm:main} implies
+\begin{equation}
+\delta_{\mathrm{bare}}(L)
+\le\frac{(3/2)^{39/2}}{\sqrt{21870}}
+=\frac{3^{16}}{2^{20}\sqrt5}.
+\label{eq:density}
+\end{equation}
+The last equality follows from \(21870=2\cdot3^7\cdot5\).
+
+This proves an upper bound for the \emph{inherited-radius bare
+cross-section construction}. The source reports a saturated ambient
+embedding of its \(K_9\) construction, which would attain this density
+at the inherited radius. The present audit verifies the abstract matrix
+and the determinant obstruction; it does not rerun the separate ambient
+coordinate embedding certificates of that source. Accordingly, the
+attainment assertion for a specified ambient lattice remains attributed
+to the supplied manuscript.
+
+If an orthogonal complement happened to have minimum greater than six,
+one could ask about increasing its packing radius; the fixed-radius
+formula above does not by itself exclude every gain of that different
+kind. Nor does it exclude antipode clusters, nonlinear packings, or
+constructions unrelated to rank-48 sections. The exact conclusion is that
+one cannot improve the source's dimension-39 bare construction by lowering
+the rank-nine determinant within the stated even integral setting.
+
+\section{Detailed audit findings and present replay status}
+\label{sec:audit}
+
+\subsection{What was actually repeated on 10 September 2026}
+The supplied archive was recovered and its \(83\) recorded SHA-256
+checksums matched before the audit. The released exact-check entry point
+was rerun and terminated with
+\begin{center}\code{ALL_RELEASED_EXACT_CERTIFICATES_PASS}.
+\end{center}
+The full regeneration entry point was also rerun and terminated with
+\begin{center}\code{FULL_EXACT_REGENERATION_BYTE_IDENTICAL}.
+\end{center}
+This regenerated the rank-two through rank-six representative data and
+all four rank-seven chunks, together with their merged output. The
+specified released outputs were byte-identical; separate comparisons also
+confirmed byte identity of all five raw files in ranks two through six.
+All \(83\) manifest entries still
+matched after the checks. These are completed reruns in this audit, not
+instructions for a future run.
+
+The runs used CPython \(3.12.14\) with assertions enabled. Python's
+\code{-O} option must not be used, since assertions implement part of
+the certificate validation. The optional broad \(E_6\) supplementary
+search was not rerun in full; the necessary \(E_7\) and targeted
+\(H_{6318}\) branch checks were rerun and cover the relevant surviving
+branches.
+
+The reruns use the released program logic, so they establish reproducible
+execution and regenerated-list agreement. They are not a wholly
+independent implementation of the complete rank-seven search. Additional
+checks were deliberately independent on important smaller components:
+\begin{itemize}
+\item \(10036\) exact integer-interval checks, \(100\) independent
+ellipsoid comparisons, and \(60\) determinant comparisons;
+\item direct bounded-coordinate enumeration of the rank-two and
+rank-three extension stages, recovering \(7\) and \(52\) labelled
+forms without using the released ellipsoid routine;
+\item independent determinant recomputation of all \(138\) rank-six
+parents and \(2235\) rank-seven children, followed by exact recomputation
+of the \(31\) determinant pairs and the \(2139+96\) split;
+\item \(51\) further small ellipsoid comparisons for auxiliary branch
+arithmetic, verification of the displayed root reflections, and an
+independent determinant calculation for \(K_9\);
+\item explicit exhaustive enumeration through norm five for
+\(H_{6318}\), \(J_{12393}\), \(J_{13689}\), \(J_{14580}\), and
+\(J_{15309,a},J_{15309,b}\), finding no nonzero vector. This closes an
+additional validation distinction: a helper that merely finds vectors
+of norm six establishes their existence, but does not itself exclude
+shorter vectors;
+\item the separate \(64\)-tuple proof of the sharpness witness in
+Section~\ref{sec:k9}, independent of the archived discriminant
+enumerator.
+\end{itemize}
+The finite tests support the audit of the arithmetic interfaces; the
+general correctness arguments are the explicit formulas and completeness
+proofs in this document. Random or small-instance tests alone are not
+offered as a proof that every search is exhaustive.
+
+\subsection{Corrections and clarifications}
+\begin{longtable}{P{0.25\textwidth}P{0.66\textwidth}}
+\toprule
+finding&correction and effect on the theorem\\\midrule
+\endfirsthead
+\toprule finding&correction and effect on the theorem\\\midrule
+\endhead
+Vector versus Gram scaling&The determinant-\(8192\) Gram matrix
+\(4C_{E_7}^{-1}\) represents \(2E_7^*\). The earlier label
+\(4E_7^*\) was wrong; the actual matrix, determinant, and exclusion
+remain correct.\\[4pt]
+Parent layer in the minimum criterion&The parent must be even integral
+and have minimum at least six. Nonzero-layer tests do not control its
+nonzero vectors. These hypotheses held for every actual parent and are
+now explicit in Proposition~\ref{prop:layers}.\\[4pt]
+Integrality of a constructed extension&Membership \(y\in J^*\)
+guarantees integral cross pairings, but the new norm must also be integral.
+Even integrality requires \(s+\mu_J(a)\in2\Z\).\\[4pt]
+Omitted zero-residue layer in a helper&One auxiliary centered-residue
+test omitted \(h^2s\ge6\). A real false-positive example exists. The
+helper was hardened, regression-tested, and rerun; its actual branch
+output was unchanged. Details follow below.\\[4pt]
+Norm convention&Minimum always means squared length. Expressions such
+as \(\min L^*=d_{r-1}/d_r\) use that convention throughout.\\[4pt]
+Dimension-eight equality rigidity&The needed external theorem concerns
+all Euclidean lattices attaining \(\gamma_8\), not merely even
+unimodular lattices. This stronger theorem is stated explicitly.\\[4pt]
+Root-reflection terminology&The displayed \(E_7\) root Gram matrix is
+not a simple-root Cartan matrix. Reflections in its displayed roots are
+checked isometries; their subgroup orbits suffice.\\[4pt]
+Discrete versus continuous radius&\(\rhog^2\) is a maximum of exact
+minima over \(J^*/J\). No equality with the ordinary covering radius
+is needed or asserted.\\[4pt]
+Unrestricted versus flag-compatible children&The two determinant-
+\(13689\) children of \(H_{7722}\) violate the lifting bound and are
+not flag-compatible. In contrast, the determinant-\(14641\) children of
+\(H_{7986}\) pass the full shortest-normal test.\\[4pt]
+Hash validation versus completeness&A matching digest proves file
+identity. Completeness additionally requires a correct exhaustive
+generator or independently verified exhaustive proof object; the full
+generator rerun and its mathematical invariant are reported separately.\\
+\bottomrule
+\end{longtable}
+
+These findings should not be hidden behind the phrase ``all checks
+passed.'' They include a genuine generic programming defect and several
+mathematically significant missing qualifications. The audit found no
+failure of the rank-nine lower-bound implication after applying these
+corrections.
+
+\subsection{The zero-residue-layer defect: example, fix, and why the result survives}
+Let
+\[
+G=\diag(22,6,6,6,6),\qquad
+y=(\tfrac12,0,0,0,0)
+\]
+in basis coordinates. The parent is even integral with minimum six.
+The class \(a=y+J\) has order \(h=2\) and minimum \(11/2\). Choose
+\(s=1/2\); the extension has cross column
+\((11,0,0,0,0)^{\mathsf T}\), last diagonal six, and determinant
+\[
+(22\cdot6^4)\cdot\tfrac12=14256.
+\]
+The centered test for \(m=1\) passes, since
+\(s+\mu_J(a)=1/2+11/2=6\). But the coordinate vector
+\[
+(-1,0,0,0,0,2)
+\]
+in the extension has norm two: its parallel component cancels, and its
+perpendicular square norm is \(h^2s=2\). The old generic helper thus
+accepted a false minimum-six candidate. The corrected version includes
+\begin{center}\code{if h*h*s < 6: continue}.
+\end{center}
+The exact regression constructs the class table for this example and
+verifies both the old false acceptance and the corrected rejection.
+
+For the actual determinant-\(7722\) branch, every accepted extension
+has \(s=13689/7722=39/22\). Therefore all \(|m|\ge2\) layers have
+norm at least
+\[
+4s=78/11>6.
+\]
+The omitted inequality is automatically satisfied for nonzero classes
+of order at least two in the actual surviving output. A class of order
+one would require \(s\ge6\), which the complete criterion controls.
+In addition, the relevant target minimum was checked directly, and both
+unrestricted targets are excluded from the flag by
+\eqref{eq:7722flag}. The correction was applied in an isolated hardened
+copy of the helper; its full branch run passed and produced a transcript
+byte-identical to the released branch output. The main bottom-up
+generator uses the complete test \(m^2s<6\) and did not contain this
+omission.
+
+\subsection{The trust structure of the computer-assisted theorem}
+It is useful to distinguish four logically different tasks.
+\begin{enumerate}
+\item \textbf{Arithmetic validity.} A stored matrix has the stated
+determinant and minimum; a stored map is unimodular and satisfies its
+Gram identity; a recorded vector has its asserted norm.
+\item \textbf{Coverage of finite searches.} Every needed parent, class,
+even diagonal, layer, and short dual vector was considered. This requires
+the exhaustive enumeration proof and code, not merely checking the
+outputs one at a time.
+\item \textbf{Mathematical reduction.} Every hypothetical counterexample
+has a flag within the windows, and every retained branch implies the
+required determinant floor. This is the structural proof in the earlier
+sections.
+\item \textbf{Scientific review.} External verification of the complete
+argument, attribution and novelty, and suitability for publication are
+additional tasks. An internal replay is not an external referee report
+or a formal proof in a proof assistant.
+\end{enumerate}
+The present audit provides new work on the first three tasks, with the
+reported boundary between full same-code regeneration and independent
+checks. It does not claim to have completed the fourth.
+
+\section{How to reproduce the checks and what each certificate establishes}
+\label{sec:reproduce}
+
+The released archive has a top-level manifest, readme files in both
+languages, an assumptions file, a claim-to-certificate map, and a
+\code{certificate} directory. Run the checks from an extracted copy so
+that relative filenames match the documented layout. The primary entry
+points are
+\begin{verbatim}
+sha256sum -c SHA256SUMS
+bash run_all_checks.sh
+bash run_full_regeneration.sh
+\end{verbatim}
+The mathematical programs use exact integer and rational arithmetic in
+Python. Keep assertions enabled; do not add \code{-O} or
+\code{-OO} to these certificate runs. The release's runtime requirements and invocation instructions
+remain authoritative for that archive. For independent work, retaining
+the original extracted package and writing audit outputs to a separate
+directory avoids accidentally changing the evidence being checked.
+
+The following map explains the logical job of the main files. Long names
+are kept exactly so that a reader can locate them.
+\begin{description}[style=nextline,leftmargin=0pt,labelsep=0pt]
+\item[\code{exact_lattice.py}\quad]
+Exact determinants, rational \(LDL^{\mathsf T}\), short-vector
+enumeration, signatures, and integral isometry checks.
+\item[\code{extend_flag.py}\quad]
+Complete discriminant-class enumeration, even diagonal ranges, all
+necessary layers, parent-level lifting prune, and shortest-normal test.
+\item[\code{verify_lower_flag_chain_exact.py}\quad]
+Validity of the stored lower raw forms and their representative maps.
+Coverage comes additionally from regenerating the lower stages with the
+audited generator.
+\item[\code{verify_regenerated_frozen_bridges_exact.py}\quad]
+Explicit isometries matching regenerated and frozen representative sets,
+including all \(138\) rank-six representatives.
+\item[\code{extend_flag_chunk.py}, \code{verify_flag_chunks.py}\quad]
+Generation and checking of the four rank-seven chunks. Parent ranges,
+input identities, counts, and the merged output must all agree.
+\item[\code{verify_rank7_survivor_linkage_exact.py}\quad]
+The exact lifting split and all \(96\) positive links to the six
+representatives. This checks the bridge from the global search to the
+individual branch proofs.
+\item[\code{verify_e7_branch_exact.py}\quad]
+The four rank-eight targets above \(\sqrt3E_7\), their exhaustive class
+tables, and their rank-nine determinant floors.
+\item[\code{verify_h6318_branch_exact.py}\quad]
+All twelve unrestricted children of \(H_{6318}\), their target
+isometries, and the two target glue radii.
+\item[\code{verify_rank7_topdown.py}\quad]
+The determinant-\(8192\) obstruction and the determinant-\(7722\)
+unrestricted branch. Its hardened counterpart in the audit supplement
+adds the missing zero-residue layer test while preserving the actual
+branch output.
+\item[\code{verify_rank7_residuals_exact.py}\quad]
+The determinant-\(8100\) obstruction and the two flag-compatible
+determinant-\(14641\) children of \(H_{7986}\), followed by their
+rank-nine floor.
+\item[\code{verify_sqrt3_e8_covering_radius_exact.py}\quad]
+The discrete discriminant radius \(8/3\) used to exclude the
+rank-eight Hermite equality case.
+\item[\code{verify_rank9_extremal_example_exact.py}\quad]
+The explicit \(K_9\) equality witness, including its determinant,
+positive definiteness, and minimum.
+\end{description}
+
+The supplementary audit contains the corrected helper and its patch,
+the zero-layer regression and transcript, independent arithmetic checks,
+theory-window and \(64\)-tuple sharpness checks, and the new replay
+reports. These supplement the original certificate package; they do not
+retroactively rename its hashed members. A legacy print label
+\code{4 E7^*} in an unchanged old transcript must be read using the
+explicit scaling correction recorded in this document.
+
+\section{What is settled and what remains open}
+\label{sec:remaining}
+
+The result established by the audited reduction and exact enumeration is
+the minimum determinant \(e_9(6)=21870\), with an explicit attaining
+matrix. It excludes every smaller even integral rank-nine section of a
+minimum-six ambient lattice and hence every improvement obtained by
+lowering that determinant in the source's bare dimension-39 construction.
+
+The source's broader questions divide as follows:
+\begin{center}\small
+\begin{tabularx}{\textwidth}{P{0.38\textwidth}>{\raggedright\arraybackslash}X}
+\toprule
+question&status of the present work\\\midrule
+Least determinant, even integral rank nine, minimum at least six&
+Determined as \(21870\) by the computer-assisted theorem.\\[3pt]
+Uniqueness at determinant \(21870\)&
+Not proved. The strict-counterexample search does not classify equality
+cases.\\[3pt]
+All isometry types in rank nine&
+Not classified. A bounded flag enumeration used for an obstruction is not
+a global rank-nine classification.\\[3pt]
+Primitive embeddings in a specified rank-48 lattice&
+Not classified or independently rerun here. The abstract obstruction
+applies to every such embedding if it exists.\\[3pt]
+Rank ten and the dimension-38 determinant window&
+Not solved by the rank-nine proof. The source's benchmark and integrality
+conditions remain a separate starting point.\\[3pt]
+Antipode or more general clusters in dimensions 38--43&
+No global optimality result is proved here. The source explicitly leaves
+room for cluster improvements, including above bare-optimal sections.\\[3pt]
+Bare statements in dimensions 40--43, ambient constructions, and kissing
+numbers elsewhere in the source&
+Quoted for context; the present audit does not constitute a replay or a
+line-by-line validation of the entire source manuscript.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+The final scope is deliberately tied to the universal statement actually
+proved. A future equality classification must include determinant
+\(21870\), retain all equality possibilities in the inequalities, and
+check their extensions rather than applying the strict bound
+\(d_9\le21868\). A future rank-ten argument requires its own
+top-level determinant and Hermite analysis. A future cluster argument
+must also track inter-coset distances and cluster cardinality; a section
+determinant alone does not determine its density.
+
+\newpage
+\appendix
+\section{A compact independent verification of the 64-tuple argument}
+\label{app:64}
+
+The following code uses only integer arithmetic and directly forms the
+matrix \(C\) appearing in Section~\ref{sec:k9}. It verifies the finite
+part of \eqref{eq:64target}; the preceding proof explains why checking
+these tuples is sufficient.
+\begin{verbatim}
+from itertools import product
+from collections import Counter
+
+C = [
+ [ 2,-1,-1,-1,-1,-1,-1, 1],
+ [-1, 2, 1, 1, 1, 1, 1, 0],
+ [-1, 1, 2, 0, 1, 0, 0,-1],
+ [-1, 1, 0, 2, 1, 1, 1, 0],
+ [-1, 1, 1, 1, 2, 1, 1,-1],
+ [-1, 1, 0, 1, 1, 2, 1, 0],
+ [-1, 1, 0, 1, 1, 1, 2, 0],
+ [ 1, 0,-1, 0,-1, 0, 0, 2],
+]
+w = (-1,-1,2,-1,0,0,1,1)
+choices = [(-1,2)]*4 + [(0,)]*2 + [(-2,1)]*2
+
+def q(x):
+    return sum(x[i]*C[i][j]*x[j]
+               for i in range(8) for j in range(8))
+
+counts = Counter(q(r) for r in product(*choices))
+assert sum(counts.values()) == 64
+assert counts == {
+    8:5, 14:9, 20:14, 26:10, 32:8, 38:5,
+    44:4, 50:4, 56:1, 62:3, 86:1,
+}
+assert q(w) == 8 and 2 not in counts
+print("K9_RESIDUE_CLASS_MINIMUM_EIGHT")
+\end{verbatim}
+The supplementary verifier additionally checks \(C^{-1}\), positive
+definiteness, determinant, the exact window endpoints, and the Schur
+complement using independently written rational arithmetic.
+
+\newpage
+\section{Glossary of the quantities that must not be confused}
+\begin{longtable}{P{0.27\textwidth}P{0.64\textwidth}}
+\toprule notation&meaning\\\midrule
+\endfirsthead
+\toprule notation&meaning\\\midrule\endhead
+\(\min L\)&Minimum squared Euclidean length of a nonzero lattice
+vector.\\[3pt]
+\(\det L\)&Determinant of a Gram matrix; the square of the covolume.\\[3pt]
+\(\covol L\)&Volume of a fundamental parallelepiped.\\[3pt]
+\(L^*\)&Dual lattice of vectors pairing integrally with \(L\).\\[3pt]
+\(A_L=L^*/L\)&Finite discriminant group of an integral lattice,
+of order \(\det L\).\\[3pt]
+\(q_L(a)\)&Class norm modulo \(2\Z\) for an even lattice.\\[3pt]
+\(\mu_L(a)\)&Exact smallest norm in a discriminant class.\\[3pt]
+\(\rhog(L)^2\)&Maximum of \(\mu_L(a)\) over the finite group;
+the square of the discrete glue radius.\\[3pt]
+\(R(L)\)&Ordinary continuous covering radius of all Euclidean space.\\[3pt]
+\(s\)&Squared perpendicular length, equivalently the Schur
+complement or the ratio of child determinant to parent determinant.\\[3pt]
+\(h=\ord(a)\)&Order of an extension class; the nonzero zero-class
+layer first occurs at index \(h\).\\[3pt]
+\(\gamma_r\)&Hermite constant for all rank-\(r\) Euclidean
+lattices, without integrality restrictions.\\[3pt]
+\(d_r\)&Determinant of rank \(r\) in a chosen saturated
+shortest-dual flag.\\[3pt]
+Labelled child&An extension presentation tied to a chosen parent
+representative and class; different presentations may be isometric.\\[3pt]
+Flag-compatible child&A child whose perpendicular parent normal is
+shortest in the child dual; passing a necessary lifting bound alone does
+not prove this.\\[3pt]
+\(e_9(6)\)&Minimum determinant over all positive-definite even
+integral rank-nine lattices of minimum at least six.\\
+\bottomrule
+\end{longtable}
+
+\newpage
+\begin{thebibliography}{99}
+\bibitem{Source}
+I.~Dorofeev, X.~Sun, and C.~Wang,
+\emph{Optimal Extensions of Cross-Sections: Sphere Packings in Dimensions
+38 to 43}, supplied confidential manuscript, 2026. The relevant open
+questions are quoted in Section~\ref{sec:question}. No public availability
+is implied.
+
+\bibitem{Certificates}
+\emph{Rank-nine complete certificates}, confidential accompanying exact
+arithmetic package, recovered release with \(83\)-entry SHA-256
+manifest; full verification and regeneration repeated on 10 September
+2026. Supplementary audit files contain the corrected generic helper,
+regression, independent arithmetic checks, and new transcripts.
+
+\bibitem{CS}
+J.~H. Conway and N.~J.~A. Sloane,
+\emph{Sphere Packings, Lattices and Groups}, third edition,
+Springer, 1999. General background on Gram matrices, duality,
+discriminant groups, root lattices, and Hermite constants.
+
+\bibitem{Martinet}
+J.~Martinet, \emph{Perfect Lattices in Euclidean Spaces},
+Springer, 2003. Background on extreme lattices and low-dimensional
+Hermite theory.
+
+\bibitem{Blichfeldt}
+H.~F. Blichfeldt,
+\emph{The minimum values of positive quadratic forms in six, seven and
+eight variables}, Mathematische Zeitschrift \textbf{39} (1935), 1--15.
+\url{https://doi.org/10.1007/BF01201341}.
+The publisher metadata was checked during this audit; the audit does not
+claim to have independently rederived all results in that paper.
+
+\bibitem{WenChang}
+J.~Wen and X.-W.~Chang,
+\emph{Sharper Bounds on Four Lattice Constants},
+arXiv:2204.08021, 2022, Table~1.
+\url{https://arxiv.org/abs/2204.08021}.
+An accessible explicit table of \(\gamma_r\) for \(1\le r\le8\).
+
+\bibitem{Viazovska}
+M.~S. Viazovska,
+\emph{The sphere packing problem in dimension 8},
+Annals of Mathematics \textbf{185} (2017), 991--1015.
+\url{https://doi.org/10.4007/annals.2017.185.3.7}.
+Author manuscript:
+\url{https://arxiv.org/abs/1603.04246}.
+The statement following Theorem~1 gives uniqueness among periodic
+optimal packings, supplying the all-lattice equality rigidity used here.
+
+\bibitem{Bacher}
+R.~Bacher, \emph{A new inequality for the Hermite constants},
+arXiv:math/0603477, 2006.
+\url{https://arxiv.org/abs/math/0603477}.
+Mordell's inequality is recalled there; the needed inequality is proved
+directly in Section~\ref{sec:hermite} of the present note.
+\end{thebibliography}
+\end{document}

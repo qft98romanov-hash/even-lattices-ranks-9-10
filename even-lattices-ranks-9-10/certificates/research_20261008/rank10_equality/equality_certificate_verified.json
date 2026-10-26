@@ -1,0 +1,154 @@
+{
+  "status": "PASS_STATIC_EQUALITY_CERTIFICATE",
+  "theorem": "Under gamma9<=2, every even integral rank10 lattice of minimum>=6 and determinant54675 contains sqrt3E8; exactly two isometry types by archived E8 classification.",
+  "base_checked_this_run": false,
+  "base_dependency_files": 826,
+  "windows": [
+    {
+      "rank": 9,
+      "raw": 40056,
+      "upper": 40056,
+      "power": 40,
+      "rhs": "12786341704809438737540681677620839843983529784845821834604389177247704605056036028321305281044304510860132724097196282751858234405517578125000000000000000000000000000000000000000000000"
+    },
+    {
+      "rank": 8,
+      "raw": 24676,
+      "upper": 24676,
+      "power": 9,
+      "rhs": "3393208827076970131514281317357104136192"
+    },
+    {
+      "rank": 7,
+      "raw": 13940,
+      "upper": 13940,
+      "power": 8,
+      "rhs": "1426143728065440852209151672057856"
+    },
+    {
+      "rank": 6,
+      "raw": 6460,
+      "upper": 6460,
+      "power": 7,
+      "rhs": "469630848509256208384000000"
+    },
+    {
+      "rank": 5,
+      "raw": 2492,
+      "upper": 2492,
+      "power": 6,
+      "rhs": "720016690758246400000/3"
+    },
+    {
+      "rank": 4,
+      "raw": 790,
+      "upper": 789,
+      "power": 5,
+      "rhs": "308519159072768"
+    },
+    {
+      "rank": 3,
+      "raw": 210,
+      "upper": 210,
+      "power": 4,
+      "rhs": "1964676276"
+    },
+    {
+      "rank": 2,
+      "raw": 44,
+      "upper": 44,
+      "power": 3,
+      "rhs": "88200"
+    },
+    {
+      "rank": 1,
+      "raw": 7,
+      "upper": 6,
+      "power": 2,
+      "rhs": "176/3"
+    }
+  ],
+  "batches": {
+    "rank6_boundary": {
+      "parents": 925,
+      "pruned_parents": 708,
+      "enumerated_parents": 217,
+      "raw": 58
+    },
+    "rank7_boundary": {
+      "parents": 3752,
+      "pruned_parents": 3252,
+      "enumerated_parents": 500,
+      "raw": 20
+    },
+    "rank7_from_new6": {
+      "parents": 58,
+      "pruned_parents": 58,
+      "enumerated_parents": 0,
+      "raw": 0
+    },
+    "rank8_boundary": {
+      "parents": 224,
+      "pruned_parents": 0,
+      "enumerated_parents": 224,
+      "raw": 0
+    },
+    "rank8_from_new7": {
+      "parents": 4,
+      "pruned_parents": 0,
+      "enumerated_parents": 4,
+      "raw": 0
+    },
+    "rank9_boundary": {
+      "parents": 47,
+      "pruned_parents": 0,
+      "enumerated_parents": 47,
+      "raw": 0
+    },
+    "rank9_from_new8": {
+      "parents": 0,
+      "pruned_parents": 0,
+      "enumerated_parents": 0,
+      "raw": 0
+    }
+  },
+  "revived_rank7": [
+    [
+      "parent_3297.json",
+      606,
+      11658,
+      4131,
+      407726892,
+      407746224
+    ],
+    [
+      "parent_3297.json",
+      607,
+      11658,
+      4131,
+      407726892,
+      407746224
+    ],
+    [
+      "parent_3297.json",
+      608,
+      11658,
+      4131,
+      407726892,
+      407746224
+    ],
+    [
+      "parent_3297.json",
+      609,
+      11658,
+      4131,
+      407726892,
+      407746224
+    ]
+  ],
+  "old_rank9_count": 3819,
+  "old_terminal_least_bound": "12966723/212",
+  "non_E8_equality_survivors": 0,
+  "full_replay_performed": false,
+  "seconds": 9.18696916099725
+}

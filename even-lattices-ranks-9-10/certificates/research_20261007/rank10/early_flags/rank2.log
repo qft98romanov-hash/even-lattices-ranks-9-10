@@ -1,0 +1,7 @@
+PARENT 0 / 1 rank 1 det 6
+  RAW_CHILDREN 9 TOTAL 9
+RAW_CHECKPOINT /workspace/scratch/e3fcbd7c9568/research_20261007/rank10/early_flags/rank2.json.raw
+DEDUPLICATING 9
+CLASSES 6
+DET_COUNTS {27: 1, 32: 1, 35: 1, 36: 1, 39: 1, 44: 1}
+OUTPUT /workspace/scratch/e3fcbd7c9568/research_20261007/rank10/early_flags/rank2.json

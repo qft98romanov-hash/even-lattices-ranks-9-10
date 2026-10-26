@@ -1,0 +1,16 @@
+{
+  "edition_date": "2026-10-26",
+  "pages": 37,
+  "xelatex_passes": 3,
+  "warnings": [],
+  "unresolved_markers_in_pdf": false,
+  "cyrillic_in_main_source": false,
+  "tex_txt_identical": true,
+  "broken_current_doc_links": [],
+  "visual_review": "All37pages reviewed in initial edition. After acknowledgements update, page1 re-rendered and visually reviewed; remaining36pages have identical extracted text and unchanged pagination.",
+  "sha256": {
+    "paper.tex": "b4eaf17f3beb252dffd389305966098cd30a97890d8003fb4adac7faa4c021f7",
+    "paper.txt": "b4eaf17f3beb252dffd389305966098cd30a97890d8003fb4adac7faa4c021f7",
+    "paper.pdf": "f6007e88f1c749a72582041b2b9f70a883af8c76b38636bccc90657657e7fe57"
+  }
+}

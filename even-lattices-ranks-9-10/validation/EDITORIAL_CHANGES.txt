@@ -1,0 +1,20 @@
+English manuscript preparation, 26 October 2026
+
+Source: current lattices_complete_EN.tex in the archived certificate package dated 8 October 2026. Historical lattices_EN.tex was not used as the main source.
+
+Changes:
+- Replaced the confidential-report cover with a working-draft title, preparer attribution to Ivan Dorofeev, edition date, underlying certificate date, complete English abstract, and AI-assistance/review status note.
+- Added an introduction explaining the source manuscript's original rank-nine/rank-ten determinant questions and their precise sphere-packing consequences.
+- Attributed the motivating source to Ivan Dorofeev, Xiaoming Sun, and Chengu Wang; did not assign coauthorship of this separate draft to the source coauthors.
+- Distinguished the original problems from the report's organizational numbering.
+- Added the unresolved P48m Remark2 question to the scope table and remaining-work list.
+- Preserved every theorem, proposition, corollary, proof, equation environment, align environment, and all54labels byte-for-byte.
+- Preserved every mathematical section of the complete current English report, including the appendix on uniform rank-ten cluster bounds.
+- Made all certificate paths use their full research_20261007 or research_20261008 prefix, relative to certificates/.
+- Linked the full earlier English rank-nine theory companion (LaTeX .txt and PDF), which already covers the old proof, all six residual branches, normalization/duality/Mordell theory, exact enumeration, corrections, and audit history.
+- Removed a nonmathematical historical statement about search-query privacy/messages from the main paper; the unchanged original remains in the certificate archive.
+- Distinguished the edition date from the dates of earlier completed computations. No fresh mathematical audit or exhaustive replay is claimed by this editorial step.
+
+The main paper is English throughout. Existing Russian historical source files in certificates/ are provenance records; the full current report and full historical rank-nine theory both already have English counterparts.
+
+Acknowledgements update, 26 October 2026: added Ivan Dorofeev's deep gratitude to Xiaoming Sun and Chengu Wang immediately after the abstract, with the full title and existing bibliography citation of their joint source manuscript. No mathematical content changed.

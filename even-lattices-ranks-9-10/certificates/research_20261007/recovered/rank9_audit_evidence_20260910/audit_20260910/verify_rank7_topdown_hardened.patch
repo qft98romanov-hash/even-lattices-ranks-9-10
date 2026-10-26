@@ -1,0 +1,22 @@
+--- archived/verify_rank7_topdown.py
++++ audited/verify_rank7_topdown_hardened.py
+@@ -272,10 +272,18 @@
+             if new_det % 4 not in (0, 1):
+                 continue
+             h = class_order(c, determinant)
++            # The least nonzero layer whose class is zero is m=h.  Its
++            # minimum is h^2*s, and it is not represented by the centered
++            # nonzero residue range below.  Check it explicitly so this
++            # routine is correct without an application-specific lower
++            # bound on s.
++            if h * h * s < 6:
++                continue
+             ok = True
+             # For m outside this centered residue range, replace m by its
+             # representative r with |r| <= h/2.  The class minimum is
+-            # unchanged up to sign and m^2 >= r^2.
++            # unchanged up to sign and m^2 >= r^2.  For r=0, the separately
++            # checked layer h has the least norm among nonzero multiples.
+             for m in range(1, h // 2 + 1):
+                 mc = tuple((m * x) % determinant for x in c)
+                 layer = m * m * s + Fraction(best[mc], determinant)

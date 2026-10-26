@@ -1,0 +1,11 @@
+{
+  "complete_rank6_parent_coverage": 3752,
+  "raw_rank7_candidates": 56269,
+  "rank8_lifting_pruned": 52208,
+  "eligible_rank7_raw": 4061,
+  "rank8_upper": 24673,
+  "eligible_isometry_classes": 224,
+  "eligible_dedup_file": "rank7_eligible.json",
+  "eligible_map_verification": "rank7_maps.log",
+  "all_rank7_isometry_count": "NOT DETERMINED; 52208 candidates safely pruned before deduplication"
+}

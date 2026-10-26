@@ -1,0 +1,134 @@
+\subsection{Completion of the global equality classification}\label{subsec:complete10equality}
+
+The strict computation proves the minimum but, by itself, does not settle equality. Passing from $D\le54672$ to $D=54675$ changes several intermediate determinant windows and can restore branches previously removed by a lifting inequality. The following additional argument checks both effects.
+
+\begin{theorem}\label{thm:global10equality}
+Let $L$ be a positive-definite even integral lattice of rank ten with $m(L)\ge6$ and $d(L)=54675$. Then $L$ contains a sublattice isometric to $\sqrt3E_8$ and
+\[
+L\cong K_{10}\quad\text{or}\quad L\cong\Kalt.
+\]
+These two lattices are not isometric. Thus $e_{10}(6)=54675$ has exactly two global equality classes. The external and computational assumptions are those stated for Theorem \ref{thm:e10exact}, supplemented by the complete equality-boundary certificates described below.
+\end{theorem}
+
+\begin{proof}
+Suppose that $L$ contains no $\sqrt3E_8$. Choose the successive primitive shortest-dual sections as in \eqref{eq:dualflag}. The upper windows at equality, rounded using exact integer powers and determinant congruences, are as follows. All lower bounds remain the ones in the strict search.
+\begin{center}
+\begin{tabular}{crrr}
+\toprule
+Rank & Strict upper bound & Equality upper bound & New determinant\\\midrule
+1&6&6&---\\
+2&44&44&---\\
+3&210&210&---\\
+4&789&789&---\\
+5&2492&2492&---\\
+6&6459&6460&6460\\
+7&13938&13940&13940\\
+8&24673&24676&24676\\
+9&40054&40056&40056\\
+10&54672&54675&54675\\
+\bottomrule
+\end{tabular}
+\end{center}
+In particular, the rank-eight lower bound is still 6564: determinant 6561 would force $\sqrt3E_8$, contrary to the assumption. The ranks through five are unchanged.
+
+\textbf{Restoring previously excluded branches.}
+A continuation prune has the form
+\[
+3d_r^2>4d_{r-1}U_{r+1}.
+\]
+Increasing $U_{r+1}$ may invalidate this inequality even if $d_r$ is in its old interval. Therefore it is not enough to examine new endpoint determinants from the old retained lists. Every old prune was checked again at the enlarged upper bounds:
+\begin{center}
+\begin{tabular}{P{0.50\linewidth}rr}
+\toprule
+Family & Old prunes & Restored records\\\midrule
+Whole searches from rank-six parents &3252&0\\
+Raw rank-seven continuation records &52208&4\\
+Raw rank-eight continuation records &18110&0\\
+Raw rank-nine continuation records &3819&0\\
+\bottomrule
+\end{tabular}
+\end{center}
+The four restored rank-seven matrices have $d_6=4131$ and $d_7=11658$. Their next determinant satisfies
+\begin{equation}\label{eq:restored7floor}
+d_8\ge\frac{3\cdot11658^2}{4\cdot4131}
+=\frac{3775249}{153},\qquad
+24673<\frac{3775249}{153}<24676.
+\end{equation}
+Within the enlarged window, rank-eight determinant congruences thus force $d_8=24676$. These four raw matrices are all retained for the additional check; no new isometry merging is required.
+
+\textbf{An independent necessary-condition certificate.}
+We give a second, simpler computation for the equality boundary. It imports neither the original extension generator nor its vector enumerator, and it does not need the minima of the discriminant classes. Let $G$ be a parent Gram matrix of rank $r$, $d=\det G$, and $A=\operatorname{adj}G$. An integral one-vector extension with even last diagonal $n$ and pairing column $p$ has target determinant
+\[
+T=nd-p^{\mathsf T}Ap.
+\]
+Its class can be encoded by
+\[
+c=Ap\pmod d,\qquad Q(c)=p^{\mathsf T}Ap\pmod{2d}.
+\]
+The value $Q$ is well-defined: replacing $p$ by $p+Gz$ changes the quadratic expression by $2d\,z^{\mathsf T}p+d\,z^{\mathsf T}Gz$, a multiple of $2d$ because $G$ is even. The kernel of $p\mapsto Ap\pmod d$ is $G\Z^r$; hence exactly $d$ classes occur.
+
+The classes and values are generated from $c=0$, $Q(0)=0$ by adding the columns $Ae_j$ and using the exact recurrence
+\begin{equation}\label{eq:finitequadraticrecurrence}
+Q(c+Ae_j)=Q(c)+2c_j+A_{jj}\pmod{2d}.
+\end{equation}
+The program checks consistency on every repeated class and verifies that precisely $d$ classes have been reached. Evenness of $n$ requires
+\begin{equation}\label{eq:boundaryquadraticcondition}
+Q(c)\equiv-T\pmod{2d}.
+\end{equation}
+A preliminary content test is also valid: if
+\[
+g=\gcd\bigl(2d,\ (A_{ii})_i,\ (2A_{ij})_{i<j}\bigr)
+\]
+does not divide $T$, no such class can exist.
+
+For each class satisfying \eqref{eq:boundaryquadraticcondition}, the new perpendicular normal must be shortest in the dual lattice. By \eqref{eq:integerdualtest}, a necessary condition is
+\begin{equation}\label{eq:boundarydualcondition}
+T(q^{\mathsf T}Aq)+\operatorname{dist}(q^{\mathsf T}c,d\Z)^2\ge d^2
+\end{equation}
+for every nonzero integral $q$ with $T(q^{\mathsf T}Aq)<d^2$. The independent exact rational enumerator lists all required $q$ inside $q^{\mathsf T}G^{-1}q\le d/T$. A single violating $q$ excludes the class. If any classes survive, a child that can continue to the next member of the full shortest-dual flag must satisfy the next lifting inequality
+\begin{equation}\label{eq:boundarynextlift}
+3T^2\le4d\,U_{r+2}.
+\end{equation}
+All classes surviving the preceding tests in this computation violate \eqref{eq:boundarynextlift}. Ignoring the full minimum test for a child is safe: the tests used here are necessary conditions, and they already eliminate every branch.
+
+The complete additional coverage consists of 4952 parent--target pairs:
+\begin{center}
+\begin{tabular}{P{0.33\linewidth}P{0.10\linewidth}P{0.11\linewidth}P{0.18\linewidth}P{0.14\linewidth}}
+\toprule
+Parent source & Number & Target & Surviving classes & Continuing\\\midrule
+Old rank-five representatives &925&6460&58&0\\
+Old rank-six representatives &3752&13940&20&0\\
+Old rank-seven representatives &224&24676&0&0\\
+Restored rank-seven raw records &4&24676&0&0\\
+Old rank-eight representatives &47&40056&0&0\\
+\bottomrule
+\end{tabular}
+\end{center}
+Here ``surviving classes'' counts the classes remaining after the determinant congruence and shortest-normal tests, before the next lifting inequality. These are computational records, not numbers of isometry types. The 58 classes arise from four parent matrices, and the 20 classes from six parent matrices. Every one fails the next lifting inequality. All four restored rank-seven forms are excluded by nonrepresentation of the target residue in their finite quadratic modules.
+
+The decisive next-step comparisons can be seen directly. The parent determinants for the 58 rank-six classes are $1934,1830,1672,1600$, with respective multiplicities $2,4,4,48$. For the 20 rank-seven classes they are $4428,4443,4268,4379,4355,4920$, with respective multiplicities $2,4,4,4,4,2$. Even the largest parent determinant in each family gives
+\[
+\begin{aligned}
+3\cdot6460^2&=125194800>4\cdot1934\cdot13940=107839840,\\
+3\cdot13940^2&=582970800>4\cdot4920\cdot24676=485623680.
+\end{aligned}
+\]
+Thus all 78 remaining classes are explicitly ruled out from a full flag.
+
+For an additional check on exhaustive coverage, the 4952 pairs split into mutually exclusive exclusion categories: 3960 are removed by a known parent dual vector, 493 by the content test, 420 by finite-module nonrepresentation, 69 by explicit shorter dual vectors for every compatible class, and 10 by the next lifting inequality for the remaining classes. The sum is exactly 4952.
+
+\textbf{Why this covers the whole equality window.}
+The lower-rank prefix through rank five is unchanged. Every newly permitted rank-six form would arise at determinant 6460 from one of the 925 old parents, but none can continue to rank seven. Consequently, at rank seven the only new possibilities are the endpoint 13940 over the old rank-six parents and the four restored old records. The endpoint cases cannot continue. At rank eight, the endpoint 24676 is checked over all 224 old representatives and all four restored records, with no surviving child. There is therefore no new rank-eight parent to extend over the rest of the rank-nine interval. The endpoint 40056 over all 47 old rank-eight representatives is likewise excluded. The old lower rank-nine interval remains empty, and every old upper-interval record still satisfies
+\[
+d_{10}\ge\frac{12966723}{212}>54675.
+\]
+Thus all old and newly admitted flags are excluded. The argument uses the previously certified transports to representatives and the complete check of restored prunes; it does not assume that a hypothetical minimizer contains $K_9$ or has a basis consisting of minimal vectors.
+
+We have reached a contradiction to the existence of an equality lattice containing no $\sqrt3E_8$. Hence every minimizer contains this sublattice. Theorem \ref{thm:rank10e8} supplies exactly the two possibilities $K_{10}$ and $\Kalt$; their Gram ranks modulo 3 are respectively 4 and 3, so they remain nonisometric as abstract integral lattices. This proves the theorem.
+\end{proof}
+
+The independent equality checks are in \file{research_20261008/independent_review/check_equality_windows_and_recovered_prunes.py} and \file{research_20261008/independent_review/check_boundaries_by_quadratic_module.py}. Their certificate statuses are \file{PASS} and \file{ALL_EXCLUDED}; the second covers all 4952 pairs. These files reuse the earlier independently implemented rational matrix and vector arithmetic, not the original extension kernel. The complete earlier strict-search certificate remains a dependency. The separate public proof of $\gamma_9\le2$ is still an external input. None of these internal checks constitutes external refereeing.
+
+As corroboration by the original extension method, a fresh generation completed all 5010 parent jobs: 4952 endpoint pairs and 58 attempted continuations from the new rank-six matrices. Of these jobs, 4018 were immediately excluded by parent lifting bounds and 992 enumerated their full discriminant-class tables. Exactly 58 rank-six and 20 rank-seven raw matrices were generated. None survives into a complete flag, and the rank-eight and rank-nine additions are empty. A separate independent audit checks every job configuration and parent linkage, independently verifies the 78 raw matrices and their primal and dual minima, and matches their exact class fingerprints to the finite-module certificate. This is a completed fresh generation and a completed independent audit; a second full generation replay is available as an option and is not claimed to have been run again.
+
+The main additional verifier is \file{research_20261008/rank10_equality/verify_equality_certificate.py}; its saved status is \file{PASS_STATIC_EQUALITY_CERTIFICATE}, with marker \file{GLOBAL_RANK10_EQUALITY_TWO_TYPES_PASS}. The independent job audit is \file{research_20261008/independent_review/check_delta_chain_independent.py}. Once the base certificate has been checked, the main verifier accepts \texttt{--skip-base}; the optional \texttt{--replay} flag regenerates the additional jobs. A static certificate check and an exhaustive regeneration are different operations, and their statuses are recorded separately.

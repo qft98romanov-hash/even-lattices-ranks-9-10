@@ -1,0 +1,11 @@
+EXACT CERTIFICATE: H_6318 RESIDUAL BRANCH
+arithmetic = integers and fractions only
+det(H6318) = 6318
+dual points for H6318 = 72127
+discriminant classes = 6318
+rho(H6318)^2 = 105/26
+labelled rank-8 extensions = 12
+determinant counts = [(12393, 2), (13689, 10)]
+J12393 det = 12393 rho^2 = 58/17 dual points = 73253 rank-9 floor = 32076
+J13689 det = 13689 rho^2 = 10/3 dual points = 71437 rank-9 floor = 36504
+H6318_BRANCH_EXACT_OK

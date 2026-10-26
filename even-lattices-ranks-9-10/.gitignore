@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+/build/
+/verification_runs/
+/manuscript/*.aux
+/manuscript/*.log
+/manuscript/*.out
+/manuscript/*.toc
+/manuscript/*.synctex.gz
+.DS_Store

@@ -1,0 +1,11 @@
+EXACT STATIC AUDIT OF RANK6->RANK7 FLAG
+input sha256 = 670ae1e56d7493af59901f30167e3059fcff5bb3a19f1b27bfbf359fa93fdf4d
+merged sha256 = 19d489d4a12aa58b61b2dce4dce547c270f9d1414f766409edc3862d0b4577d8
+parents = 138
+raw children = 2235
+active parents = [(29, 102), (72, 6), (73, 4), (75, 60), (85, 61), (86, 65), (87, 312), (88, 1360), (135, 264), (137, 1)]
+distinct (d6,d7) pairs = 31
+distinct d7 values = 28
+dual boundary vectors = 5222
+generator rerun = False
+RANK6_TO_RANK7_CHUNKS_EXACT_OK

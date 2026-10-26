@@ -1,0 +1,14 @@
+PARENT 0 / 6 rank 2 det 36
+  RAW_CHILDREN 5 TOTAL 5
+PARENT 1 / 6 rank 2 det 35
+  RAW_CHILDREN 11 TOTAL 16
+PARENT 2 / 6 rank 2 det 32
+  RAW_CHILDREN 33 TOTAL 49
+PARENT 3 / 6 rank 2 det 44
+  RAW_CHILDREN 0 TOTAL 49
+PARENT 4 / 6 rank 2 det 27
+  RAW_CHILDREN 53 TOTAL 102
+PARENT 5 / 6 rank 2 det 39
+  RAW_CHILDREN 0 TOTAL 102
+RAW_CHECKPOINT /workspace/scratch/e3fcbd7c9568/research_20261007/rank10/early_flags_regenerated/rank3.json.raw
+RAW_GENERATION_COMPLETE 102

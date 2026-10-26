@@ -1,0 +1,22 @@
+{
+  "parent_count": 1,
+  "raw_count": 9,
+  "statistics": [
+    {
+      "parent_det": 6,
+      "dual_minimum": "1/6",
+      "global_required_s": "9/2",
+      "global_s_upper": "22/3",
+      "globally_pruned": false,
+      "discriminant_classes": 6,
+      "cover_search_bound": "2",
+      "tested": {
+        "even_diagonal": 9,
+        "det_congruence": 9,
+        "minimum": 9,
+        "dual_shortest": 9
+      },
+      "raw_children": 9
+    }
+  ]
+}

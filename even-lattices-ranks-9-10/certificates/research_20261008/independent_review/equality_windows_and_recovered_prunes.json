@@ -1,0 +1,149 @@
+{
+  "status": "PASS",
+  "scope": "Independent exact endpoint and reuse audit for rank-ten equality.\n\nThis is an arithmetic/coverage audit, not an extension-generation certificate.\nThe full equality theorem additionally requires exhaustive new boundary searches.\n",
+  "strict_upper_windows": {
+    "10": 54672,
+    "9": 40054,
+    "8": 24673,
+    "7": 13938,
+    "6": 6459,
+    "5": 2492,
+    "4": 789,
+    "3": 210,
+    "2": 44,
+    "1": 6
+  },
+  "equality_upper_windows": {
+    "10": 54675,
+    "9": 40056,
+    "8": 24676,
+    "7": 13940,
+    "6": 6460,
+    "5": 2492,
+    "4": 789,
+    "3": 210,
+    "2": 44,
+    "1": 6
+  },
+  "equality_raw_floors": {
+    "9": 40056,
+    "8": 24676,
+    "7": 13940,
+    "6": 6460,
+    "5": 2492,
+    "4": 790,
+    "3": 210,
+    "2": 44,
+    "1": 7
+  },
+  "new_admissible_endpoints": {
+    "1": [],
+    "2": [],
+    "3": [],
+    "4": [],
+    "5": [],
+    "6": [
+      6460
+    ],
+    "7": [
+      13940
+    ],
+    "8": [
+      24676
+    ],
+    "9": [
+      40056
+    ]
+  },
+  "old_raw_prune_audits": [
+    {
+      "rank": 7,
+      "old_prunes": 52208,
+      "recovered_count": 4,
+      "recovered": [
+        {
+          "parent_index": 3297,
+          "child_index": 606,
+          "parent_determinant": 4131,
+          "child_determinant": 11658,
+          "necessary_next_determinant": "3775249/153",
+          "old_lhs": 407726892,
+          "old_rhs": 407696652,
+          "new_rhs": 407746224
+        },
+        {
+          "parent_index": 3297,
+          "child_index": 607,
+          "parent_determinant": 4131,
+          "child_determinant": 11658,
+          "necessary_next_determinant": "3775249/153",
+          "old_lhs": 407726892,
+          "old_rhs": 407696652,
+          "new_rhs": 407746224
+        },
+        {
+          "parent_index": 3297,
+          "child_index": 608,
+          "parent_determinant": 4131,
+          "child_determinant": 11658,
+          "necessary_next_determinant": "3775249/153",
+          "old_lhs": 407726892,
+          "old_rhs": 407696652,
+          "new_rhs": 407746224
+        },
+        {
+          "parent_index": 3297,
+          "child_index": 609,
+          "parent_determinant": 4131,
+          "child_determinant": 11658,
+          "necessary_next_determinant": "3775249/153",
+          "old_lhs": 407726892,
+          "old_rhs": 407696652,
+          "new_rhs": 407746224
+        }
+      ]
+    },
+    {
+      "rank": 8,
+      "old_prunes": 18110,
+      "recovered_count": 0,
+      "recovered": []
+    },
+    {
+      "rank": 9,
+      "old_prunes": 3819,
+      "recovered_count": 0,
+      "recovered": []
+    }
+  ],
+  "old_parent_prune_audits": [
+    {
+      "child_rank": 7,
+      "old_prunes": 3252,
+      "recovered_count": 0,
+      "recovered": []
+    },
+    {
+      "child_rank": 8,
+      "old_prunes": 0,
+      "recovered_count": 0,
+      "recovered": []
+    },
+    {
+      "child_rank": 9,
+      "old_prunes": 0,
+      "recovered_count": 0,
+      "recovered": []
+    }
+  ],
+  "recovered_rank7_only_possible_child_determinant": 24676,
+  "source_sha256": {
+    "research_20261007/rank10/early_flags/rank7_lifting_prunes.json": "bfab77cb510d711fe4c29f887e03a4dc5a1a724930324beef211a95d9f519da5",
+    "research_20261007/rank10/early_flags/rank7_parents/exact_prunes.json": "70880ec40f368c5ce8ef208f858d54abd104f5649c7cafffa102ad583f9ddf8c",
+    "research_20261007/rank10/early_flags/rank8_lifting_prunes.json": "c903e24c5e21cd665a7ebf9d1724b3b9195520b7e4d6c7d33a56ad61c0b98190",
+    "research_20261007/rank10/early_flags/rank8_parents/exact_prunes.json": "403f9ee634f1caeb583536ad8811e505bf1c0eeaa77c9341523765440013155d",
+    "research_20261007/rank10/early_flags/rank9_lifting_prunes.json": "b47497748f57331ba077797039434b151e9c9dc7660cf387f4c592e692597a26",
+    "research_20261007/rank10/early_flags/rank9_parents/exact_prunes.json": "5b6fbbdeca9490feb2981bd1e8dd8f54bea28c53ab32f8c9201075a5591921fe"
+  },
+  "theorem_status": "Arithmetic component of the completed equality proof; the separate finite-module checker and old audited prefix supply the required exhaustive coverage. This file alone is not an equality classification."
+}

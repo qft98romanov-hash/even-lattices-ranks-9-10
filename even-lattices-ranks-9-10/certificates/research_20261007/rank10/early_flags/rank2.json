@@ -1,0 +1,214 @@
+{
+  "rank": 2,
+  "determinant_window": [
+    27,
+    44
+  ],
+  "determinant_modulus": 4,
+  "determinant_residues": [
+    0,
+    3
+  ],
+  "parent_count": 1,
+  "raw_count": 9,
+  "class_count": 6,
+  "determinant_counts": {
+    "27": 1,
+    "32": 1,
+    "35": 1,
+    "36": 1,
+    "39": 1,
+    "44": 1
+  },
+  "representatives": [
+    [
+      [
+        6,
+        0
+      ],
+      [
+        0,
+        6
+      ]
+    ],
+    [
+      [
+        6,
+        -1
+      ],
+      [
+        -1,
+        6
+      ]
+    ],
+    [
+      [
+        6,
+        -2
+      ],
+      [
+        -2,
+        6
+      ]
+    ],
+    [
+      [
+        6,
+        -2
+      ],
+      [
+        -2,
+        8
+      ]
+    ],
+    [
+      [
+        6,
+        -3
+      ],
+      [
+        -3,
+        6
+      ]
+    ],
+    [
+      [
+        6,
+        -3
+      ],
+      [
+        -3,
+        8
+      ]
+    ]
+  ],
+  "raw_to_class": [
+    0,
+    1,
+    1,
+    2,
+    3,
+    2,
+    3,
+    4,
+    5
+  ],
+  "class_multiplicities": [
+    1,
+    2,
+    2,
+    2,
+    1,
+    1
+  ],
+  "isometry_maps": [
+    [
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    [
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    [
+      [
+        0,
+        -1
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    [
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    [
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    [
+      [
+        0,
+        -1
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    [
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        -1
+      ]
+    ],
+    [
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    [
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        1
+      ]
+    ]
+  ],
+  "parent_stats": [
+    {
+      "parent_det": 6,
+      "dual_minimum": "1/6",
+      "global_required_s": "9/2",
+      "global_s_upper": "22/3",
+      "globally_pruned": false,
+      "discriminant_classes": 6,
+      "cover_search_bound": "2",
+      "tested": {
+        "even_diagonal": 9,
+        "det_congruence": 9,
+        "minimum": 9,
+        "dual_shortest": 9
+      },
+      "raw_children": 9
+    }
+  ]
+}

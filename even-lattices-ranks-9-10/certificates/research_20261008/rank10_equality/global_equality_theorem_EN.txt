@@ -1,0 +1,141 @@
+GLOBAL CLASSIFICATION OF THE MINIMUM-DETERMINANT RANK-TEN LATTICES
+Confidential continuation, 8 October 2026.
+
+THEOREM (using the external Hermite bound gamma_9 <= 2).
+Let L be a positive-definite even integral lattice of rank 10 and minimum
+squared norm at least 6. Then det(L) >= 54675. If det(L)=54675, L contains
+a primitive sublattice isometric to sqrt(3)E8, and there are precisely two
+isometry types of L. Their explicit matrices and distinction are in the
+archived rank10_e8_certificate.json. Thus the previous two-type classification
+in the E8-containing subclass is now a global equality classification.
+
+DEPENDENCIES AND SCOPE.
+Determinant means Gram determinant; minimum means squared norm. The external
+input is gamma_9 <= 2, together with the classical Hermite constants through
+rank 8 and the unique rank-8 Hermite equality lattice E8. The strict lower-bound
+proof and full finite search are in research_20261007/rank10. The equality
+extension below uses those exact coverage lists and checked isometry maps,
+plus newly generated boundary lists; no earlier rank-9 optimality theorem is
+needed. This does not classify embeddings in rank 48 or improve unrestricted
+sphere packings in dimension 38.
+
+1. The saturated shortest-dual flag and equality windows.
+Assume det(L)=54675 and L contains no sqrt(3)E8. Choose iteratively the
+primitive kernel of a shortest nonzero dual vector. Write d_r for the Gram
+determinant of the rank-r flag member. The identity
+  d_(r-1) = d_r min(L_r*)
+and the Hermite bounds give the following complete upper windows:
+ r       1   2   3   4    5    6     7     8     9     10
+ upper   6  44 210 789 2492 6460 13940 24676 40056 54675.
+The lower windows are unchanged from the strict search:
+ 6,27,108,324,972,2187,4374,6564,19684.
+In rank 8, determinant 6561 would force sqrt(3)E8 and contradict the
+assumption; determinant congruence then gives 6564. All integer rounding
+steps are recomputed exactly by the new verifier.
+
+The strict search already covers the smaller upper windows
+ r6=6459, r7=13938, r8=24673, r9=40054.
+Even Gram determinants in rank 6 are 0 or 3 modulo 4, in rank 7 even,
+in rank 8 are 0 or 1 modulo 4, and in rank 9 even. Consequently the only
+new determinant values are 6460, 13940, 24676, 40056, respectively.
+Ranks 1 through 5 are identical and their saved complete coverage applies.
+
+2. Necessary lifting inequality and reuse of old coverage.
+For a parent J with determinant d and an explicit nonzero dual vector of
+squared norm d_prev/d, every shortest-normal one-rank extension of determinant
+at most U must satisfy
+  3 d^2 <= 4 d_prev U.
+The derivation is the nearest-integer dual lift described in the strict proof.
+Every old prune is therefore rechecked at the new U. Old raw matrices that
+remain eligible are covered by their saved exact integral isometries. A
+transported continuation need not preserve the entire earlier flag; it
+preserves the parent lattice and the next shortest-normal condition.
+No old prune is carried over merely because it passed at the strict bound.
+
+3. Complete boundary continuation.
+All new extension searches use exact integer adjugates and rational vector
+enumeration. The discriminant classes, even last diagonals, all nonzero layer
+minimum tests, and shortest-normal tests are exactly the same mathematically
+reviewed complete kernel as in the strict proof. Every parent is explicitly
+represented in the new job records, including parents immediately excluded
+by the lifting inequality. Duplicate new matrices are retained, not silently
+identified.
+
+(a) Rank 6. Extending all 925 old rank-5 representatives only at determinant
+6460 produces 58 raw rank-6 matrices. All 58 fail the necessary lifting test
+toward d7<=13940. Their preceding determinants are 1600 (48 matrices),
+1672 (4), 1830 (4), and 1934 (2). Directly running all 58 rank-7 extension
+jobs therefore produces zero children.
+
+(b) Rank 7. Extending all 3752 old rank-6 representatives only at determinant
+13940 produces 20 raw matrices. All 20 fail lifting toward d8<=24676.
+When the 56269 old rank-7 raw matrices are rechecked at this new d8 upper
+bound, exactly four previously excluded matrices become eligible. They
+are old parent 3297, child positions 606,607,608,609, with
+  d6=4131, d7=11658,
+  3*d7^2=407726892 <= 4*d6*24676=407746224,
+whereas the old right side at 24673 is smaller. These four are carried
+forward as four actual raw parents; no unverified isometry identification
+is used. No formerly pruned old rank-6 parent recovers beyond the endpoint
+jobs already included.
+
+(c) Rank 8. Extend all 224 old eligible rank-7 representatives only at
+new determinant 24676. Also extend all four recovered parents through the
+entire interval [6564,24676]. Both searches give zero children. Rechecking
+all 19481 old rank-8 raw matrices at the new next upper bound 40056 recovers
+none of the previously pruned matrices. Hence the same 47 old eligible
+rank-8 representatives give complete coverage at the equality windows.
+
+(d) Rank 9. Extend all 47 eligible rank-8 representatives at determinant
+40056. The result is zero children. The old lower interval [19684,24450]
+was empty, and the old interval [24452,40054] produced 3819 raw matrices.
+For all of them the final lifting lower bound remains strictly above the
+new target:
+  3*d9^2/(4*d8) >= 12966723/212 > 54675.
+Thus no rank-9 flag parent can extend to a rank-10 equality lattice
+without sqrt(3)E8. This is the required contradiction.
+
+4. From E8 containment to exactly two types.
+The archived exact E8/3E8 computation shows class minima 0,2,4,6,8 with
+multiplicities 1,240,2160,2240,1920. Every class of (sqrt(3)E8)*/sqrt(3)E8
+therefore has minimum at most 8/3. Containment of sqrt(3)E8 in a min-six
+lattice is automatically primitive. The rank-2 projected lattice P has
+minimum at least 10/3. Binary Hermite gives
+  det(L)=6561 det(P)>=6561*(3/4)*(10/3)^2=54675.
+Equality makes P a scaled A2 with Gram (5/3)[[2,1],[1,2]]. Both glue
+classes and their difference must be deep classes of norm 8 in E8/3E8.
+All 1920 deep classes form one reflection orbit. Fixing one leaves 561
+possible second classes; a certified subgroup of its stabilizer has two
+orbits of sizes 560 and 1. Thus at most two isometry types arise. Their
+explicit minimum-six matrices have determinant 54675 and different ranks
+modulo 3 (4 and 3), proving that the two types are distinct. These facts
+and their exact isometries were already completely certified in the E8
+subclass proof, now applicable globally by steps 1--3.
+
+5. Reproduction and independent confirmation.
+  python verify_equality_certificate.py
+checks the full strict certificate in memory without changing old outputs,
+checks all new source dependencies, exact equality windows, parent/child
+linkage, every lifting prune, direct primal minima and independently
+enumerated dual minima of new raw children, and the global terminal bound.
+
+  python verify_equality_certificate.py --replay --workers 5
+additionally regenerates every new extension list afresh and compares the
+complete ordered matrix lists. The replay never reuses cached job output.
+If this additional replay is actually run, its provenance is saved in
+equality_full_replay_record.json. Initial fresh-generation provenance is
+separately recorded in equality_fresh_generation_record.json. The latest
+verification status is equality_certificate_verified.json. To avoid
+repeating a base check already performed in a package-wide run, pass
+--skip-base, which explicitly records that the old proof was checked
+separately. Do not run Python with -O or -OO.
+
+The separate review in ../independent_review uses a different finite
+quadratic-module enumeration and its own exact short-dual-vector routine.
+It covers all 4952 boundary parent/determinant pairs and reaches the same
+58 and 20 early raw candidates, all eliminated by lifting, while ruling
+out all new rank-8 and rank-9 cases without using the main extension kernel.
+The independent method may retain necessary-test candidates; its exclusions
+and subsequent lifting contradictions are sufficient for completeness.
+This is an internal independent algorithmic check, not external peer review
+or a formal proof-assistant verification.

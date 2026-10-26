@@ -1,0 +1,12 @@
+START rank8_boundary 224 24676 24676
+PROGRESS rank8_boundary 25 224 children 0 seconds 24.34
+PROGRESS rank8_boundary 50 224 children 0 seconds 38.67
+PROGRESS rank8_boundary 75 224 children 0 seconds 56.74
+PROGRESS rank8_boundary 100 224 children 0 seconds 75.85
+PROGRESS rank8_boundary 125 224 children 0 seconds 99.62
+PROGRESS rank8_boundary 150 224 children 0 seconds 125.05
+PROGRESS rank8_boundary 175 224 children 0 seconds 150.33
+PROGRESS rank8_boundary 200 224 children 0 seconds 180.07
+PROGRESS rank8_boundary 224 224 children 0 seconds 205.89
+START rank8_from_new7 4 6564 24676
+PROGRESS rank8_from_new7 4 4 children 0 seconds 7.05

@@ -1,0 +1,8 @@
+P48p ambient EXACT PASS
+P48m ambient EXACT PASS
+P48p_K8 EXACT PASS det 6561 disc [3, 3, 3, 3, 3, 3, 3, 3] complement_rank 40
+P48p_K9 EXACT PASS det 21870 disc [3, 3, 3, 3, 3, 3, 30] complement_rank 39
+P48p_K10 EXACT PASS det 54675 disc [3, 3, 3, 3, 15, 45] complement_rank 38
+P48m_K5 EXACT PASS det 3072 disc [4, 16, 48] complement_rank 43
+P48m_K3 EXACT PASS det 128 disc [2, 8, 8] complement_rank 45
+ALL_PRINTED_EMBEDDING_CERTIFICATES_PASS

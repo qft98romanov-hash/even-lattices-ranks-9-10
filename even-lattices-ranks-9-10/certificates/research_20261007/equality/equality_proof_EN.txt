@@ -1,0 +1,276 @@
+RANK-NINE EQUALITY CLASSIFICATION: EXACT ADDENDUM
+7 October 2026
+
+Status: newly completed computer-assisted equality analysis, conditional only
+on the previously released exhaustive lower-bound certificate and its stated
+classical Hermite inputs. The computations described here have been executed;
+the addendum is not an external referee report or a novelty claim.
+
+THEOREM
+Let L be a positive definite even integral lattice of rank 9, with every
+nonzero vector having squared norm at least 6. If its Gram determinant is
+21870, then L is integrally isometric to the displayed lattice K9 in the
+released certificate. In conjunction with the lower-bound theorem, K9 is
+therefore the unique minimizer of e_9(6), up to isometry.
+
+Here 'determinant' means the determinant of a Gram matrix, not the covolume;
+'minimum' means squared norm. Equivalence is G = U^T K9 U with U in GL_9(Z).
+The theorem classifies lattices, not their primitive embeddings in dimension48.
+
+1. WHY THE OLD STRICT-INEQUALITY SEARCH DOES NOT SUFFICE BY ITSELF
+
+The lower-bound search assumed det L <=21868, since rank9 even determinants
+are even. At equality det L=21870 the Hermite windows change. If L_r is a
+successive kernel of a shortest nonzero dual vector and d_r=det L_r, then
+
+ d_{r-1}=d_r min(L_r^*),
+ d_{r-1} <= gamma_r d_r^{(r-1)/r}.
+
+The bound gamma9<=2^{8/7} gives
+
+ floor(2^{8/7} 21870^{8/9}) =15910,
+
+certified without floating point by
+
+ 15910^63 <= 2^72*21870^56 <15911^63.
+
+For an even integral lattice of even rank2m, the determinant is congruent
+modulo4 to 0 or (-1)^m. Consequently rank8 determinant15909 IS allowed;
+rounding directly to15908 would be incorrect. Successive exact upper bounds:
+
+ rank       raw Hermite floor       congruence-adjusted upper
+ 8          15910                   15909
+ 7           9494                    9494
+ 6           4648                    4648
+ 5           1894                    1894
+ 4            634                     633
+ 3            178                     178
+ 2             39                      39
+ 1              7                       6
+
+The exact powers gamma_r^r for r=2,...,8 are 4/3,2,4,8,64/3,64,256.
+All comparisons are rational/integer comparisons. Hence there are precisely
+three new determinant endpoints to address:4648 in rank6,9494 in rank7,
+15909 in rank8. The lower endpoints and all rank<=5 enumeration inputs stay
+as in the released proof. Rank8 determinant6561, excluded in the strict
+lower-bound proof, must be restored for equality.
+
+2. THE NEW ENDPOINTS ARE EMPTY
+
+We re-executed the exact one-vector extension generator at each new endpoint.
+An extension of an even parent J is J+Z(y+z), with y in J*, z perpendicular
+J, s=||z||^2>0, and class a=y+J. Write
+
+ mu(a)=min{||u||^2:u in a},   det K=det J*s.
+
+Using a shortest representative of a, evenness is exactly
+
+ s+mu(a) in 2Z.
+
+The extension has minimum at least6 exactly when the parent does and
+
+ m^2*s+mu(m*a)>=6   for every nonzero integer m.
+
+Only positive m with m^2*s<6 need be tested. In particular, no zero-class
+layer at the order of a may be silently omitted. To be a step of the chosen
+flag, the perpendicular dual vector must additionally be shortest; the code
+checks this by exact enumeration in the child dual. The necessary preliminary
+bound s>=3/(4 min(J*)) permits safe parent pruning.
+
+All discriminant tables are certified complete by containing det J distinct
+fingerprints after a full rational ellipsoid enumeration. Enumeration uses
+exact rational LDL decomposition and exact integer coordinate endpoints.
+Once all classes have representatives within the enumerated ball, their
+recorded minima are exact.
+
+Executed endpoint searches:
+
+ target                 complete parent input                 output
+ rank6 det4648          118 rank5 isometry representatives     empty
+ rank7 det9494          138 rank6 isometry representatives     empty
+
+The second input is exhaustive because the first endpoint was empty.
+
+For each of the archived2235 rank7 extension records, the next-step bound
+
+ d8 >= 3*d7^2/(4*d6)
+
+was recomputed with upper15909. It leaves exactly the same96 records as
+before, and no newly surviving record. Their six determinant pairs and
+multiplicities are
+
+ (2187,4374):2; (2187,6318):54; (2835,7722):32;
+ (4096,8192):1; (3240,8100):1; (3267,7986):6.
+
+The archived integral change-of-basis matrices relating these96 records to
+six representatives are checked again. Exact endpoint extension enumeration
+from all six representatives to rank8 determinant15909 returns empty in
+all six cases. Thus all previously proved rank8 branch classifications remain
+complete for equality, after separately restoring determinant6561.
+
+3. ONLY THREE RANK8 PARENT TYPES CAN ATTAIN EQUALITY
+
+If d8=6561, equality in the rank8 Hermite bound and uniqueness of its Euclidean
+extremal lattice force J=sqrt(3)E8. Its discriminant-class maximum is8/3.
+This uses uniqueness among all Euclidean Hermite-extremal rank8 lattices,
+not just uniqueness among even unimodular lattices.
+
+For the other branches, the released exact classifications and glue-class
+maxima yield a strict rank9 lower bound above21870 except for two parents
+in the sqrt(3)E7 branch. Denote the Gram matrix of sqrt(3)E7 in the archived
+basis by H. They are
+
+ J14580 = border(H,(2,-3,-1,-3,-3,-3,-3),6),
+ J15309a= border(H,(0,2,2,-1,-1,-1,-1),6).
+
+Their determinant and maximum class minima are respectively
+
+ J14580: 14580 and9/2;
+ J15309a:15309 and32/7.
+
+Indeed, for any parent J, the m=1 layer gives
+
+ det K >= det J*(6-max_a mu(a)).
+
+The other two sqrt(3)E7 parent types give32076 and42282; the remaining
+surviving rank7 branches either cannot continue in the window or force
+rank9 determinant at least36504 or39930. These comparisons remain strict
+at21870. The empty15909 endpoint closes the only newly allowed rank8 value.
+
+Thus any equality lattice is a one-vector extension of one of
+sqrt(3)E8,J14580,J15309a. This is a covering list of possible parent
+presentations; it does not assert that these presentations are distinct
+rank9 lattices or that every presentation has shortest perpendicular dual.
+
+4. ALL EQUALITY CLASSES WERE ENUMERATED
+
+For each of these parents, s is fixed to21870/det J. The exact complete
+class table was recomputed and every class tested for evenness and all
+nontrivial layers with m^2*s<6. Results:
+
+ parent        s       max mu   dual vectors searched  classes  admissible
+ sqrt(3)E8    10/3       8/3            26641             6561      1920
+ J14580        3/2       9/2           190491            14580         1
+ J15309a      10/7      32/7           227617            15309         2
+
+In every admitted case the shortest chosen ninth basis vector has norm6.
+For J15309a the m=2 condition is genuinely tested since4s=40/7<6.
+For J14580,4s=6 and all |m|>=2 layers are automatically admissible.
+The two J15309a classes are opposite, but both were independently checked.
+
+5. ALL1920 E8 CLASSES GIVE THE SAME LATTICE
+
+Let G8 be the leading8x8 block of K9 and C=G8/3. The eight basis vectors
+have squared norm2 for C. Their root reflections have integral matrices
+
+ R_i=I-e_i*(row_i C),    R_i^T G8 R_i=G8,    det R_i=-1.
+
+On an integer pairing column p in J* they act by
+
+ p'_j=p_j-p_i*C_ij.
+
+A breadth-first orbit enumeration begins at the pairing column p from K9.
+All orbit steps preserve the exact class minimum8/3. The computed orbit
+has1920 classes, precisely the full set of admissible E8 classes. The
+output stores the reflection matrices and an orbit spanning tree.
+
+This proves equivalence of extensions: a parent isometry transports the
+glue vector; replacing that transported vector by another representative
+of the same class changes it by an element of J. This replacement is an
+integral triangular change of basis in the extension. Since s is fixed,
+no further continuous extension parameter remains. Thus every E8-based
+admissible extension is isometric to K9.
+
+No unproved assertion that the chosen reflections generate the full Weyl
+group is needed: the explicitly generated subgroup is already transitive.
+
+6. EXPLICIT MAPS FOR THE OTHER THREE EXTENSIONS
+
+The pairing columns found using the fixed representatives are
+
+ parent       pairing column                       ninth norm
+ J14580       (-2,0,1,0,0,0,0,-3)                       6
+ J15309a      (3,-2,-2,-2,-2,-2,-2,-3)                   6
+ J15309a      (0,-3,-3,0,0,0,0,-3)                       6.
+
+For each resulting9x9 matrix G, equality_isometries.json contains an
+explicit integer9x9 matrix U. The verifier checks both
+
+ det U=+1 or-1,     U^T K9 U=G.
+
+These are directly checkable algebraic identities, not a numerical
+similarity test or equality of short-vector counts. All three extensions
+are therefore isometric to K9. Exact enumeration also confirms that K9
+has no nonzero vector of squared norm below6 and has258 oriented norm6
+vectors. Combined with the preceding exhaustive covering, this proves
+uniqueness.
+
+REPRODUCTION AND DEPENDENCIES
+
+Run Python3 with assertions enabled:
+
+ python verify_equality.py --baseline PATH/TO/certificate
+
+The script re-executes all NEW endpoint enumerations; verifies the changed
+windows and the96 survivor linkage maps; re-enumerates all three equality
+class tables; verifies E8 orbit transitivity and all explicit maps; and
+writes equality_verification.json. Its final success marker is
+
+ RANK9_EQUALITY_UNIQUE_K9_EXACT_PASS.
+
+The original certificate must separately establish its exhaustive rank<=7
+search and branch classifications. This addendum does not disguise these
+existing dependencies as a fresh independent implementation of them.
+The generated JSON records hashes of baseline files used directly. No
+external publication, outside review, ambient embedding classification or
+global packing optimality is claimed by this equality addendum.
+
+7. ADDITIONAL INDEPENDENT VERIFICATION
+
+A second checker, check_equality_independent.py in the independent_review
+folder, imports none of the original lattice search code. It rechecks the
+new boundary exclusions by a different method, using its own rational
+matrix inversion and determinant routines.
+
+For a parent Gram matrix G, put d=det G, A=adj(G). A dual class with pairing
+column p is encoded by c=A p modulo d. The discriminant quadratic form can
+be encoded by Q(c)=p^T A p modulo2d. It is well defined because G is even:
+replacing p by p+Gz changes this numerator by2d p^T z+d z^T Gz, a multiple
+of2d. The group is generated by the columns of A, and its values are
+computed without finding shortest vectors by the recurrence
+
+ Q(c+A e_i)=Q(c)+2c_i+A_ii  (mod2d).
+
+A hypothetical even extension of determinant T requires
+
+ Q(c)=-T (mod2d),
+
+since T=d*n-p^T A p and n is even. Breadth-first enumeration covers exactly
+d classes. Failure of this congruence for every class rules out the
+extension regardless of its minimum.
+
+Alternatively an explicit nonzero integer pairing p proves the lifting
+obstruction whenever
+
+ 4*T*(p^T A p)<3*d^2.
+
+Indeed p determines a dual vector of squared norm(p^T A p)/d, and the
+lifting inequality applies to every such nonzero dual vector. This does
+not require determining the shortest dual vector.
+
+Across the262 parent/endpoint pairs (118+138+6), the independent checker
+excludes188 by explicit dual witnesses and74 by complete finite quadratic
+module enumeration. Thus the new boundary exclusions do not rely solely
+on repeating the original short-vector enumeration kernel.
+
+The independent checker also verifies all1923 child Gram/Schur identities,
+all1919 explicit integral lifted isometries associated with edges of the
+E8 orbit spanning tree, and all four saved change-of-basis matrices toK9.
+Its final records report PASS for each of these tasks.
+
+The complete main regeneration verify_equality.py finished successfully
+with RANK9_EQUALITY_UNIQUE_K9_EXACT_PASS in227.536 seconds in this shared
+runtime. This is a reproducibility log, not a benchmark. The independent
+checker confirms the added computations; it is not an external human
+referee report and does not independently reimplement the whole original
+lower-rank search.

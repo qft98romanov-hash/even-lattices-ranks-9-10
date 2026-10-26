@@ -1,0 +1,300 @@
+{
+  "rank": 9,
+  "input_sha256": "65440940cb342a739ed2138fbf9481655ce72f2fb36afd7e54b5320baff1fe67",
+  "extension_code_sha256": "feb658a45bd1c0f3c58a9ba13ab0db809b5c4d9cf82e32df1030dc65fac9418c",
+  "accepted_extension_code_sha256": [
+    "feb658a45bd1c0f3c58a9ba13ab0db809b5c4d9cf82e32df1030dc65fac9418c",
+    "e17ef89bf9e7ee0b836923a463ca1cdbd2a239d886a98909a910ba064176ae84"
+  ],
+  "parent_count": 47,
+  "exact_pruned_parents": 0,
+  "fully_enumerated_parents": 47,
+  "raw_candidates": 3819,
+  "wall_seconds": 89.36369068299973,
+  "timings": [
+    {
+      "parent": 6,
+      "raw_count": 0,
+      "seconds": 6.137739714999043,
+      "cached": false
+    },
+    {
+      "parent": 4,
+      "raw_count": 0,
+      "seconds": 6.28812548800488,
+      "cached": false
+    },
+    {
+      "parent": 5,
+      "raw_count": 0,
+      "seconds": 6.322389002998534,
+      "cached": false
+    },
+    {
+      "parent": 3,
+      "raw_count": 0,
+      "seconds": 6.739467917999718,
+      "cached": false
+    },
+    {
+      "parent": 0,
+      "raw_count": 0,
+      "seconds": 6.94198417399457,
+      "cached": false
+    },
+    {
+      "parent": 2,
+      "raw_count": 0,
+      "seconds": 7.214457273003063,
+      "cached": false
+    },
+    {
+      "parent": 8,
+      "raw_count": 0,
+      "seconds": 5.60109436300263,
+      "cached": false
+    },
+    {
+      "parent": 7,
+      "raw_count": 0,
+      "seconds": 6.3924043740044,
+      "cached": false
+    },
+    {
+      "parent": 9,
+      "raw_count": 0,
+      "seconds": 6.307533478997357,
+      "cached": false
+    },
+    {
+      "parent": 10,
+      "raw_count": 0,
+      "seconds": 6.681089732999681,
+      "cached": false
+    },
+    {
+      "parent": 12,
+      "raw_count": 0,
+      "seconds": 6.612896901002387,
+      "cached": false
+    },
+    {
+      "parent": 11,
+      "raw_count": 0,
+      "seconds": 8.20496883699525,
+      "cached": false
+    },
+    {
+      "parent": 13,
+      "raw_count": 0,
+      "seconds": 6.110967501997948,
+      "cached": false
+    },
+    {
+      "parent": 14,
+      "raw_count": 0,
+      "seconds": 7.42888500099798,
+      "cached": false
+    },
+    {
+      "parent": 15,
+      "raw_count": 0,
+      "seconds": 8.247287225996843,
+      "cached": false
+    },
+    {
+      "parent": 16,
+      "raw_count": 0,
+      "seconds": 8.588157610000053,
+      "cached": false
+    },
+    {
+      "parent": 17,
+      "raw_count": 0,
+      "seconds": 8.405016957003681,
+      "cached": false
+    },
+    {
+      "parent": 18,
+      "raw_count": 0,
+      "seconds": 7.763581450002675,
+      "cached": false
+    },
+    {
+      "parent": 19,
+      "raw_count": 0,
+      "seconds": 8.488375166998594,
+      "cached": false
+    },
+    {
+      "parent": 20,
+      "raw_count": 600,
+      "seconds": 6.554012480999518,
+      "cached": false
+    },
+    {
+      "parent": 1,
+      "raw_count": 0,
+      "seconds": 27.07533450000483,
+      "cached": false
+    },
+    {
+      "parent": 21,
+      "raw_count": 0,
+      "seconds": 7.4448371329999645,
+      "cached": false
+    },
+    {
+      "parent": 26,
+      "raw_count": 0,
+      "seconds": 6.223880119003297,
+      "cached": false
+    },
+    {
+      "parent": 27,
+      "raw_count": 0,
+      "seconds": 6.787987962001353,
+      "cached": false
+    },
+    {
+      "parent": 28,
+      "raw_count": 0,
+      "seconds": 6.4556598819981446,
+      "cached": false
+    },
+    {
+      "parent": 29,
+      "raw_count": 0,
+      "seconds": 6.358197012996243,
+      "cached": false
+    },
+    {
+      "parent": 30,
+      "raw_count": 0,
+      "seconds": 7.597027376999904,
+      "cached": false
+    },
+    {
+      "parent": 31,
+      "raw_count": 0,
+      "seconds": 6.727029005996883,
+      "cached": false
+    },
+    {
+      "parent": 23,
+      "raw_count": 0,
+      "seconds": 22.174053303999244,
+      "cached": false
+    },
+    {
+      "parent": 22,
+      "raw_count": 0,
+      "seconds": 23.599222800999996,
+      "cached": false
+    },
+    {
+      "parent": 32,
+      "raw_count": 0,
+      "seconds": 6.52849202699872,
+      "cached": false
+    },
+    {
+      "parent": 34,
+      "raw_count": 0,
+      "seconds": 6.232966632000171,
+      "cached": false
+    },
+    {
+      "parent": 25,
+      "raw_count": 0,
+      "seconds": 21.444489519002673,
+      "cached": false
+    },
+    {
+      "parent": 24,
+      "raw_count": 0,
+      "seconds": 25.416280164994532,
+      "cached": false
+    },
+    {
+      "parent": 33,
+      "raw_count": 0,
+      "seconds": 7.76067772499664,
+      "cached": false
+    },
+    {
+      "parent": 35,
+      "raw_count": 0,
+      "seconds": 6.140523622998444,
+      "cached": false
+    },
+    {
+      "parent": 36,
+      "raw_count": 0,
+      "seconds": 6.037596504000248,
+      "cached": false
+    },
+    {
+      "parent": 37,
+      "raw_count": 0,
+      "seconds": 20.94322456899681,
+      "cached": false
+    },
+    {
+      "parent": 40,
+      "raw_count": 0,
+      "seconds": 20.33294387099886,
+      "cached": false
+    },
+    {
+      "parent": 39,
+      "raw_count": 0,
+      "seconds": 21.716541251000308,
+      "cached": false
+    },
+    {
+      "parent": 38,
+      "raw_count": 0,
+      "seconds": 22.366066237998893,
+      "cached": false
+    },
+    {
+      "parent": 41,
+      "raw_count": 0,
+      "seconds": 21.53017725499376,
+      "cached": false
+    },
+    {
+      "parent": 42,
+      "raw_count": 18,
+      "seconds": 20.831708771002013,
+      "cached": false
+    },
+    {
+      "parent": 44,
+      "raw_count": 972,
+      "seconds": 6.1453351189993555,
+      "cached": false
+    },
+    {
+      "parent": 43,
+      "raw_count": 60,
+      "seconds": 23.58771955299744,
+      "cached": false
+    },
+    {
+      "parent": 46,
+      "raw_count": 1818,
+      "seconds": 6.155492270998366,
+      "cached": false
+    },
+    {
+      "parent": 45,
+      "raw_count": 351,
+      "seconds": 20.64485011799843,
+      "cached": false
+    }
+  ],
+  "isometry_deduplication": "NOT YET PERFORMED",
+  "later_ranks": "NOT YET PERFORMED"
+}

@@ -1,0 +1,6 @@
+rank9-determinant-exact-certificates
+version: 1.0
+release-date: 2026-09-01
+statement: even positive-definite rank 9, minimum >= 6 implies determinant >= 21870
+arithmetic: exact integer/rational
+

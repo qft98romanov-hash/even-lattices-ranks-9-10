@@ -1,0 +1,11 @@
+BATCH_PASS rank6_boundary {'parents': 925, 'pruned_parents': 708, 'enumerated_parents': 217, 'raw': 58}
+BATCH_PASS rank7_boundary {'parents': 3752, 'pruned_parents': 3252, 'enumerated_parents': 500, 'raw': 20}
+BATCH_PASS rank7_from_new6 {'parents': 58, 'pruned_parents': 58, 'enumerated_parents': 0, 'raw': 0}
+DELTA_COVER_PASS 7 revived 4 newraw 20 pruned 20 eligible 4
+BATCH_PASS rank8_boundary {'parents': 224, 'pruned_parents': 0, 'enumerated_parents': 224, 'raw': 0}
+BATCH_PASS rank8_from_new7 {'parents': 4, 'pruned_parents': 0, 'enumerated_parents': 4, 'raw': 0}
+DELTA_COVER_PASS 8 revived 0 newraw 0 pruned 0 eligible 0
+BATCH_PASS rank9_boundary {'parents': 47, 'pruned_parents': 0, 'enumerated_parents': 47, 'raw': 0}
+BATCH_PASS rank9_from_new8 {'parents': 0, 'pruned_parents': 0, 'enumerated_parents': 0, 'raw': 0}
+DELTA_COVER_PASS 9 revived 0 newraw 0 pruned 0 eligible 0
+GLOBAL_RANK10_EQUALITY_TWO_TYPES_PASS PASS_STATIC_EQUALITY_CERTIFICATE UNDER gamma9<=2

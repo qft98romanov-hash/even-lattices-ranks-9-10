@@ -1,0 +1,11 @@
+EXACT CERTIFICATE: EXTREMAL RANK-NINE EXAMPLE
+arithmetic = integers and fractions only
+rank = 9
+even = yes
+positive definite = yes
+det(K9) = 21870
+nonzero vectors of norm <= 5 = 0
+oriented vectors of norm 6 = 258
+min(K9) = 6
+canonical Gram sha256 = a58eb5471560a60456d5a65f9580c1b50b001b5d92e4ecc5094258844a7bd355
+RANK9_EXTREMAL_EXAMPLE_EXACT_OK

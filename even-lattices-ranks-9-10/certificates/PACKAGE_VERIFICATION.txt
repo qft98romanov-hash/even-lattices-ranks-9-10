@@ -1,0 +1,81 @@
+ASSEMBLED PACKAGE VERIFICATION — 8 OCTOBER 2026
+
+MATHEMATICAL CHECKS ACTUALLY RUN FROM THIS PACKAGE LOCATION
+
+All 16 prior routine checks passed, using the original runner before its
+update. The exact original runner is retained as
+  PRIOR_20261007_verify_new_results.py
+and its successful log as
+  prior_routine_portability_20261008.log.
+
+All five additional checks passed after copying the finalized equality
+and independent-review data into this package:
+  verify_equality_certificate.py --skip-base
+  check_equality_windows_and_recovered_prunes.py
+  check_boundaries_by_quadratic_module.py --workers 2
+  check_delta_chain_independent.py
+  audit_two_types_and_cluster_gap.py
+
+The first check omits a redundant recheck of the old strict certificate;
+that certificate was already covered by the preceding independent chain
+audit. Command arguments, exit codes, source hashes and timings for the
+five new checks are in assembled_new_checks.json. Complete output is in
+local_replay_logs/. All 21 default check invocations therefore passed from
+the assembled package. The updated verify_new_results.py invokes them
+together; the already passed old checks were not needlessly run twice.
+
+GENERATION AND REPLAY PROVENANCE
+
+The new equality search actually generated all 5010 parent/window jobs
+from a previously nonexistent equality-job directory. Of these, 4018
+were excluded by an immediate lifting condition and 992 underwent the
+finite-class generation step. There were 78 raw children, all excluded
+from continuation; no non-E8 equality candidate survived. The preserved
+record is
+  research_20261008/rank10_equality/equality_fresh_generation_record.json.
+This is PASS_FRESH_EXACT_BOUNDARY_GENERATION, not a claim that a second
+complete --replay was performed. The new equality --replay implementation
+really regenerates every job afresh and bypasses the generator cache.
+
+The fresh-generation record hashes the ORIGINAL static-check result.
+The matching immutable snapshot is retained as
+  research_20261008/rank10_equality/equality_initial_static_record.json.
+The ordinary equality_certificate_verified.json is a dynamic result and
+records the later successful run from this package; its timing differs.
+
+Independently implemented finite quadratic-module and shorter-dual-vector
+arguments cover all 4952 necessary parent/endpoint pairs. The separate
+linkage audit checks all 5010 saved jobs, all 78 raw Gram matrices and
+their exact discriminant-class sets, four restored rank-seven flags,
+all merged continuation lists, and all 3819 terminal exclusions.
+An independent structural audit checks 559 explicit integral 10x10
+isometries, the dual minima and three primitive rank-nine kernels in
+each equality lattice, and the exact rational cluster-loss bound.
+
+The earlier COMPLETE strict-search replay is retained unchanged as
+  research_20261007/rank10/global_rank10_full_replay_record.json
+with 1897 parent lists and 115627 raw matrices. The earlier COMPLETE
+ambient replay of 281 fibers and 171472428 nodes is also retained.
+Neither old heavy computation was repeated merely to assemble this update.
+
+REPORTS AND FILE IDENTITY
+
+The current report-build and visual-review record is
+  research_20261008/report_build/report_QA.json.
+The Russian report has 37 pages and the English report 36 pages. All 73
+pages were rendered and visually reviewed. Both builds reported zero
+warnings; 54 labels, 34 numbered equation labels and 162 normalized display
+mathematics blocks agree between languages.
+Each current .txt is byte-identical to its .tex. The PDFs and sources are
+checked against the final report hashes when packaging. Historical reports
+are retained separately in prior_reports/ and do not set the current scope.
+
+SHA256SUMS covers all delivered files except itself. The final archive is
+checked by reading every ZIP member, verifying CRCs and checking every
+listed SHA256. On a fresh extraction, python verify_file_hashes.py repeats
+the hash check. Subsequent mathematical runs can legitimately rewrite
+status files or logs, so perform the identity check before rerunning.
+
+No external referee, external AI review, or formal proof-assistant check
+is claimed. File hashes, successful execution and independent numerical
+implementations do not replace the written mathematical coverage argument.

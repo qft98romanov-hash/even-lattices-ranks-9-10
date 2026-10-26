@@ -1,0 +1,9 @@
+HERMITE_WINDOW_ARITHMETIC_PASS
+unrounded_integer_floors {"1": 7, "2": 39, "3": 178, "4": 634, "5": 1894, "6": 4647, "7": 9493, "8": 15908}
+congruence_adjusted_upper {"1": 6, "2": 39, "3": 178, "4": 633, "5": 1894, "6": 4647, "7": 9492, "8": 15908, "9": 21868}
+lifting_bounds ['6561', '13689', '552123/35', '12288', '30375/2', '14641']
+K9_ROOT_RESIDUE_64_TEST_PASS
+64_point_norm_distribution [(8, 5), (14, 9), (20, 14), (26, 10), (32, 8), (38, 5), (44, 4), (50, 4), (56, 1), (62, 3), (86, 1)]
+K9_SCHUR_MINIMUM_SIX_AND_DETERMINANT_21870_PASS
+CENTERED_RESIDUE_SHORTCUT_COUNTEREXAMPLE_VERIFIED
+ALL_THEORY_AND_64_POINT_SHARPNESS_CHECKS_PASS

@@ -1,0 +1,21 @@
+EXACT CERTIFICATE: sqrt(3) E7 BRANCH
+arithmetic = integers and fractions only
+det(H) = 4374
+min(H) = 6 ; oriented minimal vectors = 126
+dual enumeration for H: points = 63745 ; classes = 4374
+glue-radius(H) = 9/2
+coset-minimum distribution:
+  [(Fraction(0, 1), 1), (Fraction(1, 2), 56), (Fraction(2, 3), 126), (Fraction(7, 6), 576), (Fraction(4, 3), 756), (Fraction(11, 6), 756), (Fraction(2, 1), 728), (Fraction(5, 2), 672), (Fraction(8, 3), 576), (Fraction(19, 6), 126), (Fraction(9, 2), 1)]
+W(E7)-orbit data (size, coset minimum):
+  [(1, Fraction(0, 1)), (1, Fraction(9, 2)), (56, Fraction(1, 2)), (56, Fraction(2, 1)), (126, Fraction(2, 3)), (126, Fraction(19, 6)), (576, Fraction(7, 6)), (576, Fraction(8, 3)), (672, Fraction(2, 1)), (672, Fraction(5, 2)), (756, Fraction(4, 3)), (756, Fraction(11, 6))]
+allowed labelled classes = 1375
+by determinant = [(12393, 126), (14580, 576), (15309, 673)]
+by (determinant, order) = [((12393, 6), 126), ((14580, 3), 576), ((15309, 2), 1), ((15309, 6), 672)]
+number of isometry types = 4
+J12393 : det = 12393 ; oriented minimal vectors = 150 ; dual points = 73253 ; classes = 12393 ; glue-radius = 58/17 ; rank-9 determinant lower bound = 32076
+J14580 : det = 14580 ; oriented minimal vectors = 140 ; dual points = 190491 ; classes = 14580 ; glue-radius = 9/2 ; rank-9 determinant lower bound = 21870
+J15309a : det = 15309 ; oriented minimal vectors = 138 ; dual points = 314953 ; classes = 15309 ; glue-radius = 32/7 ; rank-9 determinant lower bound = 21870
+J15309b : det = 15309 ; oriented minimal vectors = 126 ; dual points = 72119 ; classes = 15309 ; glue-radius = 68/21 ; rank-9 determinant lower bound = 42282
+CONCLUSION: every rank-9 continuation in this branch has det >= 21870
+therefore no candidate with det < 21870 exists in the sqrt(3) E7 branch
+transcript-sha256 = b2b7c6cfb2129bb4c0522d526a4aad2a3d02d0ee67abf24cbc2e9a9e5c80c93a

@@ -1,0 +1,45 @@
+{
+  "theorem": {
+    "source_count": 9,
+    "edited_count": 9,
+    "exact_match": true
+  },
+  "lemma": {
+    "source_count": 0,
+    "edited_count": 0,
+    "exact_match": true
+  },
+  "proposition": {
+    "source_count": 4,
+    "edited_count": 4,
+    "exact_match": true
+  },
+  "corollary": {
+    "source_count": 4,
+    "edited_count": 4,
+    "exact_match": true
+  },
+  "proof": {
+    "source_count": 14,
+    "edited_count": 14,
+    "exact_match": true
+  },
+  "equation": {
+    "source_count": 31,
+    "edited_count": 31,
+    "exact_match": true
+  },
+  "align": {
+    "source_count": 1,
+    "edited_count": 1,
+    "exact_match": true
+  },
+  "missing_dated_paths": [],
+  "cyrillic_characters": 0,
+  "labels_preserved": 54,
+  "tex_txt_byte_identical": true,
+  "source_sha256": "f2f9d957b9801a12855b3abf39a71eb323cf55813c41ddd8b72d40c193e0fe55",
+  "paper_sha256": "b4eaf17f3beb252dffd389305966098cd30a97890d8003fb4adac7faa4c021f7",
+  "notes": "Editorial transformation only; no new mathematical proof audit or exhaustive enumeration was performed by this task. Root agent will compile and visually inspect PDF.",
+  "acknowledgements_added": "Immediately after abstract; full names Xiaoming Sun and Chengu Wang; source work cited."
+}

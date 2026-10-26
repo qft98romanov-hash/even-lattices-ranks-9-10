@@ -1,0 +1,20 @@
+{
+  "version": "0.1.1-draft",
+  "edition_date": "2026-10-26",
+  "mathematical_snapshot": "2026-10-08",
+  "status": "Working draft; external scientific review and definitive novelty assessment pending.",
+  "repository_created_or_published": false,
+  "source_archive_filename": "lattice_certificates_complete_20261008.zip",
+  "source_archive_sha256": "7b08027eed3dd5388f86a5fba259e10ad5a3fabd91ec585758e7b9bad2fc5306",
+  "preserved_certificate_files": 8195,
+  "archived_manifest_entries": 8194,
+  "routine_checks_passed": 21,
+  "optional_full_regenerations_run_during_packaging": false,
+  "pdf_pages": 37,
+  "main_manuscript_sha256": {
+    "paper.tex": "b4eaf17f3beb252dffd389305966098cd30a97890d8003fb4adac7faa4c021f7",
+    "paper.txt": "b4eaf17f3beb252dffd389305966098cd30a97890d8003fb4adac7faa4c021f7",
+    "paper.pdf": "f6007e88f1c749a72582041b2b9f70a883af8c76b38636bccc90657657e7fe57"
+  },
+  "last_editorial_change": "Acknowledgements to Xiaoming Sun and Chengu Wang immediately after abstract, citing their joint source paper."
+}

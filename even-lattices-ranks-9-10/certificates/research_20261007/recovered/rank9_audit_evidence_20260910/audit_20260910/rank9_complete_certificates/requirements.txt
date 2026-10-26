@@ -1,0 +1,3 @@
+# The final exact certificate uses only the CPython standard library.
+# Tested with CPython 3.12.
+

@@ -1,0 +1,320 @@
+{
+  "input_sha256": "65440940cb342a739ed2138fbf9481655ce72f2fb36afd7e54b5320baff1fe67",
+  "prunes": [
+    {
+      "parent_index": 0,
+      "det": 20480,
+      "preceding_det": 8192,
+      "left": 1258291200,
+      "right": 801177600
+    },
+    {
+      "parent_index": 1,
+      "det": 22896,
+      "preceding_det": 10088,
+      "left": 1572680448,
+      "right": 986606400
+    },
+    {
+      "parent_index": 2,
+      "det": 21904,
+      "preceding_det": 9472,
+      "left": 1439355648,
+      "right": 926361600
+    },
+    {
+      "parent_index": 3,
+      "det": 21904,
+      "preceding_det": 9472,
+      "left": 1439355648,
+      "right": 926361600
+    },
+    {
+      "parent_index": 4,
+      "det": 21504,
+      "preceding_det": 9216,
+      "left": 1387266048,
+      "right": 901324800
+    },
+    {
+      "parent_index": 5,
+      "det": 20736,
+      "preceding_det": 9216,
+      "left": 1289945088,
+      "right": 901324800
+    },
+    {
+      "parent_index": 6,
+      "det": 21376,
+      "preceding_det": 8704,
+      "left": 1370800128,
+      "right": 851251200
+    },
+    {
+      "parent_index": 7,
+      "det": 20480,
+      "preceding_det": 8704,
+      "left": 1258291200,
+      "right": 851251200
+    },
+    {
+      "parent_index": 8,
+      "det": 20480,
+      "preceding_det": 8704,
+      "left": 1258291200,
+      "right": 851251200
+    },
+    {
+      "parent_index": 9,
+      "det": 18496,
+      "preceding_det": 8704,
+      "left": 1026306048,
+      "right": 851251200
+    },
+    {
+      "parent_index": 10,
+      "det": 20736,
+      "preceding_det": 10368,
+      "left": 1289945088,
+      "right": 1013990400
+    },
+    {
+      "parent_index": 11,
+      "det": 22272,
+      "preceding_det": 9696,
+      "left": 1488125952,
+      "right": 948268800
+    },
+    {
+      "parent_index": 12,
+      "det": 22801,
+      "preceding_det": 9966,
+      "left": 1559656803,
+      "right": 974674800
+    },
+    {
+      "parent_index": 13,
+      "det": 21025,
+      "preceding_det": 9570,
+      "left": 1326151875,
+      "right": 935946000
+    },
+    {
+      "parent_index": 14,
+      "det": 22341,
+      "preceding_det": 9372,
+      "left": 1497360843,
+      "right": 916581600
+    },
+    {
+      "parent_index": 15,
+      "det": 22125,
+      "preceding_det": 9372,
+      "left": 1468546875,
+      "right": 916581600
+    },
+    {
+      "parent_index": 16,
+      "det": 20164,
+      "preceding_det": 9372,
+      "left": 1219760688,
+      "right": 916581600
+    },
+    {
+      "parent_index": 17,
+      "det": 20832,
+      "preceding_det": 8976,
+      "left": 1301916672,
+      "right": 877852800
+    },
+    {
+      "parent_index": 18,
+      "det": 19965,
+      "preceding_det": 7986,
+      "left": 1195803675,
+      "right": 781030800
+    },
+    {
+      "parent_index": 19,
+      "det": 19360,
+      "preceding_det": 7986,
+      "left": 1124428800,
+      "right": 781030800
+    },
+    {
+      "parent_index": 21,
+      "det": 21168,
+      "preceding_det": 9072,
+      "left": 1344252672,
+      "right": 887241600
+    },
+    {
+      "parent_index": 22,
+      "det": 21600,
+      "preceding_det": 9018,
+      "left": 1399680000,
+      "right": 881960400
+    },
+    {
+      "parent_index": 23,
+      "det": 21600,
+      "preceding_det": 9018,
+      "left": 1399680000,
+      "right": 881960400
+    },
+    {
+      "parent_index": 24,
+      "det": 20493,
+      "preceding_det": 8262,
+      "left": 1259889147,
+      "right": 808023600
+    },
+    {
+      "parent_index": 25,
+      "det": 20709,
+      "preceding_det": 8208,
+      "left": 1286588043,
+      "right": 802742400
+    },
+    {
+      "parent_index": 26,
+      "det": 19008,
+      "preceding_det": 8208,
+      "left": 1083912192,
+      "right": 802742400
+    },
+    {
+      "parent_index": 27,
+      "det": 18900,
+      "preceding_det": 8100,
+      "left": 1071630000,
+      "right": 792180000
+    },
+    {
+      "parent_index": 28,
+      "det": 19845,
+      "preceding_det": 7938,
+      "left": 1181472075,
+      "right": 776336400
+    },
+    {
+      "parent_index": 29,
+      "det": 19980,
+      "preceding_det": 7722,
+      "left": 1197601200,
+      "right": 755211600
+    },
+    {
+      "parent_index": 30,
+      "det": 19737,
+      "preceding_det": 7722,
+      "left": 1168647507,
+      "right": 755211600
+    },
+    {
+      "parent_index": 31,
+      "det": 19305,
+      "preceding_det": 7722,
+      "left": 1118049075,
+      "right": 755211600
+    },
+    {
+      "parent_index": 32,
+      "det": 19188,
+      "preceding_det": 7722,
+      "left": 1104538032,
+      "right": 755211600
+    },
+    {
+      "parent_index": 33,
+      "det": 18513,
+      "preceding_det": 7722,
+      "left": 1028193507,
+      "right": 755211600
+    },
+    {
+      "parent_index": 34,
+      "det": 18144,
+      "preceding_det": 7722,
+      "left": 987614208,
+      "right": 755211600
+    },
+    {
+      "parent_index": 35,
+      "det": 18225,
+      "preceding_det": 7290,
+      "left": 996451875,
+      "right": 712962000
+    },
+    {
+      "parent_index": 36,
+      "det": 18225,
+      "preceding_det": 7290,
+      "left": 996451875,
+      "right": 712962000
+    },
+    {
+      "parent_index": 37,
+      "det": 18225,
+      "preceding_det": 6318,
+      "left": 996451875,
+      "right": 617900400
+    },
+    {
+      "parent_index": 38,
+      "det": 18144,
+      "preceding_det": 6318,
+      "left": 987614208,
+      "right": 617900400
+    },
+    {
+      "parent_index": 39,
+      "det": 17901,
+      "preceding_det": 6318,
+      "left": 961337403,
+      "right": 617900400
+    },
+    {
+      "parent_index": 40,
+      "det": 17820,
+      "preceding_det": 6318,
+      "left": 952657200,
+      "right": 617900400
+    },
+    {
+      "parent_index": 41,
+      "det": 17577,
+      "preceding_det": 6318,
+      "left": 926852787,
+      "right": 617900400
+    },
+    {
+      "parent_index": 42,
+      "det": 17172,
+      "preceding_det": 6318,
+      "left": 884632752,
+      "right": 617900400
+    },
+    {
+      "parent_index": 43,
+      "det": 16929,
+      "preceding_det": 6318,
+      "left": 859773123,
+      "right": 617900400
+    },
+    {
+      "parent_index": 45,
+      "det": 14580,
+      "preceding_det": 4374,
+      "left": 637729200,
+      "right": 427777200
+    },
+    {
+      "parent_index": 46,
+      "det": 12393,
+      "preceding_det": 4374,
+      "left": 460759347,
+      "right": 427777200
+    }
+  ]
+}

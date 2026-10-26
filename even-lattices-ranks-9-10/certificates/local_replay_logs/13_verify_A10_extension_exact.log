@@ -1,0 +1,9 @@
+{
+  "result": "CERTIFIED_EMPTY_ALTERNATIVE_MARKED_FIBER",
+  "nodes": 611239,
+  "leaves": 0,
+  "norm6_witnesses": 0,
+  "coordinate_solutions": [],
+  "elapsed_seconds": 1.229615771000681,
+  "arithmetic": "Python unbounded integers and fractions; math.isqrt; no floating-point pruning"
+}

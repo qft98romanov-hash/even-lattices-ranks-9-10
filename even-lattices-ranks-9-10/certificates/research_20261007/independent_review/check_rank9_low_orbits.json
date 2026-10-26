@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "independent_vectors": 26641,
+  "basis_root_reflections": 8,
+  "orbits": [
+    {
+      "class_norm": 8,
+      "classes": 1920,
+      "orbit_count": 1,
+      "lifted_integral_isometries_checked": 1919,
+      "determinant": 21870
+    },
+    {
+      "class_norm": 6,
+      "classes": 2240,
+      "orbit_count": 1,
+      "lifted_integral_isometries_checked": 2239,
+      "determinant": 26244
+    },
+    {
+      "class_norm": 4,
+      "classes": 2160,
+      "orbit_count": 1,
+      "lifted_integral_isometries_checked": 2159,
+      "determinant": 30618
+    }
+  ],
+  "total_lifted_isometries": 6317
+}

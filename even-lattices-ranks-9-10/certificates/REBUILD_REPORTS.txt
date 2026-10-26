@@ -1,0 +1,22 @@
+The delivered lattices_complete_RU.tex and lattices_complete_EN.tex are
+standalone canonical report sources. Their .txt aliases are identical.
+For Overleaf, paste the desired .txt into main.tex and select XeLaTeX.
+
+For local compilation from this package directory, run XeLaTeX repeatedly
+until references stabilize, for example three passes of:
+  xelatex -interaction=nonstopmode -halt-on-error lattices_complete_EN.tex
+Use lattices_complete_RU.tex for the Russian version. PDF byte identity is
+not expected after rebuilding because TeX metadata can include timestamps.
+
+The scripts under research_20261008/report_build/ preserve the authoring
+history. They are not needed to compile the delivered reports. To repeat
+the authoring workflow, first create a directory named output/ at the
+package root, then run update_reports.py, augment_reports.py and
+render_reports.py, in that order. The latter helper additionally needs
+XeLaTeX, Poppler's pdftoppm, Pillow and pypdf. These document-build dependencies
+are separate from the standard-library-only mathematical verifiers.
+
+Re-rendering replaces report_QA.json with new automatic observations.
+The archived final record additionally contains the completed visual
+inspection and exact file hashes; rerunning a rendering script
+does not itself repeat that visual inspection.

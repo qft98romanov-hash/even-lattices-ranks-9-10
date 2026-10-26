@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-26",
+  "type": "Acknowledgements-only editorial update",
+  "names": [
+    "Xiaoming Sun",
+    "Chengu Wang"
+  ],
+  "source_title": "Optimal Extensions of Cross-Sections: Sphere Packings in Dimensions 38 to 43",
+  "position": "Immediately after the abstract on page1, before status note",
+  "pdf_pages": 37,
+  "body_pages_text_unchanged": true,
+  "only_manuscript_source_change_is_acknowledgements": true,
+  "compiler_warnings": [],
+  "mathematical_certificate_tree_unchanged": true,
+  "mathematical_checks_rerun_for_this_editorial_update": false,
+  "title_page_visual_review": "PASS: acknowledgements follow abstract on same page; no overlap or clipping.",
+  "source_sha256": "b4eaf17f3beb252dffd389305966098cd30a97890d8003fb4adac7faa4c021f7"
+}

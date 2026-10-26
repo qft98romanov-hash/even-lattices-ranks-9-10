@@ -1,0 +1,298 @@
+{
+  "status": "PASS",
+  "target_rank9_window": [
+    19684,
+    24450
+  ],
+  "parents": 47,
+  "explicit_dual_prunes": 45,
+  "independent_discriminant_cover_prunes": 2,
+  "records": [
+    {
+      "parent_index": 0,
+      "determinant": 20480,
+      "method": "explicit_dual_lifting",
+      "dual_norm": "2/5"
+    },
+    {
+      "parent_index": 1,
+      "determinant": 22896,
+      "method": "explicit_dual_lifting",
+      "dual_norm": "1261/2862"
+    },
+    {
+      "parent_index": 2,
+      "determinant": 21904,
+      "method": "explicit_dual_lifting",
+      "dual_norm": "16/37"
+    },
+    {
+      "parent_index": 3,
+      "determinant": 21904,
+      "method": "explicit_dual_lifting",
+      "dual_norm": "16/37"
+    },
+    {
+      "parent_index": 4,
+      "determinant": 21504,
+      "method": "explicit_dual_lifting",
+      "dual_norm": "3/7"
+    },
+    {
+      "parent_index": 5,
+      "determinant": 20736,
+      "method": "explicit_dual_lifting",
+      "dual_norm": "4/9"
+    },
+    {
+      "parent_index": 6,
+      "determinant": 21376,
+      "method": "explicit_dual_lifting",
+      "dual_norm": "68/167"
+    },
+    {
+      "parent_index": 7,
+      "determinant": 20480,
+      "method": "explicit_dual_lifting",
+      "dual_norm": "17/40"
+    },
+    {
+      "parent_index": 8,
+      "determinant": 20480,
+      "method": "explicit_dual_lifting",
+      "dual_norm": "17/40"
+    },
+    {
+      "parent_index": 9,
+      "determinant": 18496,
+      "method": "explicit_dual_lifting",
+      "dual_norm": "8/17"
+    },
+    {
+      "parent_index": 10,
+      "determinant": 20736,
+      "method": "explicit_dual_lifting",
+      "dual_norm": "1/2"
+    },
+    {
+      "parent_index": 11,
+      "determinant": 22272,
+      "method": "explicit_dual_lifting",
+      "dual_norm": "101/232"
+    },
+    {
+      "parent_index": 12,
+      "determinant": 22801,
+      "method": "explicit_dual_lifting",
+      "dual_norm": "66/151"
+    },
+    {
+      "parent_index": 13,
+      "determinant": 21025,
+      "method": "explicit_dual_lifting",
+      "dual_norm": "66/145"
+    },
+    {
+      "parent_index": 14,
+      "determinant": 22341,
+      "method": "explicit_dual_lifting",
+      "dual_norm": "284/677"
+    },
+    {
+      "parent_index": 15,
+      "determinant": 22125,
+      "method": "explicit_dual_lifting",
+      "dual_norm": "3124/7375"
+    },
+    {
+      "parent_index": 16,
+      "determinant": 20164,
+      "method": "explicit_dual_lifting",
+      "dual_norm": "33/71"
+    },
+    {
+      "parent_index": 17,
+      "determinant": 20832,
+      "method": "explicit_dual_lifting",
+      "dual_norm": "187/434"
+    },
+    {
+      "parent_index": 18,
+      "determinant": 19965,
+      "method": "explicit_dual_lifting",
+      "dual_norm": "2/5"
+    },
+    {
+      "parent_index": 19,
+      "determinant": 19360,
+      "method": "explicit_dual_lifting",
+      "dual_norm": "33/80"
+    },
+    {
+      "parent_index": 20,
+      "determinant": 14641,
+      "method": "independent_radius_4_cover",
+      "vectors_enumerated": 139441,
+      "classes_covered": 14641,
+      "rank9_determinant_lower_bound": 29282
+    },
+    {
+      "parent_index": 21,
+      "determinant": 21168,
+      "method": "explicit_dual_lifting",
+      "dual_norm": "3/7"
+    },
+    {
+      "parent_index": 22,
+      "determinant": 21600,
+      "method": "explicit_dual_lifting",
+      "dual_norm": "167/400"
+    },
+    {
+      "parent_index": 23,
+      "determinant": 21600,
+      "method": "explicit_dual_lifting",
+      "dual_norm": "167/400"
+    },
+    {
+      "parent_index": 24,
+      "determinant": 20493,
+      "method": "explicit_dual_lifting",
+      "dual_norm": "102/253"
+    },
+    {
+      "parent_index": 25,
+      "determinant": 20709,
+      "method": "explicit_dual_lifting",
+      "dual_norm": "304/767"
+    },
+    {
+      "parent_index": 26,
+      "determinant": 19008,
+      "method": "explicit_dual_lifting",
+      "dual_norm": "19/44"
+    },
+    {
+      "parent_index": 27,
+      "determinant": 18900,
+      "method": "explicit_dual_lifting",
+      "dual_norm": "3/7"
+    },
+    {
+      "parent_index": 28,
+      "determinant": 19845,
+      "method": "explicit_dual_lifting",
+      "dual_norm": "2/5"
+    },
+    {
+      "parent_index": 29,
+      "determinant": 19980,
+      "method": "explicit_dual_lifting",
+      "dual_norm": "143/370"
+    },
+    {
+      "parent_index": 30,
+      "determinant": 19737,
+      "method": "explicit_dual_lifting",
+      "dual_norm": "286/731"
+    },
+    {
+      "parent_index": 31,
+      "determinant": 19305,
+      "method": "explicit_dual_lifting",
+      "dual_norm": "2/5"
+    },
+    {
+      "parent_index": 32,
+      "determinant": 19188,
+      "method": "explicit_dual_lifting",
+      "dual_norm": "33/82"
+    },
+    {
+      "parent_index": 33,
+      "determinant": 18513,
+      "method": "explicit_dual_lifting",
+      "dual_norm": "78/187"
+    },
+    {
+      "parent_index": 34,
+      "determinant": 18144,
+      "method": "explicit_dual_lifting",
+      "dual_norm": "143/336"
+    },
+    {
+      "parent_index": 35,
+      "determinant": 18225,
+      "method": "explicit_dual_lifting",
+      "dual_norm": "2/5"
+    },
+    {
+      "parent_index": 36,
+      "determinant": 18225,
+      "method": "explicit_dual_lifting",
+      "dual_norm": "2/5"
+    },
+    {
+      "parent_index": 37,
+      "determinant": 18225,
+      "method": "explicit_dual_lifting",
+      "dual_norm": "26/75"
+    },
+    {
+      "parent_index": 38,
+      "determinant": 18144,
+      "method": "explicit_dual_lifting",
+      "dual_norm": "39/112"
+    },
+    {
+      "parent_index": 39,
+      "determinant": 17901,
+      "method": "explicit_dual_lifting",
+      "dual_norm": "6/17"
+    },
+    {
+      "parent_index": 40,
+      "determinant": 17820,
+      "method": "explicit_dual_lifting",
+      "dual_norm": "39/110"
+    },
+    {
+      "parent_index": 41,
+      "determinant": 17577,
+      "method": "explicit_dual_lifting",
+      "dual_norm": "78/217"
+    },
+    {
+      "parent_index": 42,
+      "determinant": 17172,
+      "method": "explicit_dual_lifting",
+      "dual_norm": "39/106"
+    },
+    {
+      "parent_index": 43,
+      "determinant": 16929,
+      "method": "explicit_dual_lifting",
+      "dual_norm": "78/209"
+    },
+    {
+      "parent_index": 44,
+      "determinant": 13689,
+      "method": "independent_radius_4_cover",
+      "vectors_enumerated": 130261,
+      "classes_covered": 13689,
+      "rank9_determinant_lower_bound": 27378
+    },
+    {
+      "parent_index": 45,
+      "determinant": 14580,
+      "method": "explicit_dual_lifting",
+      "dual_norm": "3/10"
+    },
+    {
+      "parent_index": 46,
+      "determinant": 12393,
+      "method": "explicit_dual_lifting",
+      "dual_norm": "6/17"
+    }
+  ]
+}
