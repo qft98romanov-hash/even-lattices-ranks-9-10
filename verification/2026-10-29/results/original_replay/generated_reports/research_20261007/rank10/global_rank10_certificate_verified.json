@@ -1,0 +1,157 @@
+{
+  "scope": "Independent exact audit of saved coverage, isometries, flags and prunes; extension-list generation uses separately reviewed generators.",
+  "steps": [
+    {
+      "step": "exact_windows",
+      "upper_by_rank": {
+        "10": 54672,
+        "9": 40054,
+        "8": 24673,
+        "7": 13938,
+        "6": 6459,
+        "5": 2492,
+        "4": 789,
+        "3": 210,
+        "2": 44,
+        "1": 6
+      },
+      "classical_lower_by_rank": {
+        "2": "27",
+        "3": "108",
+        "4": "324",
+        "5": "972",
+        "6": "2187",
+        "7": "4374",
+        "8": "6561"
+      },
+      "special_lowers": {
+        "rank8": 6564,
+        "rank9_generic_lower": 19684,
+        "rank9_low_interval": [
+          19684,
+          24450
+        ],
+        "rank9_high_interval": [
+          24452,
+          40054
+        ]
+      }
+    },
+    {
+      "step": "rank2_coverage_and_isometries",
+      "raw_count": 9,
+      "representative_count": 6,
+      "all_maps_verified": true,
+      "all_representative_dual_minima_independently_verified": true
+    },
+    {
+      "step": "rank3_coverage_and_isometries",
+      "raw_count": 102,
+      "representative_count": 31,
+      "all_maps_verified": true,
+      "all_representative_dual_minima_independently_verified": true
+    },
+    {
+      "step": "rank4_coverage_and_isometries",
+      "raw_count": 729,
+      "representative_count": 161,
+      "all_maps_verified": true,
+      "all_representative_dual_minima_independently_verified": true
+    },
+    {
+      "step": "rank5_coverage_and_isometries",
+      "raw_count": 6934,
+      "representative_count": 925,
+      "all_maps_verified": true,
+      "all_representative_dual_minima_independently_verified": true
+    },
+    {
+      "step": "rank6_coverage_and_isometries",
+      "raw_count": 28284,
+      "representative_count": 3752,
+      "all_maps_verified": true,
+      "all_representative_dual_minima_independently_verified": true
+    },
+    {
+      "step": "rank7_complete_records",
+      "parents": 3752,
+      "parent_prunes": 3252,
+      "enumerated_parents": 500,
+      "raw": 56269,
+      "next_prunes": 52208,
+      "eligible": 4061,
+      "all_linkage_hashes_and_prunes_verified": true
+    },
+    {
+      "step": "rank7_eligible_cover",
+      "raw_count": 4061,
+      "representative_count": 224,
+      "all_maps_verified": true,
+      "all_representative_dual_minima_independently_verified": true
+    },
+    {
+      "step": "rank8_complete_records",
+      "parents": 224,
+      "parent_prunes": 0,
+      "enumerated_parents": 224,
+      "raw": 19481,
+      "next_prunes": 18110,
+      "eligible": 1371,
+      "all_linkage_hashes_and_prunes_verified": true
+    },
+    {
+      "step": "rank8_eligible_cover",
+      "raw_count": 1371,
+      "representative_count": 47,
+      "all_maps_verified": true,
+      "all_representative_dual_minima_independently_verified": true
+    },
+    {
+      "step": "rank9_low_complete_without_old_rank9_theorems",
+      "interval": [
+        19684,
+        24450
+      ],
+      "parents": 47,
+      "prunes": 45,
+      "fully_enumerated": 2,
+      "raw": 0
+    },
+    {
+      "step": "rank9_complete_records",
+      "parents": 47,
+      "parent_prunes": 0,
+      "enumerated_parents": 47,
+      "raw": 3819,
+      "next_prunes": 3819,
+      "eligible": 0,
+      "all_linkage_hashes_and_prunes_verified": true
+    },
+    {
+      "step": "final_obstruction",
+      "all_rank9_dual_minima_independently_reenumerated": true,
+      "rank9_candidates": 3819,
+      "least_next_determinant_bound": "12966723/212",
+      "strict_target_upper": 54672,
+      "remaining_candidates": 0
+    }
+  ],
+  "status": "PASS_FULL_EXACT_REPLAY",
+  "elapsed_seconds": 819.3007338949974,
+  "independently_enumerated_dual_minima_unique_matrices": 8966,
+  "reviewed_code_hashes": {
+    "exact_lattice.py": "a50cc6664e062c6bd9e2cf75503544cd3e606c48039b5419627ad12e8eb2fda8",
+    "extend_flag.py": "e17ef89bf9e7ee0b836923a463ca1cdbd2a239d886a98909a910ba064176ae84",
+    "fast_extend.py": "feb658a45bd1c0f3c58a9ba13ab0db809b5c4d9cf82e32df1030dc65fac9418c"
+  },
+  "mathematical_dependencies": [
+    "external gamma9<=2 and proved Mordell inequality",
+    "classical Hermite constants through rank8 and unique Hermite equality E8 in rank8",
+    "proved E8-containing rank10 determinant bound54675 with exact E8 class data",
+    "complete exact flag-extension generation; NO old rank9 determinant theorem or gap theorem is used"
+  ],
+  "full_generator_replay_performed": true,
+  "replay_jobs": 1897,
+  "replay_raw_candidates": 115627,
+  "replay_seconds": 793.6515925989988
+}

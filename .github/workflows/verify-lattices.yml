@@ -1,0 +1,93 @@
+name: Verify lattice certificates
+
+'on':
+  push:
+    paths:
+      - '.github/workflows/verify-lattices.yml'
+      - 'even-lattices-ranks-9-10/certificates/**'
+      - 'even-lattices-ranks-9-10/scripts/verify.py'
+      - 'even-lattices-ranks-9-10/requirements.txt'
+      - 'verification/2026-10-29/**'
+  pull_request:
+    paths:
+      - '.github/workflows/verify-lattices.yml'
+      - 'even-lattices-ranks-9-10/certificates/**'
+      - 'even-lattices-ranks-9-10/scripts/verify.py'
+      - 'even-lattices-ranks-9-10/requirements.txt'
+      - 'verification/2026-10-29/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    name: Routine certificates and independent quick checks
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    defaults:
+      run:
+        shell: bash
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONOPTIMIZE: '0'
+      PYTHONUNBUFFERED: '1'
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: verification/2026-10-29/requirements.txt
+
+      - name: Prepare fresh run-output directories
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import platform
+          import shutil
+          import sys
+          outputs = [Path('even-lattices-ranks-9-10/verification_runs'),
+                     Path('verification/2026-10-29/runs')]
+          for path in outputs:
+              if path.exists():
+                  shutil.rmtree(path)
+              path.mkdir(parents=True)
+          (outputs[1] / 'ci-environment.txt').write_text(
+              'Python: ' + sys.version + '\nPlatform: ' + platform.platform() + '\n')
+          PY
+
+      - name: Install SymPy, PARI/GP, and GAP
+        id: dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes --no-install-recommends pari-gp gap-core gap-libs
+          python -m pip install --requirement verification/2026-10-29/requirements.txt
+          dpkg-query -W pari-gp gap-core gap-libs >> verification/2026-10-29/runs/ci-environment.txt
+          python -m pip freeze >> verification/2026-10-29/runs/ci-environment.txt
+
+      - name: Run the original routine verification wrapper
+        working-directory: even-lattices-ranks-9-10
+        run: python scripts/verify.py --workers 2
+
+      - name: Run independent exact, window, PARI, and GAP checks
+        if: ${{ !cancelled() && steps.dependencies.outcome == 'success' }}
+        working-directory: verification/2026-10-29
+        run: python run_checks.py --packages exact windows pari gap --require-all --timeout 1200
+
+      - name: Upload fresh run records and logs, including failures
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v7
+        with:
+          name: lattice-verification-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            even-lattices-ranks-9-10/verification_runs/
+            verification/2026-10-29/runs/
+          if-no-files-found: warn
+          retention-days: 30

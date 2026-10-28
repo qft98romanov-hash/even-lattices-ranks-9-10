@@ -5,7 +5,7 @@
 
 Exact determinant bounds, classification of equality cases, and computational certificates motivated by sphere packings in dimensions 38 and 39.
 
-**[Read the paper (PDF)](even-lattices-ranks-9-10/manuscript/paper.pdf)** · [LaTeX source](even-lattices-ranks-9-10/manuscript/paper.tex) · [Source as TXT](even-lattices-ranks-9-10/manuscript/paper.txt) · [Results and scope](even-lattices-ranks-9-10/docs/RESULTS_AND_SCOPE.md) · [Certificates](even-lattices-ranks-9-10/certificates/)
+**[Read the paper (PDF)](even-lattices-ranks-9-10/manuscript/paper.pdf)** · [LaTeX source](even-lattices-ranks-9-10/manuscript/paper.tex) · [Source as TXT](even-lattices-ranks-9-10/manuscript/paper.txt) · [Results and scope](even-lattices-ranks-9-10/docs/RESULTS_AND_SCOPE.md) · [Certificates](even-lattices-ranks-9-10/certificates/) · **[Additional verification](verification/2026-10-29/README.md)**
 
 > **Research status.** The manuscript and exact computational evidence are available for review. Independent external mathematical review and confirmation of novelty remain pending. The work was developed with assistance from ChatGPT; it has not been formalized in a proof assistant.
 
@@ -65,6 +65,14 @@ The manuscript explains why the searches are exhaustive; the certificates allow 
 
 [Full statements, assumptions, dependencies, and open questions →](even-lattices-ranks-9-10/docs/RESULTS_AND_SCOPE.md)
 
+## Additional computational audit
+
+A new [verification package](verification/2026-10-29/README.md) provides exact Python/SymPy checks, an actual PARI/GP cross-check, an actual GAP orbit calculation, and fresh reruns of the original verification suite. The new checks agree on the explicit lattice invariants and short-vector lists; the independent boundary checker covers all **4,952** equality-boundary pairs.
+
+The [audit report](verification/2026-10-29/AUDIT_REPORT_EN.md) distinguishes newly implemented checks, reruns of the existing algorithms, and unexecuted adapters. It also documents a known legacy helper limitation and the regression and hardened-branch checks addressing it. Magma, SageMath, and Julia/OSCAR scripts are supplied but marked **NOT_RUN**. The [GitHub Actions workflow](.github/workflows/verify-lattices.yml) is prepared for routine checks and the independent quick checks; its first hosted run is still pending.
+
+These computational checks support reproducibility. The global mathematical conclusions continue to depend on the manuscript's completeness arguments and external inputs, and external expert review remains pending.
+
 ## Read and reproduce
 
 | To explore… | Start here |
@@ -73,6 +81,7 @@ The manuscript explains why the searches are exhaustive; the certificates allow 
 | Earlier proofs and supporting reports | [English reading map](even-lattices-ranks-9-10/docs/ENGLISH_READING_MAP.md) |
 | Exact programs, matrices, and finite tables | [Certificate archive](even-lattices-ranks-9-10/certificates/) |
 | Verification commands and full regeneration options | [Reproducibility guide](even-lattices-ranks-9-10/docs/REPRODUCIBILITY.md) |
+| New exact/CAS checks and coverage audit | [Additional verification](verification/2026-10-29/README.md) |
 | Recorded checks and build logs | [Validation records](even-lattices-ranks-9-10/validation/) |
 | AI assistance and review status | [Provenance and review](even-lattices-ranks-9-10/docs/AI_ASSISTANCE_AND_REVIEW.md) |
 
@@ -88,12 +97,12 @@ python scripts/verify.py
 
 The recorded verification environment is **CPython 3.12 on Linux**; the mathematical verifiers use the standard library. Keep assertions enabled: do not use `-O` or `-OO`. See the reproducibility guide for platform details and the longer regeneration runs.
 
-The routine command checks **8,194 archived file hashes** and executes **21 mathematical checks** in a temporary copy. The recorded run on **26 October 2026** passed all 21 checks. This README update does not constitute a new mathematical verification run. Hash checks establish file identity; they do not replace the mathematical completeness arguments.
+The routine command checks **8,194 archived file hashes** and executes **21 mathematical checks** in a temporary copy. The recorded routine run on **26 October 2026** passed all 21 checks. The [new audit](verification/2026-10-29/AUDIT_REPORT_EN.md) records a fresh run with all supported optional regeneration modes, together with additional independent checks. Hash checks establish file identity; they do not replace the mathematical completeness arguments.
 
 </details>
 
 ---
 
-**Manuscript edition:** 26 October 2026 · **Research snapshot:** 8 October 2026 · **Front page:** 28 October 2026.
+**Manuscript edition:** 26 October 2026 · **Research snapshot:** 8 October 2026 · **Computational audit and front page:** 29 October 2026 (Moscow; execution logs use UTC).
 
 For attribution and reuse, see [the citation guide](even-lattices-ranks-9-10/docs/CITATION.md) and [NOTICE](even-lattices-ranks-9-10/NOTICE.md). No open-source or open-content license has been selected.

@@ -1,0 +1,5 @@
+K9 PASS det = 21870 shells = {'0': 1, '6': 258, '8': 72, '10': 252}
+K10 PASS det = 54675 shells = {'0': 1, '6': 294, '8': 216, '10': 756}
+K10_alt PASS det = 54675 shells = {'0': 1, '6': 294, '8': 216, '10': 762}
+INDEPENDENT_SYMPY_FRACTION_CHECKS_PASS
+/workspace/scratch/e3fcbd7c9568/audit29/repository/verification/2026-10-29/results/exact.json

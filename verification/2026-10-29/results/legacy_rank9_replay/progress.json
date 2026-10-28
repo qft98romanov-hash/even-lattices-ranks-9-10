@@ -1,0 +1,54 @@
+{
+  "started_utc": "2026-10-28T23:12:17.477670+00:00",
+  "python": "3.12.14",
+  "workers": 2,
+  "source_files_hashed": 123,
+  "jobs": [
+    {
+      "name": "full_regeneration",
+      "command": [
+        "bash",
+        "run_full_regeneration.sh"
+      ],
+      "cwd_relative_to_copy": "audit_20260910/rank9_complete_certificates",
+      "exit_code": 0,
+      "marker": "FULL_EXACT_REGENERATION_BYTE_IDENTICAL",
+      "marker_found": true,
+      "seconds": 243.97851350800192,
+      "log_sha256": "b04601929a05b8d28064edc8726679d93ee308d528c2841b6132fea5a70451dd",
+      "status": "PASS",
+      "changed_copy_files": {}
+    },
+    {
+      "name": "mandatory_certificate_checks",
+      "command": [
+        "bash",
+        "run_all_checks.sh"
+      ],
+      "cwd_relative_to_copy": "audit_20260910/rank9_complete_certificates",
+      "exit_code": 0,
+      "marker": "ALL_RELEASED_EXACT_CERTIFICATES_PASS",
+      "marker_found": true,
+      "seconds": 273.0665229540027,
+      "log_sha256": "d492b4a650bc17aec409fdb8313619cf23c7f964089c831a125d1b6523a1d51b",
+      "status": "PASS",
+      "changed_copy_files": {}
+    },
+    {
+      "name": "supplementary_hardened_audit",
+      "command": [
+        "bash",
+        "run_audit_checks.sh"
+      ],
+      "cwd_relative_to_copy": ".",
+      "exit_code": 0,
+      "marker": "ALL_SUPPLEMENTARY_AUDIT_CHECKS_PASS",
+      "marker_found": true,
+      "seconds": 55.93073367400211,
+      "log_sha256": "11a25ea257eea6202b48504b700f71810ecc7cca109c59e528948f3a83a7566d",
+      "status": "PASS",
+      "changed_copy_files": {}
+    }
+  ],
+  "scope": "Fresh replay of the legacy strict rank-nine base, complete lower-flag generation through rank seven, all mandatory residual branches, and all five supplementary audit programs including the known zero-layer regression and hardened branch. Reuses archived algorithms; not independent external refereeing."
+}

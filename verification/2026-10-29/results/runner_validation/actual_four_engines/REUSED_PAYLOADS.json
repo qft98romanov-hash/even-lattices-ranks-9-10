@@ -1,0 +1,10 @@
+{
+  "results/pari.log": {
+    "reuse": "logs/pari.log",
+    "sha256": "6fd54e6a3475411d32b81dc953d2ddfada2818cd12533923b6c85748815b1de7"
+  },
+  "results/exact_vectors.json": {
+    "reuse": "../../exact_vectors.json",
+    "sha256": "4cfa0e1b6336363cb96913f83990972897996493c5969fca559cc92eb9e99066"
+  }
+}

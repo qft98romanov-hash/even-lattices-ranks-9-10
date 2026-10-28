@@ -1,0 +1,31 @@
+{
+  "status": "PASS",
+  "scope": "Runner behavior validation. Negative controls intentionally cause NOT_RUN/FAIL and are not mathematical failures.",
+  "cases": {
+    "actual_four_engines": {
+      "observed_returncode": 0,
+      "expected_returncode": 0,
+      "observed_status": "PASS",
+      "behavior_correct": true,
+      "record": "actual_four_engines/run.json",
+      "intentional_negative_control": false
+    },
+    "intentional_missing_required_engine": {
+      "observed_returncode": 2,
+      "expected_returncode": 2,
+      "observed_status": "NOT_RUN",
+      "behavior_correct": true,
+      "record": "intentional_missing_required_engine/run.json",
+      "intentional_negative_control": true
+    },
+    "intentional_exit_zero_without_marker": {
+      "observed_returncode": 1,
+      "expected_returncode": 1,
+      "observed_status": "FAIL",
+      "behavior_correct": true,
+      "record": "intentional_exit_zero_without_marker/run.json",
+      "intentional_negative_control": true
+    }
+  },
+  "retention": "Full execution manifests and logs retained; repeated vector payloads referenced by hash."
+}

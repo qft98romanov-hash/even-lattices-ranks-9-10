@@ -1,0 +1,42 @@
+DONE 250 OF 4952 elapsed 0.27
+DONE 500 OF 4952 elapsed 0.56
+DONE 750 OF 4952 elapsed 0.81
+DONE 1000 OF 4952 elapsed 1.11
+DONE 1250 OF 4952 elapsed 1.37
+DONE 1500 OF 4952 elapsed 1.48
+DONE 1750 OF 4952 elapsed 1.74
+DONE 2000 OF 4952 elapsed 1.89
+DONE 2250 OF 4952 elapsed 2.52
+DONE 2500 OF 4952 elapsed 3.22
+DONE 2750 OF 4952 elapsed 3.32
+DONE 3000 OF 4952 elapsed 3.59
+DONE 3250 OF 4952 elapsed 3.64
+DONE 3500 OF 4952 elapsed 4.02
+DONE 3750 OF 4952 elapsed 4.27
+DONE 4000 OF 4952 elapsed 4.56
+DONE 4250 OF 4952 elapsed 5.33
+DONE 4500 OF 4952 elapsed 5.48
+DONE 4750 OF 4952 elapsed 7.7
+{
+  "status": "ALL_EXCLUDED",
+  "source_sha256": {
+    "research_20261007/rank10/early_flags/rank5.json": "89932e2add2cecd62b3b41fc8901b3b3d595d93120a9429bc8d3432f566edcbd",
+    "research_20261007/rank10/early_flags/rank6_fast.json": "471dd105d965770a44411e72c22ca0f9dfaaa7a097f1712c49b5d6ed98d61576",
+    "research_20261007/rank10/early_flags/rank7_eligible.json": "5caae65649e0c1d65c808ebaaa7c98fab2e1d8e60e141e19268586210e7572bb",
+    "research_20261007/rank10/early_flags/rank8_eligible.json": "65440940cb342a739ed2138fbf9481655ce72f2fb36afd7e54b5320baff1fe67",
+    "research_20261007/rank10/early_flags/rank7_parents/parent_3297.json": "43dac66ba869b9b3d3e8e143533805a6ff90f7261d0c2fee0b72169794eee75f",
+    "research_20261007/independent_review/check_rank10_global_chain.py": "bc1469a9acbd068af7c81ebf8f371201d6c749f400d0d12f4ce8c0ed9568076b"
+  },
+  "scope": "Independent necessary-condition audit: finite discriminant module and lifted duals.\n\nNo original extension or vector-generation code is imported. The independent\nrational vector enumerator is the previously audited data-chain implementation.\nEvery ruled-out parent is excluded without computing discriminant-class minima.\nA class surviving those necessary conditions is tested against the lifting\nbound for the next flag rank; the audited endpoint families are all excluded.\n",
+  "parent_target_pairs": 4952,
+  "method_counts": {
+    "quadratic_polynomial_content": 493,
+    "last_dual_vector": 3960,
+    "finite_quadratic_module_nonrepresentation": 420,
+    "all_classes_have_explicit_shorter_dual": 69,
+    "surviving_classes_fail_next_lifting": 10
+  },
+  "unresolved_count": 0,
+  "elapsed_seconds": 12.505839546000061
+}
+ALL_4952_EQUALITY_BOUNDARY_PARENT_TARGET_PAIRS_INDEPENDENTLY_EXCLUDED

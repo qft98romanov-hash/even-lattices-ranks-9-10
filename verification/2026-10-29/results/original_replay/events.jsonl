@@ -1,0 +1,53 @@
+{"elapsed_seconds": 0.265, "line": "PACKAGE_FILE_HASHES_PASS: 8194 files"}
+{"elapsed_seconds": 0.265, "line": "Hashes establish file identity, not exhaustive coverage or mathematical correctness."}
+{"elapsed_seconds": 0.697, "line": "RUN research_20261007/independent_review/check_k9_perfect.py"}
+{"elapsed_seconds": 0.818, "line": "PASS research_20261007/independent_review/check_k9_perfect.py"}
+{"elapsed_seconds": 0.819, "line": "RUN research_20261007/independent_review/check_equality_independent.py"}
+{"elapsed_seconds": 3.952, "line": "PASS research_20261007/independent_review/check_equality_independent.py"}
+{"elapsed_seconds": 3.953, "line": "RUN research_20261007/equality/rank9_gap.py"}
+{"elapsed_seconds": 15.471, "line": "PASS research_20261007/equality/rank9_gap.py"}
+{"elapsed_seconds": 15.472, "line": "RUN research_20261007/rank10/verify_rank10_e8_classification.py"}
+{"elapsed_seconds": 16.59, "line": "PASS research_20261007/rank10/verify_rank10_e8_classification.py"}
+{"elapsed_seconds": 16.59, "line": "RUN research_20261007/independent_review/check_rank10_global_chain.py"}
+{"elapsed_seconds": 49.278, "line": "PASS research_20261007/independent_review/check_rank10_global_chain.py"}
+{"elapsed_seconds": 49.278, "line": "RUN research_20261007/rank10/verify_rank9_low_spectrum.py"}
+{"elapsed_seconds": 51.204, "line": "PASS research_20261007/rank10/verify_rank9_low_spectrum.py"}
+{"elapsed_seconds": 51.204, "line": "RUN research_20261007/independent_review/check_rank9_low_orbits.py"}
+{"elapsed_seconds": 52.801, "line": "PASS research_20261007/independent_review/check_rank9_low_orbits.py"}
+{"elapsed_seconds": 52.801, "line": "RUN research_20261007/rank10_theory/verify_rank10_bounds.py"}
+{"elapsed_seconds": 52.83, "line": "PASS research_20261007/rank10_theory/verify_rank10_bounds.py"}
+{"elapsed_seconds": 52.831, "line": "RUN research_20261007/clusters/verify_fixed_section_cluster_optimality.py"}
+{"elapsed_seconds": 52.947, "line": "PASS research_20261007/clusters/verify_fixed_section_cluster_optimality.py"}
+{"elapsed_seconds": 52.948, "line": "RUN research_20261007/clusters/verify_all_E8_rank9_cluster_optimality.py"}
+{"elapsed_seconds": 52.974, "line": "PASS research_20261007/clusters/verify_all_E8_rank9_cluster_optimality.py"}
+{"elapsed_seconds": 52.975, "line": "RUN research_20261007/clusters/verify_rank10_single_projection.py"}
+{"elapsed_seconds": 53.001, "line": "PASS research_20261007/clusters/verify_rank10_single_projection.py"}
+{"elapsed_seconds": 53.002, "line": "RUN research_20261007/independent_review/check_all_e8_rank9_clusters.py"}
+{"elapsed_seconds": 53.032, "line": "PASS research_20261007/independent_review/check_all_e8_rank9_clusters.py"}
+{"elapsed_seconds": 53.033, "line": "RUN research_20261007/embeddings/verify_ambient_embeddings.py --json"}
+{"elapsed_seconds": 53.879, "line": "PASS research_20261007/embeddings/verify_ambient_embeddings.py"}
+{"elapsed_seconds": 53.881, "line": "RUN research_20261007/embeddings/verify_A10_extension_exact.py"}
+{"elapsed_seconds": 55.511, "line": "PASS research_20261007/embeddings/verify_A10_extension_exact.py"}
+{"elapsed_seconds": 55.512, "line": "RUN research_20261007/embeddings/verify_A10_extension_exact.py --control"}
+{"elapsed_seconds": 57.257, "line": "PASS research_20261007/embeddings/verify_A10_extension_exact.py"}
+{"elapsed_seconds": 57.258, "line": "RUN research_20261007/independent_review/check_fixed_k9_extension_coverage.py"}
+{"elapsed_seconds": 57.934, "line": "PASS research_20261007/independent_review/check_fixed_k9_extension_coverage.py"}
+{"elapsed_seconds": 57.936, "line": "RUN research_20261007/equality/verify_equality.py"}
+{"elapsed_seconds": 283.884, "line": "PASS research_20261007/equality/verify_equality.py"}
+{"elapsed_seconds": 283.886, "line": "RUN research_20261007/embeddings/verify_all_fixed_K9_extensions.py"}
+{"elapsed_seconds": 626.626, "line": "PASS research_20261007/embeddings/verify_all_fixed_K9_extensions.py"}
+{"elapsed_seconds": 626.628, "line": "RUN research_20261007/rank10/verify_global_rank10_certificate.py --replay --workers 3"}
+{"elapsed_seconds": 1446.737, "line": "PASS research_20261007/rank10/verify_global_rank10_certificate.py"}
+{"elapsed_seconds": 1446.85, "line": "RUN research_20261008/rank10_equality/verify_equality_certificate.py --skip-base --replay --workers 3"}
+{"elapsed_seconds": 2228.512, "line": "PASS research_20261008/rank10_equality/verify_equality_certificate.py"}
+{"elapsed_seconds": 2228.78, "line": "RUN research_20261008/independent_review/check_equality_windows_and_recovered_prunes.py"}
+{"elapsed_seconds": 2228.78, "line": "PASS research_20261008/independent_review/check_equality_windows_and_recovered_prunes.py"}
+{"elapsed_seconds": 2228.782, "line": "RUN research_20261008/independent_review/check_boundaries_by_quadratic_module.py"}
+{"elapsed_seconds": 2241.503, "line": "PASS research_20261008/independent_review/check_boundaries_by_quadratic_module.py"}
+{"elapsed_seconds": 2241.505, "line": "RUN research_20261008/independent_review/check_delta_chain_independent.py"}
+{"elapsed_seconds": 2242.479, "line": "PASS research_20261008/independent_review/check_delta_chain_independent.py"}
+{"elapsed_seconds": 2242.481, "line": "RUN research_20261008/consequences/audit_two_types_and_cluster_gap.py"}
+{"elapsed_seconds": 2243.3, "line": "PASS research_20261008/consequences/audit_two_types_and_cluster_gap.py"}
+{"elapsed_seconds": 2243.302, "line": "ALL_SELECTED_NEW_RESULT_CHECKS_PASS"}
+{"elapsed_seconds": 2243.303, "line": "Read README_EN.txt or README_RU.txt for the precise scope of each result."}
+{"elapsed_seconds": 2243.443, "line": "Run record: verification_runs/20261028T225301.445694Z"}

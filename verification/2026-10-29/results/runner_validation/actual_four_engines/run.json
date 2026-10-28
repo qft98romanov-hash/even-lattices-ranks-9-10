@@ -1,0 +1,181 @@
+{
+  "schema": 1,
+  "timestamp_utc": "20261028T230501.431533Z",
+  "status": "PASS",
+  "python": "3.12.14",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "packages_requested": [
+    "exact",
+    "windows",
+    "pari",
+    "gap"
+  ],
+  "require_all": true,
+  "runner_sha256": "9ce174775b8dd8e84f129f574e7d89df070c0f9731a2f0ac76bb256e6032b704",
+  "archive_manifest_sha256": "be99da16355bb1614c858251ab1047ab44f35b7785def9feaad48854bf9db0f3",
+  "checks": {
+    "exact": {
+      "status": "PASS",
+      "script": "check_exact.py",
+      "script_sha256": "1dec8586770e4dd44ec3d500858d553f662b553c8801b4bebb03e9b50b90c6c3",
+      "required_completion_marker": "INDEPENDENT_SYMPY_FRACTION_CHECKS_PASS",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "check_exact.py"
+      ],
+      "log": "logs/exact.log",
+      "returncode": 0,
+      "elapsed_seconds": 1.962571,
+      "completion_marker_found": true,
+      "report": "results/exact.json",
+      "report_status": "PASS",
+      "version_evidence": {
+        "python": "3.12.14",
+        "sympy": "1.14.0",
+        "version_lines": []
+      }
+    },
+    "windows": {
+      "status": "PASS",
+      "script": "check_windows.py",
+      "script_sha256": "0fa7ed4149a6f7a118a3e6a0cc56db25c0800b2997ea45bd47962111b76e71a2",
+      "required_completion_marker": "INDEPENDENT_WINDOWS_HNF_AND_CLUSTER_CHECK_PASS",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "check_windows.py"
+      ],
+      "log": "logs/windows.log",
+      "returncode": 0,
+      "elapsed_seconds": 3.738065,
+      "completion_marker_found": true,
+      "report": "results/windows.json",
+      "report_status": "PASS",
+      "version_evidence": {
+        "python": "3.12.14",
+        "sympy": "1.14.0",
+        "version_lines": []
+      }
+    },
+    "pari": {
+      "status": "PASS",
+      "script": "check_pari.gp",
+      "script_sha256": "65260cd1661279a98d18dd787c962574512e2f80a174c230b55c10a10628a13f",
+      "required_completion_marker": "PASS_PARI_CROSSCHECK",
+      "command": [
+        "/workspace/scratch/e3fcbd7c9568/audit29/runtime/pari-2.19.0/Olinux-x86_64/gp-dyn",
+        "-q",
+        "-f",
+        "check_pari.gp"
+      ],
+      "log": "logs/pari.log",
+      "returncode": 0,
+      "elapsed_seconds": 0.069949,
+      "completion_marker_found": true,
+      "version_evidence": {
+        "version_lines": [
+          "PARI_VERSION [2, 19, 0]"
+        ]
+      }
+    },
+    "gap": {
+      "status": "PASS",
+      "script": "check_orbits.g",
+      "script_sha256": "49763437bb4efb8616482dc99b71b128244653ae1a780e75a0b1dc281875720b",
+      "required_completion_marker": "GAP_ORBIT_CHECK_PASS",
+      "command": [
+        "/workspace/scratch/e3fcbd7c9568/audit29/runtime/gap-run",
+        "-q",
+        "-T",
+        "check_orbits.g"
+      ],
+      "log": "logs/gap.log",
+      "returncode": 0,
+      "elapsed_seconds": 2.451403,
+      "completion_marker_found": true,
+      "report": "results/gap_orbits.json",
+      "report_status": "PASS",
+      "version_evidence": {
+        "gap_version": "4.12.1",
+        "version_lines": []
+      }
+    },
+    "pari_exact_comparison": {
+      "returncode": 0,
+      "elapsed_seconds": 0.028095,
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "compare_pari_vectors.py"
+      ],
+      "script": "compare_pari_vectors.py",
+      "script_sha256": "24bdf2fa4945e512bb6e024dcd3a85ef9b944716da88884a1dc5460dbda218b4",
+      "log": "logs/pari_exact_comparison.log",
+      "required_completion_marker": "PARI_EXACT_VECTOR_COMPARISON_PASS",
+      "completion_marker_found": true,
+      "report": "results/pari_vector_comparison.json",
+      "status": "PASS"
+    }
+  },
+  "exporters": [
+    {
+      "returncode": 0,
+      "elapsed_seconds": 0.026454,
+      "script": "export_inputs.py",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "export_inputs.py"
+      ],
+      "log": "logs/export_inputs.log"
+    },
+    {
+      "returncode": 0,
+      "elapsed_seconds": 0.021051,
+      "script": "export_pari.py",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "export_pari.py"
+      ],
+      "log": "logs/export_pari.log"
+    },
+    {
+      "returncode": 0,
+      "elapsed_seconds": 0.022251,
+      "script": "export_gap.py",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "export_gap.py"
+      ],
+      "log": "logs/export_gap.log"
+    },
+    {
+      "returncode": 0,
+      "elapsed_seconds": 0.033336,
+      "script": "export_adapters.py",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "export_adapters.py"
+      ],
+      "log": "logs/export_adapters.log"
+    }
+  ],
+  "scope": "Fresh runs of selected supplementary checks only. No external review, formal verification or new theorem is implied.",
+  "elapsed_seconds": 9.739105,
+  "input_sha256": "c6a1d1cd87421600079d1732f1584f0e23e9066070573b3b9885b8a2d571f71c",
+  "input_source_provenance": [
+    {
+      "path": "even-lattices-ranks-9-10/certificates/research_20261007/rank10/verify_rank9_extremal_example_exact.py",
+      "sha256": "53b46e2358d5797605c0a1523978f595c73fb2ddf7083fea3e488aa49acc5cac"
+    },
+    {
+      "path": "even-lattices-ranks-9-10/certificates/research_20261007/rank10/rank10_e8_certificate.json",
+      "sha256": "611ab6f7965ba3bcabaaf008c3e178d1997bd9210912a76df27064f6effdfcc2"
+    }
+  ],
+  "fresh_result_sha256": {
+    "results/exact.json": "d1231a43ad541c96d4b6acfb4483ae1fe4497d0418bb4f8a807d376ddf699dc5",
+    "results/exact_vectors.json": "4cfa0e1b6336363cb96913f83990972897996493c5969fca559cc92eb9e99066",
+    "results/gap_orbits.json": "a48806b2491ba8d614382c982dd2c972c47ff650666e304f51f399a420c2959d",
+    "results/pari.log": "6fd54e6a3475411d32b81dc953d2ddfada2818cd12533923b6c85748815b1de7",
+    "results/pari_vector_comparison.json": "e7330d894dcca87af31c199683155605a723b04155e475bfc1c4ccd0afabafb7",
+    "results/windows.json": "cdb20269526e5cf69886d21e6dad53a7198c055aea934a89001527b7316ac387"
+  }
+}

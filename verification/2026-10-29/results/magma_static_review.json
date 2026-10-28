@@ -1,0 +1,40 @@
+{
+  "status": "NOT_RUN",
+  "review_kind": "STATIC_API_AND_MATHEMATICAL_CONVENTION_REVIEW",
+  "reviewed_at_utc": "2026-10-28T23:01:37.301490+00:00",
+  "input_sha256": "c6a1d1cd87421600079d1732f1584f0e23e9066070573b3b9885b8a2d571f71c",
+  "mathematical_execution_completed": false,
+  "scope": "Explicit lattices only; no universal determinant or equality-classification claim.",
+  "second_agent_review": "No mathematical convention defect found. CAS namespace/type resolution remains unexecuted.",
+  "script": "check_magma.m",
+  "command": "magma -b check_magma.m",
+  "success_marker": "ALL_MAGMA_EXPLICIT_CHECKS_PASS",
+  "reviewed_api_conventions": [
+    "LatticeWithGram uses the supplied Gram matrix and checks positive definiteness by default.",
+    "Minimum/ShortestVectors/KissingNumber/ThetaSeries explicitly use Proof=true; no Prune or Max parameter.",
+    "ShortestVectors returns one vector per sign pair; theta exponents are squared norms.",
+    "Dual uses Rescale=false; its determinant is asserted equal to the reciprocal primal determinant.",
+    "SmithForm returns S,P,Q and P*G*Q=S is checked with unimodularity.",
+    "IsIsometric certificate satisfies T*G*Transpose(T)=target Gram.",
+    "Default automorphism action is on coordinate row vectors; U*G*Transpose(U)=G is checked.",
+    "SetQuitOnError(true) makes errors terminate the script."
+  ],
+  "official_api_urls": [
+    "https://magma.maths.usyd.edu.au/magma/handbook/text/331",
+    "https://magma.maths.usyd.edu.au/magma/handbook/text/336",
+    "https://magma.maths.usyd.edu.au/magma/handbook/text/334",
+    "https://magma.maths.usyd.edu.au/magma/handbook/text/356",
+    "https://magma.maths.usyd.edu.au/magma/handbook/text/280",
+    "https://magma.maths.usyd.edu.au/magma/handbook/text/49"
+  ],
+  "local_checks_actually_run": [
+    "Literal-input export completed",
+    "Generated literal files compared byte-for-byte with fresh JSON export"
+  ],
+  "runtime_probe": {
+    "executable": "magma",
+    "resolved_path": null
+  },
+  "reason_not_run": "Required CAS executable is absent from PATH.",
+  "script_sha256": "f4c8663df66ed69d6efc10216424acb2a834aa1083de8915fd4b9b5306a77523"
+}

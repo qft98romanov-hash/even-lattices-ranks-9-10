@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "source_commit": "0d8adc415ce93c7fd4448d48104e0b13b7c944f0",
+  "checks_passed": 24,
+  "checks_failed": 0,
+  "elapsed_seconds": 2243.457,
+  "finished_utc": "2026-10-28T23:30:24.633803+00:00",
+  "source_manifest_recheck_exit_code": 0,
+  "source_manifest_file_count": 8194,
+  "original_nested_project_git_diff_empty": true,
+  "strict_rank10_replay_jobs": 1897,
+  "strict_rank10_raw_candidates": 115627,
+  "equality_rank10_replay_jobs": 5010,
+  "equality_rank10_raw_candidates": 78,
+  "equality_rank10_non_E8_survivors": 0,
+  "fixed_K9_P48p_fibers": 281,
+  "fixed_K9_P48p_nodes": 171472428,
+  "fixed_K9_P48p_witnesses": 19,
+  "ambient_cpp_ubsan_status": "PASS",
+  "ambient_cpp_ubsan_seconds": 13.454166706000251,
+  "scope": "Rerun of all modes supported by the original wrapper, plus rebuilt original C++ ambient enumerator. These are reruns of existing algorithms, not an independent mathematical implementation. Historical baseline regenerations are reported separately by the parent audit."
+}

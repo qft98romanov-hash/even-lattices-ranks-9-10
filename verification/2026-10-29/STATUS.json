@@ -1,0 +1,86 @@
+{
+  "audit_label": "2026-10-29 Europe/Moscow",
+  "packaged_at_utc": "2026-10-28T23:31:31.265353+00:00",
+  "overall_status": "PASS_WITH_NOT_RUN",
+  "meaning": "All executed mathematical checks and runner controls passed. Three external CAS engines and hosted CI were not run. This is not formal verification or external peer review.",
+  "reviewed_commit": "0d8adc415ce93c7fd4448d48104e0b13b7c944f0",
+  "original_project_subtree": "6bf04da9fbe0e679e168391daf6aaa578e9ee0d1",
+  "common_input_sha256": "c6a1d1cd87421600079d1732f1584f0e23e9066070573b3b9885b8a2d571f71c",
+  "original_mathematical_checks": 24,
+  "original_certificate_files": 8194,
+  "checks": {
+    "exact": {
+      "status": "PASS",
+      "record": "results/exact.json"
+    },
+    "windows": {
+      "status": "PASS",
+      "record": "results/windows.json"
+    },
+    "pari": {
+      "status": "PASS",
+      "record": "results/pari_run.json"
+    },
+    "pari_vector_comparison": {
+      "status": "PASS",
+      "record": "results/pari_vector_comparison.json"
+    },
+    "gap": {
+      "status": "PASS",
+      "record": "results/gap_orbits.json"
+    },
+    "original_full_replay": {
+      "status": "PASS",
+      "record": "results/original_replay/execution.json"
+    },
+    "ambient_cpp": {
+      "status": "PASS",
+      "record": "results/original_replay/cpp_execution.json"
+    },
+    "legacy_rank9": {
+      "status": "PASS",
+      "record": "results/legacy_rank9_replay/summary.json"
+    },
+    "legacy_hardened_comparison": {
+      "status": "PASS",
+      "record": "results/legacy_rank9_replay/hardened_branch_comparison.json"
+    },
+    "enumerator_adversarial": {
+      "status": "PASS",
+      "record": "results/checker_review/enumerator_adversarial.json"
+    },
+    "runner_validation": {
+      "status": "PASS",
+      "record": "results/runner_validation/validation.json"
+    },
+    "magma": {
+      "status": "NOT_RUN",
+      "record": "results/magma_static_review.json",
+      "reason": "Required CAS executable is absent from PATH."
+    },
+    "sage": {
+      "status": "NOT_RUN",
+      "record": "results/sage_static_review.json",
+      "reason": "Required CAS executable is absent from PATH."
+    },
+    "oscar": {
+      "status": "NOT_RUN",
+      "record": "results/oscar_static_review.json",
+      "reason": "Required CAS executable is absent from PATH."
+    },
+    "github_actions": {
+      "status": "NOT_RUN",
+      "reason": "Workflow prepared and locally validated; no hosted execution during this audit."
+    }
+  },
+  "known_legacy_limitation": "Old generic topdown helper omits first nonzero zero-class layer. Regression and hardened actual-branch replay passed; see AUDIT_REPORT_EN.md section5 and coverage review section9.",
+  "unrepeated_external_or_redundant_work": [
+    "External dimension-nine perfect-form classification",
+    "Optional redundant historical E6 cross-check",
+    "Historical exploratory computations outside the mandatory proof paths"
+  ],
+  "outside_addon_files": {
+    "README.md": "ba96633bb2ccc5522350ecba8db86b0ae4c4795b738b75cad42418e3daf8eb96",
+    ".github/workflows/verify-lattices.yml": "f7e9675ace02bd7e83eac0b1e16a852737f0dabfbe36c0e58e6d486640c5cb72"
+  }
+}

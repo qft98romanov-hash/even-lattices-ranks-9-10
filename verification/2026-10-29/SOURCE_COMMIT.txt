@@ -1,0 +1,5 @@
+Repository: https://github.com/qft98romanov-hash/even-lattices-ranks-9-10
+Reviewed commit: 0d8adc415ce93c7fd4448d48104e0b13b7c944f0
+Reviewed project subtree: 6bf04da9fbe0e679e168391daf6aaa578e9ee0d1
+Audit edition: 29 October 2026 (Europe/Moscow)
+The archived manuscript and certificates are preserved unchanged.

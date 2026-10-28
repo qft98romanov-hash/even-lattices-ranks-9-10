@@ -1,0 +1,7 @@
+RUN full_regeneration
+RUN mandatory_certificate_checks
+PASS full_regeneration 243.979
+RUN supplementary_hardened_audit
+PASS mandatory_certificate_checks 273.067
+PASS supplementary_hardened_audit 55.931
+LEGACY_RANK9_COMPLETE_REPLAY PASS

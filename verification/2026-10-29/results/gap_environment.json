@@ -1,0 +1,43 @@
+{
+  "status": "PASS",
+  "runtime": "GAP 4.12.1",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "started_utc": "2026-10-28T22:59:20.512726+00:00",
+  "wall_seconds": 2.4445780820024083,
+  "exit_code": 0,
+  "invocation": [
+    "gap",
+    "-q",
+    "-b",
+    "-A",
+    "-T",
+    "check_orbits.g"
+  ],
+  "runtime_setup": "Official Debian binary packages unpacked into a task-local directory; no system installation. Native binary invoked with -l pointing to unpacked GAP library.",
+  "runtime_binary_sha256": "ab1a69f8c1667fdfb0e9ed9b5c03b6607a8af4bb4df976d2dbf40bc1187b695f",
+  "runtime_packages": [
+    {
+      "url": "https://deb.debian.org/debian/pool/main/g/gap/gap-core_4.12.1-2_amd64.deb",
+      "bytes": 790088,
+      "sha256": "d775cc6468b749da98460da7aaeda7cc83c26a9d77540ec0d30f87b7438d50bb"
+    },
+    {
+      "url": "https://deb.debian.org/debian/pool/main/g/gap/gap-libs_4.12.1-2_all.deb",
+      "bytes": 9530668,
+      "sha256": "670911236dca7b991d9fb56b0b4d22df5d2d5b8e3f2c6b639ad5099666d07fec"
+    },
+    {
+      "url": "https://deb.debian.org/debian/pool/main/g/gap/libgap8_4.12.1-2_amd64.deb",
+      "bytes": 721516,
+      "sha256": "c44c85a5df50b8201c5db4ea829f00f45e1070a8dc11a00ff3b5e5debef5a868"
+    },
+    {
+      "url": "https://deb.debian.org/debian/pool/main/g/gap-gapdoc/gap-gapdoc_1.6.6-1_all.deb",
+      "bytes": 971480,
+      "sha256": "959501f5928de1c60266ad04e03a2e0fe97aa62d956bb06826606d7620431681"
+    }
+  ],
+  "scope": "Independent E8 short-vector, class-minimum and finite-group calculation; not a global rank-ten determinant lower-bound proof.",
+  "script_sha256": "49763437bb4efb8616482dc99b71b128244653ae1a780e75a0b1dc281875720b",
+  "input_sha256": "c6a1d1cd87421600079d1732f1584f0e23e9066070573b3b9885b8a2d571f71c"
+}

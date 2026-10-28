@@ -1,0 +1,223 @@
+[1/11] Verifying released-file hashes
+./ASSUMPTIONS_EN.md: OK
+./ASSUMPTIONS_RU.md: OK
+./CLAIMS_TO_CERTIFICATES.md: OK
+./INVENTORY.md: OK
+./README_EN.md: OK
+./README_RU.md: OK
+./RUN_ALL_CHECKS.transcript: OK
+./RUN_ORDER.md: OK
+./VERSION.txt: OK
+./certificate/exact_lattice.py: OK
+./certificate/extend_flag.py: OK
+./certificate/extend_flag_chunk.py: OK
+./certificate/lower_flag_chain_exact.sha256: OK
+./certificate/merge_flag_chunks.py: OK
+./certificate/merge_flag_chunks.transcript: OK
+./certificate/rank1_seed.json: OK
+./certificate/rank2_exact_classes.json: OK
+./certificate/rank2_exact_classes.json.raw: OK
+./certificate/rank2_exact_classes_regen.json: OK
+./certificate/rank2_exact_classes_regen.json.raw: OK
+./certificate/rank2_seed_classes.json: OK
+./certificate/rank3_exact_classes.json: OK
+./certificate/rank3_exact_classes.json.raw: OK
+./certificate/rank3_exact_classes_regen.json: OK
+./certificate/rank3_exact_classes_regen.json.raw: OK
+./certificate/rank4_exact_classes.json: OK
+./certificate/rank4_exact_classes.json.raw: OK
+./certificate/rank4_exact_classes_regen.json: OK
+./certificate/rank4_exact_classes_regen.json.raw: OK
+./certificate/rank4_isometry_classes.json: OK
+./certificate/rank5_isometry_classes.json: OK
+./certificate/rank5_isometry_classes.json.raw: OK
+./certificate/rank5_isometry_classes_regen.json: OK
+./certificate/rank5_isometry_classes_regen.json.raw: OK
+./certificate/rank6_isometry_classes.json: OK
+./certificate/rank6_isometry_classes.json.raw: OK
+./certificate/rank6_isometry_classes_regen.json: OK
+./certificate/rank6_isometry_classes_regen.json.raw: OK
+./certificate/rank6_to_rank7_chunks.sha256: OK
+./certificate/rank7_chunk_000_035.json: OK
+./certificate/rank7_chunk_035_070.json: OK
+./certificate/rank7_chunk_070_105.json: OK
+./certificate/rank7_chunk_105_138.json: OK
+./certificate/rank7_merged.json: OK
+./certificate/rank7_residuals_exact.json: OK
+./certificate/rank7_residuals_sha256.txt: OK
+./certificate/rank7_survivor_linkage_exact.json: OK
+./certificate/rank7_survivor_linkage_sha256.txt: OK
+./certificate/rank9_exact_ldl.py: OK
+./certificate/regenerated_frozen_bridges_exact.json: OK
+./certificate/regenerated_frozen_bridges_sha256.txt: OK
+./certificate/verify_e6_branch_exact.py: OK
+./certificate/verify_e6_flag_branch_exact.py: OK
+./certificate/verify_e6_flag_branch_exact.sha256: OK
+./certificate/verify_e6_flag_branch_exact.transcript: OK
+./certificate/verify_e7_branch_exact.py: OK
+./certificate/verify_e7_branch_exact.sha256: OK
+./certificate/verify_e7_branch_exact.transcript: OK
+./certificate/verify_flag_chunks.py: OK
+./certificate/verify_flag_chunks.transcript: OK
+./certificate/verify_h6318_branch_exact.py: OK
+./certificate/verify_h6318_branch_exact.sha256: OK
+./certificate/verify_h6318_branch_exact.transcript: OK
+./certificate/verify_lower_flag_chain_exact.py: OK
+./certificate/verify_lower_flag_chain_exact.transcript: OK
+./certificate/verify_rank7_residuals_exact.py: OK
+./certificate/verify_rank7_residuals_exact.transcript: OK
+./certificate/verify_rank7_survivor_linkage_exact.py: OK
+./certificate/verify_rank7_survivor_linkage_exact.transcript: OK
+./certificate/verify_rank7_topdown.py: OK
+./certificate/verify_rank7_topdown.sha256: OK
+./certificate/verify_rank7_topdown.transcript: OK
+./certificate/verify_rank9_extremal_example_exact.py: OK
+./certificate/verify_rank9_extremal_example_exact.sha256: OK
+./certificate/verify_rank9_extremal_example_exact.transcript: OK
+./certificate/verify_regenerated_frozen_bridges_exact.py: OK
+./certificate/verify_regenerated_frozen_bridges_exact.transcript: OK
+./certificate/verify_sqrt3_e8_covering_radius_exact.py: OK
+./certificate/verify_sqrt3_e8_covering_radius_exact.sha256: OK
+./certificate/verify_sqrt3_e8_covering_radius_exact.transcript: OK
+./requirements.txt: OK
+./run_all_checks.sh: OK
+./run_full_regeneration.sh: OK
+[2/11] Verifying the sharp rank-nine example
+EXACT CERTIFICATE: EXTREMAL RANK-NINE EXAMPLE
+arithmetic = integers and fractions only
+rank = 9
+even = yes
+positive definite = yes
+det(K9) = 21870
+nonzero vectors of norm <= 5 = 0
+oriented vectors of norm 6 = 258
+min(K9) = 6
+canonical Gram sha256 = a58eb5471560a60456d5a65f9580c1b50b001b5d92e4ecc5094258844a7bd355
+RANK9_EXTREMAL_EXAMPLE_EXACT_OK
+[3/11] Verifying regenerated-to-frozen lower-flag bridges
+EXACT REGENERATED/FROZEN LOWER-FLAG BRIDGE VERIFIER
+CONVENTION X^T * FROZEN * X = REGENERATED
+FLOATING_POINT_DECISIONS 0
+RANK 1 REGEN rank1_seed.json FROZEN rank1_seed.json CLASSES 1 EXACT_GL_BRIDGES 1 ISOMETRY_CALLS 1 BIJECTION PASS
+RANK 2 REGEN rank2_exact_classes_regen.json FROZEN rank2_exact_classes.json CLASSES 5 EXACT_GL_BRIDGES 5 ISOMETRY_CALLS 5 BIJECTION PASS
+RANK 2 REGEN rank2_exact_classes_regen.json FROZEN rank2_seed_classes.json CLASSES 5 EXACT_GL_BRIDGES 5 ISOMETRY_CALLS 5 BIJECTION PASS
+RANK 3 REGEN rank3_exact_classes_regen.json FROZEN rank3_exact_classes.json CLASSES 14 EXACT_GL_BRIDGES 14 ISOMETRY_CALLS 14 BIJECTION PASS
+RANK 4 REGEN rank4_exact_classes_regen.json FROZEN rank4_exact_classes.json CLASSES 47 EXACT_GL_BRIDGES 47 ISOMETRY_CALLS 49 BIJECTION PASS
+RANK 4 REGEN rank4_exact_classes_regen.json FROZEN rank4_isometry_classes.json CLASSES 47 EXACT_GL_BRIDGES 47 ISOMETRY_CALLS 49 BIJECTION PASS
+RANK 5 REGEN rank5_isometry_classes_regen.json FROZEN rank5_isometry_classes.json CLASSES 118 EXACT_GL_BRIDGES 118 ISOMETRY_CALLS 118 BIJECTION PASS
+RANK 6 REGEN rank6_isometry_classes_regen.json FROZEN rank6_isometry_classes.json CLASSES 138 EXACT_GL_BRIDGES 138 ISOMETRY_CALLS 138 BIJECTION PASS
+PRIMARY_CLASS_COUNTS 1,5,14,47,118,138
+ALL_REGENERATED_FROZEN_EXACT_BRIDGES_OK
+[4/11] Auditing all 3699 lower-flag raw extensions and GL maps
+EXACT STATIC AUDIT OF REGENERATED LOWER FLAG
+ARITHMETIC integer+rational; floating-point decisions 0
+RANK 2 RAW 7 CLASSES 5 WINDOW [27,39] MAPS 7 PASS
+RANK 3 RAW 52 CLASSES 14 WINDOW [108,178] MAPS 52 PASS
+RANK 4 RAW 279 CLASSES 47 WINDOW [324,633] MAPS 279 PASS
+RANK 5 RAW 1456 CLASSES 118 WINDOW [972,1894] MAPS 1456 PASS
+RANK 6 RAW 1905 CLASSES 138 WINDOW [2187,4647] MAPS 1905 PASS
+TOTAL_RAW 3699
+CLASS_COUNTS 1,5,14,47,118,138
+ALL_LOWER_FLAG_RAW_FORMS_AND_GL_MAPS_EXACT_OK
+[5/11] Auditing all 2235 saved rank-seven extensions
+EXACT STATIC AUDIT OF RANK6->RANK7 FLAG
+input sha256 = 670ae1e56d7493af59901f30167e3059fcff5bb3a19f1b27bfbf359fa93fdf4d
+merged sha256 = 19d489d4a12aa58b61b2dce4dce547c270f9d1414f766409edc3862d0b4577d8
+parents = 138
+raw children = 2235
+active parents = [(29, 102), (72, 6), (73, 4), (75, 60), (85, 61), (86, 65), (87, 312), (88, 1360), (135, 264), (137, 1)]
+distinct (d6,d7) pairs = 31
+distinct d7 values = 28
+dual boundary vectors = 5222
+generator rerun = False
+RANK6_TO_RANK7_CHUNKS_EXACT_OK
+[6/11] Verifying all 96 survivor-to-class linkage maps
+EXACT RANK-7 LIFTING-SURVIVOR LINKAGE
+FROZEN_SHA256 670ae1e56d7493af59901f30167e3059fcff5bb3a19f1b27bfbf359fa93fdf4d
+MERGED_SHA256 19d489d4a12aa58b61b2dce4dce547c270f9d1414f766409edc3862d0b4577d8
+RAW_TOTAL 2235 LIFTING_EXCLUDED 2139 SURVIVORS 96 GROUPS 6
+CONVENTION X^T * TARGET * X = RAW
+FLOATING_POINT_DECISIONS 0
+PAIR d6=2187 d7=4374 LABEL=sqrt3_E7 RAW=2 EXACT_GL7_MAPS=2 ONE_CLASS PASS
+PAIR d6=2187 d7=6318 LABEL=H6318 RAW=54 EXACT_GL7_MAPS=54 ONE_CLASS PASS
+PAIR d6=2835 d7=7722 LABEL=D7722 RAW=32 EXACT_GL7_MAPS=32 ONE_CLASS PASS
+PAIR d6=4096 d7=8192 LABEL=four_E7_dual RAW=1 EXACT_GL7_MAPS=1 ONE_CLASS PASS
+PAIR d6=3240 d7=8100 LABEL=R8100 RAW=1 EXACT_GL7_MAPS=1 ONE_CLASS PASS
+PAIR d6=3267 d7=7986 LABEL=R7986 RAW=6 EXACT_GL7_MAPS=6 ONE_CLASS PASS
+ALL_96_SURVIVORS_LINKED_TO_6_EXACT_CLASSES
+[7/11] Independently verifying the sqrt(3)E7 branch
+EXACT CERTIFICATE: sqrt(3) E7 BRANCH
+arithmetic = integers and fractions only
+det(H) = 4374
+min(H) = 6 ; oriented minimal vectors = 126
+dual enumeration for H: points = 63745 ; classes = 4374
+glue-radius(H) = 9/2
+coset-minimum distribution:
+  [(Fraction(0, 1), 1), (Fraction(1, 2), 56), (Fraction(2, 3), 126), (Fraction(7, 6), 576), (Fraction(4, 3), 756), (Fraction(11, 6), 756), (Fraction(2, 1), 728), (Fraction(5, 2), 672), (Fraction(8, 3), 576), (Fraction(19, 6), 126), (Fraction(9, 2), 1)]
+W(E7)-orbit data (size, coset minimum):
+  [(1, Fraction(0, 1)), (1, Fraction(9, 2)), (56, Fraction(1, 2)), (56, Fraction(2, 1)), (126, Fraction(2, 3)), (126, Fraction(19, 6)), (576, Fraction(7, 6)), (576, Fraction(8, 3)), (672, Fraction(2, 1)), (672, Fraction(5, 2)), (756, Fraction(4, 3)), (756, Fraction(11, 6))]
+allowed labelled classes = 1375
+by determinant = [(12393, 126), (14580, 576), (15309, 673)]
+by (determinant, order) = [((12393, 6), 126), ((14580, 3), 576), ((15309, 2), 1), ((15309, 6), 672)]
+number of isometry types = 4
+J12393 : det = 12393 ; oriented minimal vectors = 150 ; dual points = 73253 ; classes = 12393 ; glue-radius = 58/17 ; rank-9 determinant lower bound = 32076
+J14580 : det = 14580 ; oriented minimal vectors = 140 ; dual points = 190491 ; classes = 14580 ; glue-radius = 9/2 ; rank-9 determinant lower bound = 21870
+J15309a : det = 15309 ; oriented minimal vectors = 138 ; dual points = 314953 ; classes = 15309 ; glue-radius = 32/7 ; rank-9 determinant lower bound = 21870
+J15309b : det = 15309 ; oriented minimal vectors = 126 ; dual points = 72119 ; classes = 15309 ; glue-radius = 68/21 ; rank-9 determinant lower bound = 42282
+CONCLUSION: every rank-9 continuation in this branch has det >= 21870
+therefore no candidate with det < 21870 exists in the sqrt(3) E7 branch
+transcript-sha256 = b2b7c6cfb2129bb4c0522d526a4aad2a3d02d0ee67abf24cbc2e9a9e5c80c93a
+[8/11] Verifying the determinant-6318 branch
+EXACT CERTIFICATE: H_6318 RESIDUAL BRANCH
+arithmetic = integers and fractions only
+det(H6318) = 6318
+dual points for H6318 = 72127
+discriminant classes = 6318
+rho(H6318)^2 = 105/26
+labelled rank-8 extensions = 12
+determinant counts = [(12393, 2), (13689, 10)]
+J12393 det = 12393 rho^2 = 58/17 dual points = 73253 rank-9 floor = 32076
+J13689 det = 13689 rho^2 = 10/3 dual points = 71437 rank-9 floor = 36504
+H6318_BRANCH_EXACT_OK
+[9/11] Verifying the determinant-7722 and 8192 branches
+[1] L = 4 E7^*
+    det=8192, rho_glue^2=7/2, points=42969, floor=20480
+[2] Four rank-7 descendants with d6=2835
+    det=7722, dual_min=105/286, rho_glue^2=93/22, points=65209, floor=13689
+    det=8208, dual_min=105/304, rho_glue^2=297/76, points=51077, floor=17172
+    det=9018, dual_min=105/334, rho_glue^2=1377/334, points=65015, floor=16929
+    det=9342, dual_min=105/346, rho_glue^2=1449/346, points=69801, floor=16929
+[3] Exact extension list for det 7722
+    OPPOSITE_CLASS_ASSERT: c_plus+c_minus=0 in A_L; det(T)=-1 and T^T J_plus T=J_minus
+    the only determinant is 13689
+[4] Explicit merger with the old J_13689
+    det(U)=-1 and U J_old U^T = J_new
+[5] Exact glue closure of J_13689
+    rho_glue^2=10/3, points=61429, rank-9 floor=36504
+ALL EXACT CHECKS PASSED
+[10/11] Verifying the determinant-7986 and 8100 branches
+EXACT RESIDUAL RANK-7 CERTIFICATE
+FROZEN_SHA256 670ae1e56d7493af59901f30167e3059fcff5bb3a19f1b27bfbf359fa93fdf4d
+MERGED_SHA256 19d489d4a12aa58b61b2dce4dce547c270f9d1414f766409edc3862d0b4577d8
+LINKAGE_SHA256 8a45bd0f405d085c53f084f0eaeef3b6ceb9eb1374dc6d9bd3b310d327f76026
+FLOATING_POINT_DECISIONS 0
+D7_8100 rho=15/4 points=43905 search_bound=4 rank8_floor=18225 CLOSED
+D7_7986 rho=25/6 points=64341 search_bound=5 rank8_floor=14641
+D7_7986_EXTENSIONS raw=2 opposite_cosets=PASS classes=1 det8=14641
+D8_14641 rho=36/11 points=63121 search_bound=4 rank9_floor=39930 CLOSED
+ALL_RESIDUAL_RANK7_CERTIFICATES_OK
+[11/11] Independently verifying rho(sqrt(3)E8)^2 = 8/3
+EXACT CERTIFICATE: sqrt(3) E8 GLUE COVERING RADIUS
+arithmetic = integers and fractions only
+det(E8) = 1
+vectors q_E8 <= 8 = 26641
+theta shells = [(0, 1), (2, 240), (4, 2160), (6, 6720), (8, 17520)]
+covered residues modulo 3 = 6561
+class-minimum distribution = [(0, 1), (2, 240), (4, 2160), (6, 2240), (8, 1920)]
+canonical class-minimum table sha256 = 27db94fec9b33b20d886d3c2156a7237a48b3ffa37aff041f98c0c404ef02988
+rho(sqrt(3) E8)^2 = 8/3
+det(sqrt(3) E8) = 6561
+rank-9 Schur lower bound = 10/3
+rank-9 determinant lower bound = 21870
+SQRT3_E8_COVERING_RADIUS_EXACT_OK
+ALL_RELEASED_EXACT_CERTIFICATES_PASS

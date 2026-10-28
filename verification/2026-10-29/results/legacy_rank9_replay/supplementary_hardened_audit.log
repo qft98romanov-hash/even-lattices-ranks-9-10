@@ -1,0 +1,175 @@
+README_EN.md: OK
+README_RU.md: OK
+audit_20260910/RU_appendix64_extracted.py: OK
+audit_20260910/RU_appendix64_extracted.transcript: OK
+audit_20260910/branch_findings.md: OK
+audit_20260910/branch_independent_checks.py: OK
+audit_20260910/branch_independent_checks.transcript: OK
+audit_20260910/enumeration_findings.md: OK
+audit_20260910/final_deliverable_checks.json: OK
+audit_20260910/rank9_complete_certificates/ASSUMPTIONS_EN.md: OK
+audit_20260910/rank9_complete_certificates/ASSUMPTIONS_RU.md: OK
+audit_20260910/rank9_complete_certificates/CLAIMS_TO_CERTIFICATES.md: OK
+audit_20260910/rank9_complete_certificates/INVENTORY.md: OK
+audit_20260910/rank9_complete_certificates/README_EN.md: OK
+audit_20260910/rank9_complete_certificates/README_RU.md: OK
+audit_20260910/rank9_complete_certificates/RUN_ALL_CHECKS.transcript: OK
+audit_20260910/rank9_complete_certificates/RUN_ORDER.md: OK
+audit_20260910/rank9_complete_certificates/SHA256SUMS: OK
+audit_20260910/rank9_complete_certificates/VERSION.txt: OK
+audit_20260910/rank9_complete_certificates/certificate/exact_lattice.py: OK
+audit_20260910/rank9_complete_certificates/certificate/extend_flag.py: OK
+audit_20260910/rank9_complete_certificates/certificate/extend_flag_chunk.py: OK
+audit_20260910/rank9_complete_certificates/certificate/lower_flag_chain_exact.sha256: OK
+audit_20260910/rank9_complete_certificates/certificate/merge_flag_chunks.py: OK
+audit_20260910/rank9_complete_certificates/certificate/merge_flag_chunks.transcript: OK
+audit_20260910/rank9_complete_certificates/certificate/rank1_seed.json: OK
+audit_20260910/rank9_complete_certificates/certificate/rank2_exact_classes.json: OK
+audit_20260910/rank9_complete_certificates/certificate/rank2_exact_classes.json.raw: OK
+audit_20260910/rank9_complete_certificates/certificate/rank2_exact_classes_regen.json: OK
+audit_20260910/rank9_complete_certificates/certificate/rank2_exact_classes_regen.json.raw: OK
+audit_20260910/rank9_complete_certificates/certificate/rank2_seed_classes.json: OK
+audit_20260910/rank9_complete_certificates/certificate/rank3_exact_classes.json: OK
+audit_20260910/rank9_complete_certificates/certificate/rank3_exact_classes.json.raw: OK
+audit_20260910/rank9_complete_certificates/certificate/rank3_exact_classes_regen.json: OK
+audit_20260910/rank9_complete_certificates/certificate/rank3_exact_classes_regen.json.raw: OK
+audit_20260910/rank9_complete_certificates/certificate/rank4_exact_classes.json: OK
+audit_20260910/rank9_complete_certificates/certificate/rank4_exact_classes.json.raw: OK
+audit_20260910/rank9_complete_certificates/certificate/rank4_exact_classes_regen.json: OK
+audit_20260910/rank9_complete_certificates/certificate/rank4_exact_classes_regen.json.raw: OK
+audit_20260910/rank9_complete_certificates/certificate/rank4_isometry_classes.json: OK
+audit_20260910/rank9_complete_certificates/certificate/rank5_isometry_classes.json: OK
+audit_20260910/rank9_complete_certificates/certificate/rank5_isometry_classes.json.raw: OK
+audit_20260910/rank9_complete_certificates/certificate/rank5_isometry_classes_regen.json: OK
+audit_20260910/rank9_complete_certificates/certificate/rank5_isometry_classes_regen.json.raw: OK
+audit_20260910/rank9_complete_certificates/certificate/rank6_isometry_classes.json: OK
+audit_20260910/rank9_complete_certificates/certificate/rank6_isometry_classes.json.raw: OK
+audit_20260910/rank9_complete_certificates/certificate/rank6_isometry_classes_regen.json: OK
+audit_20260910/rank9_complete_certificates/certificate/rank6_isometry_classes_regen.json.raw: OK
+audit_20260910/rank9_complete_certificates/certificate/rank6_to_rank7_chunks.sha256: OK
+audit_20260910/rank9_complete_certificates/certificate/rank7_chunk_000_035.json: OK
+audit_20260910/rank9_complete_certificates/certificate/rank7_chunk_035_070.json: OK
+audit_20260910/rank9_complete_certificates/certificate/rank7_chunk_070_105.json: OK
+audit_20260910/rank9_complete_certificates/certificate/rank7_chunk_105_138.json: OK
+audit_20260910/rank9_complete_certificates/certificate/rank7_merged.json: OK
+audit_20260910/rank9_complete_certificates/certificate/rank7_residuals_exact.json: OK
+audit_20260910/rank9_complete_certificates/certificate/rank7_residuals_sha256.txt: OK
+audit_20260910/rank9_complete_certificates/certificate/rank7_survivor_linkage_exact.json: OK
+audit_20260910/rank9_complete_certificates/certificate/rank7_survivor_linkage_sha256.txt: OK
+audit_20260910/rank9_complete_certificates/certificate/rank9_exact_ldl.py: OK
+audit_20260910/rank9_complete_certificates/certificate/regenerated_frozen_bridges_exact.json: OK
+audit_20260910/rank9_complete_certificates/certificate/regenerated_frozen_bridges_sha256.txt: OK
+audit_20260910/rank9_complete_certificates/certificate/verify_e6_branch_exact.py: OK
+audit_20260910/rank9_complete_certificates/certificate/verify_e6_flag_branch_exact.py: OK
+audit_20260910/rank9_complete_certificates/certificate/verify_e6_flag_branch_exact.sha256: OK
+audit_20260910/rank9_complete_certificates/certificate/verify_e6_flag_branch_exact.transcript: OK
+audit_20260910/rank9_complete_certificates/certificate/verify_e7_branch_exact.py: OK
+audit_20260910/rank9_complete_certificates/certificate/verify_e7_branch_exact.sha256: OK
+audit_20260910/rank9_complete_certificates/certificate/verify_e7_branch_exact.transcript: OK
+audit_20260910/rank9_complete_certificates/certificate/verify_flag_chunks.py: OK
+audit_20260910/rank9_complete_certificates/certificate/verify_flag_chunks.transcript: OK
+audit_20260910/rank9_complete_certificates/certificate/verify_h6318_branch_exact.py: OK
+audit_20260910/rank9_complete_certificates/certificate/verify_h6318_branch_exact.sha256: OK
+audit_20260910/rank9_complete_certificates/certificate/verify_h6318_branch_exact.transcript: OK
+audit_20260910/rank9_complete_certificates/certificate/verify_lower_flag_chain_exact.py: OK
+audit_20260910/rank9_complete_certificates/certificate/verify_lower_flag_chain_exact.transcript: OK
+audit_20260910/rank9_complete_certificates/certificate/verify_rank7_residuals_exact.py: OK
+audit_20260910/rank9_complete_certificates/certificate/verify_rank7_residuals_exact.transcript: OK
+audit_20260910/rank9_complete_certificates/certificate/verify_rank7_survivor_linkage_exact.py: OK
+audit_20260910/rank9_complete_certificates/certificate/verify_rank7_survivor_linkage_exact.transcript: OK
+audit_20260910/rank9_complete_certificates/certificate/verify_rank7_topdown.py: OK
+audit_20260910/rank9_complete_certificates/certificate/verify_rank7_topdown.sha256: OK
+audit_20260910/rank9_complete_certificates/certificate/verify_rank7_topdown.transcript: OK
+audit_20260910/rank9_complete_certificates/certificate/verify_rank9_extremal_example_exact.py: OK
+audit_20260910/rank9_complete_certificates/certificate/verify_rank9_extremal_example_exact.sha256: OK
+audit_20260910/rank9_complete_certificates/certificate/verify_rank9_extremal_example_exact.transcript: OK
+audit_20260910/rank9_complete_certificates/certificate/verify_regenerated_frozen_bridges_exact.py: OK
+audit_20260910/rank9_complete_certificates/certificate/verify_regenerated_frozen_bridges_exact.transcript: OK
+audit_20260910/rank9_complete_certificates/certificate/verify_sqrt3_e8_covering_radius_exact.py: OK
+audit_20260910/rank9_complete_certificates/certificate/verify_sqrt3_e8_covering_radius_exact.sha256: OK
+audit_20260910/rank9_complete_certificates/certificate/verify_sqrt3_e8_covering_radius_exact.transcript: OK
+audit_20260910/rank9_complete_certificates/requirements.txt: OK
+audit_20260910/rank9_complete_certificates/run_all_checks.sh: OK
+audit_20260910/rank9_complete_certificates/run_full_regeneration.sh: OK
+audit_20260910/replay_evidence_SHA256SUMS: OK
+audit_20260910/replay_final_hash_check.log: OK
+audit_20260910/replay_findings.md: OK
+audit_20260910/replay_full_regeneration_20260910.log: OK
+audit_20260910/replay_full_regeneration_result.json: OK
+audit_20260910/replay_initial_hash_check.log: OK
+audit_20260910/replay_metadata.json: OK
+audit_20260910/replay_regenerated_raw_comparisons.json: OK
+audit_20260910/replay_run_all_checks_20260910.log: OK
+audit_20260910/replay_run_all_checks_result.json: OK
+audit_20260910/replay_source_unchanged_hash_check.log: OK
+audit_20260910/ru_verified_final_compile.log: OK
+audit_20260910/test_enumeration_independent.py: OK
+audit_20260910/test_enumeration_independent.transcript: OK
+audit_20260910/theory_findings.md: OK
+audit_20260910/topdown_hardening_sha256.txt: OK
+audit_20260910/topdown_zero_layer_regression.py: OK
+audit_20260910/topdown_zero_layer_regression.transcript: OK
+audit_20260910/verify_rank7_topdown_hardened.patch: OK
+audit_20260910/verify_rank7_topdown_hardened.py: OK
+audit_20260910/verify_rank7_topdown_hardened.transcript: OK
+audit_20260910/verify_theory_and_sharpness.py: OK
+audit_20260910/verify_theory_and_sharpness.transcript: OK
+manuscripts/rank9_audit_theory_EN.pdf: OK
+manuscripts/rank9_audit_theory_EN.txt: OK
+manuscripts/rank9_audit_theory_RU.pdf: OK
+manuscripts/rank9_audit_theory_RU.txt: OK
+recovered/rank9_complete_certificates.zip: OK
+run_audit_checks.sh: OK
+[1/5] Independent enumeration kernels and low-rank extensions
+INTEGER_INTERVAL 10000 random + 36 huge-centre boundary cases PASS
+RATIONAL_ELLIPSOIDS 100 independent adjugate/Cauchy box comparisons PASS
+BAREISS_DETERMINANTS 60 arbitrary integer matrices PASS
+DISCRIMINANT_CLASS_MINIMA ranks 1 and all five rank2 parents PASS
+INDEPENDENT_EXTENSION_GENERATOR rank1->rank2 7 raw PASS
+INDEPENDENT_EXTENSION_GENERATOR rank2->rank3 52 raw PASS
+ALL_INDEPENDENT_ENUMERATION_KERNEL_TESTS_PASS
+[2/5] Independent residual-branch and K9 checks
+CARTESIAN_ELLIPSOID_COMPARISONS 51 PASS
+K9_LEIBNIZ_DETERMINANT_AND_TWO_ENUMERATORS det=21870 min=6 kissing=258 PASS
+E6_E7_REFLECTIONS_EXACT_DUAL_ISOMETRIES PASS
+DIRECT_MINIMUM H6318 6 PASS
+DIRECT_MINIMUM J12393 6 PASS
+DIRECT_MINIMUM J13689 6 PASS
+DIRECT_MINIMUM J14580 6 PASS
+DIRECT_MINIMUM J15309a 6 PASS
+DIRECT_MINIMUM J15309b 6 PASS
+TOPDOWN_ZERO_CLASS_LAYERS_AND_7722_FLAG_BOUND PASS
+ALL_INDEPENDENT_BRANCH_CHECKS_PASS
+[3/5] Exact windows and the independent 64-point sharpness proof
+HERMITE_WINDOW_ARITHMETIC_PASS
+unrounded_integer_floors {"1": 7, "2": 39, "3": 178, "4": 634, "5": 1894, "6": 4647, "7": 9493, "8": 15908}
+congruence_adjusted_upper {"1": 6, "2": 39, "3": 178, "4": 633, "5": 1894, "6": 4647, "7": 9492, "8": 15908, "9": 21868}
+lifting_bounds ['6561', '13689', '552123/35', '12288', '30375/2', '14641']
+K9_ROOT_RESIDUE_64_TEST_PASS
+64_point_norm_distribution [(8, 5), (14, 9), (20, 14), (26, 10), (32, 8), (38, 5), (44, 4), (50, 4), (56, 1), (62, 3), (86, 1)]
+K9_SCHUR_MINIMUM_SIX_AND_DETERMINANT_21870_PASS
+CENTERED_RESIDUE_SHORTCUT_COUNTEREXAMPLE_VERIFIED
+ALL_THEORY_AND_64_POINT_SHARPNESS_CHECKS_PASS
+[4/5] Regression for the omitted nonzero zero-class layer
+FULL_DIAGONAL_DISCRIMINANT_TABLE 28512
+OLD_HELPER_ACCEPTS_TARGET True
+HARDENED_HELPER_ACCEPTS_TARGET False
+TARGET_DETERMINANT 14256 SECOND_LAYER_NORM 2
+ZERO_CLASS_LAYER_REGRESSION_PASS
+[5/5] Hardened top-down branch verification
+[1] L = 4 E7^*
+    det=8192, rho_glue^2=7/2, points=42969, floor=20480
+[2] Four rank-7 descendants with d6=2835
+    det=7722, dual_min=105/286, rho_glue^2=93/22, points=65209, floor=13689
+    det=8208, dual_min=105/304, rho_glue^2=297/76, points=51077, floor=17172
+    det=9018, dual_min=105/334, rho_glue^2=1377/334, points=65015, floor=16929
+    det=9342, dual_min=105/346, rho_glue^2=1449/346, points=69801, floor=16929
+[3] Exact extension list for det 7722
+    OPPOSITE_CLASS_ASSERT: c_plus+c_minus=0 in A_L; det(T)=-1 and T^T J_plus T=J_minus
+    the only determinant is 13689
+[4] Explicit merger with the old J_13689
+    det(U)=-1 and U J_old U^T = J_new
+[5] Exact glue closure of J_13689
+    rho_glue^2=10/3, points=61429, rank-9 floor=36504
+ALL EXACT CHECKS PASSED
+ALL_SUPPLEMENTARY_AUDIT_CHECKS_PASS

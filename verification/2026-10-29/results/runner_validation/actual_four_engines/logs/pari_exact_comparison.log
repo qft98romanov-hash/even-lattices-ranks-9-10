@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "lattices": {
+    "K9": {
+      "matching_nonzero_vectors_through_10": 582
+    },
+    "K10": {
+      "matching_nonzero_vectors_through_10": 1266
+    },
+    "K10_alt": {
+      "matching_nonzero_vectors_through_10": 1272
+    }
+  },
+  "scope": "Equality of complete returned coordinate sets; exact completeness supplied by the separate rational enumerator."
+}
+PARI_EXACT_VECTOR_COMPARISON_PASS

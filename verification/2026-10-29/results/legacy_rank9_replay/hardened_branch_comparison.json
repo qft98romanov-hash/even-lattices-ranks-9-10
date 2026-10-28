@@ -1,0 +1,10 @@
+{
+  "checked_utc": "2026-10-28T23:17:52.436970+00:00",
+  "fresh_hardened_transcript_sha256": "92fdc2815c939f183043636137cc6ab04d5bfc937642b96b7ae113cb60034a32",
+  "byte_equal_to_archived_transcripts": {
+    "verify_rank7_topdown_hardened.transcript": true,
+    "rank9_complete_certificates/certificate/verify_rank7_topdown.transcript": true
+  },
+  "regression_reproduced": true,
+  "status": "PASS"
+}

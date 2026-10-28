@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "exit_code": 0,
+  "elapsed_seconds": 0.06582314100160147,
+  "command": [
+    "/workspace/scratch/e3fcbd7c9568/audit29/runtime/pari-2.19.0/gp",
+    "-q",
+    "-f",
+    "check_pari.gp"
+  ],
+  "pari_source_version": "2.19.0",
+  "source_sha256": "f317b9722eb5d9094a60303774f066f3a83e3ec1f170be8546c44d7583f30b6d",
+  "source_url": "https://pari.math.u-bordeaux.fr/pub/pari/unix/pari-2.19.0.tar.gz",
+  "kernel": "native; built without GMP and readline",
+  "input_sha256": "c6a1d1cd87421600079d1732f1584f0e23e9066070573b3b9885b8a2d571f71c",
+  "script_sha256": "65260cd1661279a98d18dd787c962574512e2f80a174c230b55c10a10628a13f",
+  "scope": "Numerical-enumeration corroboration plus exact returned-vector and matrix identities; not rigorous enumeration completeness or global classification."
+}

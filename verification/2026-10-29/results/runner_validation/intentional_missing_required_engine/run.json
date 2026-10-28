@@ -1,0 +1,79 @@
+{
+  "schema": 1,
+  "timestamp_utc": "20261028T230313.713077Z",
+  "status": "NOT_RUN",
+  "python": "3.12.14",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "packages_requested": [
+    "magma"
+  ],
+  "require_all": true,
+  "runner_sha256": "9ce174775b8dd8e84f129f574e7d89df070c0f9731a2f0ac76bb256e6032b704",
+  "archive_manifest_sha256": "be99da16355bb1614c858251ab1047ab44f35b7785def9feaad48854bf9db0f3",
+  "checks": {
+    "magma": {
+      "status": "NOT_RUN",
+      "script": "check_magma.m",
+      "script_sha256": "f4c8663df66ed69d6efc10216424acb2a834aa1083de8915fd4b9b5306a77523",
+      "required_completion_marker": "ALL_MAGMA_EXPLICIT_CHECKS_PASS",
+      "reason": "executable_not_found",
+      "requested_executable": "intentionally-missing-magma-executable"
+    }
+  },
+  "exporters": [
+    {
+      "returncode": 0,
+      "elapsed_seconds": 0.036902,
+      "script": "export_inputs.py",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "export_inputs.py"
+      ],
+      "log": "logs/export_inputs.log"
+    },
+    {
+      "returncode": 0,
+      "elapsed_seconds": 0.022537,
+      "script": "export_pari.py",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "export_pari.py"
+      ],
+      "log": "logs/export_pari.log"
+    },
+    {
+      "returncode": 0,
+      "elapsed_seconds": 0.023243,
+      "script": "export_gap.py",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "export_gap.py"
+      ],
+      "log": "logs/export_gap.log"
+    },
+    {
+      "returncode": 0,
+      "elapsed_seconds": 0.026987,
+      "script": "export_adapters.py",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "export_adapters.py"
+      ],
+      "log": "logs/export_adapters.log"
+    }
+  ],
+  "scope": "Fresh runs of selected supplementary checks only. No external review, formal verification or new theorem is implied.",
+  "elapsed_seconds": 1.230184,
+  "input_sha256": "c6a1d1cd87421600079d1732f1584f0e23e9066070573b3b9885b8a2d571f71c",
+  "input_source_provenance": [
+    {
+      "path": "even-lattices-ranks-9-10/certificates/research_20261007/rank10/verify_rank9_extremal_example_exact.py",
+      "sha256": "53b46e2358d5797605c0a1523978f595c73fb2ddf7083fea3e488aa49acc5cac"
+    },
+    {
+      "path": "even-lattices-ranks-9-10/certificates/research_20261007/rank10/rank10_e8_certificate.json",
+      "sha256": "611ab6f7965ba3bcabaaf008c3e178d1997bd9210912a76df27064f6effdfcc2"
+    }
+  ],
+  "fresh_result_sha256": {}
+}

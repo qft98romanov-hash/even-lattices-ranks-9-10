@@ -1,0 +1,35 @@
+{
+  "status": "NOT_RUN",
+  "review_kind": "STATIC_API_AND_MATHEMATICAL_CONVENTION_REVIEW",
+  "reviewed_at_utc": "2026-10-28T23:01:37.301490+00:00",
+  "input_sha256": "c6a1d1cd87421600079d1732f1584f0e23e9066070573b3b9885b8a2d571f71c",
+  "mathematical_execution_completed": false,
+  "scope": "Explicit lattices only; no universal determinant or equality-classification claim.",
+  "second_agent_review": "No mathematical convention defect found. CAS namespace/type resolution remains unexecuted.",
+  "script": "check_sage.py",
+  "command": "sage -python check_sage.py",
+  "success_marker": "ALL_SAGE_EXPLICIT_CROSS_CHECKS_PASS",
+  "reviewed_api_conventions": [
+    "QuadraticForm(2*G) accounts for the Hessian convention Q(v)=v^T*H*v/2.",
+    "short_vector_list_up_to_length bound is strict; both signs explicitly requested.",
+    "Every returned vector is checked exactly, with uniqueness and opposite-sign closure.",
+    "Smith transformation matrices are checked by exact multiplication and unimodularity.",
+    "Dual denominator scaling is exactly undone in the reported minimum.",
+    "E8 isometry return matrix is checked as M^T*G*M=C, with integer entries and determinant +/-1.",
+    "Enumeration and isometry use PARI; this is not an independent backend from check_pari.gp."
+  ],
+  "official_api_urls": [
+    "https://doc.sagemath.org/html/en/reference/quadratic_forms/sage/quadratic_forms/quadratic_form.html",
+    "https://doc.sagemath.org/html/en/reference/matrices/sage/matrix/matrix_integer_dense.html",
+    "https://pari.math.u-bordeaux.fr/dochtml/html-stable/Linear_algebra__Vectors__matrices_and_sets.html"
+  ],
+  "local_checks_actually_run": [
+    "CPython py_compile passed (syntax only, no Sage import or mathematical execution)"
+  ],
+  "runtime_probe": {
+    "executable": "sage",
+    "resolved_path": null
+  },
+  "reason_not_run": "Required CAS executable is absent from PATH.",
+  "script_sha256": "2bbd50bf972a435e4d8bb63b19bd10510b101e599dbbdb1d733b3406ec1ab2dd"
+}

@@ -1,0 +1,28 @@
+{
+  "status": "PASS",
+  "started_utc": "2026-10-28T22:56:17.330776+00:00",
+  "compile_command": [
+    "g++",
+    "-std=c++17",
+    "-O2",
+    "-fsanitize=undefined",
+    "-fno-sanitize-recover=undefined",
+    "/workspace/scratch/e3fcbd7c9568/audit29/repository/even-lattices-ranks-9-10/certificates/research_20261007/embeddings/search_all_fixed_K9_extensions.cpp",
+    "-o",
+    "/workspace/scratch/e3fcbd7c9568/audit29/work/replay/ambient_ubsan"
+  ],
+  "compiler": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0",
+  "source_sha256": "395c58e847c94cb84ac16fd4e77b40f1789b3fb47301883975dd0cdb90f89a37",
+  "input_sha256": "a02d2446d62c10cf0be1c86b19843f1ae7e17ec6df80fc7930742257d3f31e1e",
+  "scope": "Fresh sanitized execution of the original C++ integer ambient-fiber enumerator; not a new implementation.",
+  "compile_exit_code": 0,
+  "exit_code": 0,
+  "matches_archived_counts_and_witnesses": true,
+  "cases": 281,
+  "nodes": 171472428,
+  "leaves": 19,
+  "witnesses": 19,
+  "stderr_bytes": 0,
+  "elapsed_seconds": 13.454166706000251,
+  "finished_utc": "2026-10-28T22:56:30.786900+00:00"
+}

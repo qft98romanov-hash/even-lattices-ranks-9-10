@@ -1,0 +1,2 @@
+# Tested version for the independent Python checks.
+sympy==1.14.0

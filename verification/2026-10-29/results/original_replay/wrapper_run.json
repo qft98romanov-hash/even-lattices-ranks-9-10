@@ -1,0 +1,19 @@
+{
+  "timestamp_utc": "20261028T225301.445694Z",
+  "python": "3.12.14",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "mode": "routine plus requested regenerations",
+  "flags": [
+    "--full-global",
+    "--replay-rank10-equality",
+    "--full-local-extensions",
+    "--full-equality"
+  ],
+  "workers": 3,
+  "certificate_manifest_sha256": "be99da16355bb1614c858251ab1047ab44f35b7785def9feaad48854bf9db0f3",
+  "elapsed_seconds": 2243.174,
+  "exit_code": 0,
+  "invoked_check_count": 24,
+  "status": "PASS",
+  "scope": "Executed checks only; not external peer review or formal verification."
+}
