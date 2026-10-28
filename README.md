@@ -19,11 +19,7 @@ I am deeply grateful to **Xiaoming Sun** and **Chengu Wang** for our collaborati
 
 ## The problem and the main results
 
-For positive-definite even integral lattices, define
-
-$$
-e_r(6)=\min\left\{\det L:\mathrm{rank}(L)=r,\quad \min_{0\ne v\in L}\|v\|^2\geq 6\right\}.
-$$
+For each positive integer $r$, let $e_r(6)$ denote the smallest Gram determinant among all positive-definite even integral lattices of rank $r$ in which every nonzero vector has squared norm at least 6.
 
 Here the determinant is the **Gram determinant** (the square of the covolume), and the minimum is a **squared norm**.
 
